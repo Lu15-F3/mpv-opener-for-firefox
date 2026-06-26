@@ -105,7 +105,7 @@ Caso você precise apagar completamente os arquivos de configuração de integra
 ### Automatic Removal / Remoção Automática
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/Lu15-F3/mpv-opener-for-firefox/main/uninstall.sh |bash
+curl -sSL https://raw.githubusercontent.com/Lu15-F3/mpv-opener-for-firefox/main/uninstall.sh | bash
 ```
 
 ### Manual Removal / Remoção Manual
