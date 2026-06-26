@@ -1,0 +1,104 @@
+{
+  "extensionName": {
+    "message": "MPV-Öffner für Firefox"
+  },
+  "extensionDescription": {
+    "message": "Senden Sie Videolinks direkt von Firefox an Ihren lokalen MPV-Player."
+  },
+  "sendToMpv": {
+    "message": "An mpv senden"
+  },
+  "sendAudioToMpv": {
+    "message": "Anhören (nur Audio)"
+  },
+  "contextMenuOptions": {
+    "message": "Erweiterungseinstellungen"
+  },
+  "tabMain": {
+    "message": "Kontrolle"
+  },
+  "tabHistory": {
+    "message": "Geschichte"
+  },
+  "clearHistory": {
+    "message": "Verlauf löschen"
+  },
+  "emptyHistory": {
+    "message": "Noch keine Videos gesendet."
+  },
+  "optionsTitle": {
+    "message": "MPV-Öffner-Einstellungen"
+  },
+  "playbackSettings": {
+    "message": "Wiedergabeeinstellungen"
+  },
+  "displayMode": {
+    "message": "Anzeigemodus"
+  },
+  "standardWindow": {
+    "message": "Standardfenster"
+  },
+  "fullscreen": {
+    "message": "Vollbild"
+  },
+  "pipMode": {
+    "message": "Bild-in-Bild (unten rechts)"
+  },
+  "initialState": {
+    "message": "Ausgangszustand"
+  },
+  "statePlaying": {
+    "message": "Spielen"
+  },
+  "statePaused": {
+    "message": "Angehalten"
+  },
+  "windowBehavior": {
+    "message": "Fensterverhalten"
+  },
+  "alwaysOnTopLabel": {
+    "message": "Halten Sie das MPV-Fenster immer im Vordergrund"
+  },
+  "audioSettings": {
+    "message": "Konfiguration des Audiogeräts"
+  },
+  "audioDeviceLabel": {
+    "message": "Standard-Audioausgabegerät (mpv --audio-device)"
+  },
+  "audioDevicePlaceholder": {
+    "message": "z. B. alsa/hdmi, Pulse/Gerätename"
+  },
+  "tabBehavior": {
+    "message": "Tab-Verhalten"
+  },
+  "closeTabLabel": {
+    "message": "Tab automatisch schließen, nachdem das Video an MPV gesendet wurde"
+  },
+  "saveButton": {
+    "message": "Einstellungen speichern"
+  },
+  "saveSuccess": {
+    "message": "Einstellungen erfolgreich gespeichert!"
+  },
+  "sendingNotification": {
+    "message": "Video wird an MPV gesendet..."
+  },
+  "fedoraSettings": {
+    "message": "Fedora- und KDE-Plasma-Integration"
+  },
+  "inhibitSleepLabel": {
+    "message": "Bildschirmschoner und Ruhezustand des Systems während der Wiedergabe sperren"
+  },
+  "aggressiveCacheLabel": {
+    "message": "Aktiviere aggressiven Netzwerk-Cache (verhindert Stream-Pufferung)"
+  },
+  "qualitySettings": {
+    "message": "Qualitäts- und Streamfilter"
+  },
+  "maxResolutionLabel": {
+    "message": "Maximale Stream-Auflösung"
+  },
+  "autoSubtitlesLabel": {
+    "message": "Laden Sie eingebettete und automatisch generierte Untertitel automatisch"
+  }
+}

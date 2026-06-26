@@ -1,0 +1,104 @@
+{
+  "extensionName": {
+    "message": "Abridor MPV para Firefox"
+  },
+  "extensionDescription": {
+    "message": "Envía enlaces de vídeo directamente desde Firefox a tu reproductor MPV local."
+  },
+  "sendToMpv": {
+    "message": "enviar a mpv"
+  },
+  "sendAudioToMpv": {
+    "message": "Escuchar (solo audio)"
+  },
+  "contextMenuOptions": {
+    "message": "Preferencias de extensión"
+  },
+  "tabMain": {
+    "message": "Control"
+  },
+  "tabHistory": {
+    "message": "Historia"
+  },
+  "clearHistory": {
+    "message": "Borrar historial"
+  },
+  "emptyHistory": {
+    "message": "Aún no se han enviado vídeos."
+  },
+  "optionsTitle": {
+    "message": "Configuración del abridor de MPV"
+  },
+  "playbackSettings": {
+    "message": "Configuración de reproducción"
+  },
+  "displayMode": {
+    "message": "Modo de visualización"
+  },
+  "standardWindow": {
+    "message": "Standard Window"
+  },
+  "fullscreen": {
+    "message": "Pantalla completa"
+  },
+  "pipMode": {
+    "message": "Imagen en imagen (abajo a la derecha)"
+  },
+  "initialState": {
+    "message": "Estado inicial"
+  },
+  "statePlaying": {
+    "message": "Jugando"
+  },
+  "statePaused": {
+    "message": "En pausa"
+  },
+  "windowBehavior": {
+    "message": "Comportamiento de la ventana"
+  },
+  "alwaysOnTopLabel": {
+    "message": "Mantenga la ventana mpv siempre en la parte superior"
+  },
+  "audioSettings": {
+    "message": "Configuración del dispositivo de audio"
+  },
+  "audioDeviceLabel": {
+    "message": "Dispositivo de salida de audio predeterminado (mpv --audio-device)"
+  },
+  "audioDevicePlaceholder": {
+    "message": "por ejemplo, alsa/hdmi, pulse/nombre_dispositivo"
+  },
+  "tabBehavior": {
+    "message": "Comportamiento de la pestaña"
+  },
+  "closeTabLabel": {
+    "message": "Cerrar pestaña automáticamente después de enviar video a mpv"
+  },
+  "saveButton": {
+    "message": "Guardar configuración"
+  },
+  "saveSuccess": {
+    "message": "¡La configuración se guardó correctamente!"
+  },
+  "sendingNotification": {
+    "message": "Enviando vídeo a mpv..."
+  },
+  "fedoraSettings": {
+    "message": "Integración de Fedora y KDE Plasma"
+  },
+  "inhibitSleepLabel": {
+    "message": "Inhibir el protector de pantalla y la suspensión del sistema durante la reproducción"
+  },
+  "aggressiveCacheLabel": {
+    "message": "Enable aggressive network cache (Prevents stream buffering)"
+  },
+  "qualitySettings": {
+    "message": "Filtros de calidad y transmisión"
+  },
+  "maxResolutionLabel": {
+    "message": "Resolución máxima de transmisión"
+  },
+  "autoSubtitlesLabel": {
+    "message": "Cargue automáticamente subtítulos incrustados y generados automáticamente"
+  }
+}

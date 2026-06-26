@@ -1,0 +1,104 @@
+{
+  "extensionName": {
+    "message": "适用于 Firefox 的 MPV 开启器"
+  },
+  "extensionDescription": {
+    "message": "将视频链接直接从 Firefox 发送到本地 mpv 播放器。"
+  },
+  "sendToMpv": {
+    "message": "发送至mpv"
+  },
+  "sendAudioToMpv": {
+    "message": "聆听（仅音频）"
+  },
+  "contextMenuOptions": {
+    "message": "扩展首选项"
+  },
+  "tabMain": {
+    "message": "控制"
+  },
+  "tabHistory": {
+    "message": "历史"
+  },
+  "clearHistory": {
+    "message": "清除历史记录"
+  },
+  "emptyHistory": {
+    "message": "尚未发送视频。"
+  },
+  "optionsTitle": {
+    "message": "MPV 开启器设置"
+  },
+  "playbackSettings": {
+    "message": "播放设置"
+  },
+  "displayMode": {
+    "message": "显示模式"
+  },
+  "standardWindow": {
+    "message": "标准窗"
+  },
+  "fullscreen": {
+    "message": "全屏"
+  },
+  "pipMode": {
+    "message": "画中画（右下）"
+  },
+  "initialState": {
+    "message": "初始状态"
+  },
+  "statePlaying": {
+    "message": "演奏"
+  },
+  "statePaused": {
+    "message": "已暂停"
+  },
+  "windowBehavior": {
+    "message": "窗口行为"
+  },
+  "alwaysOnTopLabel": {
+    "message": "保持 mpv 窗口始终位于顶部"
+  },
+  "audioSettings": {
+    "message": "音频设备配置"
+  },
+  "audioDeviceLabel": {
+    "message": "默认音频输出设备 (mpv --audio-device)"
+  },
+  "audioDevicePlaceholder": {
+    "message": "例如，alsa/hdmi、pulse/device_name"
+  },
+  "tabBehavior": {
+    "message": "选项卡行为"
+  },
+  "closeTabLabel": {
+    "message": "将视频发送到 mpv 后自动关闭选项卡"
+  },
+  "saveButton": {
+    "message": "保存设置"
+  },
+  "saveSuccess": {
+    "message": "设置保存成功！"
+  },
+  "sendingNotification": {
+    "message": "正在将视频发送到 mpv..."
+  },
+  "fedoraSettings": {
+    "message": "Fedora 和 KDE Plasma 集成"
+  },
+  "inhibitSleepLabel": {
+    "message": "播放期间禁止屏幕保护程序和系统睡眠"
+  },
+  "aggressiveCacheLabel": {
+    "message": "启用积极的网络缓存（防止流缓冲）"
+  },
+  "qualitySettings": {
+    "message": "质量和流过滤器"
+  },
+  "maxResolutionLabel": {
+    "message": "最大码流分辨率"
+  },
+  "autoSubtitlesLabel": {
+    "message": "自动加载嵌入和自动生成的字幕"
+  }
+}

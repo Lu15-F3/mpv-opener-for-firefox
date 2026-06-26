@@ -1,0 +1,104 @@
+{
+  "extensionName": {
+    "message": "Открывалка MPV для Firefox"
+  },
+  "extensionDescription": {
+    "message": "Отправляйте ссылки на видео прямо из Firefox на местный MPV-плеер."
+  },
+  "sendToMpv": {
+    "message": "Отправить в МПВ"
+  },
+  "sendAudioToMpv": {
+    "message": "Слушать (только аудио)"
+  },
+  "contextMenuOptions": {
+    "message": "Настройки расширения"
+  },
+  "tabMain": {
+    "message": "Контроль"
+  },
+  "tabHistory": {
+    "message": "История"
+  },
+  "clearHistory": {
+    "message": "Очистить историю"
+  },
+  "emptyHistory": {
+    "message": "Видео пока не отправлено."
+  },
+  "optionsTitle": {
+    "message": "Настройки открывания MPV"
+  },
+  "playbackSettings": {
+    "message": "Настройки воспроизведения"
+  },
+  "displayMode": {
+    "message": "Режим отображения"
+  },
+  "standardWindow": {
+    "message": "Стандартное окно"
+  },
+  "fullscreen": {
+    "message": "Полноэкранный"
+  },
+  "pipMode": {
+    "message": "Картинка в картинке (справа внизу)"
+  },
+  "initialState": {
+    "message": "Исходное состояние"
+  },
+  "statePlaying": {
+    "message": "Играя"
+  },
+  "statePaused": {
+    "message": "Приостановлено"
+  },
+  "windowBehavior": {
+    "message": "Поведение окна"
+  },
+  "alwaysOnTopLabel": {
+    "message": "Держите окно mpv всегда сверху"
+  },
+  "audioSettings": {
+    "message": "Конфигурация аудиоустройства"
+  },
+  "audioDeviceLabel": {
+    "message": "Устройство вывода звука по умолчанию (mpv --audio-device)"
+  },
+  "audioDevicePlaceholder": {
+    "message": "например, alsa/hdmi,pulse/имя_устройства"
+  },
+  "tabBehavior": {
+    "message": "Поведение вкладок"
+  },
+  "closeTabLabel": {
+    "message": "Автоматически закрывать вкладку после отправки видео в mpv"
+  },
+  "saveButton": {
+    "message": "Сохранить настройки"
+  },
+  "saveSuccess": {
+    "message": "Настройки успешно сохранены!"
+  },
+  "sendingNotification": {
+    "message": "Отправка видео в mpv..."
+  },
+  "fedoraSettings": {
+    "message": "Интеграция Fedora и KDE Plasma"
+  },
+  "inhibitSleepLabel": {
+    "message": "Запретить заставку и спящий режим системы во время воспроизведения"
+  },
+  "aggressiveCacheLabel": {
+    "message": "Включить агрессивный сетевой кеш (предотвращает буферизацию потока)"
+  },
+  "qualitySettings": {
+    "message": "Фильтры качества и потока"
+  },
+  "maxResolutionLabel": {
+    "message": "Максимальное разрешение потока"
+  },
+  "autoSubtitlesLabel": {
+    "message": "Автоматически загружать встроенные и автоматически созданные субтитры"
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "extensionName": {
+    "message": "MPV Opener для Firefox"
+  },
+  "extensionDescription": {
+    "message": "Надсилайте посилання на відео безпосередньо з Firefox на локальний програвач mpv."
+  },
+  "sendToMpv": {
+    "message": "Надіслати в mpv"
+  },
+  "sendAudioToMpv": {
+    "message": "Слухати (лише аудіо)"
+  },
+  "contextMenuOptions": {
+    "message": "Параметри розширення"
+  },
+  "tabMain": {
+    "message": "КОНТРОЛЬ"
+  },
+  "tabHistory": {
+    "message": "історія"
+  },
+  "clearHistory": {
+    "message": "Очистити історію"
+  },
+  "emptyHistory": {
+    "message": "Відео ще не надіслано."
+  },
+  "optionsTitle": {
+    "message": "Налаштування MPV Opener"
+  },
+  "playbackSettings": {
+    "message": "Налаштування відтворення"
+  },
+  "displayMode": {
+    "message": "Режим відображення"
+  },
+  "standardWindow": {
+    "message": "Стандартне вікно"
+  },
+  "fullscreen": {
+    "message": "Повний екран"
+  },
+  "pipMode": {
+    "message": "Картинка в картинці (внизу праворуч)"
+  },
+  "initialState": {
+    "message": "Початковий стан"
+  },
+  "statePlaying": {
+    "message": "Граючи"
+  },
+  "statePaused": {
+    "message": "Призупинено"
+  },
+  "windowBehavior": {
+    "message": "Поведінка вікна"
+  },
+  "alwaysOnTopLabel": {
+    "message": "Тримайте вікно mpv завжди зверху"
+  },
+  "audioSettings": {
+    "message": "Конфігурація аудіопристрою"
+  },
+  "audioDeviceLabel": {
+    "message": "Пристрій аудіовиведення за замовчуванням (mpv --audio-device)"
+  },
+  "audioDevicePlaceholder": {
+    "message": "наприклад, alsa/hdmi, pulse/назва_пристрою"
+  },
+  "tabBehavior": {
+    "message": "Поведінка вкладки"
+  },
+  "closeTabLabel": {
+    "message": "Автоматично закривати вкладку після надсилання відео в mpv"
+  },
+  "saveButton": {
+    "message": "Зберегти налаштування"
+  },
+  "saveSuccess": {
+    "message": "Налаштування успішно збережено!"
+  },
+  "sendingNotification": {
+    "message": "Надсилання відео в формат mpv..."
+  },
+  "fedoraSettings": {
+    "message": "Інтеграція з плазмою Fedora та KDE"
+  },
+  "inhibitSleepLabel": {
+    "message": "Блокування заставки та сну системи під час відтворення"
+  },
+  "aggressiveCacheLabel": {
+    "message": "Увімкнути агресивний мережевий кеш (запобігає буферизації потоку)"
+  },
+  "qualitySettings": {
+    "message": "Фільтри якості та потоку"
+  },
+  "maxResolutionLabel": {
+    "message": "Максимальна роздільна здатність потоку"
+  },
+  "autoSubtitlesLabel": {
+    "message": "Автоматично завантажувати вбудовані та автоматично створені субтитри"
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "extensionName": {
+    "message": "Firefox 用 MPV オープナー"
+  },
+  "extensionDescription": {
+    "message": "Firefox からローカル mpv プレーヤーにビデオ リンクを直接送信します。"
+  },
+  "sendToMpv": {
+    "message": "MPVに送信"
+  },
+  "sendAudioToMpv": {
+    "message": "聞く（音声のみ）"
+  },
+  "contextMenuOptions": {
+    "message": "拡張機能の設定"
+  },
+  "tabMain": {
+    "message": "コントロール"
+  },
+  "tabHistory": {
+    "message": "歴史"
+  },
+  "clearHistory": {
+    "message": "履歴をクリアする"
+  },
+  "emptyHistory": {
+    "message": "まだビデオは送信されていません。"
+  },
+  "optionsTitle": {
+    "message": "MPV オープナーの設定"
+  },
+  "playbackSettings": {
+    "message": "再生設定"
+  },
+  "displayMode": {
+    "message": "表示モード"
+  },
+  "standardWindow": {
+    "message": "標準ウィンドウ"
+  },
+  "fullscreen": {
+    "message": "全画面表示"
+  },
+  "pipMode": {
+    "message": "ピクチャー・イン・ピクチャー (右下)"
+  },
+  "initialState": {
+    "message": "初期状態"
+  },
+  "statePlaying": {
+    "message": "遊ぶ"
+  },
+  "statePaused": {
+    "message": "一時停止中"
+  },
+  "windowBehavior": {
+    "message": "ウィンドウの動作"
+  },
+  "alwaysOnTopLabel": {
+    "message": "mpv ウィンドウを常に最前面に保つ"
+  },
+  "audioSettings": {
+    "message": "オーディオデバイスの構成"
+  },
+  "audioDeviceLabel": {
+    "message": "デフォルトのオーディオ出力デバイス (mpv --audio-device)"
+  },
+  "audioDevicePlaceholder": {
+    "message": "例: alsa/hdmi、pulse/device_name"
+  },
+  "tabBehavior": {
+    "message": "タブの動作"
+  },
+  "closeTabLabel": {
+    "message": "ビデオをmpvに送信した後、タブを自動的に閉じます"
+  },
+  "saveButton": {
+    "message": "設定の保存"
+  },
+  "saveSuccess": {
+    "message": "設定が正常に保存されました。"
+  },
+  "sendingNotification": {
+    "message": "ビデオを MPV に送信しています..."
+  },
+  "fedoraSettings": {
+    "message": "Fedora と KDE プラズマの統合"
+  },
+  "inhibitSleepLabel": {
+    "message": "再生中のスクリーンセーバーとシステムのスリープを禁止する"
+  },
+  "aggressiveCacheLabel": {
+    "message": "アグレッシブなネットワーク キャッシュを有効にする (ストリーム バッファリングを防止します)"
+  },
+  "qualitySettings": {
+    "message": "品質およびストリームフィルター"
+  },
+  "maxResolutionLabel": {
+    "message": "最大ストリーム解像度"
+  },
+  "autoSubtitlesLabel": {
+    "message": "埋め込み字幕と自動生成字幕を自動的に読み込みます"
+  }
+}

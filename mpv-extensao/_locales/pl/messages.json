@@ -1,0 +1,104 @@
+{
+  "extensionName": {
+    "message": "Otwieracz MPV dla Firefoksa"
+  },
+  "extensionDescription": {
+    "message": "Wysyłaj łącza wideo bezpośrednio z przeglądarki Firefox do lokalnego odtwarzacza MPV."
+  },
+  "sendToMpv": {
+    "message": "Wyślij do mpv"
+  },
+  "sendAudioToMpv": {
+    "message": "Słuchaj (tylko dźwięk)"
+  },
+  "contextMenuOptions": {
+    "message": "Preferencje rozszerzenia"
+  },
+  "tabMain": {
+    "message": "Kontrola"
+  },
+  "tabHistory": {
+    "message": "Historia"
+  },
+  "clearHistory": {
+    "message": "Wyczyść historię"
+  },
+  "emptyHistory": {
+    "message": "Nie przesłano jeszcze żadnych filmów."
+  },
+  "optionsTitle": {
+    "message": "Ustawienia otwieracza MPV"
+  },
+  "playbackSettings": {
+    "message": "Ustawienia odtwarzania"
+  },
+  "displayMode": {
+    "message": "Tryb wyświetlania"
+  },
+  "standardWindow": {
+    "message": "Standardowe okno"
+  },
+  "fullscreen": {
+    "message": "Pełny ekran"
+  },
+  "pipMode": {
+    "message": "Obraz w obrazie (prawy dolny róg)"
+  },
+  "initialState": {
+    "message": "Stan początkowy"
+  },
+  "statePlaying": {
+    "message": "Gra"
+  },
+  "statePaused": {
+    "message": "Wstrzymano"
+  },
+  "windowBehavior": {
+    "message": "Zachowanie okna"
+  },
+  "alwaysOnTopLabel": {
+    "message": "Utrzymuj okno mpv zawsze na górze"
+  },
+  "audioSettings": {
+    "message": "Konfiguracja urządzenia audio"
+  },
+  "audioDeviceLabel": {
+    "message": "Domyślne urządzenie wyjściowe audio (mpv --audio-device)"
+  },
+  "audioDevicePlaceholder": {
+    "message": "np. alsa/hdmi, impuls/nazwa_urządzenia"
+  },
+  "tabBehavior": {
+    "message": "Zachowanie karty"
+  },
+  "closeTabLabel": {
+    "message": "Zamknij kartę automatycznie po wysłaniu wideo do mpv"
+  },
+  "saveButton": {
+    "message": "Zapisz ustawienia"
+  },
+  "saveSuccess": {
+    "message": "Ustawienia zostały zapisane pomyślnie!"
+  },
+  "sendingNotification": {
+    "message": "Wysyłanie wideo do mpv..."
+  },
+  "fedoraSettings": {
+    "message": "Integracja Fedory i KDE Plasma"
+  },
+  "inhibitSleepLabel": {
+    "message": "Zablokuj wygaszacz ekranu i uśpienie systemu podczas odtwarzania"
+  },
+  "aggressiveCacheLabel": {
+    "message": "Włącz agresywną pamięć podręczną sieci (zapobiega buforowaniu strumienia)"
+  },
+  "qualitySettings": {
+    "message": "Filtry jakości i strumienia"
+  },
+  "maxResolutionLabel": {
+    "message": "Maksymalna rozdzielczość strumienia"
+  },
+  "autoSubtitlesLabel": {
+    "message": "Automatycznie ładuj osadzone i automatycznie wygenerowane napisy"
+  }
+}

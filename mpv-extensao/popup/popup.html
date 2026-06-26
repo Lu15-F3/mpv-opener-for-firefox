@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="tabs-nav">
+    <button id="tab-btn-main" class="tab-link active">Control</button>
+    <button id="tab-btn-history" class="tab-link">History</button>
+  </div>
+
+  <div id="tab-main" class="tab-content active">
+    <div class="container">
+      <div class="quick-select">
+        <label for="quickRes">Resolution Cap:</label>
+        <select id="quickRes">
+          <option value="best">Best (Max)</option>
+          <option value="1080">1080p</option>
+          <option value="720">720p</option>
+          <option value="480">480p</option>
+        </select>
+      </div>
+      <button id="send-btn" class="btn-primary">⚡ Send to mpv</button>
+      <button id="send-audio-btn" class="btn-secondary">🎵 Listen Only</button>
+    </div>
+  </div>
+
+  <div id="tab-history" class="tab-content">
+    <div class="history-container">
+      <ul id="history-list"></ul>
+      <button id="clear-history-btn" class="btn-danger">Clear History</button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

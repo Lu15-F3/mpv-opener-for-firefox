@@ -1,0 +1,104 @@
+{
+  "extensionName": {
+    "message": "ﺲﻛﻮﻓﺮﻳﺎﻓ ﺢﻔﺼﺘﻤﻟ MPV ﺖﺤﺘﻓ"
+  },
+  "extensionDescription": {
+    "message": ".ﻚﻳﺪﻟ ﻲﻠﺤﻤﻟﺍ mpv ﻞﻐﺸﻣ ﻰﻟﺇ Firefox ﻦﻣ ﺓﺮﺷﺎﺒﻣ ﻮﻳﺪﻴﻔﻟﺍ ﻂﺑﺍﻭﺭ ﻞﺳﺭﺃ"
+  },
+  "sendToMpv": {
+    "message": "mpv ﻰﻟﺇ ﻞﺳﺭﺃ"
+  },
+  "sendAudioToMpv": {
+    "message": "(ﻂﻘﻓ ﺕﻮﺼﻟﺍ) ﻉﺎﻤﺘﺳﻻ﻿ﺍ"
+  },
+  "contextMenuOptions": {
+    "message": "ﺪﻳﺪﻤﺘﻟﺍ ﺕﻼ﻿ﻴﻀﻔﺗ"
+  },
+  "tabMain": {
+    "message": "ﻢﻜﺤﺘﻳ"
+  },
+  "tabHistory": {
+    "message": "ﺦﻳﺭﺎﺗ"
+  },
+  "clearHistory": {
+    "message": "ﺦﻳﺭﺎﺘﻟﺍ ﺢﺴﻣ"
+  },
+  "emptyHistory": {
+    "message": ".ﺪﻌﺑ ﻮﻳﺪﻴﻓ ﻊﻃﺎﻘﻣ ﻝﺎﺳﺭﺇ ﻢﺘﻳ ﻢﻟ"
+  },
+  "optionsTitle": {
+    "message": "MPV ﺢﺘﻓ ﺕﺍﺩﺍﺪﻋﺇ"
+  },
+  "playbackSettings": {
+    "message": "ﻞﻴﻐﺸﺘﻟﺍ ﺕﺍﺩﺍﺪﻋﺇ"
+  },
+  "displayMode": {
+    "message": "ﺽﺮﻌﻟﺍ ﻊﺿﻭ"
+  },
+  "standardWindow": {
+    "message": "ﺔﻴﺳﺎﻴﻗ ﺓﺬﻓﺎﻧ"
+  },
+  "fullscreen": {
+    "message": "ﺔﺷﺎﺸﻟﺍ ءﻞﻣ"
+  },
+  "pipMode": {
+    "message": "(ﻦﻴﻤﻴﻟﺍ ﻞﻔﺳﺃ) ﺓﺭﻮﺻ ﻞﺧﺍﺩ ﺓﺭﻮﺻ"
+  },
+  "initialState": {
+    "message": "ﺔﻴﻟﻭﻷ﻿ﺍ ﺔﻟﺎﺤﻟﺍ"
+  },
+  "statePlaying": {
+    "message": "ﺐﻌﻠﻟﺍ"
+  },
+  "statePaused": {
+    "message": "ﺎﺘًﻗﺆﻣ ﻒﻗﻮﺘﻣ"
+  },
+  "windowBehavior": {
+    "message": "ﺓﺬﻓﺎﻨﻟﺍ ﻙﻮﻠﺳ"
+  },
+  "alwaysOnTopLabel": {
+    "message": "ﻰﻠﻋﻷ﻿ﺍ ﻲﻓ ﺎﻤﺋﺍﺩ mpv ﺓﺬﻓﺎﻧ ءﺎﻘﺑﺇ"
+  },
+  "audioSettings": {
+    "message": "ﺕﻮﺼﻟﺍ ﺯﺎﻬﺟ ﻦﻳﻮﻜﺗ"
+  },
+  "audioDeviceLabel": {
+    "message": "(mpv --audio-device) ﻲﺿﺍﺮﺘﻓﻻ﻿ﺍ ﺕﻮﺼﻟﺍ ﺝﺍﺮﺧﺇ ﺯﺎﻬﺟ"
+  },
+  "audioDevicePlaceholder": {
+    "message": "ﺯﺎﻬﺠﻟﺍ_ﻢﺳﺍ/ﺾﺒﻨﻟﺍ ،alsa/hdmi ،ﻝﺎﺜﻤﻟﺍ ﻞﻴﺒﺳ ﻰﻠﻋ"
+  },
+  "tabBehavior": {
+    "message": "ﺐﻳﻮﺒﺘﻟﺍ ﺔﻣﻼ﻿ﻋ ﻙﻮﻠﺳ"
+  },
+  "closeTabLabel": {
+    "message": "mpv ﻰﻟﺇ ﻮﻳﺪﻴﻔﻟﺍ ﻝﺎﺳﺭﺇ ﺪﻌﺑ ﺎﻴًﺋﺎﻘﻠﺗ ﺐﻳﻮﺒﺘﻟﺍ ﺔﻣﻼ﻿ﻋ ﻖﻠﻏﺃ"
+  },
+  "saveButton": {
+    "message": "ﺕﺍﺩﺍﺪﻋﻹ﻿ﺍ ﻆﻔﺣ"
+  },
+  "saveSuccess": {
+    "message": "!ﺡﺎﺠﻨﺑ ﺕﺍﺩﺍﺪﻋﻹ﻿ﺍ ﻆﻔﺣ ﻢﺗ"
+  },
+  "sendingNotification": {
+    "message": "...mpv ﻰﻟﺇ ﻮﻳﺪﻴﻔﻟﺍ ﻝﺎﺳﺭﺇ"
+  },
+  "fedoraSettings": {
+    "message": "ﺎﻣﺯﻼ﻿ﺑ ﻱﺪﻴﻛﻭ ﺍﺭﻭﺪﻴﻓ ﻞﻣﺎﻜﺗ"
+  },
+  "inhibitSleepLabel": {
+    "message": "ﻞﻴﻐﺸﺘﻟﺍ ءﺎﻨﺛﺃ ﻡﺎﻈﻨﻟﺍ ﻡﻮﻧﻭ ﻒﻗﻮﺘﻟﺍ ﺔﺷﺎﺷ ﻊﻨﻣ"
+  },
+  "aggressiveCacheLabel": {
+    "message": "(ﺭﺎﻴﺘﻠﻟ ﺖﻗﺆﻤﻟﺍ ﻦﻳﺰﺨﺘﻟﺍ ﻊﻨﻤﻳ) ﺔﻜﺒﺸﻠﻟ ﺔﻳﻮﻘﻟﺍ ﺖﻗﺆﻤﻟﺍ ﻦﻳﺰﺨﺘﻟﺍ ﺓﺮﻛﺍﺫ ﻦﻴﻜﻤﺗ"
+  },
+  "qualitySettings": {
+    "message": "ﻖﻓﺪﺘﻟﺍﻭ ﺓﺩﻮﺠﻟﺍ ﺕﺎﺤﺷﺮﻣ"
+  },
+  "maxResolutionLabel": {
+    "message": "ﻖﻓﺪﻟﺍ ﺔﻗﺪﻟ ﻰﺼﻗﻷ﻿ﺍ ﺪﺤﻟﺍ"
+  },
+  "autoSubtitlesLabel": {
+    "message": "ﺎﻴًﺋﺎﻘﻠﺗ ﺎﻴًﺋﺎﻘﻠﺗ ﺓﺄﺸﻨﻤﻟﺍﻭ ﺔﻨﻤﻀﻤﻟﺍ ﺕﺎﻤﺟﺮﺘﻟﺍ ﻞﻴﻤﺤﺗ"
+  }
+}

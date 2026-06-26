@@ -1,0 +1,104 @@
+{
+  "extensionName": {
+    "message": "MPV Opener for Firefox"
+  },
+  "extensionDescription": {
+    "message": "Send video links directly from Firefox to your local mpv player."
+  },
+  "sendToMpv": {
+    "message": "Send to mpv"
+  },
+  "sendAudioToMpv": {
+    "message": "Listen (Audio Only)"
+  },
+  "contextMenuOptions": {
+    "message": "Extension Preferences"
+  },
+  "tabMain": {
+    "message": "Control"
+  },
+  "tabHistory": {
+    "message": "History"
+  },
+  "clearHistory": {
+    "message": "Clear History"
+  },
+  "emptyHistory": {
+    "message": "No videos sent yet."
+  },
+  "optionsTitle": {
+    "message": "MPV Opener Settings"
+  },
+  "playbackSettings": {
+    "message": "Playback Settings"
+  },
+  "displayMode": {
+    "message": "Display Mode"
+  },
+  "standardWindow": {
+    "message": "Standard Window"
+  },
+  "fullscreen": {
+    "message": "Fullscreen"
+  },
+  "pipMode": {
+    "message": "Picture-in-Picture (Bottom Right)"
+  },
+  "initialState": {
+    "message": "Initial State"
+  },
+  "statePlaying": {
+    "message": "Playing"
+  },
+  "statePaused": {
+    "message": "Paused"
+  },
+  "windowBehavior": {
+    "message": "Window Behavior"
+  },
+  "alwaysOnTopLabel": {
+    "message": "Keep mpv window always on top"
+  },
+  "audioSettings": {
+    "message": "Audio Device Configuration"
+  },
+  "audioDeviceLabel": {
+    "message": "Default Audio Output Device (mpv --audio-device)"
+  },
+  "audioDevicePlaceholder": {
+    "message": "e.g., alsa/hdmi, pulse/device_name"
+  },
+  "tabBehavior": {
+    "message": "Tab Behavior"
+  },
+  "closeTabLabel": {
+    "message": "Close tab automatically after sending video to mpv"
+  },
+  "saveButton": {
+    "message": "Save Settings"
+  },
+  "saveSuccess": {
+    "message": "Settings saved successfully!"
+  },
+  "sendingNotification": {
+    "message": "Sending video to mpv..."
+  },
+  "fedoraSettings": {
+    "message": "Fedora & KDE Plasma Integration"
+  },
+  "inhibitSleepLabel": {
+    "message": "Inhibit screensaver and system sleep during playback"
+  },
+  "aggressiveCacheLabel": {
+    "message": "Enable aggressive network cache (Prevents stream buffering)"
+  },
+  "qualitySettings": {
+    "message": "Quality & Stream Filters"
+  },
+  "maxResolutionLabel": {
+    "message": "Maximum Stream Resolution"
+  },
+  "autoSubtitlesLabel": {
+    "message": "Automatically load embedded and auto-generated subtitles"
+  }
+}

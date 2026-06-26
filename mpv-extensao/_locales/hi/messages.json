@@ -1,0 +1,104 @@
+{
+  "extensionName": {
+    "message": "फ़ायरफ़ॉक्स के लिए एमपीवी ओपनर"
+  },
+  "extensionDescription": {
+    "message": "फ़ायरफ़ॉक्स से सीधे अपने स्थानीय एमपीवी प्लेयर पर वीडियो लिंक भेजें।"
+  },
+  "sendToMpv": {
+    "message": "एमपीवी को भेजें"
+  },
+  "sendAudioToMpv": {
+    "message": "सुनें (केवल ऑडियो)"
+  },
+  "contextMenuOptions": {
+    "message": "विस्तार प्राथमिकताएँ"
+  },
+  "tabMain": {
+    "message": "नियंत्रण"
+  },
+  "tabHistory": {
+    "message": "इतिहास"
+  },
+  "clearHistory": {
+    "message": "इतिहास मिटा दें"
+  },
+  "emptyHistory": {
+    "message": "अभी तक कोई वीडियो नहीं भेजा गया."
+  },
+  "optionsTitle": {
+    "message": "एमपीवी ओपनर सेटिंग्स"
+  },
+  "playbackSettings": {
+    "message": "प्लेबैक सेटिंग्स"
+  },
+  "displayMode": {
+    "message": "प्रदर्शन मोड"
+  },
+  "standardWindow": {
+    "message": "मानक विंडो"
+  },
+  "fullscreen": {
+    "message": "पूर्ण स्क्रीन"
+  },
+  "pipMode": {
+    "message": "चित्र-में-चित्र (नीचे दाएँ)"
+  },
+  "initialState": {
+    "message": "आरंभिक राज्य"
+  },
+  "statePlaying": {
+    "message": "खेलना"
+  },
+  "statePaused": {
+    "message": "रुका हुआ"
+  },
+  "windowBehavior": {
+    "message": "विंडो व्यवहार"
+  },
+  "alwaysOnTopLabel": {
+    "message": "एमपीवी विंडो को हमेशा ऊपर रखें"
+  },
+  "audioSettings": {
+    "message": "ऑडियो डिवाइस कॉन्फ़िगरेशन"
+  },
+  "audioDeviceLabel": {
+    "message": "डिफ़ॉल्ट ऑडियो आउटपुट डिवाइस (एमपीवी --ऑडियो-डिवाइस)"
+  },
+  "audioDevicePlaceholder": {
+    "message": "उदाहरण के लिए, एएलएसए/एचडीएमआई, पल्स/डिवाइस_नाम"
+  },
+  "tabBehavior": {
+    "message": "टैब व्यवहार"
+  },
+  "closeTabLabel": {
+    "message": "एमपीवी पर वीडियो भेजने के बाद टैब स्वचालित रूप से बंद हो जाता है"
+  },
+  "saveButton": {
+    "message": "सेटिंग्स सेव करें"
+  },
+  "saveSuccess": {
+    "message": "सेटिंग्स सफलतापूर्वक सहेजी गईं!"
+  },
+  "sendingNotification": {
+    "message": "एमपीवी पर वीडियो भेजा जा रहा है..."
+  },
+  "fedoraSettings": {
+    "message": "फेडोरा और केडीई प्लाज्मा एकीकरण"
+  },
+  "inhibitSleepLabel": {
+    "message": "प्लेबैक के दौरान स्क्रीनसेवर और सिस्टम स्लीप को रोकें"
+  },
+  "aggressiveCacheLabel": {
+    "message": "आक्रामक नेटवर्क कैश सक्षम करें (स्ट्रीम बफ़रिंग को रोकता है)"
+  },
+  "qualitySettings": {
+    "message": "गुणवत्ता एवं स्ट्रीम फ़िल्टर"
+  },
+  "maxResolutionLabel": {
+    "message": "अधिकतम स्ट्रीम रिज़ॉल्यूशन"
+  },
+  "autoSubtitlesLabel": {
+    "message": "स्वचालित रूप से एम्बेडेड और स्वचालित रूप से जेनरेट किए गए उपशीर्षक लोड करें"
+  }
+}

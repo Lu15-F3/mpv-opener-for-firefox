@@ -1,0 +1,9 @@
+{
+  "name": "org.custom.mpv",
+  "description": "MPV Native Messaging Host Opener Wrapper",
+  "path": "PLACEHOLDER_HOME/.local/bin/mpv_wrapper.py",
+  "type": "stdio",
+  "allowed_extensions": [
+    "mpv-opener@lu15-f3-dev.org"
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "extensionName": {
+    "message": "Firefox용 MPV 오프너"
+  },
+  "extensionDescription": {
+    "message": "Firefox에서 로컬 mpv 플레이어로 직접 비디오 링크를 보냅니다."
+  },
+  "sendToMpv": {
+    "message": "mpv로 보내기"
+  },
+  "sendAudioToMpv": {
+    "message": "듣기(오디오만)"
+  },
+  "contextMenuOptions": {
+    "message": "확장 프로그램 기본 설정"
+  },
+  "tabMain": {
+    "message": "제어"
+  },
+  "tabHistory": {
+    "message": "역사"
+  },
+  "clearHistory": {
+    "message": "기록 지우기"
+  },
+  "emptyHistory": {
+    "message": "아직 전송된 동영상이 없습니다."
+  },
+  "optionsTitle": {
+    "message": "MPV 오프너 설정"
+  },
+  "playbackSettings": {
+    "message": "재생 설정"
+  },
+  "displayMode": {
+    "message": "디스플레이 모드"
+  },
+  "standardWindow": {
+    "message": "표준 창"
+  },
+  "fullscreen": {
+    "message": "전체 화면"
+  },
+  "pipMode": {
+    "message": "PIP(Picture-in-Picture)(오른쪽 하단)"
+  },
+  "initialState": {
+    "message": "초기 상태"
+  },
+  "statePlaying": {
+    "message": "재생"
+  },
+  "statePaused": {
+    "message": "일시중지됨"
+  },
+  "windowBehavior": {
+    "message": "창 동작"
+  },
+  "alwaysOnTopLabel": {
+    "message": "mpv 창을 항상 위에 유지"
+  },
+  "audioSettings": {
+    "message": "오디오 장치 구성"
+  },
+  "audioDeviceLabel": {
+    "message": "기본 오디오 출력 장치(mpv --audio-device)"
+  },
+  "audioDevicePlaceholder": {
+    "message": "예: alsa/hdmi, 펄스/장치_이름"
+  },
+  "tabBehavior": {
+    "message": "탭 동작"
+  },
+  "closeTabLabel": {
+    "message": "비디오를 mpv로 보낸 후 자동으로 탭 닫기"
+  },
+  "saveButton": {
+    "message": "설정 저장"
+  },
+  "saveSuccess": {
+    "message": "설정이 성공적으로 저장되었습니다!"
+  },
+  "sendingNotification": {
+    "message": "mpv로 비디오를 보내는 중..."
+  },
+  "fedoraSettings": {
+    "message": "Fedora 및 KDE 플라즈마 통합"
+  },
+  "inhibitSleepLabel": {
+    "message": "재생 중 화면 보호기 및 시스템 절전 모드 금지"
+  },
+  "aggressiveCacheLabel": {
+    "message": "공격적인 네트워크 캐시 활성화(스트림 버퍼링 방지)"
+  },
+  "qualitySettings": {
+    "message": "품질 및 스트림 필터"
+  },
+  "maxResolutionLabel": {
+    "message": "최대 스트림 해상도"
+  },
+  "autoSubtitlesLabel": {
+    "message": "포함된 자동 생성 자막을 자동으로 로드합니다."
+  }
+}
