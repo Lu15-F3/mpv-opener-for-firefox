@@ -29,4 +29,4 @@ O histórico completo de lançamentos simulados do ecossistema de desenvolviment
 
 ---
 *Para ver as mudanças de código e revisões de arquivos, acesse o painel comparativo:*
-[Compare v1.0.0...v5.0.0](https://github.com/Lu15-F3/mpv-firefox-opener/compare/v1.0.0...v5.0.0)
+[Compare v1.0.0...v5.0.0](https://github.com/Lu15-F3/mpv-opener-for-firefox/compare/v1.0.0...v5.0.0)
