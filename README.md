@@ -2,11 +2,11 @@
 
 A lightweight Firefox extension designed for Fedora Linux and KDE Plasma that allows you to seamlessly redirect video streams, audio tracks, and full playlists from your browser directly into your native local mpv media player.
 
-Uma extensão leve para o Firefox projetada para o Fedora Linux e KDE Plasma que permite redirecionar perfeitamente transmissões de vídeo, faixas de áudio e playlists completas do seu navegador diretamente para o seu player de mídia local e nativo mpv.
+> 🇧🇷 **BR:** Uma extensão leve para o Firefox projetada para o Fedora Linux e KDE Plasma que permite redirecionar perfeitamente transmissões de vídeo, faixas de áudio e playlists completas do seu navegador diretamente para o seu player de mídia local e nativo mpv.
 
 Save system resources (CPU/RAM), bypass heavy web player scripts, and enjoy advanced hardware acceleration, custom shaders, and native desktop integration.
 
-Economize recursos do sistema (CPU/RAM), ignore scripts pesados de players da web e desfrute de aceleração de hardware avançada, shaders personalizados e integração nativa com o desktop.
+> 🇧🇷 **BR:** Economize recursos do sistema (CPU/RAM), ignore scripts pesados de players da web e desfrute de aceleração de hardware avançada, shaders personalizados e integração nativa com o desktop.
 
 ---
 
@@ -32,17 +32,18 @@ Economize recursos do sistema (CPU/RAM), ignore scripts pesados de players da we
 
 Before installing the extension interface, you must ensure that your system has the media backend, the web extractor engine, and the D-Bus communication plugin installed.
 
-Antes de instalar a interface da extensão, você deve garantir que seu sistema tenha o backend de mídia, o mecanismo de extração web e o plugin de comunicação D-Bus instalados.
+> 🇧🇷 **BR:** Antes de instalar a interface da extensão, você deve garantir que seu sistema tenha o backend de mídia, o mecanismo de extração web e o plugin de comunicação D-Bus instalados.
 
 Run the following command in your terminal:  
-Execute o seguinte comando no seu terminal:
+> 🇧🇷 **BR:** Execute o seguinte comando no seu terminal:
 
 ```bash
 sudo dnf install mpv yt-dlp mpv-mpris
 ```
 
-> ⚠️ **CRITICAL / CRÍTICO:** The `mpv-mpris` package is mandatory. Without it, the system Media Widget integration will fail, and background audio processes could get trapped in execution.  
-> O pacote `mpv-mpris` é obrigatório. Sem ele, a integração com o Widget de Mídia do sistema falhará, e os processos de áudio em segundo plano podem ficar presos em execução.
+> ⚠️ **CRITICAL / CRÍTICO:** The `mpv-mpris` package is mandatory. Without it, the system Media Widget integration will fail, and background audio processes could get trapped in execution.
+  
+> 🇧🇷 **BR:** O pacote `mpv-mpris` é obrigatório. Sem ele, a integração com o Widget de Mídia do sistema falhará, e os processos de áudio em segundo plano podem ficar presos em execução.
 
 ---
 
@@ -50,17 +51,17 @@ sudo dnf install mpv yt-dlp mpv-mpris
 
 ### 1. Web Extension / 1. Extensão Web
 Install the official extension front-end from the Mozilla Add-ons store:  
-Instale o front-end oficial da extensão a partir da loja de Add-ons da Mozilla:
+> 🇧🇷 **BR:** Instale o front-end oficial da extensão a partir da loja de Add-ons da Mozilla:
 
 👉 [Get MPV Firefox Opener for Firefox (Replace with your real AMO link)](#) / [Baixar MPV Firefox Opener para Firefox (Substitua pelo seu link real da AMO)](#)
 
 ### 2. Native Messaging Host / 2. Host de Mensagens Nativo
 Choose one of the methods below to configure the secure bridge between Firefox and your system's mpv player.  
-Escolha um dos métodos abaixo para configurar a ponte segura entre o Firefox e o player mpv do seu sistema.
+> 🇧🇷 **BR:** Escolha um dos métodos abaixo para configurar a ponte segura entre o Firefox e o player mpv do seu sistema.
 
 #### Method A: Automatic Installation (Recommended) / Método A: Instalação Automática (Recomendado)
 Paste the following command into your terminal to download and run the automated script installer:  
-Cole o seguinte comando no seu terminal para baixar e executar o instalador de script automatizado:
+> 🇧🇷 **BR:** Cole o seguinte comando no seu terminal para baixar e executar o instalador de script automatizado:
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/Lu15-F3/mpv-opener-for-firefox/main/install.sh | bash
@@ -68,18 +69,18 @@ curl -sSL https://raw.githubusercontent.com/Lu15-F3/mpv-opener-for-firefox/main/
 
 #### Method B: Manual Installation / Método B: Instalação Manual
 If you prefer to configure the bridge configuration files manually:  
-Se você preferir configurar os arquivos de configuração da ponte manualmente:
+> 🇧🇷 **BR:** Se você preferir configurar os arquivos de configuração da ponte manualmente:
 
 Clone this repository:  
-Clone este repositório:
+> 🇧🇷 **BR:** Clone este repositório:
 
 ```bash
 git clone https://github.com/Lu15-F3/mpv-opener-for-firefox.git
-cd mpv-firefox-opener
+cd mpv-opener-for-firefox
 ```
 
 Copy the Python wrapper execution binary into your user bin folder:  
-Copie o binário de execução do wrapper Python para a pasta bin do seu usuário:
+> 🇧🇷 **BR:** Copie o binário de execução do wrapper Python para a pasta bin do seu usuário:
 
 ```bash
 mkdir -p ~/.local/bin
@@ -88,7 +89,7 @@ chmod +x ~/.local/bin/mpv_wrapper.py
 ```
 
 Register the Native Messaging Manifest inside the Firefox target directory:  
-Registre o Manifesto de Mensagens Nativo dentro do diretório de destino do Firefox:
+> 🇧🇷 **BR:** Registre o Manifesto de Mensagens Nativo dentro do diretório de destino do Firefox:
 
 ```bash
 mkdir -p ~/.mozilla/native-messaging-hosts
@@ -100,7 +101,7 @@ cp native-host/org.custom.mpv.json ~/.mozilla/native-messaging-hosts/org.custom.
 ## 🗑️ Uninstallation / 🗑️ Desinstalação
 
 Should you need to wipe out the local host integration configuration files completely from your user space:  
-Caso você precise apagar completamente os arquivos de configuração de integração do host local do seu espaço de usuário:
+> 🇧🇷 **BR:** Caso você precise apagar completamente os arquivos de configuração de integração do host local do seu espaço de usuário:
 
 ### Automatic Removal / Remoção Automática
 
@@ -120,4 +121,4 @@ rm -f ~/.mozilla/native-messaging-hosts/org.custom.mpv.json
 ## 📄 License / 📄 Licença
 
 This project is licensed under the MIT License - see the LICENSE file for details.  
-Este projeto está licenciado sob a Licença MIT - veja o arquivo LICENSE para mais detalhes.
+> 🇧🇷 **BR:** Este projeto está licenciado sob a Licença MIT - veja o arquivo LICENSE para mais detalhes.
