@@ -118,6 +118,35 @@ rm -f ~/.mozilla/native-messaging-hosts/org.custom.mpv.json
 
 ---
 
+## 📂 Repository Files / Arquivos deste Repositório
+
+For backup purposes and transparency with the community, this repository contains:
+> 🇧🇷 **BR:** Para fins de backup e transparência com a comunidade, este repositório contém:
+
+* **mpv_wrapper.py** -> The Python script that runs on your Linux system. / O script Python que roda no seu Linux.
+* **org.custom.mpv.json** -> The manifest file that you place inside Mozilla's hidden folder. / O manifesto que você coloca na pasta oculta do Mozilla.
+* **manifest.json** e **background.js** -> The source code for the browser extension. / O código-fonte da extensão do navegador.
+
+---
+
+### 📦 Notes on Flatpak - Snap / Notas sobre Flatpak - Snap
+This extension was originally designed for native (RPM/DEB) versions of Firefox and MPV. If you are using Flatpak versions, paths change and additional permissions are required due to system isolation:
+> 🇧🇷 **BR:** Esta extensão foi projetada originalmente para as versões nativas (RPM/DEB) do Firefox e do MPV. Se você utiliza as versões em Flatpak, os caminhos mudam e permissões adicionais são necessárias devido ao isolamento do sistema:
+
+* **Firefox in Flatpak:** The `org.custom.mpv.json` file must be moved to:
+  `~/.var/app/org.mozilla.firefox/.mozilla/native-messaging-hosts/`
+  *(Note: Due to the sandbox, the JSON manifest must invoke the script using the `flatpak-spawn --host` command so it can execute outside the isolation).*
+
+> 🇧🇷 **BR:** * **Firefox em Flatpak:** O arquivo `org.custom.mpv.json` deve ser movido para:
+  `~/.var/app/org.mozilla.firefox/.mozilla/native-messaging-hosts/`
+  *(Nota: Por conta da sandbox, o manifesto JSON precisa invocar o script usando o comando `flatpak-spawn --host` para que ele seja executado fora do isolamento).*
+  
+* **MPV in Flatpak:** You must edit the `mpv_wrapper.py` script to call the player using the `flatpak run io.mpv.Mpv` command instead of just `mpv`.
+
+> 🇧🇷 **BR:** * **MPV em Flatpak:** É necessário editar o script `mpv_wrapper.py` para chamar o player usando o comando `flatpak run io.mpv.Mpv` em vez de apenas `mpv`.
+
+---
+
 ## 📄 License / 📄 Licença
 
 This project is licensed under the MIT License - see the LICENSE file for details.  
