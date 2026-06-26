@@ -7,12 +7,14 @@ NATIVE_DIR_NATIVE="$HOME/.mozilla/native-messaging-hosts"
 NATIVE_DIR_FLATPAK="$HOME/.var/app/org.mozilla.firefox/.mozilla/native-messaging-hosts"
 MANIFEST_NAME="org.custom.mpv.json"
 
-echo "🗑️ Iniciando desinstalação segura do mpv-firefox-opener..."
+echo "🗑️  Iniciando desinstalação segura do mpv-firefox-opener..."
 
 # 1. Remoção cirúrgica dos binários específicos criados pela aplicação
 if [ -f "$BIN_DIR/mpv_wrapper.py" ]; then
     rm "$BIN_DIR/mpv_wrapper.py"
     echo "• Binário mpv_wrapper.py removido."
+else
+    echo "• Binário mpv_wrapper.py não encontrado (já removido ou não instalado)."
 fi
 
 # 2. Remoção cirúrgica dos manifestos de integração
