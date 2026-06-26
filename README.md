@@ -1,5 +1,7 @@
 # MPV Opener for Firefox 🎬🎵 / MPV Opener para Firefox 🎬🎵
 
+[![Versão](https://img.shields.io/amo/v/mpv-opener%40lu15-f3-dev.org?style=flat-square&color=ff4500&logo=firefox-browser&logoColor=white)](https://addons.mozilla.org/pt-BR/firefox/addon/mpv-opener-for-firefox/) [![Usuários](https://img.shields.io/amo/users/mpv-opener%40lu15-f3-dev.org?style=flat-square&color=ff4500&logo=firefox-browser&logoColor=white)](https://addons.mozilla.org/pt-BR/firefox/addon/mpv-opener-for-firefox/) [![Avaliações](https://img.shields.io/amo/rating/mpv-opener%40lu15-f3-dev.org?style=flat-square&color=ff4500&logo=firefox-browser&logoColor=white)](https://addons.mozilla.org/pt-BR/firefox/addon/mpv-opener-for-firefox/) [![Estrelas](https://img.shields.io/amo/stars/mpv-opener%40lu15-f3-dev.org?style=flat-square&color=ff4500&logo=firefox-browser&logoColor=white)](https://addons.mozilla.org/pt-BR/firefox/addon/mpv-opener-for-firefox/)
+
 A lightweight Firefox extension designed for Fedora Linux and KDE Plasma that allows you to seamlessly redirect video streams, audio tracks, and full playlists from your browser directly into your native local mpv media player.
 
 > 🇧🇷 **BR:** Uma extensão leve para o Firefox projetada para o Fedora Linux e KDE Plasma que permite redirecionar perfeitamente transmissões de vídeo, faixas de áudio e playlists completas do seu navegador diretamente para o seu player de mídia local e nativo mpv.
