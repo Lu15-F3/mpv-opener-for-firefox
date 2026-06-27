@@ -55,7 +55,7 @@ sudo dnf install mpv yt-dlp mpv-mpris
 Install the official extension front-end from the Mozilla Add-ons store:  
 > 🇧🇷 **BR:** Instale o front-end oficial da extensão a partir da loja de Add-ons da Mozilla:
 
-👉 [Get MPV Firefox Opener for Firefox (Replace with your real AMO link)](#) / [Baixar MPV Firefox Opener para Firefox (Substitua pelo seu link real da AMO)](#)
+👉 [Get MPV Opener for Firefox](https://addons.mozilla.org/pt-BR/firefox/addon/mpv-opener-for-firefox/) / [Baixar MPV Opener para Firefox](https://addons.mozilla.org/pt-BR/firefox/addon/mpv-opener-for-firefox/)
 
 ### 2. Native Messaging Host / 2. Host de Mensagens Nativo
 Choose one of the methods below to configure the secure bridge between Firefox and your system's mpv player.  
