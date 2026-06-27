@@ -61,15 +61,18 @@ Install the official extension front-end from the Mozilla Add-ons store:
 Choose one of the methods below to configure the secure bridge between Firefox and your system's mpv player.  
 > 🇧🇷 **BR:** Escolha um dos métodos abaixo para configurar a ponte segura entre o Firefox e o player mpv do seu sistema.
 
-#### Method A: Automatic Installation (Recommended) / Método A: Instalação Automática (Recomendado)
+---
+
+#### 🛠️ Method A: Automatic Installation (Recommended) / Método A: Instalação Automática (Recomendado)
 Paste the following command into your terminal to download and run the automated script installer:  
 > 🇧🇷 **BR:** Cole o seguinte comando no seu terminal para baixar e executar o instalador de script automatizado:
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/Lu15-F3/mpv-opener-for-firefox/main/install.sh | bash
 ```
+---
 
-#### Method B: Manual Installation / Método B: Instalação Manual
+#### 🛠️ Method B: Manual Installation / Método B: Instalação Manual
 If you prefer to configure the bridge configuration files manually:  
 > 🇧🇷 **BR:** Se você preferir configurar os arquivos de configuração da ponte manualmente:
 
