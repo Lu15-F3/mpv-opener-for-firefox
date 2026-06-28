@@ -119,6 +119,7 @@ curl -sSL https://raw.githubusercontent.com/Lu15-F3/mpv-opener-for-firefox/main/
 ```bash
 rm -f ~/.local/bin/mpv_wrapper.py
 rm -f ~/.mozilla/native-messaging-hosts/org.custom.mpv.json
+rm -f ~/.var/app/org.mozilla.firefox/.mozilla/native-messaging-hosts/org.custom.mpv.json
 ```
 
 ---
