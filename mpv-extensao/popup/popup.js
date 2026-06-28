@@ -56,7 +56,11 @@ document.addEventListener("DOMContentLoaded", () => {
     list.innerHTML = "";
     browser.storage.local.get({ history: [] }).then((data) => {
       if (data.history.length === 0) {
-        list.innerHTML = `<div class="no-history">${browser.i18n.getMessage("emptyHistory")}</div>`;
+        const noHistoryDiv = document.createElement("div");
+        noHistoryDiv.className = "no-history";
+        noHistoryDiv.textContent = browser.i18n.getMessage("emptyHistory");
+        list.appendChild(noHistoryDiv);
+        
         document.getElementById("clear-history-btn").style.display = "none";
         return;
       }

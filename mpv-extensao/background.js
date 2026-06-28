@@ -1,5 +1,25 @@
-// Inicializar os menus de contexto
-browser.runtime.onInstalled.addListener(() => {
+// Inicializar os menus de contexto e testar a ponte Native Messaging na instalação
+browser.runtime.onInstalled.addListener((details) => {
+  // Executa o teste apenas na primeira instalação
+  if (details.reason === "install") {
+    
+    // Envia uma mensagem vazia de ping para testar o host Python
+    browser.runtime.sendNativeMessage("org.custom.mpv", { url: "" })
+      .then((response) => {
+        // Se responder (mesmo que com status error por falta de URL), significa que a ponte existe!
+        console.log("Ponte Native Messaging detectada com sucesso.");
+      })
+      .catch((error) => {
+        // Se cair aqui, o manifest JSON ou o script python não existem no PC do usuário
+        console.warn("Native Messaging Host não instalado. Abrindo página de ajuda...", error);
+        
+        // Abre a página welcome.html em uma nova aba para guiar o usuário
+        browser.tabs.create({
+          url: browser.runtime.getURL("welcome/welcome.html")
+        });
+      });
+  }
+
   // Menu de Contexto 1: No ícone da extensão (Preferências)
   browser.contextMenus.create({
     id: "open-preferences",
