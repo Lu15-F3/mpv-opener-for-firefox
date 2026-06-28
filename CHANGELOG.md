@@ -5,12 +5,19 @@
 
 O histórico completo de lançamentos simulados do ecossistema de desenvolvimento do projeto está detalhado abaixo.
 
+## [v5.0.1] - 2026-06-28
+### Adicionado
+- **Onboarding Interativo:** Introduzida uma página de boas-vindas dinâmica e bilíngue (`welcome.html`) com botões de cópia instantânea de comandos de terminal com um clique.
+- **Verificação de Handshake de Dependência:** Programada uma rotina de detecção automática segura na instalação da extensão (`runtime.onInstalled`) para verificar o backend do sistema e a disponibilidade de mensagens nativas, evitando falhas de inicialização silenciosas para novos usuários.
+
+
 ## [v5.0.0] - Controle em Tempo Real & Persistência
 - Implementação de Servidor IPC estável via sockets UNIX independentes.
 - Adicionado botão "Adicionar à fila" gerenciando playlists ativas diretamente pelo navegador.
 - Controle remoto de mídia completo integrado no popup (Play/Pause, Slider de volume e Barra Seek).
 - Verificação automática do Native Messaging: Agora a extensão testa a comunicação com a ponte Python (`org.custom.mpv`) imediatamente após a instalação.
 - Página de Boas-Vindas (`welcome.html`): Caso o Native Messaging Host não seja detectado no computador do usuário, uma página de ajuda será aberta automaticamente para orientar na instalação.
+
 ### Modificado
 - **Refatoração do `background.js`:** Centralização das rotinas do ciclo de vida da extensão e melhor organização na criação dos menus de contexto (`open-preferences`, `ctx-send-video` e `ctx-send-audio`).
 
