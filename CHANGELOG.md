@@ -9,6 +9,10 @@ O histórico completo de lançamentos simulados do ecossistema de desenvolviment
 - Implementação de Servidor IPC estável via sockets UNIX independentes.
 - Adicionado botão "Adicionar à fila" gerenciando playlists ativas diretamente pelo navegador.
 - Controle remoto de mídia completo integrado no popup (Play/Pause, Slider de volume e Barra Seek).
+- Verificação automática do Native Messaging: Agora a extensão testa a comunicação com a ponte Python (`org.custom.mpv`) imediatamente após a instalação.
+- Página de Boas-Vindas (`welcome.html`): Caso o Native Messaging Host não seja detectado no computador do usuário, uma página de ajuda será aberta automaticamente para orientar na instalação.
+### Modificado
+- **Refatoração do `background.js`:** Centralização das rotinas do ciclo de vida da extensão e melhor organização na criação dos menus de contexto (`open-preferences`, `ctx-send-video` e `ctx-send-audio`).
 
 ## [v4.0.0] - Gerenciamento Inteligente de Legendas e Qualidade
 - Criação de menu de resoluções dinâmicas injetadas na propriedade `--ytdl-format`.
