@@ -33,6 +33,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("send-btn").addEventListener("click", () => { sendActiveTab("sendToMpv"); });
   document.getElementById("send-audio-btn").addEventListener("click", () => { sendActiveTab("sendAudioToMpv"); });
+
+  // Adicione essa escuta junto com os outros seletores de botões ativos:
+  document.getElementById("sniff-btn").addEventListener("click", () => {
+    browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
+    if (tabs[0]) {
+      browser.runtime.sendMessage({ action: "openSniffer", tabId: tabs[0].id });
+      window.close();
+    }
+  });
+});
+
   document.getElementById("clear-history-btn").addEventListener("click", () => {
     browser.storage.local.set({ history: [] }).then(() => renderHistory());
   });

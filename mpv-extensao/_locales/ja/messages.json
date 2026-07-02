@@ -1,104 +1,206 @@
 {
   "extensionName": {
-    "message": "Firefox 用 MPV オープナー"
+    "message": "Firefox 用 MPV オープナー",
+    "description": "ブラウザに表示される拡張機能の名前"
   },
   "extensionDescription": {
-    "message": "Firefox からローカル mpv プレーヤーにビデオ リンクを直接送信します。"
+    "message": "Firefox からローカル mpv プレーヤーにビデオ リンクを直接送信します。",
+    "description": "アドオンマネージャーに表示される拡張機能の説明"
   },
   "sendToMpv": {
-    "message": "MPVに送信"
+    "message": "MPVに送信",
+    "description": "ビデオリンクをmpvに送信するためのラベル"
   },
   "sendAudioToMpv": {
-    "message": "聞く（音声のみ）"
+    "message": "聞く（音声のみ）",
+    "description": "音声ストリームのみを mpv に送信するためのラベル"
   },
   "contextMenuOptions": {
-    "message": "拡張機能の設定"
+    "message": "拡張機能の設定",
+    "description": "ブラウザーアクションのコンテキストメニューに表示されるテキスト"
   },
   "tabMain": {
-    "message": "コントロール"
+    "message": "コントロール",
+    "description": "ポップアップインターフェイスのメインタブのタイトル"
   },
   "tabHistory": {
-    "message": "歴史"
+    "message": "歴史",
+    "description": "ポップアップインターフェイスの履歴タブのタイトル"
   },
   "clearHistory": {
-    "message": "履歴をクリアする"
+    "message": "履歴をクリアする",
+    "description": "ローカル履歴ストレージを消去するためのボタンのテキスト"
   },
   "emptyHistory": {
-    "message": "まだビデオは送信されていません。"
+    "message": "まだビデオは送信されていません。",
+    "description": "表示する履歴がない場合のプレースホルダー テキスト"
   },
   "optionsTitle": {
-    "message": "MPV オープナーの設定"
+    "message": "MPV オープナーの設定",
+    "description": "設定パネルページのメインタイトル見出し"
   },
   "playbackSettings": {
-    "message": "再生設定"
+    "message": "再生設定",
+    "description": "ウィンドウとメディアの起動オプションのセクション ヘッダー"
   },
   "displayMode": {
-    "message": "表示モード"
+    "message": "表示モード",
+    "description": "ウィンドウ制約のドロップダウン セレクターのタイトル"
   },
   "standardWindow": {
-    "message": "標準ウィンドウ"
+    "message": "標準ウィンドウ",
+    "description": "通常の可動プレーヤーレイアウトのオプション"
   },
   "fullscreen": {
-    "message": "全画面表示"
+    "message": "全画面表示",
+    "description": "mpv を起動してモニターに直接表示するオプション"
   },
   "pipMode": {
-    "message": "ピクチャー・イン・ピクチャー (右下)"
+    "message": "ピクチャー・イン・ピクチャー (右下)",
+    "description": "プレイヤーを画面上の隅に配置するオプション"
   },
   "initialState": {
-    "message": "初期状態"
+    "message": "初期状態",
+    "description": "ビデオの再生を開始するか一時停止するかを指定するラベル"
   },
   "statePlaying": {
-    "message": "遊ぶ"
+    "message": "遊ぶ",
+    "description": "即時メディア実行の開始値"
   },
   "statePaused": {
-    "message": "一時停止中"
+    "message": "一時停止中",
+    "description": "一時停止フレームで待機するための開始値"
   },
   "windowBehavior": {
-    "message": "ウィンドウの動作"
+    "message": "ウィンドウの動作",
+    "description": "デスクトップ動作設定のサブヘッダー"
   },
   "alwaysOnTopLabel": {
-    "message": "mpv ウィンドウを常に最前面に保つ"
+    "message": "mpv ウィンドウを常に最前面に保つ",
+    "description": "フローティング プレーヤー レイヤーのチェックボックスの説明テキスト"
   },
   "audioSettings": {
-    "message": "オーディオデバイスの構成"
+    "message": "オーディオデバイスの設定",
+    "description": "高度なオーディオ出力のセクションヘッダー"
   },
   "audioDeviceLabel": {
-    "message": "デフォルトのオーディオ出力デバイス (mpv --audio-device)"
+    "message": "デフォルトのオーディオ出力デバイス (mpv --audio-device)",
+    "description": "カスタムオーディオドライバーのターゲットパスを設定するためのラベル"
   },
   "audioDevicePlaceholder": {
-    "message": "例: alsa/hdmi、pulse/device_name"
+    "message": "例: alsa/hdmi、pulse/device_name",
+    "description": "テキスト入力ボックス内のプレースホルダー ヒント構文"
   },
   "tabBehavior": {
-    "message": "タブの動作"
+    "message": "タブの動作",
+    "description": "送信後のレイアウト管理用セクションヘッダー"
   },
   "closeTabLabel": {
-    "message": "ビデオをmpvに送信した後、タブを自動的に閉じます"
+    "message": "ビデオをmpvに送信した後、タブを自動的に閉じます",
+    "description": "起動直後にワークスペースをクリアするチェックボックス オプション"
   },
   "saveButton": {
-    "message": "設定の保存"
+    "message": "設定の保存",
+    "description": "オプションフォームのコミットボタン内のアクションテキスト"
   },
   "saveSuccess": {
-    "message": "設定が正常に保存されました。"
+    "message": "設定が正常に保存されました。",
+    "description": "運用アップデートに関するフローティング メッセージ バナー アラート テキスト"
   },
   "sendingNotification": {
-    "message": "ビデオを MPV に送信しています..."
+    "message": "ビデオを MPV に送信しています...",
+    "description": "ブラウザーのネイティブ バックグラウンド通知バナーで使用されるテキスト"
   },
   "fedoraSettings": {
-    "message": "Fedora と KDE プラズマの統合"
+    "message": "Fedora と KDE プラズマの統合",
+    "description": "特定の Linux オペレーティング環境オプションに特化したセクション ヘッダー"
   },
   "inhibitSleepLabel": {
-    "message": "再生中のスクリーンセーバーとシステムのスリープを禁止する"
+    "message": "再生中のスクリーンセーバーとシステムのスリープを禁止する",
+    "description": "システム電源管理ルールを一時停止するためのチェックボックス"
   },
   "aggressiveCacheLabel": {
-    "message": "アグレッシブなネットワーク キャッシュを有効にする (ストリーム バッファリングを防止します)"
+    "message": "アグレッシブなネットワーク キャッシュを有効にする (ストリーム バッファリングを防止します)",
+    "description": "上位のシステム RAM バッファをメディア フィードに割り当てるためのチェックボックス"
   },
   "qualitySettings": {
-    "message": "品質およびストリームフィルター"
+    "message": "品質およびストリームフィルター",
+    "description": "解像度フィルターを説明するセクションヘッダー"
   },
   "maxResolutionLabel": {
-    "message": "最大ストリーム解像度"
+    "message": "最大ストリーム解像度",
+    "description": "帯域幅制限キャッププロファイルを選択するためのラベル"
   },
   "autoSubtitlesLabel": {
-    "message": "埋め込み字幕と自動生成字幕を自動的に読み込みます"
+    "message": "埋め込み字幕と自動生成字幕を自動的に読み込みます",
+    "description": "メディア引数にトラック フラグを追加するためのチェックボックス"
+  },
+  "snifferTitle": {
+    "message": "メディアリンクスニファー",
+    "description": "メディア ストリーム フィッシャー ビュー ページ内のメイン タイトル ヘッダー"
+  },
+  "snifferSubtitle": {
+    "message": "キャプチャされたストリーム (広告は自動的にフィルタリングされます):",
+    "description": "字幕追跡が成功してトラップされた要素をリストする"
+  },
+  "snifferInstructions": {
+    "message": "<strong>手順:</strong> ウェブサイト タブに戻り、ビデオ プレーヤーの <strong>再生</strong> を押します (表示されるポップアップをすべて閉じます)。非表示の実際のストリームはすぐに下に表示されます。",
+    "description": "アクティブ フレーム キャプチャ方法を説明する案内通知"
+  },
+  "ctxSniffMedia": {
+    "message": "🎣 メディアスニファーモードを開始する",
+    "description": "ページの右クリックのコンテキスト メニューに動的に適用されるラベル"
+  },
+  "sendToMpvBtnText": {
+    "message": "🚀 MPV に送信",
+    "description": "スニファーインターフェイス内で見つかったアイテムに割り当てられた機能アクショントリガー"
+  },
+  "welcomeTitle": {
+    "message": "ほぼ準備完了です！セットアップが必要です 🐧",
+    "description": "最初にオンボーディングのウェルカム ビュー ヘッダーをインストールします"
+  },
+  "welcomeIntro": {
+    "message": "<strong>Firefox 用 MPV オープナー</strong> がブラウザに追加されましたが、まだ Fedora システムと通信できません。次の 2 つの簡単な手順に従ってください。",
+    "description": "ローカルホスト実行ハンドシェイクの問題を強調する導入段落"
+  },
+  "welcomeStep1Title": {
+    "message": "1. Fedora の依存関係をインストールする",
+    "description": "動作パッケージの依存関係を説明するヘッダー タイトル"
+  },
+  "welcomeStep1Desc": {
+    "message": "ターミナルを開き、次のコマンドを実行して、プレーヤー、抽出エンジン、およびメディア プラグインをインストールします。",
+    "description": "CLI ブロックの前にある命令の説明の詳細ブロック"
+  },
+  "welcomeStep2Title": {
+    "message": "2. 通信ブリッジ（ネイティブホスト）を有効にする",
+    "description": "マニフェスト配置権限タスクの詳細を示すヘッダー"
+  },
+  "welcomeStep2Desc": {
+    "message": "次に、公式インストーラー スクリプトを実行して、ローカル統合マニフェストを登録します。",
+    "description": "オンラインカールインストーラー実行スクリプトを示す詳細"
+  },
+  "welcomeFooter": {
+    "message": "コマンドを実行すると、拡張機能はすぐに機能します。 Firefox を再起動する必要はありません。",
+    "description": "プラットフォームの即時操作性を確認する最終メッセージを奨励"
+  },
+  "copyBtn": {
+    "message": "コピー",
+    "description": "セットアップ ダッシュボードの標準インタラクティブ クリップボード要素のラベル"
+  },
+  "copiedBtn": {
+    "message": "コピーしました！",
+    "description": "成功したコピー操作を確認する簡単な状態の視覚的な更新"
+  },
+  "shortcutSendVideoDesc": {
+    "message": "アクティブなタブのビデオを MPV に送信する",
+    "description": "システムツールメニューの下に表示されるホットキーマッピングのコンテキスト説明"
+  },
+  "shortcutSendAudioDesc": {
+    "message": "MPV でアクティブなタブの音声を聞く",
+    "description": "リスニングプロファイルの設定を対象としたホットキーマッピングの説明"
+  },
+  "shortcutOpenSnifferDesc": {
+    "message": "メディア スニファー モードを開く",
+    "description": "メディア トラップ タブへの直接アクセス パスの概要を示すホットキー マッピング通知"
   }
 }

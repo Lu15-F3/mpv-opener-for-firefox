@@ -8,54 +8,30 @@
 <body>
 
   <div class="lang-selector">
-    <button id="btn-en" class="lang-btn active">English</button>
+    <button id="btn-en" class="lang-btn">English</button>
     <button id="btn-pt" class="lang-btn">Português (BR)</button>
   </div>
 
   <div class="card">
-    <div id="lang-en" class="lang-content active">
-      <h1>Almost Ready! Setup Required 🐧</h1>
-      <p>The <strong>MPV Opener for Firefox</strong> has been added to your browser, but it cannot communicate with your Fedora system yet. Follow these two quick steps:</p>
-      
-      <div class="step-container">
-        <h3>1. Install Fedora Dependencies</h3>
-        <p>Open your terminal and run this command to install the player, extractor engine, and media plugin:</p>
-        <div class="code-wrapper">
-          <span class="code-text" id="cmd-deps-en">sudo dnf install mpv yt-dlp mpv-mpris</span>
-          <button class="copy-btn" data-target="cmd-deps-en">Copy</button>
-        </div>
-
-        <h3>2. Enable the Communication Bridge (Native Host)</h3>
-        <p>Now execute the official installer script to register the local integration manifests:</p>
-        <div class="code-wrapper">
-          <span class="code-text" id="cmd-host-en">curl -sSL https://raw.githubusercontent.com/Lu15-F3/mpv-opener-for-firefox/main/install.sh | bash</span>
-          <button class="copy-btn" data-target="cmd-host-en">Copy</button>
-        </div>
+    <h1 id="welcome-title"></h1>
+    <p id="welcome-intro"></p>
+    
+    <div class="step-container">
+      <h3 id="step1-title"></h3>
+      <p id="step1-desc"></p>
+      <div class="code-wrapper">
+        <span class="code-text" id="cmd-deps">sudo dnf install mpv yt-dlp mpv-mpris</span>
+        <button class="copy-btn" id="btn-copy-deps" data-target="cmd-deps"></button>
       </div>
-      <p class="footer-note">After running the commands, the extension will work instantly. No need to restart Firefox.</p>
-    </div>
 
-    <div id="lang-pt" class="lang-content">
-      <h1>Quase Pronto! Configuração Necessária 🐧</h1>
-      <p>O <strong>MPV Opener for Firefox</strong> foi adicionado ao seu navegador, mas ainda não consegue se comunicar com o seu sistema Fedora. Siga estes dois passos rápidos:</p>
-      
-      <div class="step-container">
-        <h3>1. Instalar as Dependências do Fedora</h3>
-        <p>Abra o seu terminal e rode o comando para instalar o player, o motor extrator e o plugin de mídia:</p>
-        <div class="code-wrapper">
-          <span class="code-text" id="cmd-deps-pt">sudo dnf install mpv yt-dlp mpv-mpris</span>
-          <button class="copy-btn" data-target="cmd-deps-pt">Copiar</button>
-        </div>
-
-        <h3>2. Ativar a Ponte de Comunicação (Native Host)</h3>
-        <p>Agora execute o script instalador oficial para registrar os manifestos de integração locais:</p>
-        <div class="code-wrapper">
-          <span class="code-text" id="cmd-host-pt">curl -sSL https://raw.githubusercontent.com/Lu15-F3/mpv-opener-for-firefox/main/install.sh | bash</span>
-          <button class="copy-btn" data-target="cmd-host-pt">Copiar</button>
-        </div>
+      <h3 id="step2-title"></h3>
+      <p id="step2-desc"></p>
+      <div class="code-wrapper">
+        <span class="code-text" id="cmd-host">curl -sSL https://raw.githubusercontent.com/Lu15-F3/mpv-opener-for-firefox/main/install.sh | bash</span>
+        <button class="copy-btn" id="btn-copy-host" data-target="cmd-host"></button>
       </div>
-      <p class="footer-note">Após rodar os comandos, a extensão funcionará instantaneamente. Não é necessário reiniciar o Firefox.</p>
     </div>
+    <p class="footer-note" id="welcome-footer"></p>
   </div>
 
   <script src="welcome.js"></script>

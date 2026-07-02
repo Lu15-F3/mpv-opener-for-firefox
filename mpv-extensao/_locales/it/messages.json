@@ -1,104 +1,206 @@
 {
   "extensionName": {
-    "message": "Apri MPV per Firefox"
+    "message": "Apri MPV per Firefox",
+    "description": "Il nome dell'estensione visualizzata nel browser"
   },
   "extensionDescription": {
-    "message": "Invia collegamenti video direttamente da Firefox al tuo lettore MPV locale."
+    "message": "Invia collegamenti video direttamente da Firefox al tuo lettore MPV locale.",
+    "description": "La descrizione dell'estensione mostrata nel gestore dei componenti aggiuntivi"
   },
   "sendToMpv": {
-    "message": "Invia a MPV"
+    "message": "Invia a MPV",
+    "description": "Etichetta per l'invio del collegamento video a mpv"
   },
   "sendAudioToMpv": {
-    "message": "Ascolta (solo audio)"
+    "message": "Ascolta (solo audio)",
+    "description": "Etichetta per inviare solo il flusso audio a mpv"
   },
   "contextMenuOptions": {
-    "message": "Preferenze di estensione"
+    "message": "Preferenze di estensione",
+    "description": "Testo mostrato nel menu contestuale delle azioni del browser"
   },
   "tabMain": {
-    "message": "Controllare"
+    "message": "Controllare",
+    "description": "Titolo della scheda principale nell'interfaccia popup"
   },
   "tabHistory": {
-    "message": "Storia"
+    "message": "Storia",
+    "description": "Titolo della scheda Cronologia nell'interfaccia popup"
   },
   "clearHistory": {
-    "message": "Cancella cronologia"
+    "message": "Cancella cronologia",
+    "description": "Testo del pulsante per cancellare la memoria della cronologia locale"
   },
   "emptyHistory": {
-    "message": "Nessun video ancora inviato."
+    "message": "Nessun video ancora inviato.",
+    "description": "Testo segnaposto quando non c'è cronologia da visualizzare"
   },
   "optionsTitle": {
-    "message": "Impostazioni di apertura monovolume"
+    "message": "Impostazioni di apertura monovolume",
+    "description": "Intestazione del titolo principale nella pagina del pannello delle preferenze"
   },
   "playbackSettings": {
-    "message": "Impostazioni di riproduzione"
+    "message": "Impostazioni di riproduzione",
+    "description": "Intestazione della sezione per le opzioni di avvio di finestre e supporti"
   },
   "displayMode": {
-    "message": "Modalità di visualizzazione"
+    "message": "Modalità di visualizzazione",
+    "description": "Titolo del selettore a discesa per i vincoli della finestra"
   },
   "standardWindow": {
-    "message": "Finestra standard"
+    "message": "Finestra standard",
+    "description": "Opzione per un layout normale del lettore mobile"
   },
   "fullscreen": {
-    "message": "A schermo intero"
+    "message": "A schermo intero",
+    "description": "Opzione per lanciare mpv riempiendo direttamente il monitor"
   },
   "pipMode": {
-    "message": "Picture-in-Picture (in basso a destra)"
+    "message": "Picture-in-Picture (in basso a destra)",
+    "description": "Opzione per posizionare il giocatore con le spalle al muro sullo schermo"
   },
   "initialState": {
-    "message": "Stato iniziale"
+    "message": "Stato iniziale",
+    "description": "Etichetta che specifica se la riproduzione del video viene avviata o messa in pausa"
   },
   "statePlaying": {
-    "message": "Giocando"
+    "message": "Giocando",
+    "description": "Valore di avvio per l'esecuzione immediata del supporto"
   },
   "statePaused": {
-    "message": "In pausa"
+    "message": "In pausa",
+    "description": "Valore di avvio per l'attesa in un frame in pausa"
   },
   "windowBehavior": {
-    "message": "Comportamento della finestra"
+    "message": "Comportamento della finestra",
+    "description": "Sottointestazione per le configurazioni del comportamento desktop"
   },
   "alwaysOnTopLabel": {
-    "message": "Mantieni la finestra MPV sempre in primo piano"
+    "message": "Mantieni la finestra MPV sempre in primo piano",
+    "description": "Testo descrittivo della casella di controllo per il livello del giocatore mobile"
   },
   "audioSettings": {
-    "message": "Configurazione del dispositivo audio"
+    "message": "Configurazione del dispositivo audio",
+    "description": "Intestazione della sezione per le uscite audio avanzate"
   },
   "audioDeviceLabel": {
-    "message": "Dispositivo di uscita audio predefinito (mpv --audio-device)"
+    "message": "Dispositivo di uscita audio predefinito (mpv --audio-device)",
+    "description": "Etichetta per l'impostazione di percorsi di destinazione dei driver audio personalizzati"
   },
   "audioDevicePlaceholder": {
-    "message": "ad esempio, alsa/hdmi, impulsi/nome_dispositivo"
+    "message": "ad esempio, alsa/hdmi, impulsi/nome_dispositivo",
+    "description": "Sintassi del suggerimento segnaposto all'interno della casella di immissione testo"
   },
   "tabBehavior": {
-    "message": "Comportamento della scheda"
+    "message": "Comportamento della scheda",
+    "description": "Intestazione della sezione per la gestione del layout post-trasmissione"
   },
   "closeTabLabel": {
-    "message": "Chiudi la scheda automaticamente dopo aver inviato il video a mpv"
+    "message": "Chiudi la scheda automaticamente dopo aver inviato il video a mpv",
+    "description": "Opzione casella di controllo per cancellare l'area di lavoro subito dopo il lancio"
   },
   "saveButton": {
-    "message": "Salva impostazioni"
+    "message": "Salva impostazioni",
+    "description": "Testo dell'azione all'interno del pulsante di conferma del modulo delle opzioni"
   },
   "saveSuccess": {
-    "message": "Impostazioni salvate con successo!"
+    "message": "Impostazioni salvate con successo!",
+    "description": "Testo di avviso del banner di messaggio mobile sull'aggiornamento operativo"
   },
   "sendingNotification": {
-    "message": "Invio video a mpv..."
+    "message": "Invio video a mpv...",
+    "description": "Testo utilizzato nel banner di notifica in background nativo del browser"
   },
   "fedoraSettings": {
-    "message": "Integrazione Fedora e KDE Plasma"
+    "message": "Integrazione Fedora e KDE Plasma",
+    "description": "Intestazione di sezione dedicata alle opzioni specifiche dell'ambiente operativo Linux"
   },
   "inhibitSleepLabel": {
-    "message": "Inibisce lo screensaver e la sospensione del sistema durante la riproduzione"
+    "message": "Inibisce lo screensaver e la sospensione del sistema durante la riproduzione",
+    "description": "Casella di controllo per sospendere le regole di gestione dell'alimentazione del sistema"
   },
   "aggressiveCacheLabel": {
-    "message": "Abilita cache di rete aggressiva (impedisce il buffering del flusso)"
+    "message": "Abilita cache di rete aggressiva (impedisce il buffering del flusso)",
+    "description": "Casella di controllo per allocare buffer RAM di sistema più elevati al feed multimediale"
   },
   "qualitySettings": {
-    "message": "Filtri di qualità e flusso"
+    "message": "Filtri di qualità e flusso",
+    "description": "Intestazione della sezione che descrive i filtri di risoluzione"
   },
   "maxResolutionLabel": {
-    "message": "Risoluzione massima del flusso"
+    "message": "Risoluzione massima del flusso",
+    "description": "Etichetta per selezionare il profilo limite dei limiti di larghezza di banda"
   },
   "autoSubtitlesLabel": {
-    "message": "Carica automaticamente i sottotitoli incorporati e generati automaticamente"
+    "message": "Carica automaticamente i sottotitoli incorporati e generati automaticamente",
+    "description": "Casella di controllo per aggiungere flag di traccia negli argomenti multimediali"
+  },
+  "snifferTitle": {
+    "message": "Sniffer di collegamenti multimediali",
+    "description": "Intestazione del titolo principale all'interno della pagina di visualizzazione Fisher del flusso multimediale"
+  },
+  "snifferSubtitle": {
+    "message": "Stream catturati (annunci filtrati automaticamente):",
+    "description": "Elenca gli elementi bloccati con successo nel tracciamento dei sottotitoli"
+  },
+  "snifferInstructions": {
+    "message": "<strong>Istruzioni:</strong> torna alla scheda del sito web, premi <strong>PLAY</strong> sul lettore video (e chiudi tutti i popup visualizzati). I flussi reali nascosti verranno immediatamente popolati di seguito.",
+    "description": "Nota guida che spiega la metodologia di acquisizione dei fotogrammi attivi"
+  },
+  "ctxSniffMedia": {
+    "message": "🎣 Avvia la modalità Media Sniffer",
+    "description": "Etichetta applicata dinamicamente nei menu contestuali cliccabili con il pulsante destro del mouse della pagina"
+  },
+  "sendToMpvBtnText": {
+    "message": "🚀 Invia a MPV",
+    "description": "Trigger di azione funzionale assegnato agli elementi trovati all'interno dell'interfaccia dello sniffer"
+  },
+  "welcomeTitle": {
+    "message": "Quasi pronto! Configurazione richiesta 🐧",
+    "description": "Per prima cosa installa l'intestazione della vista di benvenuto all'onboarding"
+  },
+  "welcomeIntro": {
+    "message": "<strong>MPV Opener per Firefox</strong> è stato aggiunto al tuo browser, ma non può ancora comunicare con il tuo sistema Fedora. Segui questi due rapidi passaggi:",
+    "description": "Paragrafo introduttivo che enfatizza i problemi di handshake dell'esecuzione dell'host locale"
+  },
+  "welcomeStep1Title": {
+    "message": "1. Installa le dipendenze Fedora",
+    "description": "Titolo dell'intestazione che spiega le dipendenze del pacchetto operativo"
+  },
+  "welcomeStep1Desc": {
+    "message": "Apri il terminale ed esegui questo comando per installare il lettore, il motore di estrazione e il plug-in multimediale:",
+    "description": "La descrizione dell'istruzione dettaglia il blocco che precede il blocco CLI"
+  },
+  "welcomeStep2Title": {
+    "message": "2. Abilita il Communication Bridge (Host nativo)",
+    "description": "Intestazione che descrive in dettaglio le attività relative alle autorizzazioni per il posizionamento del manifest"
+  },
+  "welcomeStep2Desc": {
+    "message": "Ora esegui lo script di installazione ufficiale per registrare i manifest di integrazione locale:",
+    "description": "Dettagli che indicano gli script di esecuzione del programma di installazione di curl online"
+  },
+  "welcomeFooter": {
+    "message": "Dopo aver eseguito i comandi, l'estensione funzionerà immediatamente. Non è necessario riavviare Firefox.",
+    "description": "Messaggio finale incoraggiante che conferma l'operatività immediata della piattaforma"
+  },
+  "copyBtn": {
+    "message": "Copia",
+    "description": "Etichetta per gli elementi degli appunti interattivi standard del dashboard di configurazione"
+  },
+  "copiedBtn": {
+    "message": "Copiato!",
+    "description": "Breve aggiornamento visivo dello stato che riconosce le interazioni di copia riuscite"
+  },
+  "shortcutSendVideoDesc": {
+    "message": "Invia il video della scheda attiva a MPV",
+    "description": "Spiegazione contestuale della mappatura dei tasti di scelta rapida mostrata nel menu Strumenti di sistema"
+  },
+  "shortcutSendAudioDesc": {
+    "message": "Ascolta l'audio della scheda attiva in MPV",
+    "description": "Spiegazione della mappatura dei tasti di scelta rapida mirata alla configurazione del profilo di ascolto"
+  },
+  "shortcutOpenSnifferDesc": {
+    "message": "Apri la modalità Media Sniffer",
+    "description": "Avviso di mappatura dei tasti di scelta rapida che delinea i percorsi di accesso direttamente nelle schede delle trappole multimediali"
   }
 }

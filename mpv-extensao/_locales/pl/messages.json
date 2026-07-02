@@ -1,104 +1,206 @@
 {
   "extensionName": {
-    "message": "Otwieracz MPV dla Firefoksa"
+    "message": "Otwieracz MPV dla Firefoksa",
+    "description": "Nazwa rozszerzenia wyświetlana w przeglądarce"
   },
   "extensionDescription": {
-    "message": "Wysyłaj łącza wideo bezpośrednio z przeglądarki Firefox do lokalnego odtwarzacza MPV."
+    "message": "Wysyłaj łącza wideo bezpośrednio z przeglądarki Firefox do lokalnego odtwarzacza MPV.",
+    "description": "Opis rozszerzenia wyświetlany w menedżerze dodatków"
   },
   "sendToMpv": {
-    "message": "Wyślij do mpv"
+    "message": "Wyślij do mpv",
+    "description": "Etykieta do wysyłania łącza wideo do formatu mpv"
   },
   "sendAudioToMpv": {
-    "message": "Słuchaj (tylko dźwięk)"
+    "message": "Słuchaj (tylko dźwięk)",
+    "description": "Etykieta do wysyłania samego strumienia audio do formatu mpv"
   },
   "contextMenuOptions": {
-    "message": "Preferencje rozszerzenia"
+    "message": "Preferencje rozszerzenia",
+    "description": "Tekst wyświetlany w menu kontekstowym akcji przeglądarki"
   },
   "tabMain": {
-    "message": "Kontrola"
+    "message": "Kontrola",
+    "description": "Tytuł głównej karty w wyskakującym interfejsie"
   },
   "tabHistory": {
-    "message": "Historia"
+    "message": "Historia",
+    "description": "Tytuł karty historii w wyskakującym interfejsie"
   },
   "clearHistory": {
-    "message": "Wyczyść historię"
+    "message": "Wyczyść historię",
+    "description": "Tekst przycisku umożliwiający wyczyszczenie pamięci lokalnej"
   },
   "emptyHistory": {
-    "message": "Nie przesłano jeszcze żadnych filmów."
+    "message": "Nie przesłano jeszcze żadnych filmów.",
+    "description": "Tekst zastępczy, gdy nie ma historii do wyświetlenia"
   },
   "optionsTitle": {
-    "message": "Ustawienia otwieracza MPV"
+    "message": "Ustawienia otwieracza MPV",
+    "description": "Główny nagłówek tytułu na stronie panelu preferencji"
   },
   "playbackSettings": {
-    "message": "Ustawienia odtwarzania"
+    "message": "Ustawienia odtwarzania",
+    "description": "Nagłówek sekcji dotyczący opcji uruchamiania okna i multimediów"
   },
   "displayMode": {
-    "message": "Tryb wyświetlania"
+    "message": "Tryb wyświetlania",
+    "description": "Tytuł selektora listy rozwijanej dla ograniczeń okna"
   },
   "standardWindow": {
-    "message": "Standardowe okno"
+    "message": "Standardowe okno",
+    "description": "Opcja zwykłego układu ruchomego odtwarzacza"
   },
   "fullscreen": {
-    "message": "Pełny ekran"
+    "message": "Pełny ekran",
+    "description": "Możliwość uruchomienia MPV bezpośrednio wypełniając monitor"
   },
   "pipMode": {
-    "message": "Obraz w obrazie (prawy dolny róg)"
+    "message": "Obraz w obrazie (prawy dolny róg)",
+    "description": "Opcja umieszczenia gracza w narożniku na ekranie"
   },
   "initialState": {
-    "message": "Stan początkowy"
+    "message": "Stan początkowy",
+    "description": "Etykieta określająca, czy odtwarzanie wideo ma zostać rozpoczęte, czy wstrzymane"
   },
   "statePlaying": {
-    "message": "Gra"
+    "message": "Gra",
+    "description": "Wartość początkowa do natychmiastowego wykonania multimediów"
   },
   "statePaused": {
-    "message": "Wstrzymano"
+    "message": "Wstrzymano",
+    "description": "Wartość początkowa oczekiwania w wstrzymanej ramce"
   },
   "windowBehavior": {
-    "message": "Zachowanie okna"
+    "message": "Zachowanie okna",
+    "description": "Nagłówek podrzędny dotyczący konfiguracji zachowania pulpitu"
   },
   "alwaysOnTopLabel": {
-    "message": "Utrzymuj okno mpv zawsze na górze"
+    "message": "Utrzymuj okno mpv zawsze na górze",
+    "description": "Tekst opisu pola wyboru dla pływającej warstwy gracza"
   },
   "audioSettings": {
-    "message": "Konfiguracja urządzenia audio"
+    "message": "Konfiguracja urządzenia audio",
+    "description": "Nagłówek sekcji dla zaawansowanych wyjść audio"
   },
   "audioDeviceLabel": {
-    "message": "Domyślne urządzenie wyjściowe audio (mpv --audio-device)"
+    "message": "Domyślne urządzenie wyjściowe audio (mpv --audio-device)",
+    "description": "Etykieta do ustawiania niestandardowych ścieżek docelowych sterownika audio"
   },
   "audioDevicePlaceholder": {
-    "message": "np. alsa/hdmi, impuls/nazwa_urządzenia"
+    "message": "np. alsa/hdmi, impuls/nazwa_urządzenia",
+    "description": "Składnia wskazówki zastępczej w polu wprowadzania tekstu"
   },
   "tabBehavior": {
-    "message": "Zachowanie karty"
+    "message": "Zachowanie karty",
+    "description": "Nagłówek sekcji dotyczący zarządzania układem po transmisji"
   },
   "closeTabLabel": {
-    "message": "Zamknij kartę automatycznie po wysłaniu wideo do mpv"
+    "message": "Zamknij kartę automatycznie po wysłaniu wideo do mpv",
+    "description": "Opcja pola wyboru umożliwiająca wyczyszczenie obszaru roboczego zaraz po uruchomieniu"
   },
   "saveButton": {
-    "message": "Zapisz ustawienia"
+    "message": "Zapisz ustawienia",
+    "description": "Tekst akcji wewnątrz przycisku zatwierdzania formularza opcji"
   },
   "saveSuccess": {
-    "message": "Ustawienia zostały zapisane pomyślnie!"
+    "message": "Ustawienia zostały zapisane pomyślnie!",
+    "description": "Tekst alertu na banerze pływającej wiadomości w przypadku aktualizacji operacyjnej"
   },
   "sendingNotification": {
-    "message": "Wysyłanie wideo do mpv..."
+    "message": "Wysyłanie wideo do mpv...",
+    "description": "Tekst używany w natywnym banerze powiadomień w tle przeglądarki"
   },
   "fedoraSettings": {
-    "message": "Integracja Fedory i KDE Plasma"
+    "message": "Integracja Fedory i KDE Plasma",
+    "description": "Nagłówek sekcji poświęcony konkretnym opcjom środowiska operacyjnego Linux"
   },
   "inhibitSleepLabel": {
-    "message": "Zablokuj wygaszacz ekranu i uśpienie systemu podczas odtwarzania"
+    "message": "Zablokuj wygaszacz ekranu i uśpienie systemu podczas odtwarzania",
+    "description": "Pole wyboru umożliwiające zawieszenie reguł zarządzania energią systemu"
   },
   "aggressiveCacheLabel": {
-    "message": "Włącz agresywną pamięć podręczną sieci (zapobiega buforowaniu strumienia)"
+    "message": "Włącz agresywną pamięć podręczną sieci (zapobiega buforowaniu strumienia)",
+    "description": "Pole wyboru przydzielania wyższych buforów systemowej RAM do podawania multimediów"
   },
   "qualitySettings": {
-    "message": "Filtry jakości i strumienia"
+    "message": "Filtry jakości i strumienia",
+    "description": "Nagłówek sekcji opisującej filtry rozdzielczości"
   },
   "maxResolutionLabel": {
-    "message": "Maksymalna rozdzielczość strumienia"
+    "message": "Maksymalna rozdzielczość strumienia",
+    "description": "Etykieta do wybierania profilu ograniczenia przepustowości"
   },
   "autoSubtitlesLabel": {
-    "message": "Automatycznie ładuj osadzone i automatycznie wygenerowane napisy"
+    "message": "Automatycznie ładuj osadzone i automatycznie wygenerowane napisy",
+    "description": "Pole wyboru umożliwiające dodawanie flag ścieżek do argumentów multimedialnych"
+  },
+  "snifferTitle": {
+    "message": "Sniffer łącza multimedialnego",
+    "description": "Główny nagłówek tytułu na stronie widoku strumienia multimediów"
+  },
+  "snifferSubtitle": {
+    "message": "Przechwycone strumienie (reklamy automatycznie filtrowane):",
+    "description": "Lista elementów śledzenia napisów, które pomyślnie przechwycono"
+  },
+  "snifferInstructions": {
+    "message": "<strong>Instrukcje:</strong> wróć do karty witryny, naciśnij <strong>ODTWARZAJ</strong> w odtwarzaczu wideo (i zamknij wszystkie wyskakujące okienka). Ukryte, rzeczywiste strumienie natychmiast zapełnią się poniżej.",
+    "description": "Wskazówka przewodnia wyjaśniająca metodologię przechwytywania aktywnych klatek"
+  },
+  "ctxSniffMedia": {
+    "message": "🎣 Uruchom tryb wyszukiwania multimediów",
+    "description": "Etykieta zastosowana dynamicznie do menu kontekstowych strony wyświetlanych po kliknięciu prawym przyciskiem myszy"
+  },
+  "sendToMpvBtnText": {
+    "message": "🚀 Wyślij do MPV",
+    "description": "Funkcjonalny wyzwalacz akcji przypisany do elementów znalezionych w interfejsie sniffera"
+  },
+  "welcomeTitle": {
+    "message": "Prawie gotowe! Wymagana konfiguracja 🐧",
+    "description": "Najpierw zainstaluj nagłówek powitalnego widoku pokładowego"
+  },
+  "welcomeIntro": {
+    "message": "<strong>Otwieracz MPV dla przeglądarki Firefox</strong> został dodany do Twojej przeglądarki, ale nie może jeszcze komunikować się z Twoim systemem Fedora. Wykonaj te dwa szybkie kroki:",
+    "description": "Akapit wprowadzający podkreślający problemy z uzgadnianiem wykonania lokalnego hosta"
+  },
+  "welcomeStep1Title": {
+    "message": "1. Zainstaluj zależności Fedory",
+    "description": "Tytuł nagłówka wyjaśniający zależności pakietu operacyjnego"
+  },
+  "welcomeStep1Desc": {
+    "message": "Otwórz terminal i uruchom to polecenie, aby zainstalować odtwarzacz, silnik ekstraktora i wtyczkę multimedialną:",
+    "description": "Blok szczegółów opisu instrukcji poprzedzający blok CLI"
+  },
+  "welcomeStep2Title": {
+    "message": "2. Włącz most komunikacyjny (host natywny)",
+    "description": "Nagłówek zawierający szczegółowe informacje o zadaniach związanych z uprawnieniami do umieszczania manifestu"
+  },
+  "welcomeStep2Desc": {
+    "message": "Teraz uruchom oficjalny skrypt instalatora, aby zarejestrować manifesty lokalnej integracji:",
+    "description": "Szczegóły wskazujące skrypty wykonawcze instalatora curl online"
+  },
+  "welcomeFooter": {
+    "message": "Po uruchomieniu poleceń rozszerzenie zacznie działać natychmiast. Nie ma potrzeby ponownego uruchamiania Firefoksa.",
+    "description": "Zachęcający komunikat końcowy potwierdzający natychmiastową funkcjonalność platformy"
+  },
+  "copyBtn": {
+    "message": "Kopia",
+    "description": "Etykieta standardowych elementów interaktywnego schowka panelu konfiguracyjnego"
+  },
+  "copiedBtn": {
+    "message": "Skopiowano!",
+    "description": "Krótka aktualizacja wizualna stanu potwierdzająca udane interakcje z kopiami"
+  },
+  "shortcutSendVideoDesc": {
+    "message": "Wyślij wideo z aktywną zakładką do MPV",
+    "description": "Kontekstowe objaśnienie mapowania skrótów klawiszowych pokazane w menu narzędzi systemowych"
+  },
+  "shortcutSendAudioDesc": {
+    "message": "Słuchaj dźwięku z aktywnej karty w formacie MPV",
+    "description": "Wyjaśnienie mapowania skrótów klawiszowych dotyczące konfiguracji profilu słuchania"
+  },
+  "shortcutOpenSnifferDesc": {
+    "message": "Otwórz tryb wyszukiwania multimediów",
+    "description": "Uwaga dotycząca mapowania skrótów klawiszowych przedstawiająca ścieżki dostępu bezpośrednio do zakładek pułapek multimediów"
   }
 }

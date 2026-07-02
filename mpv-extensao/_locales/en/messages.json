@@ -1,104 +1,206 @@
 {
   "extensionName": {
-    "message": "MPV Opener for Firefox"
+    "message": "MPV Opener for Firefox",
+    "description": "The name of the extension displayed in the browser"
   },
   "extensionDescription": {
-    "message": "Send video links directly from Firefox to your local mpv player."
+    "message": "Send video links directly from Firefox to your local mpv player.",
+    "description": "The extension description shown in the addons manager"
   },
   "sendToMpv": {
-    "message": "Send to mpv"
+    "message": "Send to mpv",
+    "description": "Label for sending video link to mpv"
   },
   "sendAudioToMpv": {
-    "message": "Listen (Audio Only)"
+    "message": "Listen (Audio Only)",
+    "description": "Label for sending only audio stream to mpv"
   },
   "contextMenuOptions": {
-    "message": "Extension Preferences"
+    "message": "Extension Preferences",
+    "description": "Text shown in the browser action context menu"
   },
   "tabMain": {
-    "message": "Control"
+    "message": "Control",
+    "description": "Main tab title in the popup interface"
   },
   "tabHistory": {
-    "message": "History"
+    "message": "History",
+    "description": "History tab title in the popup interface"
   },
   "clearHistory": {
-    "message": "Clear History"
+    "message": "Clear History",
+    "description": "Button text to wipe the local history storage"
   },
   "emptyHistory": {
-    "message": "No videos sent yet."
+    "message": "No videos sent yet.",
+    "description": "Placeholder text when there is no history to display"
   },
   "optionsTitle": {
-    "message": "MPV Opener Settings"
+    "message": "MPV Opener Settings",
+    "description": "Main title heading on the preferences panel page"
   },
   "playbackSettings": {
-    "message": "Playback Settings"
+    "message": "Playback Settings",
+    "description": "Section header for window and media startup options"
   },
   "displayMode": {
-    "message": "Display Mode"
+    "message": "Display Mode",
+    "description": "Dropdown selector title for window constraints"
   },
   "standardWindow": {
-    "message": "Standard Window"
+    "message": "Standard Window",
+    "description": "Option for a regular movable player layout"
   },
   "fullscreen": {
-    "message": "Fullscreen"
+    "message": "Fullscreen",
+    "description": "Option to launch mpv directly filling the monitor"
   },
   "pipMode": {
-    "message": "Picture-in-Picture (Bottom Right)"
+    "message": "Picture-in-Picture (Bottom Right)",
+    "description": "Option to position player cornered on screen"
   },
   "initialState": {
-    "message": "Initial State"
+    "message": "Initial State",
+    "description": "Label specifying whether video starts playing or paused"
   },
   "statePlaying": {
-    "message": "Playing"
+    "message": "Playing",
+    "description": "Startup value for immediate media execution"
   },
   "statePaused": {
-    "message": "Paused"
+    "message": "Paused",
+    "description": "Startup value for waiting in a paused frame"
   },
   "windowBehavior": {
-    "message": "Window Behavior"
+    "message": "Window Behavior",
+    "description": "Sub-header for desktop behavior configurations"
   },
   "alwaysOnTopLabel": {
-    "message": "Keep mpv window always on top"
+    "message": "Keep mpv window always on top",
+    "description": "Checkbox description text for floating player layer"
   },
   "audioSettings": {
-    "message": "Audio Device Configuration"
+    "message": "Audio Device Configuration",
+    "description": "Section header for advanced audio outputs"
   },
   "audioDeviceLabel": {
-    "message": "Default Audio Output Device (mpv --audio-device)"
+    "message": "Default Audio Output Device (mpv --audio-device)",
+    "description": "Label for setting custom audio driver target paths"
   },
   "audioDevicePlaceholder": {
-    "message": "e.g., alsa/hdmi, pulse/device_name"
+    "message": "e.g., alsa/hdmi, pulse/device_name",
+    "description": "Placeholder hint syntax inside the text input box"
   },
   "tabBehavior": {
-    "message": "Tab Behavior"
+    "message": "Tab Behavior",
+    "description": "Section header for post-transmission layout management"
   },
   "closeTabLabel": {
-    "message": "Close tab automatically after sending video to mpv"
+    "message": "Close tab automatically after sending video to mpv",
+    "description": "Checkbox option to clear workspace right after launch"
   },
   "saveButton": {
-    "message": "Save Settings"
+    "message": "Save Settings",
+    "description": "Action text inside the options form commit button"
   },
   "saveSuccess": {
-    "message": "Settings saved successfully!"
+    "message": "Settings saved successfully!",
+    "description": "Floating message banner alert text on operational update"
   },
   "sendingNotification": {
-    "message": "Sending video to mpv..."
+    "message": "Sending video to mpv...",
+    "description": "Text used in the browser native background notification banner"
   },
   "fedoraSettings": {
-    "message": "Fedora & KDE Plasma Integration"
+    "message": "Fedora & KDE Plasma Integration",
+    "description": "Section header dedicated to specific Linux operating environment options"
   },
   "inhibitSleepLabel": {
-    "message": "Inhibit screensaver and system sleep during playback"
+    "message": "Inhibit screensaver and system sleep during playback",
+    "description": "Checkbox for suspending system power management rules"
   },
   "aggressiveCacheLabel": {
-    "message": "Enable aggressive network cache (Prevents stream buffering)"
+    "message": "Enable aggressive network cache (Prevents stream buffering)",
+    "description": "Checkbox for allocating higher system RAM buffers to media feed"
   },
   "qualitySettings": {
-    "message": "Quality & Stream Filters"
+    "message": "Quality & Stream Filters",
+    "description": "Section header describing resolution filters"
   },
   "maxResolutionLabel": {
-    "message": "Maximum Stream Resolution"
+    "message": "Maximum Stream Resolution",
+    "description": "Label for picking bandwidth limits cap profile"
   },
   "autoSubtitlesLabel": {
-    "message": "Automatically load embedded and auto-generated subtitles"
+    "message": "Automatically load embedded and auto-generated subtitles",
+    "description": "Checkbox for adding track flags into media arguments"
+  },
+  "snifferTitle": {
+    "message": "Media Link Sniffer",
+    "description": "Main title header inside the media stream fisher view page"
+  },
+  "snifferSubtitle": {
+    "message": "Captured Streams (Ads Automatically Filtered):",
+    "description": "List subtitle tracking successfully trapped elements"
+  },
+  "snifferInstructions": {
+    "message": "<strong>Instructions:</strong> Go back to the website tab, press <strong>PLAY</strong> on the video player (and close any popups that appear). Hidden actual streams will instantly populate below.",
+    "description": "Guiding notice explaining the active frame capturing methodology"
+  },
+  "ctxSniffMedia": {
+    "message": "🎣 Start Media Sniffer Mode",
+    "description": "Label applied dynamically into page right-click contextual menus"
+  },
+  "sendToMpvBtnText": {
+    "message": "🚀 Send to MPV",
+    "description": "Functional action trigger assigned to items found inside the sniffer interface"
+  },
+  "welcomeTitle": {
+    "message": "Almost Ready! Setup Required 🐧",
+    "description": "First install on-boarding welcoming view header"
+  },
+  "welcomeIntro": {
+    "message": "The <strong>MPV Opener for Firefox</strong> has been added to your browser, but it cannot communicate with your Fedora system yet. Follow these two quick steps:",
+    "description": "Intro paragraph emphasizing local host execution handshake issues"
+  },
+  "welcomeStep1Title": {
+    "message": "1. Install Fedora Dependencies",
+    "description": "Header title explaining operating package dependencies"
+  },
+  "welcomeStep1Desc": {
+    "message": "Open your terminal and run this command to install the player, extractor engine, and media plugin:",
+    "description": "Instruction description details block preceding CLI block"
+  },
+  "welcomeStep2Title": {
+    "message": "2. Enable the Communication Bridge (Native Host)",
+    "description": "Header detailing manifest placement permissions tasks"
+  },
+  "welcomeStep2Desc": {
+    "message": "Now execute the official installer script to register the local integration manifests:",
+    "description": "Details indicating online curl installer execution scripts"
+  },
+  "welcomeFooter": {
+    "message": "After running the commands, the extension will work instantly. No need to restart Firefox.",
+    "description": "Encouraging final message confirming immediate platform operability"
+  },
+  "copyBtn": {
+    "message": "Copy",
+    "description": "Label for setup dashboard standard interactive clipboard elements"
+  },
+  "copiedBtn": {
+    "message": "Copied!",
+    "description": "Brief state visual update acknowledging successful copy interactions"
+  },
+  "shortcutSendVideoDesc": {
+    "message": "Send active tab video to MPV",
+    "description": "Hotkeys mapping contextual explanation shown under system tools menu"
+  },
+  "shortcutSendAudioDesc": {
+    "message": "Listen to active tab audio in MPV",
+    "description": "Hotkeys mapping explanation targeting listening profile setup"
+  },
+  "shortcutOpenSnifferDesc": {
+    "message": "Open Media Sniffer Mode (Modo Pesca)",
+    "description": "Hotkeys mapping notice outlining access paths directly into media trap tabs"
   }
 }
