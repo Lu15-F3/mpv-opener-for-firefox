@@ -14,23 +14,32 @@ Save system resources (CPU/RAM), bypass heavy web player scripts, and enjoy adva
 
 ## ✨ Features / ✨ Recursos
 
-* **Instant Disparage / Envio Instantâneo:** Send the active tab, video element, or any link to mpv via click or context menus. / Envie a aba ativa, elemento de vídeo ou qualquer link para o mpv por meio de cliques ou menus de contexto.
+* **Instant Disparage / Envio Instantâneo:** Send the active tab, video element, or any link to mpv via click or context menus.
+> 🇧🇷 **BR:** Envie a aba ativa, elemento de vídeo ou qualquer link para o mpv por meio de cliques ou menus de contexto.
 
-* **Listen Only Mode / Modo Apenas Áudio:** Play background streams with video track disabled. Completely hidden window controlled globally by your OS. / Reproduza transmissões em segundo plano com a faixa de vídeo desativada. Janela completamente oculta controlada globalmente pelo seu sistema operacional.
+* **Listen Only Mode / Modo Apenas Áudio:** Play background streams with video track disabled. Completely hidden window controlled globally by your OS.
+> 🇧🇷 **BR:** Reproduza transmissões em segundo plano com a faixa de vídeo desativada. Janela completamente oculta controlada globalmente pelo seu sistema operacional.
 
-* **KDE Plasma & MPRIS Integration / Integração com KDE Plasma & MPRIS:** Fully integrates into the native system Media Widget (system tray) and obeys hardware multimedia keys (Play/Pause/Skip), even in Audio Only mode. / Integra-se totalmente ao Widget de Mídia nativo do sistema (bandeja do sistema) e obedece às teclas multimídia físicas (Play/Pause/Pular), mesmo no modo Apenas Áudio.
+* **KDE Plasma & MPRIS Integration / Integração com KDE Plasma & MPRIS:** Fully integrates into the native system Media Widget (system tray) and obeys hardware multimedia keys (Play/Pause/Skip), even in Audio Only mode.
+> 🇧🇷 **BR:** Integra-se totalmente ao Widget de Mídia nativo do sistema (bandeja do sistema) e obedece às teclas multimídia físicas (Play/Pause/Pular), mesmo no modo Apenas Áudio.
 
-* **Smart Queueing / Fila Inteligente:** Clicking to send a new video while mpv is already active will automatically append it to your active playing queue (via IPC Socket). / Clicar para enviar um novo vídeo enquanto o mpv já estiver ativo irá adicioná-lo automaticamente à sua fila de reprodução ativa (via IPC Socket).
+* **Smart Queueing / Fila Inteligente:** Clicking to send a new video while mpv is already active will automatically append it to your active playing queue (via IPC Socket).
+> 🇧🇷 **BR:** Clicar para enviar um novo vídeo enquanto o mpv já estiver ativo irá adicioná-lo automaticamente à sua fila de reprodução ativa (via IPC Socket).
 
-* **Native Playlist Support / Suporte Nativo a Playlists:** Real playlists (e.g., YouTube lists) are parsed automatically and play sequentially. / Playlists reais (ex: listas do YouTube) são analisadas automaticamente e reproduzidas sequencialmente.
+* **Native Playlist Support / Suporte Nativo a Playlists:** Real playlists (e.g., YouTube lists) are parsed automatically and play sequentially.
+> 🇧🇷 **BR:** Playlists reais (ex: listas do YouTube) são analisadas automaticamente e reproduzidas sequencialmente.
 
-* **Quality Cap Control / Controle de Limite de Qualidade:** Restricty maximum stream resolutions (1080p, 720p, 480p) dynamically from the extension popup. / Restrinja as resoluções máximas de transmissão (1080p, 720p, 480p) dinamicamente a partir do popup da extensão.
+* **Quality Cap Control / Controle de Limite de Qualidade:** Restricty maximum stream resolutions (1080p, 720p, 480p) dynamically from the extension popup.
+> 🇧🇷 **BR:** Restrinja as resoluções máximas de transmissão (1080p, 720p, 480p) dinamicamente a partir do popup da extensão.
 
-* **Keyboard Shortcuts / Atalhos de Teclado:** Native support for the Firefox Commands API with three default shortcuts (**Ctrl+Alt+M** for active tab video, **Ctrl+Alt+P** for active tab audio, and **Ctrl+Alt+V** for fishing mode) and fully customizable remapping via the native Firefox menu **(about:addons)**. / Suporte nativo à API Commands do Firefox com três atalhos padrão (**Ctrl+Alt+M** para vídeo da aba ativa, **Ctrl+Alt+P** para áudio da aba ativa e **Ctrl+Alt+V** para o modo pesca) e customização livre através do menu nativo do Firefox **(about:addons)**.
+* **Keyboard Shortcuts / Atalhos de Teclado:** Native support for the Firefox Commands API with three default shortcuts (**Ctrl+Alt+M** for active tab video, **Ctrl+Alt+P** for active tab audio, and **Ctrl+Alt+V** for fishing mode) and fully customizable remapping via the native Firefox menu **(about:addons)**.
+> 🇧🇷 **BR:** Suporte nativo à API Commands do Firefox com três atalhos padrão (**Ctrl+Alt+M** para vídeo da aba ativa, **Ctrl+Alt+P** para áudio da aba ativa e **Ctrl+Alt+V** para o modo pesca) e customização livre através do menu nativo do Firefox **(about:addons)**.
 
-* **Advanced Features / Recursos Avançados:** Anti-buffering aggressive network cache, embedded/auto-generated subtitle loader, and automatic system screensaver/sleep inhibition during playback. / Cache de rede agressivo anti-buffering, carregador de legendas embutidas/auto-geradas e inibição automática do protetor de tela/suspensão do sistema durante a reprodução.
+* **Advanced Features / Recursos Avançados:** Anti-buffering aggressive network cache, embedded/auto-generated subtitle loader, and automatic system screensaver/sleep inhibition during playback.
+> 🇧🇷 **BR:** Cache de rede agressivo anti-buffering, carregador de legendas embutidas/auto-geradas e inibição automática do protetor de tela/suspensão do sistema durante a reprodução.
 
-* **Media Link Sniffer / Modo Pesca:** Advanced media capture directly from active tab network traffic, with the ability to intercept hidden manifests (.m3u8) and transport stream fragments (.ts) in proprietary web players. / Captura avançada de mídias diretamente do tráfego de rede da aba ativa, com capacidade de interceptar manifestos ocultos (.m3u8) e fragmentos de transporte (.ts) em reprodutores web proprietários.
+* **Media Link Sniffer / Modo Pesca:** Advanced media capture directly from active tab network traffic, with the ability to intercept hidden manifests (.m3u8) and transport stream fragments (.ts) in proprietary web players.
+> 🇧🇷 **BR:** Captura avançada de mídias diretamente do tráfego de rede da aba ativa, com capacidade de interceptar manifestos ocultos (.m3u8) e fragmentos de transporte (.ts) em reprodutores web proprietários.
 
 ---
 
