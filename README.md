@@ -26,7 +26,11 @@ Save system resources (CPU/RAM), bypass heavy web player scripts, and enjoy adva
 
 * **Quality Cap Control / Controle de Limite de Qualidade:** Restricty maximum stream resolutions (1080p, 720p, 480p) dynamically from the extension popup. / Restrinja as resoluções máximas de transmissão (1080p, 720p, 480p) dinamicamente a partir do popup da extensão.
 
+* **Keyboard Shortcuts / Atalhos de Teclado:** Native support for the Firefox Commands API with three default shortcuts (Ctrl+Alt+M for active tab video, Ctrl+Alt+P for active tab audio, and Ctrl+Alt+V for fishing mode) and fully customizable remapping via the native Firefox menu (about:addons). / Suporte nativo à API Commands do Firefox com três atalhos padrão (Ctrl+Alt+M para vídeo da aba ativa, Ctrl+Alt+P para áudio da aba ativa e Ctrl+Alt+V para o modo pesca) e customização livre através do menu nativo do Firefox (about:addons).
+
 * **Advanced Features / Recursos Avançados:** Anti-buffering aggressive network cache, embedded/auto-generated subtitle loader, and automatic system screensaver/sleep inhibition during playback. / Cache de rede agressivo anti-buffering, carregador de legendas embutidas/auto-geradas e inibição automática do protetor de tela/suspensão do sistema durante a reprodução.
+
+* **Media Link Sniffer / Modo Pesca:** Advanced media capture directly from active tab network traffic, with the ability to intercept hidden manifests (.m3u8) and transport stream fragments (.ts) in proprietary web players. / Captura avançada de mídias diretamente do tráfego de rede da aba ativa, com capacidade de interceptar manifestos ocultos (.m3u8) e fragmentos de transporte (.ts) em reprodutores web proprietários.
 
 ---
 
