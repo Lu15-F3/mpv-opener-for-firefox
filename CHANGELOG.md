@@ -5,6 +5,15 @@
 
 O histórico completo de lançamentos simulados do ecossistema de desenvolvimento do projeto está detalhado abaixo.
 
+## [v6.0.1] - 2026-07-03
+
+### 🛠️ Atualização de Segurança e Compatibilidade (Correção)
+
+### Corrigido
+* **Conformidade de Segurança**: Removida completamente toda utilização de `innerHTML` nos arquivos `sniffer.js` e `welcome.js` para eliminar avisos de segurança e prevenir potenciais vetores de XSS.
+* **Manipulação do DOM**: Migrada a injeção de texto internacionalizado contendo elementos de formatação para a criação segura e nativa de nós do DOM (`document.createElement`, `createTextNode` e `textContent`).
+* **Correção de Formatação da Interface**: Resolvido um problema onde tags HTML brutas (como `<strong>`) eram exibidas como texto puro no painel de instruções do Media Link Sniffer.
+
 ## [v6.0.0] - 2026-07-02
 
 ### Adicionado
@@ -68,4 +77,4 @@ O histórico completo de lançamentos simulados do ecossistema de desenvolviment
 
 ---
 *Para ver as mudanças de código e revisões de arquivos, acesse o painel comparativo:*
-[Compare v1.0.0...v6.0.0](https://github.com/Lu15-F3/mpv-opener-for-firefox/compare/v1.0.0...v6.0.0)
+[Compare v1.0.0...v6.0.1](https://github.com/Lu15-F3/mpv-opener-for-firefox/compare/v1.0.0...v6.0.1)
