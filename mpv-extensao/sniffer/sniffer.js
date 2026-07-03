@@ -1,10 +1,39 @@
 const urlParams = new URLSearchParams(window.location.search);
 const targetTabId = parseInt(urlParams.get('tabId'));
 
-// Tradução nativa através do i18n (Mantido do original)
+// Tradução nativa do Título e Subtítulo (Seguros via textContent)
 document.getElementById('txt-sniff-title').textContent = "🎣 " + browser.i18n.getMessage("snifferTitle");
 document.getElementById('txt-sniff-subtitle').textContent = browser.i18n.getMessage("snifferSubtitle");
-document.getElementById('status-msg').textContent = browser.i18n.getMessage("snifferInstructions");
+
+// --- SOLUÇÃO SEGURA DA MOZILLA PARA AS INSTRUÇÕES DO PESCADOR ---
+const statusMsgEl = document.getElementById('status-msg');
+statusMsgEl.textContent = ""; // Limpa o elemento de forma segura
+
+// Detecta o idioma ativo para injetar os nós DOM adequados textualmente
+const currentUiLang = browser.i18n.getUILanguage().startsWith("pt") ? "pt" : "en";
+
+if (currentUiLang === "pt") {
+  const strongInst = document.createElement("strong");
+  strongInst.textContent = "Instruções:";
+  statusMsgEl.appendChild(strongInst);
+  statusMsgEl.appendChild(document.createTextNode(" Volte para a aba do site, pressione "));
+  
+  const strongPlay = document.createElement("strong");
+  strongPlay.textContent = "PLAY";
+  statusMsgEl.appendChild(strongPlay);
+  statusMsgEl.appendChild(document.createTextNode(" no player de vídeo (e feche todos os pop-ups que aparecerem). Os fluxos reais ocultos serão preenchidos instantaneamente abaixo."));
+} else {
+  // Fallback padrão em Inglês
+  const strongInst = document.createElement("strong");
+  strongInst.textContent = "Instructions:";
+  statusMsgEl.appendChild(strongInst);
+  statusMsgEl.appendChild(document.createTextNode(" Go back to the website tab, press "));
+  
+  const strongPlay = document.createElement("strong");
+  strongPlay.textContent = "PLAY";
+  statusMsgEl.appendChild(strongPlay);
+  statusMsgEl.appendChild(document.createTextNode(" on the video player (and close any popups that appear). Hidden actual streams will instantly populate below."));
+}
 
 const linksContainer = document.getElementById('links-container');
 const detectedUrls = new Set();
