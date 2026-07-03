@@ -5,6 +5,14 @@
 
 O histórico completo de lançamentos simulados do ecossistema de desenvolvimento do projeto está detalhado abaixo.
 
+## [v6.0.2] - 2026-07-03
+
+### 🛠️ Corrigido
+* **Correção**: Ajuste pontual nas strings de tradução do arquivo pt_BR/messages.json.
+ 
+### Corrigido
+* **Conformidade de Segurança**: Removida completamente toda utilização de `innerHTML` nos arquivos `sniffer.js` e `welcome.js` para eliminar avisos de segurança e prevenir potenciais vetores de XSS.
+
 ## [v6.0.1] - 2026-07-03
 
 ### 🛠️ Atualização de Segurança e Compatibilidade (Correção)
