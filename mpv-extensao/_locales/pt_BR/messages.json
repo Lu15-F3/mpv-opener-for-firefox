@@ -1,6 +1,6 @@
 {
   "extensionName": {
-    "message": "Abridor de MPV para Firefox",
+    "message": "MPV Opener for Firefox",
     "description": "O nome da extensão exibida no navegador"
   },
   "extensionDescription": {
@@ -24,7 +24,7 @@
     "description": "Título da guia principal na interface pop-up"
   },
   "tabHistory": {
-    "message": "História",
+    "message": "Histórico",
     "description": "Título da guia Histórico na interface pop-up"
   },
   "clearHistory": {
@@ -36,7 +36,7 @@
     "description": "Texto de espaço reservado quando não há histórico para exibir"
   },
   "optionsTitle": {
-    "message": "Configurações do abridor de MPV",
+    "message": "Configurações do MPV Opener for Firefox",
     "description": "Título principal na página do painel de preferências"
   },
   "playbackSettings": {
@@ -64,7 +64,7 @@
     "description": "Rótulo especificando se o vídeo começa a ser reproduzido ou pausado"
   },
   "statePlaying": {
-    "message": "Jogando",
+    "message": "Reproduzindo",
     "description": "Valor inicial para execução imediata de mídia"
   },
   "statePaused": {
@@ -160,7 +160,7 @@
     "description": "Primeiro instale o cabeçalho de visualização de boas-vindas de integração"
   },
   "welcomeIntro": {
-    "message": "O <strong>MPV Opener para Firefox</strong> foi adicionado ao seu navegador, mas ainda não pode se comunicar com o seu sistema Fedora. Siga estas duas etapas rápidas:",
+    "message": "O <strong>MPV Opener for Firefox</strong> foi adicionado ao seu navegador, mas ainda não pode se comunicar com o seu sistema Fedora. Siga estas duas etapas rápidas:",
     "description": "Parágrafo de introdução enfatizando problemas de handshake de execução de host local"
   },
   "welcomeStep1Title": {
