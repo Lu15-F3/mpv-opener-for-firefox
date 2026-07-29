@@ -1,6 +1,6 @@
 // ============================================================
 // popup.js - MPV Opener for Firefox v7.0
-// COM REMOÇÃO DOS BOTÕES DUPLICADOS
+// COM REMOÇÃO DOS BOTÕES DUPLICADOS E SEM innerHTML
 // ============================================================
 
 function applyPopupTranslations() {
@@ -32,10 +32,32 @@ document.addEventListener("DOMContentLoaded", function() {
   document.getElementById("tab-btn-main").textContent = browser.i18n.getMessage("tabMain");
   document.getElementById("tab-btn-queue").textContent = browser.i18n.getMessage("tabQueue");
   document.getElementById("tab-btn-history").textContent = browser.i18n.getMessage("tabHistory");
-  document.getElementById("send-btn").innerHTML = '<span class="icon">▶</span> ' + browser.i18n.getMessage("sendToMpv");
-  document.getElementById("send-audio-btn").innerHTML = '<span class="icon">♪</span> ' + browser.i18n.getMessage("sendAudioToMpv");
+  
+  // --- CORREÇÃO: Substituir innerHTML por manipulação DOM segura ---
+  // Botão Send to mpv
+  var sendBtn = document.getElementById("send-btn");
+  sendBtn.textContent = "";
+  var sendIcon = document.createElement("span");
+  sendIcon.className = "icon";
+  sendIcon.textContent = "▶";
+  sendBtn.appendChild(sendIcon);
+  sendBtn.appendChild(document.createTextNode(" " + browser.i18n.getMessage("sendToMpv")));
+  
+  // Botão Listen Only
+  var audioBtn = document.getElementById("send-audio-btn");
+  audioBtn.textContent = "";
+  var audioIcon = document.createElement("span");
+  audioIcon.className = "icon";
+  audioIcon.textContent = "♪";
+  audioBtn.appendChild(audioIcon);
+  audioBtn.appendChild(document.createTextNode(" " + browser.i18n.getMessage("sendAudioToMpv")));
+  
   document.getElementById("clear-history-btn").textContent = browser.i18n.getMessage("clearHistory");
-  document.querySelector('.toggle-label').textContent = browser.i18n.getMessage("queueEnabled");
+  
+  var toggleLabel = document.querySelector('.toggle-label');
+  if (toggleLabel) {
+    toggleLabel.textContent = browser.i18n.getMessage("queueEnabled");
+  }
   
   // ============================================================
   // Load Settings
@@ -112,15 +134,15 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   // ============================================================
-// Botão de Preferências
-// ============================================================
-document.getElementById('settings-btn').addEventListener('click', function() {
-  browser.runtime.openOptionsPage();
-  window.close(); // Fecha o popup após abrir as configurações
-});
+  // Botão de Preferências
+  // ============================================================
+  document.getElementById('settings-btn').addEventListener('click', function() {
+    browser.runtime.openOptionsPage();
+    window.close();
+  });
   
   // ============================================================
-  // Queue - Apenas Clear (botões de controle removidos)
+  // Queue - Apenas Clear
   // ============================================================
   document.getElementById("clear-queue-btn").addEventListener("click", function() {
     if (confirm("Clear all items from queue?")) {
@@ -137,7 +159,7 @@ document.getElementById('settings-btn').addEventListener('click', function() {
   });
   
   // ============================================================
-  // Mini Player Controls (Controlador Definitivo)
+  // Mini Player Controls
   // ============================================================
   function sendPlayerCommand(command, params) {
     browser.runtime.sendMessage({
@@ -255,10 +277,10 @@ document.getElementById('settings-btn').addEventListener('click', function() {
     // Play button
     var playBtn = document.getElementById("mp-play-pause");
     if (isPlaying) {
-      playBtn.innerHTML = "⏸";
+      playBtn.textContent = "⏸";
       playBtn.className = "mp-btn mp-play-btn playing";
     } else {
-      playBtn.innerHTML = "▶";
+      playBtn.textContent = "▶";
       playBtn.className = "mp-btn mp-play-btn";
     }
     

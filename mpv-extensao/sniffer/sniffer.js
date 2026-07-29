@@ -1,6 +1,6 @@
 // ============================================================
 // sniffer.js - MPV Opener for Firefox v7.0
-// COM SUPORTE COMPLETO A i18n
+// COM SUPORTE COMPLETO A i18n E SEM innerHTML
 // ============================================================
 
 var urlParams = new URLSearchParams(window.location.search);
@@ -23,13 +23,11 @@ function t(key, fallback) {
 // Aplicar traduções a todos os elementos com data-i18n
 // ============================================================
 function applyTranslations() {
-  // Traduzir elementos com data-i18n
   var elements = document.querySelectorAll('[data-i18n]');
   elements.forEach(function(el) {
     var key = el.getAttribute('data-i18n');
     var translation = t(key);
     if (translation) {
-      // Se for input ou textarea, usar placeholder/value
       if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
         if (el.type === 'text' || el.type === 'password' || el.type === 'search') {
           el.placeholder = translation;
@@ -42,13 +40,11 @@ function applyTranslations() {
     }
   });
   
-  // Traduzir título da página
   var titleKey = document.querySelector('title')?.getAttribute('data-i18n');
   if (titleKey) {
     document.title = t(titleKey, document.title);
   }
   
-  // Atualizar elementos específicos
   document.getElementById('txt-sniff-title').textContent = t('snifferTitle', 'Media Link Sniffer');
   document.getElementById('txt-sniff-subtitle').textContent = t('snifferSubtitle', 'Captured Streams');
   
@@ -58,24 +54,69 @@ function applyTranslations() {
 }
 
 // ============================================================
-// Instructions (traduzidas com HTML)
+// Instruções - CORRIGIDO: SEM innerHTML EM QUALQUER LUGAR
 // ============================================================
-var statusMsgEl = document.getElementById('status-msg');
-statusMsgEl.textContent = "";
-
-// Usar innerHTML para renderizar HTML das traduções
-var instructions = t('snifferInstructions', '');
-
-if (instructions) {
-  // Se a tradução existe no messages.json, usar ela com HTML
-  statusMsgEl.innerHTML = instructions;
-} else {
-  // Fallback para instruções hardcoded
-  var currentUiLang = browser.i18n.getUILanguage().startsWith("pt") ? "pt" : "en";
-  if (currentUiLang === "pt") {
-    statusMsgEl.innerHTML = '<strong>Instruções:</strong> Volte para a aba do site, pressione <strong>PLAY</strong> no player de vídeo (e feche todos os pop-ups que aparecerem). Os fluxos reais ocultos serão preenchidos instantaneamente abaixo.';
+function renderInstructions() {
+  var statusMsgEl = document.getElementById('status-msg');
+  statusMsgEl.textContent = "";
+  
+  var instructionsKey = 'snifferInstructions';
+  var instructions = t(instructionsKey, '');
+  
+  if (instructions) {
+    // Parsear a string de instruções manualmente para criar nós DOM seguros
+    // O formato esperado: "<strong>Instructions:</strong> Go back to the website tab, press <strong>PLAY</strong> on the video player..."
+    
+    var parts = instructions.split(/(<strong>|<\/strong>)/g);
+    var currentStrong = null;
+    
+    for (var i = 0; i < parts.length; i++) {
+      var part = parts[i];
+      
+      if (part === '<strong>') {
+        // Início de tag strong
+        currentStrong = document.createElement('strong');
+        // O próximo elemento (que não é tag) será o conteúdo
+        i++;
+        if (i < parts.length && parts[i] !== '<\/strong>') {
+          currentStrong.textContent = parts[i];
+          statusMsgEl.appendChild(currentStrong);
+        }
+        // Pular a tag de fechamento no próximo loop
+        i++;
+      } else if (part === '</strong>') {
+        // Ignorar, já processamos
+        continue;
+      } else if (part && part.trim() !== '') {
+        // Texto normal
+        statusMsgEl.appendChild(document.createTextNode(part));
+      }
+    }
   } else {
-    statusMsgEl.innerHTML = '<strong>Instructions:</strong> Go back to the website tab, press <strong>PLAY</strong> on the video player (and close any popups that appear). Hidden actual streams will instantly populate below.';
+    // Fallback hardcoded para pt-BR ou en-US
+    var currentUiLang = browser.i18n.getUILanguage().startsWith("pt") ? "pt" : "en";
+    
+    if (currentUiLang === "pt") {
+      var strongInst = document.createElement("strong");
+      strongInst.textContent = "Instruções:";
+      statusMsgEl.appendChild(strongInst);
+      statusMsgEl.appendChild(document.createTextNode(" Volte para a aba do site, pressione "));
+      
+      var strongPlay = document.createElement("strong");
+      strongPlay.textContent = "PLAY";
+      statusMsgEl.appendChild(strongPlay);
+      statusMsgEl.appendChild(document.createTextNode(" no player de vídeo (e feche todos os pop-ups que aparecerem). Os fluxos reais ocultos serão preenchidos instantaneamente abaixo."));
+    } else {
+      var strongInst = document.createElement("strong");
+      strongInst.textContent = "Instructions:";
+      statusMsgEl.appendChild(strongInst);
+      statusMsgEl.appendChild(document.createTextNode(" Go back to the website tab, press "));
+      
+      var strongPlay = document.createElement("strong");
+      strongPlay.textContent = "PLAY";
+      statusMsgEl.appendChild(strongPlay);
+      statusMsgEl.appendChild(document.createTextNode(" on the video player (and close any popups that appear). Hidden actual streams will instantly populate below."));
+    }
   }
 }
 
@@ -886,6 +927,9 @@ document.getElementById('send-all-btn').addEventListener('click', function() {
 // Aplicar traduções primeiro
 applyTranslations();
 
+// Renderizar instruções com DOM seguro (SEM innerHTML)
+renderInstructions();
+
 // Depois adicionar UI de filtro
 setTimeout(addFilterUI, 100);
 
@@ -908,6 +952,7 @@ window.__MPV_SNIFFER = {
   testAllLinks: testAllLinks,
   t: t,
   applyTranslations: applyTranslations,
+  renderInstructions: renderInstructions,
   scan: function() {
     browser.tabs.executeScript(targetTabId, {
       code: 'window.__MPV_SNIFFER && window.__MPV_SNIFFER.scan();'
