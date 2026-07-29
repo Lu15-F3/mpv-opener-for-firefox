@@ -12,34 +12,161 @@ Save system resources (CPU/RAM), bypass heavy web player scripts, and enjoy adva
 
 ---
 
-## ✨ Features / ✨ Recursos
+✨ Features / ✨ Recursos
 
-* **Instant Disparage / Envio Instantâneo:** Send the active tab, video element, or any link to mpv via click or context menus.
-> 🇧🇷 **BR:** Envie a aba ativa, elemento de vídeo ou qualquer link para o mpv por meio de cliques ou menus de contexto.
+• Instant Disparage / Envio Instantâneo: Send the active tab, video element, or any link to mpv via click or context menus.
 
-* **Listen Only Mode / Modo Apenas Áudio:** Play background streams with video track disabled. Completely hidden window controlled globally by your OS.
-> 🇧🇷 **BR:** Reproduza transmissões em segundo plano com a faixa de vídeo desativada. Janela completamente oculta controlada globalmente pelo seu sistema operacional.
+> 🇧🇷 BR: Envie a aba ativa, elemento de vídeo ou qualquer link para o mpv por meio de cliques ou menus de contexto.
 
-* **KDE Plasma & MPRIS Integration / Integração com KDE Plasma & MPRIS:** Fully integrates into the native system Media Widget (system tray) and obeys hardware multimedia keys (Play/Pause/Skip), even in Audio Only mode.
-> 🇧🇷 **BR:** Integra-se totalmente ao Widget de Mídia nativo do sistema (bandeja do sistema) e obedece às teclas multimídia físicas (Play/Pause/Pular), mesmo no modo Apenas Áudio.
+• Listen Only Mode / Modo Apenas Áudio: Play background streams with video track disabled. Completely hidden window controlled globally by your OS.
 
-* **Smart Queueing / Fila Inteligente:** Clicking to send a new video while mpv is already active will automatically append it to your active playing queue (via IPC Socket).
-> 🇧🇷 **BR:** Clicar para enviar um novo vídeo enquanto o mpv já estiver ativo irá adicioná-lo automaticamente à sua fila de reprodução ativa (via IPC Socket).
+> 🇧🇷 BR: Reproduza transmissões em segundo plano com a faixa de vídeo desativada. Janela completamente oculta controlada globalmente pelo seu sistema operacional.
 
-* **Native Playlist Support / Suporte Nativo a Playlists:** Real playlists (e.g., YouTube lists) are parsed automatically and play sequentially.
-> 🇧🇷 **BR:** Playlists reais (ex: listas do YouTube) são analisadas automaticamente e reproduzidas sequencialmente.
+• KDE Plasma & MPRIS Integration / Integração com KDE Plasma & MPRIS: Fully integrates into the native system Media Widget (system tray) and obeys hardware multimedia keys (Play/Pause/Skip), even in Audio Only mode.
 
-* **Quality Cap Control / Controle de Limite de Qualidade:** Restricty maximum stream resolutions (1080p, 720p, 480p) dynamically from the extension popup.
-> 🇧🇷 **BR:** Restrinja as resoluções máximas de transmissão (1080p, 720p, 480p) dinamicamente a partir do popup da extensão.
+> 🇧🇷 BR: Integra-se totalmente ao Widget de Mídia nativo do sistema (bandeja do sistema) e obedece às teclas multimídia físicas (Play/Pause/Pular), mesmo no modo Apenas Áudio.
 
-* **Keyboard Shortcuts / Atalhos de Teclado:** Native support for the Firefox Commands API with three default shortcuts (**Ctrl+Alt+M** for active tab video, **Ctrl+Alt+P** for active tab audio, and **Ctrl+Alt+V** for fishing mode) and fully customizable remapping via the native Firefox menu **(about:addons)**.
-> 🇧🇷 **BR:** Suporte nativo à API Commands do Firefox com três atalhos padrão (**Ctrl+Alt+M** para vídeo da aba ativa, **Ctrl+Alt+P** para áudio da aba ativa e **Ctrl+Alt+V** para o modo pesca) e customização livre através do menu nativo do Firefox **(about:addons)**.
+• Smart Queueing & Queue Manager / Fila Inteligente e Gerenciador de Fila: Clicking to send a new video while mpv is already active will automatically append it to your active playing queue (via IPC Socket). The first video always starts immediately; subsequent videos are queued automatically. Includes a dedicated Queue Manager page with full control over your playlist.
 
-* **Advanced Features / Recursos Avançados:** Anti-buffering aggressive network cache, embedded/auto-generated subtitle loader, and automatic system screensaver/sleep inhibition during playback.
-> 🇧🇷 **BR:** Cache de rede agressivo anti-buffering, carregador de legendas embutidas/auto-geradas e inibição automática do protetor de tela/suspensão do sistema durante a reprodução.
+> 🇧🇷 BR: Clicar para enviar um novo vídeo enquanto o mpv já estiver ativo irá adicioná-lo automaticamente à sua fila de reprodução ativa (via IPC Socket). O primeiro vídeo sempre inicia imediatamente; os vídeos subsequentes são enfileirados automaticamente. Inclui uma página dedicada do Gerenciador de Fila com controle total sobre sua playlist.
 
-* **Media Link Sniffer / Modo Pesca:** Advanced media capture directly from active tab network traffic, with the ability to intercept hidden manifests (.m3u8) and transport stream fragments (.ts) in proprietary web players.
-> 🇧🇷 **BR:** Captura avançada de mídias diretamente do tráfego de rede da aba ativa, com capacidade de interceptar manifestos ocultos (.m3u8) e fragmentos de transporte (.ts) em reprodutores web proprietários.
+• Queue Controls / Controles da Fila:
+
+  • Mini Player integrated into popup and Queue Manager with Play/Pause, Next/Previous, Volume control, and Seek bar.
+
+> 🇧🇷 BR: Mini Player integrado ao popup e ao Gerenciador de Fila com Play/Pause, Próximo/Anterior, Controle de Volume e Barra de Progresso.
+
+  • Queue badge counter on the extension icon showing total items in queue.
+
+> 🇧🇷 BR: Contador de badge no ícone da extensão mostrando o total de itens na fila.
+
+  • Toggle Queue Mode on/off (when disabled, videos open in separate windows instead of queueing).
+
+> 🇧🇷 BR: Alternar Modo Fila ativado/desativado (quando desativado, os vídeos abrem em janelas separadas ao invés de enfileirar).
+
+  • Remove individual items from queue with a single click.
+
+> 🇧🇷 BR: Remover itens individuais da fila com um clique.
+
+  • Clear All items from queue.
+
+> 🇧🇷 BR: Limpar Toda a fila.
+
+  • Play Next / Play Previous to navigate through the playlist.
+
+> 🇧🇷 BR: Próximo / Anterior para navegar pela playlist.
+
+  • Volume Up / Volume Down controls integrated into the Mini Player.
+
+> 🇧🇷 BR: Aumentar / Diminuir Volume controles integrados ao Mini Player.
+
+  • Visual status indicators showing "Playing", "Paused", or "Idle" for each item.
+
+> 🇧🇷 BR: Indicadores visuais de status mostrando "Tocando", "Pausado" ou "Ocioso" para cada item.
+
+• Native Playlist Support / Suporte Nativo a Playlists: Real playlists (e.g., YouTube lists) are parsed automatically and play sequentially.
+
+> 🇧🇷 BR: Playlists reais (ex: listas do YouTube) são analisadas automaticamente e reproduzidas sequencialmente.
+
+• Quality Cap Control / Controle de Limite de Qualidade: Restrict maximum stream resolutions (1080p, 720p, 480p) dynamically from the extension popup.
+
+> 🇧🇷 BR: Restrinja as resoluções máximas de transmissão (1080p, 720p, 480p) dinamicamente a partir do popup da extensão.
+
+• Keyboard Shortcuts / Atalhos de Teclado: Native support for the Firefox Commands API with three default shortcuts (Ctrl+Alt+M to send active tab video to MPV, Ctrl+Alt+P to listen to active tab audio in MPV, and Ctrl+Alt+V to open Media Sniffer Mode) and fully customizable remapping via the native Firefox menu (about:addons).
+
+> 🇧🇷 BR: Suporte nativo à API Commands do Firefox com três atalhos padrão (Ctrl+Alt+M para enviar vídeo da aba ativa para o MPV, Ctrl+Alt+P para ouvir áudio da aba ativa no MPV e Ctrl+Alt+V para o Modo Pesca) e customização livre através do menu nativo do Firefox (about:addons).
+
+• Advanced Features / Recursos Avançados: Anti-buffering aggressive network cache for smooth streaming, embedded/auto-generated subtitle loader with automatic subtitle tracks, automatic system screensaver/sleep inhibition during playback, custom audio device selection for advanced audio routing, auto-close tab option after sending video to mpv, and window behavior controls (Fullscreen, Picture-in-Picture, Always on Top).
+
+> 🇧🇷 BR: Cache de rede agressivo anti-buffering para streaming suave, carregador de legendas embutidas/auto-geradas com faixas de legenda automáticas, inibição automática do protetor de tela/suspensão do sistema durante a reprodução, seleção personalizada de dispositivo de áudio para roteamento avançado de áudio, opção de fechar aba automaticamente após enviar vídeo para o mpv e controles de comportamento da janela (Tela Cheia, Picture-in-Picture, Sempre no Topo).
+
+• Media Link Sniffer / Modo Pesca (Enhanced): Advanced media capture directly from active tab network traffic with multiple intelligent interception methods.
+
+> 🇧🇷 BR: Captura avançada de mídias diretamente do tráfego de rede da aba ativa com múltiplos métodos inteligentes de interceptação.
+
+• Capture Methods / Métodos de Captura:
+
+  • WebSocket Interception – Captures media URLs transmitted via WebSocket connections.
+
+> 🇧🇷 BR: Interceptação de WebSocket – Captura URLs de mídia transmitidas via conexões WebSocket.
+
+  • Service Worker Monitoring – Tracks Service Worker registrations and messages.
+
+> 🇧🇷 BR: Monitoramento de Service Workers – Rastreia registros e mensagens de Service Workers.
+
+  • MediaSource/SourceBuffer Interception – Detects media buffer creation.
+
+> 🇧🇷 BR: Interceptação de MediaSource/SourceBuffer – Detecta criação de buffers de mídia.
+
+  • Native Player Injection – Intercepts events from HLS.js, DASH.js, Shaka Player, Clappr, and more.
+
+> 🇧🇷 BR: Injeção em Players Nativos – Intercepta eventos de HLS.js, DASH.js, Shaka Player, Clappr e mais.
+
+  • Response Body Analysis – Reads Fetch responses to find hidden media URLs.
+
+> 🇧🇷 BR: Análise de Corpo de Respostas – Lê respostas Fetch para encontrar URLs de mídia ocultas.
+
+  • Console Interception – Captures URLs printed to browser console.
+
+> 🇧🇷 BR: Interceptação de Console – Captura URLs impressas no console do navegador.
+
+  • Drag & Drop / Clipboard Monitoring – Captures media links from user interaction.
+
+> 🇧🇷 BR: Detecção de Drag & Drop e Clipboard – Captura links de mídia da interação do usuário.
+
+  • HTTP2 Push Detection – Identifies media resources sent via Server Push.
+
+> 🇧🇷 BR: Detecção de HTTP2 Push – Identifica recursos de mídia enviados via Server Push.
+
+  • Dynamic Fragment Reconstruction – Rebuilds manifests from segments (.ts, .m4s, /seg-).
+
+> 🇧🇷 BR: Reconstrução Dinâmica de Fragmentos – Reconstrói manifestos a partir de segmentos.
+
+• Sniffer Features / Recursos do Sniffer:
+
+  • Link Validation – Tests each captured link for accessibility with visual status badges.
+
+> 🇧🇷 BR: Validação de Links – Testa cada link capturado com indicadores visuais de status.
+
+  • Quality Grouping – Automatically groups captured links by resolution (4K, 2K, FHD, HD, SD).
+
+> 🇧🇷 BR: Agrupamento por Resolução – Agrupa automaticamente links por qualidade.
+
+  • Resolution Filter – Filter captured links by quality.
+
+> 🇧🇷 BR: Filtro por Resolução – Filtra links capturados por qualidade.
+
+  • Test All Links – Batch validation of all captured streams.
+
+> 🇧🇷 BR: Testar Todos os Links – Validação em lote de todos os streams capturados.
+
+  • Send All to MPV – Send all captured streams to mpv at once.
+
+> 🇧🇷 BR: Enviar Todos para o MPV – Envia todos os streams capturados para o mpv de uma vez.
+
+  • Export All – Copy all captured URLs to clipboard.
+
+> 🇧🇷 BR: Exportar Todos – Copia todas as URLs capturadas para a área de transferência.
+
+• Multi-Language Support / Suporte Multi-Idiomas: Full i18n support with dynamic language detection based on your system locale. All interfaces (popup, options, sniffer, queue manager, welcome page) are translated in real-time. Supported languages include English 🇬🇧, Portuguese (BR) 🇧🇷, Spanish 🇪🇸, French 🇫🇷, German 🇩🇪, Italian 🇮🇹, Japanese 🇯🇵, Korean 🇰🇷, Russian 🇷🇺, Ukrainian 🇺🇦, Arabic 🇸🇦, Hindi 🇮🇳, Polish 🇵🇱, and Chinese (Simplified) 🇨🇳.
+
+> 🇧🇷 BR: Suporte completo a i18n com detecção dinâmica de idioma baseada na localidade do sistema. Todas as interfaces (popup, opções, sniffer, gerenciador de fila, página de boas-vindas) são traduzidas em tempo real. Idiomas suportados incluem Inglês 🇬🇧, Português (BR) 🇧🇷, Espanhol 🇪🇸, Francês 🇫🇷, Alemão 🇩🇪, Italiano 🇮🇹, Japonês 🇯🇵, Coreano 🇰🇷, Russo 🇷🇺, Ucraniano 🇺🇦, Árabe 🇸🇦, Hindi 🇮🇳, Polonês 🇵🇱 e Chinês (Simplificado) 🇨🇳.
+
+• Fedora & KDE Plasma Integration / Integração com Fedora & KDE Plasma: Native MPRIS plugin for full system media widget integration, hardware media keys support (Play/Pause/Skip), system sleep inhibition and screen saver prevention during playback, optimized for Fedora with automatic dependency detection.
+
+> 🇧🇷 BR: Plugin MPRIS nativo para integração completa com o widget de mídia do sistema, suporte a teclas multimídia físicas (Play/Pause/Pular), inibição de suspensão do sistema e prevenção de protetor de tela enquanto a mídia está tocando, otimizado para Fedora com detecção automática de dependências.
+
+• Smart Installer / Instalador Inteligente: Automatic dependency checking (mpv, yt-dlp, mpv-mpris, python3, curl, socat), multi-language installation messages, Flatpak Firefox support (installs manifests for both native and Flatpak Firefox), safe uninstall, and installation verification with Native Host communication test.
+
+> 🇧🇷 BR: Verificação automática de dependências (mpv, yt-dlp, mpv-mpris, python3, curl, socat), mensagens de instalação multi-idioma, suporte a Firefox Flatpak (instala manifestos para Firefox nativo e Flatpak), desinstalação segura e verificação de instalação com teste de comunicação Native Host.
+
+• Security & Compliance / Segurança & Conformidade: No innerHTML usage (100% DOM-safe manipulation with createElement and textContent), Mozilla Store compliant, permission minimized, and `data_collection_permissions` properly configured.
+
+> 🇧🇷 BR: Sem uso de innerHTML (100% manipulação DOM segura com createElement e textContent), em conformidade com a Mozilla Store, permissões minimizadas e `data_collection_permissions` configurada corretamente.
+
+• Developer Tools / Ferramentas para Desenvolvedores: Comprehensive logging for debugging queue and sniffer systems, exposed sniffer API in console (`window.__MPV_SNIFFER`), well-commented code for easy maintenance, and modern ES5+ JavaScript with broad browser compatibility.
+
+> 🇧🇷 BR: Logs abrangentes para depuração dos sistemas de fila e sniffer, API do sniffer exposta no console (`window.__MPV_SNIFFER`), código bem comentado para fácil manutenção e JavaScript ES5+ moderno com ampla compatibilidade de navegadores.
 
 ---
 
