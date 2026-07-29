@@ -1,0 +1,182 @@
+{
+  "installer": {
+    "message": "MPV-Öffner für Firefox – Installer v7.0",
+    "description": "Titel des Installationsprogramms"
+  },
+  "uninstaller": {
+    "message": "MPV Opener für Firefox – Deinstallationsprogramm",
+    "description": "Titel des Deinstallationsprogramms"
+  },
+  "checking_deps": {
+    "message": "Abhängigkeiten prüfen...",
+    "description": "Meldung zur Überprüfung der Abhängigkeiten"
+  },
+  "all_deps_installed": {
+    "message": "Alle Abhängigkeiten installiert.",
+    "description": "Alle Abhängigkeiten installiert"
+  },
+  "missing_deps": {
+    "message": "Fehlende Abhängigkeiten:",
+    "description": "Fehlende Abhängigkeiten"
+  },
+  "install_command": {
+    "message": "Bitte installieren Sie sie zuerst:",
+    "description": "Befehl installieren"
+  },
+  "creating_dirs": {
+    "message": "Verzeichnisse erstellen...",
+    "description": "Verzeichnisse erstellen"
+  },
+  "installing_wrapper": {
+    "message": "Nativer Wrapper wird installiert...",
+    "description": "Wrapper installieren"
+  },
+  "generating_manifest": {
+    "message": "Manifest wird erstellt...",
+    "description": "Manifest wird erstellt"
+  },
+  "verifying": {
+    "message": "Installation wird überprüft...",
+    "description": "Verifizieren"
+  },
+  "verified": {
+    "message": "Erfolgreich verifiziert!",
+    "description": "Verifiziert"
+  },
+  "failed": {
+    "message": "Installation fehlgeschlagen",
+    "description": "Fehlgeschlagen"
+  },
+  "testing": {
+    "message": "Native Host-Kommunikation testen...",
+    "description": "Testen"
+  },
+  "test_passed": {
+    "message": "Native-Host-Test bestanden",
+    "description": "Test bestanden"
+  },
+  "test_failed": {
+    "message": "Der Native-Host-Test ist fehlgeschlagen",
+    "description": "Test fehlgeschlagen"
+  },
+  "complete": {
+    "message": "Installation erfolgreich abgeschlossen!",
+    "description": "Vollständig"
+  },
+  "ready": {
+    "message": "MPV Opener für Firefox ist einsatzbereit!",
+    "description": "Bereit"
+  },
+  "restart": {
+    "message": "Möglicherweise müssen Sie Firefox neu starten, damit die Änderungen wirksam werden.",
+    "description": "Neustart"
+  },
+  "next_steps": {
+    "message": "Nächste Schritte:",
+    "description": "Nächste Schritte"
+  },
+  "click_icon": {
+    "message": "Klicken Sie zum Testen auf das Erweiterungssymbol",
+    "description": "Klicken Sie auf das Symbol"
+  },
+  "shortcut_video": {
+    "message": "Verwenden Sie Strg+Alt+M, um Videos an mpv zu senden",
+    "description": "Kurzes Video"
+  },
+  "shortcut_sniffer": {
+    "message": "Verwenden Sie Strg+Alt+V, um den Media Sniffer zu öffnen",
+    "description": "Shortcut-Sniffer"
+  },
+  "links": {
+    "message": "Links:",
+    "description": "Links"
+  },
+  "addon_store": {
+    "message": "Add-on-Store",
+    "description": "Add-on-Store"
+  },
+  "github": {
+    "message": "GitHub",
+    "description": "GitHub"
+  },
+  "already_installed": {
+    "message": "Native Host scheint bereits installiert zu sein.",
+    "description": "Bereits installiert"
+  },
+  "reinstall": {
+    "message": "Möchten Sie eine Neuinstallation durchführen?",
+    "description": "Neu installieren"
+  },
+  "cancelled": {
+    "message": "Installation abgebrochen.",
+    "description": "Abgesagt"
+  },
+  "error_source": {
+    "message": "Fehler: Erforderliche Dateien wurden im Native-Host-Ordner nicht gefunden",
+    "description": "Fehlerquelle"
+  },
+  "removing": {
+    "message": "Komponenten entfernen...",
+    "description": "Entfernen"
+  },
+  "removed": {
+    "message": "ENTFERNT:",
+    "description": "ENTFERNT"
+  },
+  "not_found": {
+    "message": "Nicht gefunden:",
+    "description": "Nicht gefunden"
+  },
+  "cleaning": {
+    "message": "Leere Verzeichnisse bereinigen...",
+    "description": "Reinigung"
+  },
+  "removed_empty": {
+    "message": "Leer entfernt:",
+    "description": "Leer entfernt"
+  },
+  "dir_not_empty": {
+    "message": "Verzeichnis nicht leer oder nicht gefunden:",
+    "description": "Verzeichnis nicht leer"
+  },
+  "uninstall_complete": {
+    "message": "Deinstallation erfolgreich abgeschlossen!",
+    "description": "Deinstallation abgeschlossen"
+  },
+  "uninstall_confirm": {
+    "message": "Dadurch wird MPV Opener von Ihrem System entfernt.",
+    "description": "Deinstallation bestätigen"
+  },
+  "continue_prompt": {
+    "message": "Weitermachen?",
+    "description": "Weiter-Eingabeaufforderung"
+  },
+  "deps_mpv": {
+    "message": "mpv",
+    "description": "MPV-Abhängigkeit"
+  },
+  "deps_ytdlp": {
+    "message": "yt-dlp",
+    "description": "yt-dlp-Abhängigkeit"
+  },
+  "deps_mpv_mpris": {
+    "message": "mpv-mpris",
+    "description": "mpv-mpris-Abhängigkeit"
+  },
+  "deps_python": {
+    "message": "Python3",
+    "description": "Python3-Abhängigkeit"
+  },
+  "deps_curl": {
+    "message": "Locken",
+    "description": "Curl-Abhängigkeit"
+  },
+  "deps_socat": {
+    "message": "schockiert",
+    "description": "schockierte Abhängigkeit"
+  },
+  "language": {
+    "message": "Sprache",
+    "description": "Sprachbezeichnung"
+  }
+}

@@ -6,34 +6,47 @@
   <link rel="stylesheet" href="welcome.css">
 </head>
 <body>
-
   <div class="lang-selector">
-    <button id="btn-en" class="lang-btn">English</button>
+    <button id="btn-en" class="lang-btn active">English</button>
     <button id="btn-pt" class="lang-btn">Português (BR)</button>
   </div>
-
+  
   <div class="card">
-    <h1 id="welcome-title"></h1>
+    <div class="header">
+      <img src="../icons/icon-48.png" alt="MPV Opener" class="header-icon">
+      <h1 id="welcome-title">Almost Ready! Setup Required</h1>
+    </div>
+    
+    <div id="status-check" class="status-check"></div>
     <p id="welcome-intro"></p>
     
     <div class="step-container">
-      <h3 id="step1-title"></h3>
-      <p id="step1-desc"></p>
+      <h3 id="step1-title">1. Install Dependencies</h3>
+      <p id="step1-desc">Open your terminal and run this command to install the player, extractor engine, and media plugin:</p>
       <div class="code-wrapper">
         <span class="code-text" id="cmd-deps">sudo dnf install mpv yt-dlp mpv-mpris</span>
-        <button class="copy-btn" id="btn-copy-deps" data-target="cmd-deps"></button>
+        <button class="copy-btn" id="btn-copy-deps" data-target="cmd-deps">Copy</button>
       </div>
-
-      <h3 id="step2-title"></h3>
-      <p id="step2-desc"></p>
+      
+      <h3 id="step2-title">2. Enable the Communication Bridge (Native Host)</h3>
+      <p id="step2-desc">Now execute the official installer script to register the local integration manifests:</p>
       <div class="code-wrapper">
         <span class="code-text" id="cmd-host">curl -sSL https://raw.githubusercontent.com/Lu15-F3/mpv-opener-for-firefox/main/install.sh | bash</span>
-        <button class="copy-btn" id="btn-copy-host" data-target="cmd-host"></button>
+        <button class="copy-btn" id="btn-copy-host" data-target="cmd-host">Copy</button>
       </div>
     </div>
-    <p class="footer-note" id="welcome-footer"></p>
+    
+    <div class="footer-links">
+      <a href="https://addons.mozilla.org/pt-BR/firefox/addon/mpv-opener-for-firefox/" target="_blank" class="footer-link">
+        Add-on Store
+      </a>
+      <a href="https://github.com/Lu15-F3/mpv-opener-for-firefox" target="_blank" class="footer-link">
+        GitHub
+      </a>
+    </div>
+    <p class="footer-note" id="welcome-footer">After running the commands, the extension will work instantly. No need to restart Firefox.</p>
   </div>
-
+  
   <script src="welcome.js"></script>
 </body>
 </html>

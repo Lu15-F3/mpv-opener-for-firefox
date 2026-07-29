@@ -1,0 +1,182 @@
+{
+  "installer": {
+    "message": "MPV Opener для Firefox - інсталятор v7.0",
+    "description": "Назва інсталятора"
+  },
+  "uninstaller": {
+    "message": "MPV Opener для Firefox - Програма видалення",
+    "description": "Назва деінсталятора"
+  },
+  "checking_deps": {
+    "message": "Перевірка залежностей...",
+    "description": "Повідомлення про перевірку залежностей"
+  },
+  "all_deps_installed": {
+    "message": "Усі залежності встановлено.",
+    "description": "Усі залежності встановлено"
+  },
+  "missing_deps": {
+    "message": "Відсутні залежності:",
+    "description": "Відсутні залежності"
+  },
+  "install_command": {
+    "message": "Спочатку встановіть їх:",
+    "description": "Команда встановлення"
+  },
+  "creating_dirs": {
+    "message": "Створення каталогів...",
+    "description": "Створення каталогів"
+  },
+  "installing_wrapper": {
+    "message": "Встановлення рідної оболонки...",
+    "description": "Встановлення обгортки"
+  },
+  "generating_manifest": {
+    "message": "Створення маніфесту...",
+    "description": "Створення маніфесту"
+  },
+  "verifying": {
+    "message": "Перевірка встановлення...",
+    "description": "Перевірка"
+  },
+  "verified": {
+    "message": "Перевірено успішно!",
+    "description": "Перевірено"
+  },
+  "failed": {
+    "message": "Не вдалося встановити",
+    "description": "Не вдалося"
+  },
+  "testing": {
+    "message": "Тестування зв’язку з рідним хостом...",
+    "description": "Тестування"
+  },
+  "test_passed": {
+    "message": "Тест Native Host пройдено",
+    "description": "Тест пройдено"
+  },
+  "test_failed": {
+    "message": "Не вдалося перевірити рідний хост",
+    "description": "Перевірка не виконана"
+  },
+  "complete": {
+    "message": "Встановлення успішно завершено!",
+    "description": "Повний"
+  },
+  "ready": {
+    "message": "MPV Opener для Firefox готовий до використання!",
+    "description": "Готовий"
+  },
+  "restart": {
+    "message": "Вам може знадобитися перезапустити Firefox, щоб зміни набули чинності.",
+    "description": "Перезапустіть"
+  },
+  "next_steps": {
+    "message": "Наступні кроки:",
+    "description": "Наступні кроки"
+  },
+  "click_icon": {
+    "message": "Натисніть значок розширення, щоб перевірити",
+    "description": "Натисніть значок"
+  },
+  "shortcut_video": {
+    "message": "Використовуйте Ctrl+Alt+M, щоб надіслати відео в mpv",
+    "description": "Ярлик відео"
+  },
+  "shortcut_sniffer": {
+    "message": "Використовуйте Ctrl+Alt+V, щоб відкрити Media Sniffer",
+    "description": "Сніффер швидкого доступу"
+  },
+  "links": {
+    "message": "Посилання:",
+    "description": "Посилання"
+  },
+  "addon_store": {
+    "message": "Магазин додатків",
+    "description": "Магазин аддонів"
+  },
+  "github": {
+    "message": "GitHub",
+    "description": "GitHub"
+  },
+  "already_installed": {
+    "message": "Нативний хост уже встановлено.",
+    "description": "Вже встановлено"
+  },
+  "reinstall": {
+    "message": "Ви хочете перевстановити?",
+    "description": "Перевстановити"
+  },
+  "cancelled": {
+    "message": "Встановлення скасовано.",
+    "description": "Скасовано"
+  },
+  "error_source": {
+    "message": "Помилка: необхідні файли не знайдено в папці native-host",
+    "description": "Джерело помилки"
+  },
+  "removing": {
+    "message": "Видалення компонентів...",
+    "description": "Видалення"
+  },
+  "removed": {
+    "message": "Видалено:",
+    "description": "Видалено"
+  },
+  "not_found": {
+    "message": "Не знайдено:",
+    "description": "Не знайдено"
+  },
+  "cleaning": {
+    "message": "Очищення порожніх каталогів...",
+    "description": "прибирання"
+  },
+  "removed_empty": {
+    "message": "Вилучено пусто:",
+    "description": "Видалено порожнім"
+  },
+  "dir_not_empty": {
+    "message": "Каталог не порожній або не знайдений:",
+    "description": "Каталог не порожній"
+  },
+  "uninstall_complete": {
+    "message": "Видалення успішно завершено!",
+    "description": "Видалення завершено"
+  },
+  "uninstall_confirm": {
+    "message": "Це видалить MPV Opener із вашої системи.",
+    "description": "Підтвердження видалення"
+  },
+  "continue_prompt": {
+    "message": "Продовжити?",
+    "description": "Продовжити підказку"
+  },
+  "deps_mpv": {
+    "message": "mpv",
+    "description": "залежність mpv"
+  },
+  "deps_ytdlp": {
+    "message": "yt-dlp",
+    "description": "залежність yt-dlp"
+  },
+  "deps_mpv_mpris": {
+    "message": "mpv-mpris",
+    "description": "залежність mpv-mpris"
+  },
+  "deps_python": {
+    "message": "python3",
+    "description": "залежність python3"
+  },
+  "deps_curl": {
+    "message": "завиток",
+    "description": "залежність від кучерів"
+  },
+  "deps_socat": {
+    "message": "шокований",
+    "description": "шокована залежність"
+  },
+  "language": {
+    "message": "Мова",
+    "description": "Мовна мітка"
+  }
+}

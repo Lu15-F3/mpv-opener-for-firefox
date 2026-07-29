@@ -1,5 +1,11 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // Aplicar traduções
+// ============================================================
+// options.js - MPV Opener for Firefox v7.0
+// ============================================================
+
+document.addEventListener("DOMContentLoaded", function() {
+  // ============================================================
+  // Translations
+  // ============================================================
   document.getElementById("title-settings").textContent = browser.i18n.getMessage("optionsTitle");
   document.getElementById("header-playback").textContent = browser.i18n.getMessage("playbackSettings");
   document.getElementById("label-display").textContent = browser.i18n.getMessage("displayMode") + ":";
@@ -10,26 +16,32 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("opt-playing").textContent = browser.i18n.getMessage("statePlaying");
   document.getElementById("opt-paused").textContent = browser.i18n.getMessage("statePaused");
   
-  // Tradução da nova seção: Quality & Stream Filters
   document.getElementById("header-quality").textContent = browser.i18n.getMessage("qualitySettings");
   document.getElementById("label-maxResolution").textContent = browser.i18n.getMessage("maxResolutionLabel");
   document.getElementById("label-autoSubtitles").textContent = browser.i18n.getMessage("autoSubtitlesLabel");
-
-  // Tradução v3.0
+  
   document.getElementById("header-fedora").textContent = browser.i18n.getMessage("fedoraSettings");
   document.getElementById("label-inhibitSleep").textContent = browser.i18n.getMessage("inhibitSleepLabel");
   document.getElementById("label-aggressiveCache").textContent = browser.i18n.getMessage("aggressiveCacheLabel");
-
+  
   document.getElementById("header-window").textContent = browser.i18n.getMessage("windowBehavior");
   document.getElementById("label-alwaysOnTop").textContent = browser.i18n.getMessage("alwaysOnTopLabel");
+  
   document.getElementById("header-audio").textContent = browser.i18n.getMessage("audioSettings");
   document.getElementById("label-audioDevice").textContent = browser.i18n.getMessage("audioDeviceLabel");
   document.getElementById("audioDevice").placeholder = browser.i18n.getMessage("audioDevicePlaceholder");
+  
   document.getElementById("header-tab").textContent = browser.i18n.getMessage("tabBehavior");
   document.getElementById("label-close").textContent = browser.i18n.getMessage("closeTabLabel");
+  
+  document.getElementById("header-queue").textContent = "Queue Settings";
+  document.getElementById("label-queueMode").textContent = browser.i18n.getMessage("queueEnabled");
+  
   document.getElementById("save-btn").textContent = browser.i18n.getMessage("saveButton");
-
-  // Carregar dados salvos (incluindo as novas opções e seus valores padrão)
+  
+  // ============================================================
+  // Load Saved Data
+  // ============================================================
   browser.storage.local.get({
     displayMode: "standard",
     initialState: "playing",
@@ -39,8 +51,9 @@ document.addEventListener("DOMContentLoaded", () => {
     audioDevice: "",
     closeTab: false,
     aggressiveCache: false,
-    inhibitSleep: true
-  }).then((items) => {
+    inhibitSleep: true,
+    queueModeEnabled: true
+  }).then(function(items) {
     document.getElementById("displayMode").value = items.displayMode;
     document.getElementById("initialState").value = items.initialState;
     document.getElementById("maxResolution").value = items.maxResolution;
@@ -50,11 +63,14 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("closeTab").checked = items.closeTab;
     document.getElementById("aggressiveCache").checked = items.aggressiveCache;
     document.getElementById("inhibitSleep").checked = items.inhibitSleep;
+    document.getElementById("queueModeEnabled").checked = items.queueModeEnabled !== false;
   });
-
-  // Salvar alterações
-  document.getElementById("save-btn").addEventListener("click", () => {
-    browser.storage.local.set({
+  
+  // ============================================================
+  // Save Settings
+  // ============================================================
+  document.getElementById("save-btn").addEventListener("click", function() {
+    var settings = {
       displayMode: document.getElementById("displayMode").value,
       initialState: document.getElementById("initialState").value,
       maxResolution: document.getElementById("maxResolution").value,
@@ -63,11 +79,18 @@ document.addEventListener("DOMContentLoaded", () => {
       audioDevice: document.getElementById("audioDevice").value.trim(),
       closeTab: document.getElementById("closeTab").checked,
       aggressiveCache: document.getElementById("aggressiveCache").checked,
-      inhibitSleep: document.getElementById("inhibitSleep").checked
-    }).then(() => {
-      const status = document.getElementById("status");
+      inhibitSleep: document.getElementById("inhibitSleep").checked,
+      queueModeEnabled: document.getElementById("queueModeEnabled").checked
+    };
+    
+    browser.storage.local.set(settings).then(function() {
+      var status = document.getElementById("status");
       status.textContent = browser.i18n.getMessage("saveSuccess");
-      setTimeout(() => { status.textContent = ""; }, 3000);
+      status.style.color = "var(--success-green)";
+      setTimeout(function() {
+        status.textContent = "";
+        status.style.color = "";
+      }, 3000);
     });
   });
 });

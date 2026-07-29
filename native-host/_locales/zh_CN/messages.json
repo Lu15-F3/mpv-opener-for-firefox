@@ -1,0 +1,182 @@
+{
+  "installer": {
+    "message": "适用于 Firefox 的 MPV Opener - 安装程序 v7.0",
+    "description": "安装人员头衔"
+  },
+  "uninstaller": {
+    "message": "适用于 Firefox 的 MPV Opener - 卸载程序",
+    "description": "卸载程序标题"
+  },
+  "checking_deps": {
+    "message": "检查依赖关系...",
+    "description": "检查依赖关系消息"
+  },
+  "all_deps_installed": {
+    "message": "已安装所有依赖项。",
+    "description": "已安装所有依赖项"
+  },
+  "missing_deps": {
+    "message": "缺少依赖项：",
+    "description": "缺少依赖项"
+  },
+  "install_command": {
+    "message": "请先安装它们：",
+    "description": "安装命令"
+  },
+  "creating_dirs": {
+    "message": "正在创建目录...",
+    "description": "创建目录"
+  },
+  "installing_wrapper": {
+    "message": "正在安装本机包装器...",
+    "description": "安装包装纸"
+  },
+  "generating_manifest": {
+    "message": "正在生成清单...",
+    "description": "生成清单"
+  },
+  "verifying": {
+    "message": "正在验证安装...",
+    "description": "正在验证"
+  },
+  "verified": {
+    "message": "验证成功！",
+    "description": "已验证"
+  },
+  "failed": {
+    "message": "安装失败",
+    "description": "失败的"
+  },
+  "testing": {
+    "message": "测试本机主机通信...",
+    "description": "测试"
+  },
+  "test_passed": {
+    "message": "本机主机测试已通过",
+    "description": "测试通过"
+  },
+  "test_failed": {
+    "message": "本机主机测试失败",
+    "description": "测试失败"
+  },
+  "complete": {
+    "message": "安装成功完成！",
+    "description": "完全的"
+  },
+  "ready": {
+    "message": "适用于 Firefox 的 MPV Opener 已准备好使用！",
+    "description": "准备好"
+  },
+  "restart": {
+    "message": "您可能需要重新启动 Firefox 才能使更改生效。",
+    "description": "重新启动"
+  },
+  "next_steps": {
+    "message": "后续步骤：",
+    "description": "后续步骤"
+  },
+  "click_icon": {
+    "message": "单击扩展图标进行测试",
+    "description": "单击图标"
+  },
+  "shortcut_video": {
+    "message": "使用 Ctrl+Alt+M 将视频发送到 mpv",
+    "description": "快捷视频"
+  },
+  "shortcut_sniffer": {
+    "message": "使用 Ctrl+Alt+V 打开媒体嗅探器",
+    "description": "快捷嗅探器"
+  },
+  "links": {
+    "message": "链接：",
+    "description": "链接"
+  },
+  "addon_store": {
+    "message": "附加商店",
+    "description": "插件商店"
+  },
+  "github": {
+    "message": "GitHub",
+    "description": "GitHub"
+  },
+  "already_installed": {
+    "message": "本机主机似乎已安装。",
+    "description": "已安装"
+  },
+  "reinstall": {
+    "message": "您想重新安装吗？",
+    "description": "重新安装"
+  },
+  "cancelled": {
+    "message": "安装已取消。",
+    "description": "取消"
+  },
+  "error_source": {
+    "message": "错误：在本机主机文件夹中找不到所需的文件",
+    "description": "错误来源"
+  },
+  "removing": {
+    "message": "正在移除组件...",
+    "description": "去除"
+  },
+  "removed": {
+    "message": "删除：",
+    "description": "已删除"
+  },
+  "not_found": {
+    "message": "未找到：",
+    "description": "未找到"
+  },
+  "cleaning": {
+    "message": "清理空目录...",
+    "description": "打扫"
+  },
+  "removed_empty": {
+    "message": "删除空：",
+    "description": "删除空"
+  },
+  "dir_not_empty": {
+    "message": "目录不为空或未找到：",
+    "description": "目录不为空"
+  },
+  "uninstall_complete": {
+    "message": "卸载成功完成！",
+    "description": "卸载完成"
+  },
+  "uninstall_confirm": {
+    "message": "这将从您的系统中删除 MPV Opener。",
+    "description": "卸载确认"
+  },
+  "continue_prompt": {
+    "message": "继续？",
+    "description": "继续提示"
+  },
+  "deps_mpv": {
+    "message": "多用途车",
+    "description": "mpv 依赖性"
+  },
+  "deps_ytdlp": {
+    "message": "yt-dlp",
+    "description": "yt-dlp 依赖性"
+  },
+  "deps_mpv_mpris": {
+    "message": "mpv-mpris",
+    "description": "mpv-mpris 依赖项"
+  },
+  "deps_python": {
+    "message": "蟒蛇3",
+    "description": "python3依赖"
+  },
+  "deps_curl": {
+    "message": "卷曲",
+    "description": "卷曲依赖"
+  },
+  "deps_socat": {
+    "message": "震惊",
+    "description": "震惊的依赖"
+  },
+  "language": {
+    "message": "语言",
+    "description": "语言标签"
+  }
+}

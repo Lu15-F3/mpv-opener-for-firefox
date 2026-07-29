@@ -4,7 +4,7 @@
     "description": "Der Name der im Browser angezeigten Erweiterung"
   },
   "extensionDescription": {
-    "message": "Senden Sie Videolinks direkt von Firefox an Ihren lokalen MPV-Player.",
+    "message": "Senden Sie Videolinks direkt von Firefox an Ihren lokalen MPV-Player mit Warteschlangenunterstützung.",
     "description": "Die im Add-On-Manager angezeigte Erweiterungsbeschreibung"
   },
   "sendToMpv": {
@@ -27,13 +27,53 @@
     "message": "Geschichte",
     "description": "Titel der Registerkarte „Verlauf“ in der Popup-Oberfläche"
   },
+  "tabQueue": {
+    "message": "Warteschlange",
+    "description": "Titel der Warteschlangen-Registerkarte in der Popup-Oberfläche"
+  },
   "clearHistory": {
     "message": "Verlauf löschen",
     "description": "Schaltflächentext zum Löschen des lokalen Verlaufsspeichers"
   },
   "emptyHistory": {
     "message": "Noch keine Videos gesendet.",
-    "description": "Platzhaltertext, wenn kein Verlauf angezeigt werden kann"
+    "description": "Platzhaltertext, wenn kein Verlauf zur Anzeige vorhanden ist"
+  },
+  "emptyQueue": {
+    "message": "Die Warteschlange ist leer.",
+    "description": "Platzhaltertext, wenn keine Warteschlangenelemente vorhanden sind"
+  },
+  "queueCount": {
+    "message": "Elemente in der Warteschlange",
+    "description": "Etikett mit der Anzahl der Warteschlangen"
+  },
+  "queueEnabled": {
+    "message": "Schwanzmode",
+    "description": "Beschriftung für das Umschalten des Warteschlangenmodus"
+  },
+  "queueEnabledDesc": {
+    "message": "Wenn diese Option aktiviert ist, werden Videos zur Warteschlange hinzugefügt, anstatt neue Fenster zu öffnen",
+    "description": "Beschreibung für das Umschalten des Warteschlangenmodus"
+  },
+  "stopQueue": {
+    "message": "Warteschlange stoppen",
+    "description": "Schaltfläche zum Stoppen der aktuellen Warteschlangenwiedergabe"
+  },
+  "clearQueue": {
+    "message": "Alles löschen",
+    "description": "Schaltfläche zum Löschen aller Warteschlangenelemente"
+  },
+  "playNext": {
+    "message": "Als nächstes spielen",
+    "description": "Schaltfläche zum Abspielen des nächsten Elements in der Warteschlange"
+  },
+  "playPrev": {
+    "message": "Vorheriges abspielen",
+    "description": "Schaltfläche zum Abspielen des vorherigen Elements in der Warteschlange"
+  },
+  "removeItem": {
+    "message": "Entfernen",
+    "description": "Schaltfläche zum Entfernen eines Elements aus der Warteschlange"
   },
   "optionsTitle": {
     "message": "MPV-Öffner-Einstellungen",
@@ -84,7 +124,7 @@
     "description": "Abschnittsüberschrift für erweiterte Audioausgaben"
   },
   "audioDeviceLabel": {
-    "message": "Standard-Audiowiedergabegerät (mpv --audio-device)",
+    "message": "Standard-Audioausgabegerät (mpv --audio-device)",
     "description": "Bezeichnung zum Festlegen benutzerdefinierter Audiotreiber-Zielpfade"
   },
   "audioDevicePlaceholder": {
@@ -140,7 +180,7 @@
     "description": "Haupttitelüberschrift auf der Fisher-Ansichtsseite des Medienstreams"
   },
   "snifferSubtitle": {
-    "message": "Erfasste Streams (Anzeigen werden automatisch gefiltert):",
+    "message": "Aufgenommene Streams",
     "description": "Listen Sie die erfolgreich erfassten Untertitel-Tracking-Elemente auf"
   },
   "snifferInstructions": {
@@ -149,22 +189,22 @@
   },
   "ctxSniffMedia": {
     "message": "🎣 Starten Sie den Medien-Sniffer-Modus",
-    "description": "Beschriftung wird dynamisch in Kontextmenüs mit Rechtsklick auf der Seite angewendet"
+    "description": "Beschriftung wird dynamisch in Kontextmenüs mit der rechten Maustaste auf der Seite angewendet"
   },
   "sendToMpvBtnText": {
-    "message": "🚀 An MPV senden",
+    "message": "An MPV senden",
     "description": "Funktioneller Aktionsauslöser, der den in der Sniffer-Schnittstelle gefundenen Elementen zugewiesen ist"
   },
   "welcomeTitle": {
-    "message": "Fast fertig! Einrichtung erforderlich 🐧",
+    "message": "Fast fertig! Einrichtung erforderlich",
     "description": "Installieren Sie zunächst den Onboarding-Begrüßungsansichtsheader"
   },
   "welcomeIntro": {
-    "message": "Der <strong>MPV Opener für Firefox</strong> wurde Ihrem Browser hinzugefügt, kann aber noch nicht mit Ihrem Fedora-System kommunizieren. Befolgen Sie diese beiden schnellen Schritte:",
+    "message": "Der MPV Opener für Firefox wurde Ihrem Browser hinzugefügt, kann jedoch noch nicht mit Ihrem System kommunizieren. Befolgen Sie diese beiden schnellen Schritte:",
     "description": "Einleitungsabsatz, in dem die Handshake-Probleme bei der lokalen Hostausführung hervorgehoben werden"
   },
   "welcomeStep1Title": {
-    "message": "1. Fedora-Abhängigkeiten installieren",
+    "message": "1. Abhängigkeiten installieren",
     "description": "Header-Titel, der die Abhängigkeiten der Betriebspakete erläutert"
   },
   "welcomeStep1Desc": {
@@ -185,7 +225,7 @@
   },
   "copyBtn": {
     "message": "Kopie",
-    "description": "Beschriftung für standardmäßige interaktive Zwischenablageelemente des Setup-Dashboards"
+    "description": "Beschriftung für standardmäßige interaktive Elemente der Zwischenablage im Setup-Dashboard"
   },
   "copiedBtn": {
     "message": "Kopiert!",
@@ -202,5 +242,269 @@
   "shortcutOpenSnifferDesc": {
     "message": "Öffnen Sie den Medien-Sniffer-Modus",
     "description": "Hinweis zur Zuordnung von Hotkeys, der Zugriffspfade direkt in Medienfallen-Registerkarten beschreibt"
+  },
+  "snifferCapturedCount": {
+    "message": "gefangen genommen",
+    "description": "Beschriftung mit der Anzahl der erfassten Streams"
+  },
+  "snifferCopyLink": {
+    "message": "Kopie",
+    "description": "Schaltfläche zum Kopieren eines Links"
+  },
+  "snifferOpenTab": {
+    "message": "Offen",
+    "description": "Schaltfläche zum Öffnen des Links in einem neuen Tab"
+  },
+  "snifferExportAll": {
+    "message": "Alle exportieren",
+    "description": "Schaltfläche zum Exportieren aller erfassten Links"
+  },
+  "snifferClearAll": {
+    "message": "Alles löschen",
+    "description": "Schaltfläche zum Löschen aller erfassten Links"
+  },
+  "snifferSendAll": {
+    "message": "Alle senden",
+    "description": "Schaltfläche zum Senden aller erfassten Links an mpv"
+  },
+  "snifferCopied": {
+    "message": "Kopiert!",
+    "description": "Bestätigung beim Kopieren des Links"
+  },
+  "snifferExportSuccess": {
+    "message": "Links zur Konsole exportiert",
+    "description": "Bestätigung, wenn Links exportiert werden"
+  },
+  "snifferEmpty": {
+    "message": "Noch keine Streams erfasst. Befolgen Sie die obigen Anweisungen.",
+    "description": "Leere Statusmeldung im Sniffer"
+  },
+  "nowPlaying": {
+    "message": "Jetzt gespielt",
+    "description": "Mini-Player spielt jetzt Label"
+  },
+  "volumeUp": {
+    "message": "Lautstärke erhöhen",
+    "description": "Kurzinfo zur Schaltfläche „Lautstärke erhöhen“."
+  },
+  "volumeDown": {
+    "message": "Lautstärke verringern",
+    "description": "Tooltip zum Verringern der Lautstärke"
+  },
+  "previousTrack": {
+    "message": "Vorherige",
+    "description": "Kurzinfo zur Schaltfläche „Vorheriger Titel“."
+  },
+  "nextTrack": {
+    "message": "Nächste",
+    "description": "Tooltip für die Schaltfläche „Nächster Titel“."
+  },
+  "playPause": {
+    "message": "Wiedergabe/Pause",
+    "description": "Kurzinfo zur Wiedergabe-Pause-Schaltfläche"
+  },
+  "snifferChecking": {
+    "message": "Überprüfung...",
+    "description": "Statusmeldung beim Überprüfen eines Links"
+  },
+  "snifferValid": {
+    "message": "Gültig",
+    "description": "Statusmeldung, wenn der Link gültig ist"
+  },
+  "snifferInvalid": {
+    "message": "Ungültig",
+    "description": "Statusmeldung, wenn der Link ungültig ist"
+  },
+  "snifferInvalidTooltip": {
+    "message": "Link nicht zugänglich",
+    "description": "Tooltip für ungültige Links"
+  },
+  "snifferTestLink": {
+    "message": "Prüfen",
+    "description": "Schaltfläche zum Testen eines Links"
+  },
+  "snifferTestLinkTooltip": {
+    "message": "Testen Sie, ob dieser Link zugänglich ist",
+    "description": "Tooltip für die Testschaltfläche"
+  },
+  "snifferTestAll": {
+    "message": "Alle testen",
+    "description": "Schaltfläche zum Testen aller Links"
+  },
+  "snifferTestAllTooltip": {
+    "message": "Testen Sie alle erfassten Links",
+    "description": "Tooltip für die Schaltfläche „Alle testen“."
+  },
+  "snifferTestResult": {
+    "message": "Testergebnis:",
+    "description": "Titel des Testergebnisdialogs"
+  },
+  "snifferStatus": {
+    "message": "Status",
+    "description": "Statusbeschriftung im Testdialog"
+  },
+  "snifferType": {
+    "message": "Typ",
+    "description": "Geben Sie die Beschriftung im Testdialog ein"
+  },
+  "snifferIsVideo": {
+    "message": "Ist Video",
+    "description": "Ist das Videolabel im Testdialog"
+  },
+  "snifferReason": {
+    "message": "Grund",
+    "description": "Begründungsbezeichnung im Testdialog"
+  },
+  "snifferYes": {
+    "message": "Ja",
+    "description": "Ja im Testdialog"
+  },
+  "snifferNo": {
+    "message": "No",
+    "description": "Nein im Testdialog"
+  },
+  "snifferTesting": {
+    "message": "Testen...",
+    "description": "Status beim Testen eines Links"
+  },
+  "snifferWait": {
+    "message": "Bitte warten...",
+    "description": "Wartenachricht"
+  },
+  "snifferNoLinks": {
+    "message": "Keine Links zum Testen",
+    "description": "Keine Links zum Testen"
+  },
+  "snifferNoUrls": {
+    "message": "Keine URLs zum Exportieren",
+    "description": "Keine URLs zum Exportieren"
+  },
+  "snifferNoStreams": {
+    "message": "Keine Streams zum Senden vorhanden",
+    "description": "Keine Streams zum Senden vorhanden"
+  },
+  "snifferLinks": {
+    "message": "Links?",
+    "description": "Link-Frage"
+  },
+  "snifferStreams": {
+    "message": "Streams in MPV?",
+    "description": "Streams-Frage"
+  },
+  "snifferFilter": {
+    "message": "Filter",
+    "description": "Filteretikett"
+  },
+  "snifferAllQualities": {
+    "message": "Alle Qualitäten",
+    "description": "Option „Alle Qualitäten“."
+  },
+  "snifferTestAllConfirm": {
+    "message": "Testen Sie alles",
+    "description": "Testen Sie alle Bestätigungsnachrichten"
+  },
+  "snifferSendAllConfirm": {
+    "message": "Alles senden",
+    "description": "Senden Sie alle Bestätigungsnachrichten"
+  },
+  "snifferClearConfirm": {
+    "message": "Alle erfassten Streams löschen?",
+    "description": "Klare Bestätigungsnachricht"
+  },
+  "popupResolutionCap": {
+    "message": "Auflösungsobergrenze:",
+    "description": "Beschriftung für die Auflösungsauswahl im Popup"
+  },
+  "popupBestQuality": {
+    "message": "Am besten (maximal)",
+    "description": "Option für beste Qualität"
+  },
+  "popup1080p": {
+    "message": "1080p",
+    "description": "1080p-Option"
+  },
+  "popup720p": {
+    "message": "720b",
+    "description": "720p-Option"
+  },
+  "popup480p": {
+    "message": "480p",
+    "description": "480p-Option"
+  },
+  "playerIdle": {
+    "message": "Leerlauf",
+    "description": "Ruhezustand des Spielers"
+  },
+  "noVideoPlaying": {
+    "message": "Es wird kein Video abgespielt",
+    "description": "Platzhalter, wenn kein Video abgespielt wird"
+  },
+  "timeSeparator": {
+    "message": "/",
+    "description": "Zeittrennzeichen im Player"
+  },
+  "playerPrevious": {
+    "message": "Vorherige",
+    "description": "Schaltfläche „Vorheriger Titel“."
+  },
+  "playerNext": {
+    "message": "Nächste",
+    "description": "Schaltfläche „Nächster Titel“."
+  },
+  "playerVolume": {
+    "message": "Volumen",
+    "description": "Datenträgerbezeichnung"
+  },
+  "openQueueManager": {
+    "message": "Öffnen Sie den Warteschlangenmanager",
+    "description": "Schaltfläche zum Öffnen der Warteschlangenmanagerseite"
+  },
+  "viewQueue": {
+    "message": "Warteschlange anzeigen",
+    "description": "Kontextmenüeintrag zur Anzeige der Warteschlange"
+  },
+  "queueManagerTitle": {
+    "message": "Warteschlangenmanager",
+    "description": "Titel der Warteschlangenmanagerseite"
+  },
+  "queueEmptyStatus": {
+    "message": "Die Warteschlange ist leer.",
+    "description": "Status der leeren Warteschlange"
+  },
+  "queueCompleted": {
+    "message": "Vollendet",
+    "description": "Status der Warteschlange abgeschlossen"
+  },
+  "queuePaused": {
+    "message": "Angehalten",
+    "description": "Status der Warteschlange angehalten"
+  },
+  "queuePlaying": {
+    "message": "Spielen",
+    "description": "Status der Warteschlangenwiedergabe"
+  },
+  "queueRemaining": {
+    "message": "übrig",
+    "description": "Verbleibende Elemente in der Warteschlange"
+  },
+  "queueStatusCompleted": {
+    "message": "✓ Abgeschlossen ({current} / {total})",
+    "description": "Status „Warteschlange abgeschlossen“ mit Anzahl"
+  },
+  "queueStatusPlaying": {
+    "message": "▶ Spielen ({remaining} verbleibend)",
+    "description": "Der Warteschlangenstatus wird mit der verbleibenden Anzahl abgespielt"
+  },
+  "queueStatusPaused": {
+    "message": "⏸ Angehalten ({count} Elemente)",
+    "description": "Status „Warteschlange angehalten“ mit Anzahl der Elemente"
+  },
+  "queueStatusIdle": {
+    "message": "⏹ Leerlauf",
+    "description": "Leerlaufstatus der Warteschlange"
+  },
+  "queueItemsLabel": {
+    "message": "Artikel",
+    "description": "Artikelbezeichnung in der Warteschlange"
   }
 }

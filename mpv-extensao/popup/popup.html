@@ -7,32 +7,103 @@
 <body>
   <div class="tabs-nav">
     <button id="tab-btn-main" class="tab-link active">Control</button>
+    <button id="tab-btn-queue" class="tab-link">Queue</button>
     <button id="tab-btn-history" class="tab-link">History</button>
+    <button id="settings-btn" class="tab-link settings-btn" title="Preferences">⚙️</button>
   </div>
-
-  <div class="container">
-  <div class="quick-select">
-    <label for="quickRes">Resolution Cap:</label>
-    <select id="quickRes">
-      <option value="best">Best (Max)</option>
-      <option value="1080">1080p</option>
-      <option value="720">720p</option>
-      <option value="480">480p</option>
-    </select>
-  </div>
-  <button id="send-btn" class="btn-primary">⚡ Send to mpv</button>
-  <button id="send-audio-btn" class="btn-secondary">🎵 Listen Only</button>
   
-  <button id="sniff-btn" class="btn-sniffer" style="background: #f5c2e7; color: #11111b; margin-top: 5px; width: 100%; border: none; padding: 8px; border-radius: 4px; font-weight: bold; cursor: pointer;">🎣 Modo Pesca (Sniffer)</button>
-</div>
-
+  <div id="tab-main" class="tab-content active">
+    <div class="container">
+      <div class="quick-select">
+        <label for="quickRes" data-i18n="popupResolutionCap">Resolution Cap:</label>
+        <select id="quickRes">
+          <option value="best" data-i18n="popupBestQuality">Best (Max)</option>
+          <option value="1080" data-i18n="popup1080p">1080p</option>
+          <option value="720" data-i18n="popup720p">720p</option>
+          <option value="480" data-i18n="popup480p">480p</option>
+        </select>
+      </div>
+      <button id="send-btn" class="btn-primary">
+        <span class="icon">▶</span> Send to mpv
+      </button>
+      <button id="send-audio-btn" class="btn-secondary">
+        <span class="icon">♪</span> Listen Only
+      </button>
+      <button id="sniff-btn" class="btn-sniffer">
+        <span class="icon">🎣</span> Modo Pesca (Sniffer)
+      </button>
+      <div class="queue-toggle-container">
+        <label class="toggle-switch">
+          <input type="checkbox" id="queue-toggle">
+          <span class="toggle-slider"></span>
+        </label>
+        <span class="toggle-label">Queue Mode</span>
+      </div>
+    </div>
+  </div>
+  
+  <div id="tab-queue" class="tab-content">
+    <div class="queue-container">
+      <!-- MINI PLAYER INTEGRADO (Controlador Definitivo) -->
+      <div class="mini-player" id="mini-player">
+        <div class="mini-player-header">
+          <span class="mini-player-title" data-i18n="nowPlaying">▶ Now Playing</span>
+          <span class="mini-player-status" id="mp-status-text" data-i18n="playerIdle">Idle</span>
+        </div>
+        <div class="mini-player-info">
+          <div class="mini-player-thumbnail">
+            <img id="mp-thumbnail" src="../icons/icon-48.png" alt="Thumbnail">
+            <span class="mini-player-overlay" id="mp-play-status">▶</span>
+          </div>
+          <div class="mini-player-details">
+            <div class="mini-player-title" id="mp-title" data-i18n="noVideoPlaying">No video playing</div>
+            <div class="mini-player-time" id="mp-time">00:00 <span data-i18n="timeSeparator">/</span> 00:00</div>
+          </div>
+        </div>
+        <div class="mini-player-timeline">
+          <input type="range" id="mp-timeline" min="0" max="100" value="0" step="0.1">
+        </div>
+        <div class="mini-player-controls">
+          <button id="mp-prev" class="mp-btn" title="__MSG_playerPrevious__">◀◀</button>
+          <button id="mp-play-pause" class="mp-btn mp-play-btn" title="__MSG_playPause__">▶</button>
+          <button id="mp-next" class="mp-btn" title="__MSG_playerNext__">▶▶</button>
+          <button id="mp-volume-down" class="mp-btn mp-vol-btn" title="Volume Down">🔉</button>
+          <button id="mp-volume-up" class="mp-btn mp-vol-btn" title="Volume Up">🔊</button>
+        </div>
+        <!-- Volume indicator -->
+        <div class="volume-indicator" id="volume-indicator">
+          <span class="volume-label" data-i18n="playerVolume">Volume</span>
+          <div class="volume-bar">
+            <div class="volume-level" id="volume-level" style="width: 100%"></div>
+          </div>
+          <span class="volume-percent" id="volume-percent">100%</span>
+        </div>
+      </div>
+      
+      <!-- QUEUE LIST (Apenas lista, sem botões de controle) -->
+      <div class="queue-header">
+        <span class="queue-count" id="queue-count">0 items in queue</span>
+        <div class="queue-actions">
+          <button id="clear-queue-btn" class="btn-small btn-warning">✕ Clear All</button>
+        </div>
+      </div>
+      
+      <!-- Botão para abrir o Queue Manager -->
+      <div class="queue-extra-actions">
+        <button id="open-queue-manager-btn" class="btn-queue-manager" data-i18n="openQueueManager">📋 Open Queue Manager</button>
+      </div>
+      
+      <ul id="queue-list"></ul>
+    </div>
+  </div>
+  
   <div id="tab-history" class="tab-content">
     <div class="history-container">
       <ul id="history-list"></ul>
       <button id="clear-history-btn" class="btn-danger">Clear History</button>
     </div>
   </div>
-
+  
   <script src="popup.js"></script>
 </body>
 </html>

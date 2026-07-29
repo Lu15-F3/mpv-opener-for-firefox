@@ -1,0 +1,182 @@
+{
+  "installer": {
+    "message": "फ़ायरफ़ॉक्स के लिए एमपीवी ओपनर - इंस्टॉलर v7.0",
+    "description": "इंस्टॉलर शीर्षक"
+  },
+  "uninstaller": {
+    "message": "फ़ायरफ़ॉक्स के लिए एमपीवी ओपनर - अनइंस्टॉलर",
+    "description": "अनइंस्टॉलर शीर्षक"
+  },
+  "checking_deps": {
+    "message": "निर्भरताएँ जाँच रहा है...",
+    "description": "निर्भरता संदेश की जाँच कर रहा है"
+  },
+  "all_deps_installed": {
+    "message": "सभी निर्भरताएँ स्थापित।",
+    "description": "सभी निर्भरताएँ स्थापित"
+  },
+  "missing_deps": {
+    "message": "गुम निर्भरताएँ:",
+    "description": "गुम निर्भरताएँ"
+  },
+  "install_command": {
+    "message": "कृपया पहले उन्हें स्थापित करें:",
+    "description": "आदेश स्थापित करें"
+  },
+  "creating_dirs": {
+    "message": "निर्देशिकाएँ बनाई जा रही हैं...",
+    "description": "निर्देशिकाएँ बनाना"
+  },
+  "installing_wrapper": {
+    "message": "देशी रैपर स्थापित किया जा रहा है...",
+    "description": "रैपर स्थापित करना"
+  },
+  "generating_manifest": {
+    "message": "मेनिफेस्ट उत्पन्न हो रहा है...",
+    "description": "जनरेटिंग मेनिफेस्ट"
+  },
+  "verifying": {
+    "message": "संस्थापन की पुष्टि कर रहा...",
+    "description": "सत्यापन"
+  },
+  "verified": {
+    "message": "सफलतापूर्वक सत्यापित!",
+    "description": "सत्यापित"
+  },
+  "failed": {
+    "message": "स्थापित करने में विफल",
+    "description": "असफल"
+  },
+  "testing": {
+    "message": "नेटिव होस्ट संचार का परीक्षण...",
+    "description": "परीक्षण"
+  },
+  "test_passed": {
+    "message": "नेटिव होस्ट परीक्षा उत्तीर्ण की",
+    "description": "परीक्षण उत्तीर्ण हुआ"
+  },
+  "test_failed": {
+    "message": "नेटिव होस्ट परीक्षण विफल रहा",
+    "description": "परीक्षण विफल रहा"
+  },
+  "complete": {
+    "message": "स्थापना सफलतापूर्वक पूर्ण हुई!",
+    "description": "पूरा"
+  },
+  "ready": {
+    "message": "फ़ायरफ़ॉक्स के लिए एमपीवी ओपनर उपयोग के लिए तैयार है!",
+    "description": "तैयार"
+  },
+  "restart": {
+    "message": "परिवर्तनों को प्रभावी करने के लिए आपको फ़ायरफ़ॉक्स को पुनः आरंभ करने की आवश्यकता हो सकती है।",
+    "description": "पुनः आरंभ करें"
+  },
+  "next_steps": {
+    "message": "अगले कदम:",
+    "description": "अगले कदम"
+  },
+  "click_icon": {
+    "message": "परीक्षण करने के लिए एक्सटेंशन आइकन पर क्लिक करें",
+    "description": "आइकन पर क्लिक करें"
+  },
+  "shortcut_video": {
+    "message": "mpv पर वीडियो भेजने के लिए Ctrl+Alt+M का उपयोग करें",
+    "description": "शॉर्टकट वीडियो"
+  },
+  "shortcut_sniffer": {
+    "message": "मीडिया स्निफ़र खोलने के लिए Ctrl+Alt+V का उपयोग करें",
+    "description": "शॉर्टकट खोजी"
+  },
+  "links": {
+    "message": "लिंक:",
+    "description": "लिंक"
+  },
+  "addon_store": {
+    "message": "ऐड-ऑन स्टोर",
+    "description": "ऐडऑन स्टोर"
+  },
+  "github": {
+    "message": "गिटहब",
+    "description": "गिटहब"
+  },
+  "already_installed": {
+    "message": "ऐसा प्रतीत होता है कि नेटिव होस्ट पहले से ही स्थापित है।",
+    "description": "पहले से ही स्थापित"
+  },
+  "reinstall": {
+    "message": "क्या आप पुनः स्थापित करना चाहते हैं?",
+    "description": "पुनर्स्थापित"
+  },
+  "cancelled": {
+    "message": "स्थापना रद्द कर दी गई.",
+    "description": "रद्द कर दिया गया"
+  },
+  "error_source": {
+    "message": "त्रुटि: आवश्यक फ़ाइलें मूल-होस्ट फ़ोल्डर में नहीं मिलीं",
+    "description": "त्रुटि स्रोत"
+  },
+  "removing": {
+    "message": "घटकों को हटाया जा रहा है...",
+    "description": "निकाला जा रहा है"
+  },
+  "removed": {
+    "message": "निकाला गया:",
+    "description": "हटाया गया"
+  },
+  "not_found": {
+    "message": "नहीं मिला:",
+    "description": "नहीं मिला"
+  },
+  "cleaning": {
+    "message": "खाली निर्देशिकाएँ साफ़ की जा रही हैं...",
+    "description": "सफाई"
+  },
+  "removed_empty": {
+    "message": "खाली हटा दिया गया:",
+    "description": "खाली हटा दिया गया"
+  },
+  "dir_not_empty": {
+    "message": "निर्देशिका खाली नहीं है या नहीं मिली है:",
+    "description": "निर्देशिका खाली नहीं है"
+  },
+  "uninstall_complete": {
+    "message": "अनइंस्टॉलेशन सफलतापूर्वक पूरा हुआ!",
+    "description": "अनइंस्टॉल पूर्ण"
+  },
+  "uninstall_confirm": {
+    "message": "यह आपके सिस्टम से एमपीवी ओपनर को हटा देगा।",
+    "description": "अनइंस्टॉल की पुष्टि करें"
+  },
+  "continue_prompt": {
+    "message": "जारी रखना?",
+    "description": "शीघ्र जारी रखें"
+  },
+  "deps_mpv": {
+    "message": "एमपीवी",
+    "description": "एमपीवी निर्भरता"
+  },
+  "deps_ytdlp": {
+    "message": "yt-dlp",
+    "description": "yt-dlp निर्भरता"
+  },
+  "deps_mpv_mpris": {
+    "message": "एमपीवी-एमप्रिस",
+    "description": "mpv-mpris निर्भरता"
+  },
+  "deps_python": {
+    "message": "Python3",
+    "description": "Python3 निर्भरता"
+  },
+  "deps_curl": {
+    "message": "कर्ल",
+    "description": "कर्ल निर्भरता"
+  },
+  "deps_socat": {
+    "message": "हैरान",
+    "description": "चौंका देने वाली निर्भरता"
+  },
+  "language": {
+    "message": "भाषा",
+    "description": "भाषा लेबल"
+  }
+}

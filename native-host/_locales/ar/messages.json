@@ -1,0 +1,182 @@
+{
+  "installer": {
+    "message": "ﺖﺒﺜﻤﻟﺍ 7.0 ﺭﺍﺪﺻﻹ﻿ﺍ - ﺲﻛﻮﻓﺮﻳﺎﻓ ﺢﻔﺼﺘﻤﻟ MPV ﺢﺘﻓ ﺓﺍﺩﺃ",
+    "description": "ﺖﺒﺜﻤﻟﺍ ﻥﺍﻮﻨﻋ"
+  },
+  "uninstaller": {
+    "message": "ﺖﻴﺒﺜﺘﻟﺍ ءﺎﻐﻟﺇ ﺞﻣﺎﻧﺮﺑ - ﺲﻛﻮﻓﺮﻳﺎﻓ ﺢﻔﺼﺘﻤﻟ MPV Opener ﺞﻣﺎﻧﺮﺑ",
+    "description": "ﺖﻴﺒﺜﺘﻟﺍ ءﺎﻐﻟﺇ ﺞﻣﺎﻧﺮﺑ ﻥﺍﻮﻨﻋ"
+  },
+  "checking_deps": {
+    "message": "...ﺕﺎﻴﻌﺒﺘﻟﺍ ﻦﻣ ﻖﻘﺤﺘﻟﺍ",
+    "description": "ﺕﺎﻴﻌﺒﺘﻟﺍ ﺔﻟﺎﺳﺭ ﻦﻣ ﻖﻘﺤﺘﻟﺍ"
+  },
+  "all_deps_installed": {
+    "message": ".ﺕﺎﻴﻌﺒﺘﻟﺍ ﻊﻴﻤﺟ ﺖﻴﺒﺜﺗ ﻢﺗ",
+    "description": "ﺕﺎﻴﻌﺒﺘﻟﺍ ﺔﻓﺎﻛ ﺖﻴﺒﺜﺗ ﻢﺗ"
+  },
+  "missing_deps": {
+    "message": ":ﺓﺩﻮﻘﻔﻤﻟﺍ ﺕﺎﻴﻌﺒﺘﻟﺍ",
+    "description": "ﺓﺩﻮﻘﻔﻤﻟﺍ ﺕﺎﻴﻌﺒﺘﻟﺍ"
+  },
+  "install_command": {
+    "message": ":ﻻً﻿ﻭﺃ ﺎﻬﺘﻴﺒﺜﺗ ﻰﺟﺮﻳ",
+    "description": "ﺖﻴﺒﺜﺘﻟﺍ ﺮﻣﺃ"
+  },
+  "creating_dirs": {
+    "message": "...ﻞﺋﻻ﻿ﺪﻟﺍ ءﺎﺸﻧﺇ",
+    "description": "ﻞﺋﻻ﻿ﺪﻟﺍ ءﺎﺸﻧﺇ"
+  },
+  "installing_wrapper": {
+    "message": "...ﻲﻠﺻﻷ﻿ﺍ ﻊﻤﺠﻤﻟﺍ ﺖﻴﺒﺜﺗ",
+    "description": "ﻊﻤﺠﻤﻟﺍ ﺖﻴﺒﺜﺗ"
+  },
+  "generating_manifest": {
+    "message": "...ﻥﺎﻴﺒﻟﺍ ءﺎﺸﻧﺇ ﺭٍﺎﺟ",
+    "description": "ﻥﺎﻴﺒﻟﺍ ﺪﻴﻟﻮﺗ"
+  },
+  "verifying": {
+    "message": "...ﺖﻴﺒﺜﺘﻟﺍ ﻦﻣ ﻖﻘﺤﺘﻟﺍ ﺭٍﺎﺟ",
+    "description": "ﻖﻘﺤﺘﻟﺍ"
+  },
+  "verified": {
+    "message": "!ﺡﺎﺠﻨﺑ ﻖﻘﺤﺘﻟﺍ ﻢﺗ",
+    "description": "ﻪﻨﻣ ﻖﻘﺤﺘﻟﺍ ﻢﺗ"
+  },
+  "failed": {
+    "message": "ﺖﻴﺒﺜﺘﻟﺍ ﻞﺸﻓ",
+    "description": "ﻞﺸﻓ"
+  },
+  "testing": {
+    "message": "...ﻲﻠﺻﻷ﻿ﺍ ﻒﻴﻀﻤﻟﺍ ﻝﺎﺼﺗﺍ ﺭﺎﺒﺘﺧﺍ ﺭٍﺎﺟ",
+    "description": "ﺭﺎﺒﺘﺧﺍ"
+  },
+  "test_passed": {
+    "message": "ﻲﻠﺻﻷ﻿ﺍ ﻒﻴﻀﻤﻟﺍ ﺭﺎﺒﺘﺧﺍ ﺯﺎﻴﺘﺟﺍ ﻢﺗ",
+    "description": "ﺭﺎﺒﺘﺧﻻ﻿ﺍ ﺢﺠﻧ"
+  },
+  "test_failed": {
+    "message": "ﻲﻠﺻﻷ﻿ﺍ ﻒﻴﻀﻤﻟﺍ ﺭﺎﺒﺘﺧﺍ ﻞﺸﻓ",
+    "description": "ﺭﺎﺒﺘﺧﻻ﻿ﺍ ﻞﺸﻓ"
+  },
+  "complete": {
+    "message": "!ﺡﺎﺠﻨﺑ ﺖﻴﺒﺜﺘﻟﺍ ﻢﺗ",
+    "description": "ﻞﻤﺘﻜﻣ"
+  },
+  "ready": {
+    "message": "MPV Opener ﻡﺍﺪﺨﺘﺳﻼ﻿ﻟ ﺰﻫﺎﺟ ﺲﻛﻮﻓﺮﻳﺎﻓ ﺢﻔﺼﺘﻤﻟ!",
+    "description": "ﺪﻌﺘﺴﻣ"
+  },
+  "restart": {
+    "message": ".ﻝﻮﻌﻔﻤﻟﺍ ﺔﻳﺭﺎﺳ ﺕﺍﺮﻴﻴﻐﺘﻟﺍ ﺢﺒﺼﺘﻟ Firefox ﻞﻴﻐﺸﺗ ﺓﺩﺎﻋﺇ ﻰﻟﺇ ﺝﺎﺘﺤﺗ ﺪﻗ",
+    "description": "ﻞﻴﻐﺸﺗ ﺓﺩﺎﻋﺇ"
+  },
+  "next_steps": {
+    "message": ":ﺔﻴﻟﺎﺘﻟﺍ ﺕﺍﻮﻄﺨﻟﺍ",
+    "description": "ﺔﻴﻟﺎﺘﻟﺍ ﺕﺍﻮﻄﺨﻟﺍ"
+  },
+  "click_icon": {
+    "message": "ﺭﺎﺒﺘﺧﻼ﻿ﻟ ﺩﺍﺪﺘﻣﻻ﻿ﺍ ﺔﻧﻮﻘﻳﺃ ﻰﻠﻋ ﺮﻘﻧﺍ",
+    "description": "ﺔﻧﻮﻘﻳﺃ ﻰﻠﻋ ﺮﻘﻧﺍ"
+  },
+  "shortcut_video": {
+    "message": "mpv ﻰﻟﺇ ﻮﻳﺪﻴﻔﻟﺍ ﻝﺎﺳﺭﻹ﻿ Ctrl+Alt+M ﻡﺪﺨﺘﺳﺍ",
+    "description": "ﺮﺼﺘﺨﻣ ﻮﻳﺪﻴﻓ"
+  },
+  "shortcut_sniffer": {
+    "message": "Media Sniffer ﺢﺘﻔﻟ Ctrl+Alt+V ﻡﺪﺨﺘﺳﺍ",
+    "description": "ﺭﺎﺼﺘﺧﻻ﻿ﺍ ﻢﺷ"
+  },
+  "links": {
+    "message": ":ﻂﺑﺍﻭﺮﻟﺍ",
+    "description": "ﻂﺑﺍﻭﺭ"
+  },
+  "addon_store": {
+    "message": "ﺕﺎﻓﺎﺿﻹ﻿ﺍ ﺮﺠﺘﻣ",
+    "description": "ﺕﺎﻓﺎﺿﻹ﻿ﺍ ﺮﺠﺘﻣ"
+  },
+  "github": {
+    "message": "ﺐﺜﻴﺟ",
+    "description": "ﺐﺜﻴﺟ"
+  },
+  "already_installed": {
+    "message": ".ﻞﻌﻔﻟﺎﺑ ﻪﺘﻴﺒﺜﺗ ﻢﺗ ﺪﻗ Native Host ﻥﺃ ﻭﺪﺒﻳ",
+    "description": "ﻞﻌﻔﻟﺎﺑ ﻪﺘﻴﺒﺜﺗ ﻢﺗ"
+  },
+  "reinstall": {
+    "message": "؟ﺖﻴﺒﺜﺘﻟﺍ ﺓﺩﺎﻋﺇ ﺪﻳﺮﺗ ﻞﻫ",
+    "description": "ﺖﻴﺒﺜﺘﻟﺍ ﺪﻋﺃ"
+  },
+  "cancelled": {
+    "message": ".ﺖﻴﺒﺜﺘﻟﺍ ءﺎﻐﻟﺇ ﻢﺗ",
+    "description": "ءﺎﻐﻟﻹ﻿ﺍ ﻢﺗ"
+  },
+  "error_source": {
+    "message": "ﻲﻠﺻﻷ﻿ﺍ ﻒﻴﻀﻤﻟﺍ ﺪﻠﺠﻣ ﻲﻓ ﺔﺑﻮﻠﻄﻤﻟﺍ ﺕﺎﻔﻠﻤﻟﺍ ﻰﻠﻋ ﺭﻮﺜﻌﻟﺍ ﻢﺘﻳ ﻢﻟ :ﺄﻄﺧ",
+    "description": "ﺄﻄﺨﻟﺍ ﺭﺪﺼﻣ"
+  },
+  "removing": {
+    "message": "...ﺕﺎﻧﻮﻜﻤﻟﺍ ﺔﻟﺍﺯﺇ",
+    "description": "ﺔﻟﺍﺯﺇ"
+  },
+  "removed": {
+    "message": ":ﺔﻟﺍﺯﻹ﻿ﺍ ﺖﻤﺗ",
+    "description": "ﺔﻟﺍﺯﻹ﻿ﺍ ﺖﻤﺗ"
+  },
+  "not_found": {
+    "message": ":ﻰﻠﻋ ﺭﻮﺜﻌﻟﺍ ﻢﺘﻳ ﻢﻟ",
+    "description": "ﻪﻴﻠﻋ ﺭﻮﺜﻌﻟﺍ ﻢﺘﻳ ﻢﻟ"
+  },
+  "cleaning": {
+    "message": "...ﺔﻏﺭﺎﻔﻟﺍ ﻞﺋﻻ﻿ﺪﻟﺍ ﻒﻴﻈﻨﺗ",
+    "description": "ﻒﻴﻈﻨﺗ"
+  },
+  "removed_empty": {
+    "message": ":ﺔﻏﺭﺎﻓ ﺔﻟﺍﺯﻹ﻿ﺍ ﺖﻤﺗ",
+    "description": "ﺔﻏﺭﺎﻓ ﺎﻬﺘﻟﺍﺯﺇ ﺖﻤﺗ"
+  },
+  "dir_not_empty": {
+    "message": ":ﻪﻴﻠﻋ ﺭﻮﺜﻌﻟﺍ ﻢﺘﻳ ﻢﻟ ﻭﺃ ﻍﺭﺎﻓ ﺮﻴﻏ ﻞﻴﻟﺪﻟﺍ",
+    "description": "ﺎﻏﺭﺎﻓ ﺲﻴﻟ ﻞﻴﻟﺪﻟﺍ"
+  },
+  "uninstall_complete": {
+    "message": "!ﺡﺎﺠﻨﺑ ﺖﻴﺒﺜﺘﻟﺍ ءﺎﻐﻟﺇ ﺔﻴﻠﻤﻋ ﺖﻤﺗ",
+    "description": "ﺖﻴﺒﺜﺘﻟﺍ ءﺎﻐﻟﺇ ﺔﻴﻠﻤﻋ ﺖﻠﻤﺘﻛﺍ"
+  },
+  "uninstall_confirm": {
+    "message": ".ﻚﻣﺎﻈﻧ ﻦﻣ MPV Opener ﺔﻟﺍﺯﺇ ﻰﻟﺇ ﺍﺬﻫ ﻱﺩﺆﻴﺳ",
+    "description": "ﺖﻴﺒﺜﺘﻟﺍ ءﺎﻐﻟﺇ ﺪﻴﻛﺄﺗ"
+  },
+  "continue_prompt": {
+    "message": "؟ﻞﻤﻜﻳ",
+    "description": "ﺔﺒﻟﺎﻄﻤﻟﺍ ﺔﻌﺑﺎﺘﻣ"
+  },
+  "deps_mpv": {
+    "message": "ﻲﻓ ﻲﺑ ﻡﺇ",
+    "description": "mpv ﺔﻴﻌﺒﺗ"
+  },
+  "deps_ytdlp": {
+    "message": "yt-dlp",
+    "description": "yt-dlp ﺔﻴﻌﺒﺗ"
+  },
+  "deps_mpv_mpris": {
+    "message": "mpv-mpris",
+    "description": "mpv-mpris ﺔﻴﻌﺒﺗ"
+  },
+  "deps_python": {
+    "message": "3ﻥﻮﺜﻴﺑ",
+    "description": "3ﻥﻮﺜﻴﺑ ﺔﻴﻌﺒﺘﻟﺍ"
+  },
+  "deps_curl": {
+    "message": "ﺔﻘﻴﻠﺣ",
+    "description": "ﺓﺮﻴﻔﻀﻟﺍ ﺔﻴﻌﺒﺘﻟﺍ"
+  },
+  "deps_socat": {
+    "message": "ﺖﻣﺪﺻ",
+    "description": "ﺔﻣﺪﺼﻟﺎﺑ ﺔﻴﻌﺒﺘﻟﺍ"
+  },
+  "language": {
+    "message": "ﺔﻐﻟ",
+    "description": "ﺔﻐﻠﻟﺍ ﺔﻴﻤﺴﺗ"
+  }
+}

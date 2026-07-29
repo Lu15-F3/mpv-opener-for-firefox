@@ -1,0 +1,182 @@
+{
+  "installer": {
+    "message": "Firefox 用 MPV オープナー - インストーラー v7.0",
+    "description": "インストーラーのタイトル"
+  },
+  "uninstaller": {
+    "message": "Firefox 用 MPV オープナー - アンインストーラー",
+    "description": "アンインストーラーのタイトル"
+  },
+  "checking_deps": {
+    "message": "依存関係を確認しています...",
+    "description": "依存関係を確認するメッセージ"
+  },
+  "all_deps_installed": {
+    "message": "すべての依存関係がインストールされました。",
+    "description": "すべての依存関係がインストールされています"
+  },
+  "missing_deps": {
+    "message": "不足している依存関係:",
+    "description": "依存関係が欠落している"
+  },
+  "install_command": {
+    "message": "最初にインストールしてください:",
+    "description": "インストールコマンド"
+  },
+  "creating_dirs": {
+    "message": "ディレクトリを作成しています...",
+    "description": "ディレクトリの作成"
+  },
+  "installing_wrapper": {
+    "message": "ネイティブ ラッパーをインストールしています...",
+    "description": "ラッパーのインストール"
+  },
+  "generating_manifest": {
+    "message": "マニフェストを生成中...",
+    "description": "マニフェストの生成"
+  },
+  "verifying": {
+    "message": "インストールを確認しています...",
+    "description": "検証中"
+  },
+  "verified": {
+    "message": "無事に認証されました！",
+    "description": "確認済み"
+  },
+  "failed": {
+    "message": "インストールに失敗しました",
+    "description": "失敗した"
+  },
+  "testing": {
+    "message": "ネイティブホスト通信をテストしています...",
+    "description": "テスト"
+  },
+  "test_passed": {
+    "message": "ネイティブホストテストに合格しました",
+    "description": "テストに合格しました"
+  },
+  "test_failed": {
+    "message": "ネイティブホストテストに失敗しました",
+    "description": "テストが失敗しました"
+  },
+  "complete": {
+    "message": "無事にインストール完了しました！",
+    "description": "完了"
+  },
+  "ready": {
+    "message": "Firefox 用 MPV オープナーを使用する準備ができました。",
+    "description": "準備ができて"
+  },
+  "restart": {
+    "message": "変更を有効にするには、Firefox を再起動する必要がある場合があります。",
+    "description": "再起動"
+  },
+  "next_steps": {
+    "message": "次のステップ:",
+    "description": "次のステップ"
+  },
+  "click_icon": {
+    "message": "拡張機能アイコンをクリックしてテストします",
+    "description": "アイコンをクリック"
+  },
+  "shortcut_video": {
+    "message": "Ctrl+Alt+M を使用してビデオを mpv に送信します",
+    "description": "ショートカットビデオ"
+  },
+  "shortcut_sniffer": {
+    "message": "Ctrl+Alt+V を使用してメディア スニファーを開きます",
+    "description": "ショートカットスニファー"
+  },
+  "links": {
+    "message": "リンク:",
+    "description": "リンク"
+  },
+  "addon_store": {
+    "message": "アドオンストア",
+    "description": "アドオンストア"
+  },
+  "github": {
+    "message": "GitHub",
+    "description": "GitHub"
+  },
+  "already_installed": {
+    "message": "ネイティブ ホストはすでにインストールされているようです。",
+    "description": "すでにインストールされています"
+  },
+  "reinstall": {
+    "message": "再インストールしますか?",
+    "description": "再インストール"
+  },
+  "cancelled": {
+    "message": "インストールがキャンセルされました。",
+    "description": "キャンセル"
+  },
+  "error_source": {
+    "message": "エラー: 必要なファイルがネイティブホストフォルダーに見つかりません",
+    "description": "エラーの原因"
+  },
+  "removing": {
+    "message": "コンポーネントを取り外しています...",
+    "description": "削除中"
+  },
+  "removed": {
+    "message": "削除されました:",
+    "description": "削除されました"
+  },
+  "not_found": {
+    "message": "見つかりません：",
+    "description": "見つかりません"
+  },
+  "cleaning": {
+    "message": "空のディレクトリをクリーニングしています...",
+    "description": "クリーニング"
+  },
+  "removed_empty": {
+    "message": "空で削除されました:",
+    "description": "空で削除されました"
+  },
+  "dir_not_empty": {
+    "message": "ディレクトリが空でないか、見つかりません:",
+    "description": "ディレクトリが空ではありません"
+  },
+  "uninstall_complete": {
+    "message": "アンインストールが無事完了しました！",
+    "description": "アンインストール完了"
+  },
+  "uninstall_confirm": {
+    "message": "これにより、MPV Opener がシステムから削除されます。",
+    "description": "アンインストールの確認"
+  },
+  "continue_prompt": {
+    "message": "続く？",
+    "description": "プロンプトを続行する"
+  },
+  "deps_mpv": {
+    "message": "MPV",
+    "description": "MPV 依存関係"
+  },
+  "deps_ytdlp": {
+    "message": "yt-dlp",
+    "description": "yt-dlp 依存関係"
+  },
+  "deps_mpv_mpris": {
+    "message": "mpv-mpris",
+    "description": "mpv-mpris の依存関係"
+  },
+  "deps_python": {
+    "message": "Python3",
+    "description": "Python3の依存関係"
+  },
+  "deps_curl": {
+    "message": "カール",
+    "description": "カールの依存関係"
+  },
+  "deps_socat": {
+    "message": "ショックを受けた",
+    "description": "ショックを受けた依存症"
+  },
+  "language": {
+    "message": "言語",
+    "description": "言語ラベル"
+  }
+}

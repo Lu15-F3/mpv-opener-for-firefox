@@ -1,94 +1,73 @@
 #!/bin/bash
-# Script Instalador Dinâmico e Híbrido (Nativo + Flatpak) com Verificação de Dependências
+# ============================================================
+# MPV Opener for Firefox - Instalador Principal
+# ============================================================
+
 set -e
 
-# Configurações do Repositório (Altere se necessário)
-REPO_RAW_URL="https://raw.githubusercontent.com/Lu15-F3/mpv-opener-for-firefox/main"
+# Cores
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+CYAN='\033[0;36m'
+BOLD='\033[1m'
+NC='\033[0m'
 
-# Caminhos universais baseados em variáveis de ambiente
-BIN_DIR="$HOME/.local/bin"
-NATIVE_DIR_NATIVE="$HOME/.mozilla/native-messaging-hosts"
-NATIVE_DIR_FLATPAK="$HOME/.var/app/org.mozilla.firefox/.mozilla/native-messaging-hosts"
-MANIFEST_NAME="org.custom.mpv.json"
+echo -e "${CYAN}╔══════════════════════════════════════════════════════════════╗${NC}"
+echo -e "${CYAN}║${NC} ${BOLD}${GREEN}MPV Opener for Firefox - Instalador v7.3${NC}${CYAN} ║${NC}"
+echo -e "${CYAN}╚══════════════════════════════════════════════════════════════╝${NC}"
 
-echo "🔍 Verificando dependências do sistema..."
+# ============================================================
+# Download e execução do instalador nativo
+# ============================================================
+echo -e "\n${BLUE}▶ Baixando o instalador nativo...${NC}"
 
-# Função para verificar se os comandos existem no sistema
-check_dep() {
-    command -v "$1" >/dev/null 2>&1
-}
+# Criar diretório temporário
+TMP_DIR=$(mktemp -d)
+cd "$TMP_DIR"
 
-MISSING_DEPS=()
-! check_dep mpv && MISSING_DEPS+=("mpv")
-! check_dep yt-dlp && MISSING_DEPS+=("yt-dlp")
+# Baixar todos os arquivos necessários
+echo -e "${BLUE}▶ Baixando arquivos...${NC}"
 
-# mpv-mpris geralmente não expõe binários diretos, checaremos via rpm se dnf estiver disponível
-if check_dep dnf; then
-    if ! rpm -q mpv-mpris >/dev/null 2>&1; then
-        MISSING_DEPS+=("mpv-mpris")
-    fi
-fi
+# URLs dos arquivos (ajuste para seu repositório)
+BASE_URL="https://raw.githubusercontent.com/Lu15-F3/mpv-opener-for-firefox/main/native-host"
 
-if [ ${#MISSING_DEPS[@]} -ne 0 ]; then
-    echo "⚠️  As seguintes dependências estão faltando: ${MISSING_DEPS[*]}"
-    if check_dep dnf; then
-        read -p "👉 Deseja que o script tente instalá-las automaticamente via DNF? (s/N): " -r response
-        if [[ "$response" =~ ^([sS][iI][mM]|[sS])$ ]]; then
-            echo "🔐 Solicitando privilégios para instalar as dependências..."
-            sudo dnf install -y "${MISSING_DEPS[@]}"
-        else
-            echo "❌ Instalação abortada. Por favor, instale as dependências manualmente e execute o script novamente."
-            exit 1
-        fi
-    else
-        echo "❌ Gerenciador DNF não encontrado. Por favor, instale manualmente: ${MISSING_DEPS[*]}"
-        exit 1
-    fi
-fi
+# Lista de arquivos necessários
+FILES=(
+    "install.sh"
+    "uninstall.sh"
+    "locale_loader.sh"
+    "mpv_wrapper.py"
+    "org.custom.mpv.json"
+)
 
-echo "📦 Instalando binário e manifestos do Native Messaging Host..."
+# Baixar cada arquivo
+for file in "${FILES[@]}"; do
+    echo -e "  Baixando ${CYAN}$file${NC}..."
+    curl -sSL "${BASE_URL}/${file}" -o "$file"
+    chmod +x "$file" 2>/dev/null || true
+done
 
-# 1. Certificar que as pastas de destino existam
-mkdir -p "$BIN_DIR"
-mkdir -p "$NATIVE_DIR_NATIVE"
-mkdir -p "$NATIVE_DIR_FLATPAK"
+# Baixar as localizações
+echo -e "${BLUE}▶ Baixando localizações...${NC}"
 
-# Criação de arquivos temporários para download limpo
-TEMP_WRAPPER=$(mktemp)
-TEMP_MANIFEST=$(mktemp)
+# Lista de idiomas
+LANGUAGES=("en" "pt_BR" "es" "fr" "de" "it" "ja" "ko" "ru" "uk" "ar" "hi" "pl" "zh_CN" "pt_PT")
 
-# 2. Baixar os arquivos necessários do repositório remoto de forma segura
-echo "📥 Baixando arquivos do repositório..."
-curl -sSL "$REPO_RAW_URL/native-host/mpv_wrapper.py" -o "$TEMP_WRAPPER"
-curl -sSL "$REPO_RAW_URL/native-host/$MANIFEST_NAME" -o "$TEMP_MANIFEST"
+mkdir -p _locales
+for lang in "${LANGUAGES[@]}"; do
+    echo -e "  Baixando ${CYAN}${lang}${NC}..."
+    mkdir -p "_locales/${lang}"
+    curl -sSL "${BASE_URL}/_locales/${lang}/messages.json" -o "_locales/${lang}/messages.json"
+done
 
-# Validar se os downloads foram bem-sucedidos
-if [ ! -s "$TEMP_WRAPPER" ] || [ ! -s "$TEMP_MANIFEST" ]; then
-    echo "❌ Erro: Não foi possível baixar os arquivos do GitHub. Verifique sua conexão ou os caminhos do repositório."
-    rm -f "$TEMP_WRAPPER" "$TEMP_MANIFEST"
-    exit 1
-fi
+# Executar o instalador
+echo -e "\n${BLUE}▶ Executando instalador...${NC}\n"
+./install.sh
 
-# Mover o wrapper para o destino e torná-lo executável
-cp "$TEMP_WRAPPER" "$BIN_DIR/mpv_wrapper.py"
-chmod +x "$BIN_DIR/mpv_wrapper.py"
+# Limpar
+cd - > /dev/null
+rm -rf "$TMP_DIR"
 
-# 3. Gerar e injetar o caminho absoluto no manifesto temporário
-# Escapar caminhos absolutos do $HOME para uso seguro no sed
-ESCAPED_BIN_PATH=$(echo "$BIN_DIR/mpv_wrapper.py" | sed 's/\//\\\//g')
-
-if grep -q "PLACEHOLDER_HOME/\.local\/bin\/mpv_wrapper\.py" "$TEMP_MANIFEST"; then
-    sed -i "s/PLACEHOLDER_HOME\/\.local\/bin\/mpv_wrapper\.py/$ESCAPED_BIN_PATH/g" "$TEMP_MANIFEST"
-else
-    # Fallback caso a string do placeholder mude sutilmente no JSON original
-    sed -i "s|\"path\": \".*\"|\"path\": \"$BIN_DIR/mpv_wrapper.py\"|g" "$TEMP_MANIFEST"
-fi
-
-# 4. Copiar o manifesto ajustado cirurgicamente aos caminhos Nativo e Flatpak
-cp "$TEMP_MANIFEST" "$NATIVE_DIR_NATIVE/$MANIFEST_NAME"
-cp "$TEMP_MANIFEST" "$NATIVE_DIR_FLATPAK/$MANIFEST_NAME"
-
-# Limpeza dos arquivos temporários
-rm -f "$TEMP_WRAPPER" "$TEMP_MANIFEST"
-
-echo "✅ Instalação concluída com sucesso no ecossistema Firefox!"
+echo -e "\n${GREEN}✔ Instalação concluída!${NC}"

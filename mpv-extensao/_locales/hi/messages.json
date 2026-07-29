@@ -4,7 +4,7 @@
     "description": "ब्राउज़र में प्रदर्शित एक्सटेंशन का नाम"
   },
   "extensionDescription": {
-    "message": "फ़ायरफ़ॉक्स से सीधे अपने स्थानीय एमपीवी प्लेयर पर वीडियो लिंक भेजें।",
+    "message": "कतार समर्थन के साथ फ़ायरफ़ॉक्स से सीधे अपने स्थानीय एमपीवी प्लेयर पर वीडियो लिंक भेजें।",
     "description": "ऐडऑन मैनेजर में एक्सटेंशन विवरण दिखाया गया है"
   },
   "sendToMpv": {
@@ -27,6 +27,10 @@
     "message": "इतिहास",
     "description": "पॉपअप इंटरफ़ेस में इतिहास टैब शीर्षक"
   },
+  "tabQueue": {
+    "message": "कतार",
+    "description": "पॉपअप इंटरफ़ेस में कतार टैब शीर्षक"
+  },
   "clearHistory": {
     "message": "इतिहास मिटा दें",
     "description": "स्थानीय इतिहास भंडारण को मिटाने के लिए बटन टेक्स्ट"
@@ -34,6 +38,42 @@
   "emptyHistory": {
     "message": "अभी तक कोई वीडियो नहीं भेजा गया.",
     "description": "जब प्रदर्शित करने के लिए कोई इतिहास न हो तो प्लेसहोल्डर टेक्स्ट"
+  },
+  "emptyQueue": {
+    "message": "कतार खाली है.",
+    "description": "जब कोई कतार आइटम न हो तो प्लेसहोल्डर टेक्स्ट"
+  },
+  "queueCount": {
+    "message": "कतार में आइटम",
+    "description": "कतार संख्या दर्शाने वाला लेबल"
+  },
+  "queueEnabled": {
+    "message": "पूंछ फैशन",
+    "description": "क्यू मोड टॉगल के लिए लेबल"
+  },
+  "queueEnabledDesc": {
+    "message": "सक्षम होने पर, वीडियो नई विंडो खोलने के बजाय कतार में जोड़ दिए जाते हैं",
+    "description": "कतार मोड टॉगल का विवरण"
+  },
+  "stopQueue": {
+    "message": "कतार रोकें",
+    "description": "वर्तमान कतार प्लेबैक को रोकने के लिए बटन"
+  },
+  "clearQueue": {
+    "message": "सभी साफ करें",
+    "description": "सभी कतार आइटम साफ़ करने के लिए बटन"
+  },
+  "playNext": {
+    "message": "अगला खेलें",
+    "description": "कतार में अगला आइटम चलाने के लिए बटन"
+  },
+  "playPrev": {
+    "message": "पिछला खेलें",
+    "description": "पिछले आइटम को कतार में चलाने के लिए बटन"
+  },
+  "removeItem": {
+    "message": "निकालना",
+    "description": "कतार से आइटम हटाने के लिए बटन"
   },
   "optionsTitle": {
     "message": "एमपीवी ओपनर सेटिंग्स",
@@ -81,7 +121,7 @@
   },
   "audioSettings": {
     "message": "ऑडियो डिवाइस कॉन्फ़िगरेशन",
-    "description": "Section header for advanced audio outputs"
+    "description": "उन्नत ऑडियो आउटपुट के लिए अनुभाग शीर्षलेख"
   },
   "audioDeviceLabel": {
     "message": "डिफ़ॉल्ट ऑडियो आउटपुट डिवाइस (एमपीवी --ऑडियो-डिवाइस)",
@@ -140,7 +180,7 @@
     "description": "मीडिया स्ट्रीम फिशर व्यू पेज के अंदर मुख्य शीर्षक हेडर"
   },
   "snifferSubtitle": {
-    "message": "कैप्चर की गई स्ट्रीम (विज्ञापन स्वचालित रूप से फ़िल्टर किए गए):",
+    "message": "कैप्चर की गई धाराएँ",
     "description": "सूची उपशीर्षक ट्रैकिंग सफलतापूर्वक फंसे हुए तत्वों"
   },
   "snifferInstructions": {
@@ -152,19 +192,19 @@
     "description": "लेबल को पृष्ठ पर राइट-क्लिक प्रासंगिक मेनू में गतिशील रूप से लागू किया गया"
   },
   "sendToMpvBtnText": {
-    "message": "🚀 एमपीवी को भेजें",
+    "message": "एमपीवी को भेजें",
     "description": "स्निफर इंटरफ़ेस के अंदर पाए जाने वाले आइटमों को कार्यात्मक कार्रवाई ट्रिगर सौंपा गया है"
   },
   "welcomeTitle": {
-    "message": "लगभग तैयार! सेटअप आवश्यक 🐧",
+    "message": "लगभग तैयार! सेटअप आवश्यक",
     "description": "सबसे पहले ऑन-बोर्डिंग वेलकमिंग व्यू हेडर इंस्टॉल करें"
   },
   "welcomeIntro": {
-    "message": "<strong>फ़ायरफ़ॉक्स के लिए एमपीवी ओपनर</strong> को आपके ब्राउज़र में जोड़ा गया है, लेकिन यह अभी तक आपके फेडोरा सिस्टम के साथ संचार नहीं कर सकता है। इन दो त्वरित चरणों का पालन करें:",
+    "message": "फ़ायरफ़ॉक्स के लिए एमपीवी ओपनर आपके ब्राउज़र में जोड़ा गया है, लेकिन यह अभी तक आपके सिस्टम से संचार नहीं कर सकता है। इन दो त्वरित चरणों का पालन करें:",
     "description": "स्थानीय होस्ट निष्पादन हैंडशेक मुद्दों पर जोर देने वाला परिचय पैराग्राफ"
   },
   "welcomeStep1Title": {
-    "message": "1. फेडोरा निर्भरताएँ स्थापित करें",
+    "message": "1. निर्भरताएँ स्थापित करें",
     "description": "ऑपरेटिंग पैकेज निर्भरताओं को समझाने वाला हेडर शीर्षक"
   },
   "welcomeStep1Desc": {
@@ -202,5 +242,269 @@
   "shortcutOpenSnifferDesc": {
     "message": "मीडिया स्निफर मोड खोलें",
     "description": "हॉटकीज़ मैपिंग नोटिस सीधे मीडिया ट्रैप टैब में पहुंच पथों को रेखांकित करता है"
+  },
+  "snifferCapturedCount": {
+    "message": "कब्जा कर लिया",
+    "description": "कैप्चर की गई धाराओं की गिनती दर्शाने वाला लेबल"
+  },
+  "snifferCopyLink": {
+    "message": "प्रतिलिपि",
+    "description": "किसी लिंक को कॉपी करने के लिए बटन"
+  },
+  "snifferOpenTab": {
+    "message": "खुला",
+    "description": "नए टैब में लिंक खोलने के लिए बटन"
+  },
+  "snifferExportAll": {
+    "message": "सभी निर्यात करें",
+    "description": "सभी कैप्चर किए गए लिंक निर्यात करने के लिए बटन"
+  },
+  "snifferClearAll": {
+    "message": "सभी साफ करें",
+    "description": "सभी कैप्चर किए गए लिंक साफ़ करने के लिए बटन"
+  },
+  "snifferSendAll": {
+    "message": "सब भेजें",
+    "description": "सभी कैप्चर किए गए लिंक को एमपीवी पर भेजने के लिए बटन"
+  },
+  "snifferCopied": {
+    "message": "नकल की गई!",
+    "description": "लिंक कॉपी होने पर पुष्टि"
+  },
+  "snifferExportSuccess": {
+    "message": "कंसोल पर लिंक निर्यात किए गए",
+    "description": "लिंक निर्यात होने पर पुष्टि"
+  },
+  "snifferEmpty": {
+    "message": "अभी तक कोई स्ट्रीम कैप्चर नहीं की गई. ऊपर दिए गए निर्देशों का पालन करें.",
+    "description": "स्निफ़र में खाली स्थिति संदेश"
+  },
+  "nowPlaying": {
+    "message": "अब खेल रहे हैं",
+    "description": "मिनी प्लेयर अब लेबल चला रहा है"
+  },
+  "volumeUp": {
+    "message": "आवाज बढ़ाएं",
+    "description": "वॉल्यूम बढ़ाएं बटन टूलटिप"
+  },
+  "volumeDown": {
+    "message": "नीची मात्रा",
+    "description": "वॉल्यूम डाउन बटन टूलटिप"
+  },
+  "previousTrack": {
+    "message": "पहले का",
+    "description": "पिछला ट्रैक बटन टूलटिप"
+  },
+  "nextTrack": {
+    "message": "अगला",
+    "description": "अगला ट्रैक बटन टूलटिप"
+  },
+  "playPause": {
+    "message": "चलाएं/रोकें",
+    "description": "प्ले पॉज़ बटन टूलटिप"
+  },
+  "snifferChecking": {
+    "message": "जाँच हो रही है...",
+    "description": "किसी लिंक की जाँच करते समय स्थिति संदेश"
+  },
+  "snifferValid": {
+    "message": "वैध",
+    "description": "लिंक वैध होने पर स्थिति संदेश"
+  },
+  "snifferInvalid": {
+    "message": "अमान्य",
+    "description": "लिंक अमान्य होने पर स्थिति संदेश"
+  },
+  "snifferInvalidTooltip": {
+    "message": "लिंक पहुंच योग्य नहीं है",
+    "description": "अमान्य लिंक के लिए टूलटिप"
+  },
+  "snifferTestLink": {
+    "message": "परीक्षा",
+    "description": "किसी लिंक का परीक्षण करने के लिए बटन"
+  },
+  "snifferTestLinkTooltip": {
+    "message": "परीक्षण करें कि क्या यह लिंक पहुंच योग्य है",
+    "description": "परीक्षण बटन के लिए टूलटिप"
+  },
+  "snifferTestAll": {
+    "message": "सभी का परीक्षण करें",
+    "description": "सभी लिंक का परीक्षण करने के लिए बटन"
+  },
+  "snifferTestAllTooltip": {
+    "message": "सभी कैप्चर किए गए लिंक का परीक्षण करें",
+    "description": "सभी बटन का परीक्षण करने के लिए टूलटिप"
+  },
+  "snifferTestResult": {
+    "message": "परीक्षा परिणाम:",
+    "description": "परीक्षा परिणाम संवाद शीर्षक"
+  },
+  "snifferStatus": {
+    "message": "स्थिति",
+    "description": "परीक्षण संवाद में स्थिति लेबल"
+  },
+  "snifferType": {
+    "message": "प्रकार",
+    "description": "परीक्षण संवाद में लेबल टाइप करें"
+  },
+  "snifferIsVideo": {
+    "message": "वीडियो है",
+    "description": "परीक्षण संवाद में वीडियो लेबल है"
+  },
+  "snifferReason": {
+    "message": "कारण",
+    "description": "परीक्षण संवाद में कारण लेबल"
+  },
+  "snifferYes": {
+    "message": "हाँ",
+    "description": "परीक्षण संवाद में हाँ"
+  },
+  "snifferNo": {
+    "message": "No",
+    "description": "परीक्षण संवाद में नहीं"
+  },
+  "snifferTesting": {
+    "message": "परीक्षण...",
+    "description": "किसी लिंक का परीक्षण करते समय स्थिति"
+  },
+  "snifferWait": {
+    "message": "कृपया प्रतीक्षा करें...",
+    "description": "संदेश प्रतीक्षा करें"
+  },
+  "snifferNoLinks": {
+    "message": "परीक्षण के लिए कोई लिंक नहीं",
+    "description": "परीक्षण के लिए कोई लिंक नहीं"
+  },
+  "snifferNoUrls": {
+    "message": "निर्यात करने के लिए कोई URL नहीं",
+    "description": "निर्यात करने के लिए कोई URL नहीं"
+  },
+  "snifferNoStreams": {
+    "message": "भेजने के लिए कोई स्ट्रीम नहीं",
+    "description": "भेजने के लिए कोई स्ट्रीम नहीं"
+  },
+  "snifferLinks": {
+    "message": "लिंक?",
+    "description": "लिंक प्रश्न"
+  },
+  "snifferStreams": {
+    "message": "एमपीवी पर स्ट्रीम?",
+    "description": "धाराएँ प्रश्न"
+  },
+  "snifferFilter": {
+    "message": "फ़िल्टर",
+    "description": "फ़िल्टर लेबल"
+  },
+  "snifferAllQualities": {
+    "message": "सभी गुण",
+    "description": "सभी गुण विकल्प"
+  },
+  "snifferTestAllConfirm": {
+    "message": "सभी का परीक्षण करें",
+    "description": "सभी पुष्टि संदेश का परीक्षण करें"
+  },
+  "snifferSendAllConfirm": {
+    "message": "सब भेजें",
+    "description": "सभी पुष्टि संदेश भेजें"
+  },
+  "snifferClearConfirm": {
+    "message": "सभी कैप्चर की गई स्ट्रीम साफ़ करें?",
+    "description": "पुष्टिकरण संदेश साफ़ करें"
+  },
+  "popupResolutionCap": {
+    "message": "रिज़ॉल्यूशन कैप:",
+    "description": "पॉपअप में रिज़ॉल्यूशन चयनकर्ता के लिए लेबल"
+  },
+  "popupBestQuality": {
+    "message": "सर्वोत्तम (अधिकतम)",
+    "description": "सर्वोत्तम गुणवत्ता का विकल्प"
+  },
+  "popup1080p": {
+    "message": "1080पी",
+    "description": "1080p विकल्प"
+  },
+  "popup720p": {
+    "message": "720बी",
+    "description": "720p विकल्प"
+  },
+  "popup480p": {
+    "message": "480पी",
+    "description": "480p विकल्प"
+  },
+  "playerIdle": {
+    "message": "निठल्ला",
+    "description": "खिलाड़ी निष्क्रिय स्थिति"
+  },
+  "noVideoPlaying": {
+    "message": "कोई वीडियो नहीं चल रहा",
+    "description": "प्लेसहोल्डर जब कोई वीडियो नहीं चल रहा हो"
+  },
+  "timeSeparator": {
+    "message": "/",
+    "description": "प्लेयर में समय विभाजक"
+  },
+  "playerPrevious": {
+    "message": "पहले का",
+    "description": "पिछला ट्रैक बटन"
+  },
+  "playerNext": {
+    "message": "अगला",
+    "description": "अगला ट्रैक बटन"
+  },
+  "playerVolume": {
+    "message": "आयतन",
+    "description": "वोल्यूम लेबल"
+  },
+  "openQueueManager": {
+    "message": "कतार प्रबंधक खोलें",
+    "description": "कतार प्रबंधक पृष्ठ खोलने के लिए बटन"
+  },
+  "viewQueue": {
+    "message": "कतार देखें",
+    "description": "कतार देखने के लिए संदर्भ मेनू आइटम"
+  },
+  "queueManagerTitle": {
+    "message": "कतार प्रबंधक",
+    "description": "कतार प्रबंधक पृष्ठ का शीर्षक"
+  },
+  "queueEmptyStatus": {
+    "message": "कतार खाली है.",
+    "description": "खाली कतार स्थिति"
+  },
+  "queueCompleted": {
+    "message": "पुरा होना।",
+    "description": "कतार पूर्ण स्थिति"
+  },
+  "queuePaused": {
+    "message": "रुका हुआ",
+    "description": "कतार रोकी गई स्थिति"
+  },
+  "queuePlaying": {
+    "message": "खेलना",
+    "description": "कतार में खेलने की स्थिति"
+  },
+  "queueRemaining": {
+    "message": "शेष",
+    "description": "कतार में शेष आइटम"
+  },
+  "queueStatusCompleted": {
+    "message": "✓ पूर्ण ({वर्तमान} / {कुल})",
+    "description": "गिनती के साथ कतार पूर्ण स्थिति"
+  },
+  "queueStatusPlaying": {
+    "message": "▶ चल रहा है ({remaining} शेष)",
+    "description": "कतार की स्थिति शेष गिनती के साथ चल रही है"
+  },
+  "queueStatusPaused": {
+    "message": "⏸ रोका गया ({गिनती} आइटम)",
+    "description": "सामान्य गणना के साथ कतार रुकी हुई स्थिति"
+  },
+  "queueStatusIdle": {
+    "message": "⏹ निष्क्रिय",
+    "description": "कतार निष्क्रिय स्थिति"
+  },
+  "queueItemsLabel": {
+    "message": "सामान",
+    "description": "कतार में आइटम लेबल"
   }
 }

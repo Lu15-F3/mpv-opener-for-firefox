@@ -6,7 +6,10 @@
 </head>
 <body>
   <div class="container">
-    <h1 id="title-settings">MPV Opener Settings</h1>
+    <div class="header">
+      <img src="../icons/icon-48.png" alt="MPV Opener" class="header-icon">
+      <h1 id="title-settings">MPV Opener Settings</h1>
+    </div>
     
     <div class="section">
       <h2 id="header-playback">Playback Settings</h2>
@@ -15,7 +18,7 @@
         <select id="displayMode">
           <option value="standard" id="opt-standard">Standard Window</option>
           <option value="fullscreen" id="opt-fullscreen">Fullscreen</option>
-          <option value="pip" id="opt-pip">Picture-in-Picture (Bottom Right)</option>
+          <option value="pip" id="opt-pip">Picture-in-Picture</option>
         </select>
       </div>
       <div class="form-group">
@@ -26,13 +29,13 @@
         </select>
       </div>
     </div>
-
+    
     <div class="section">
       <h2 id="header-quality">Quality & Stream Filters</h2>
       <div class="form-group">
         <label id="label-maxResolution" for="maxResolution">Maximum Stream Resolution:</label>
         <select id="maxResolution">
-          <option value="best">Best Quality Disponible</option>
+          <option value="best">Best Quality Available</option>
           <option value="1080">1080p Full HD</option>
           <option value="720">720p HD</option>
           <option value="480">480p SD</option>
@@ -40,22 +43,22 @@
       </div>
       <div class="checkbox-group">
         <input type="checkbox" id="autoSubtitles">
-        <label for="autoSubtitles" id="label-autoSubtitles">Automatically load embedded and auto-generated subtitles</label>
+        <label for="autoSubtitles" id="label-autoSubtitles">Auto-load embedded subtitles</label>
       </div>
     </div>
-
+    
     <div class="section">
       <h2 id="header-fedora">Fedora & KDE Plasma Integration</h2>
       <div class="checkbox-group">
         <input type="checkbox" id="inhibitSleep" checked>
-        <label for="inhibitSleep" id="label-inhibitSleep">Inhibit screensaver and system sleep during playback</label>
+        <label for="inhibitSleep" id="label-inhibitSleep">Inhibit screensaver and system sleep</label>
       </div>
       <div class="checkbox-group">
         <input type="checkbox" id="aggressiveCache">
-        <label for="aggressiveCache" id="label-aggressiveCache">Enable aggressive network cache (Prevents stream buffering)</label>
+        <label for="aggressiveCache" id="label-aggressiveCache">Enable aggressive network cache</label>
       </div>
     </div>
-
+    
     <div class="section">
       <h2 id="header-window">Window Behavior</h2>
       <div class="checkbox-group">
@@ -63,25 +66,42 @@
         <label for="alwaysOnTop" id="label-alwaysOnTop">Keep mpv window always on top</label>
       </div>
     </div>
-
+    
     <div class="section">
       <h2 id="header-audio">Audio Device Configuration</h2>
       <div class="form-group-vertical">
-        <label id="label-audioDevice" for="audioDevice">Default Audio Output Device (mpv --audio-device)</label>
+        <label id="label-audioDevice" for="audioDevice">Default Audio Output Device</label>
         <input type="text" id="audioDevice" placeholder="e.g., alsa/hdmi, pulse/device_name">
       </div>
     </div>
-
+    
     <div class="section">
       <h2 id="header-tab">Tab Behavior</h2>
       <div class="checkbox-group">
         <input type="checkbox" id="closeTab">
-        <label for="closeTab" id="label-close">Close tab automatically after sending video to mpv</label>
+        <label for="closeTab" id="label-close">Close tab automatically after sending</label>
       </div>
     </div>
-
+    
+    <div class="section">
+      <h2 id="header-queue" data-i18n="queueSettings">Queue Settings</h2>
+      <div class="checkbox-group">
+        <input type="checkbox" id="queueModeEnabled" checked>
+        <label for="queueModeEnabled" id="label-queueMode" data-i18n="queueEnabled">Enable Queue Mode</label>
+      </div>
+    </div>
+    
     <button id="save-btn" class="btn-save">Save Settings</button>
     <div id="status" class="status-msg"></div>
+    
+    <div class="footer-links">
+      <a href="https://addons.mozilla.org/pt-BR/firefox/addon/mpv-opener-for-firefox/" target="_blank" class="footer-link">
+        Add-on Store
+      </a>
+      <a href="https://github.com/Lu15-F3/mpv-opener-for-firefox" target="_blank" class="footer-link">
+        GitHub
+      </a>
+    </div>
   </div>
   <script src="options.js"></script>
 </body>

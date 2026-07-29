@@ -1,0 +1,182 @@
+{
+  "installer": {
+    "message": "MPV Opener dla przeglądarki Firefox - Instalator v7.0",
+    "description": "Tytuł instalatora"
+  },
+  "uninstaller": {
+    "message": "MPV Opener dla Firefoksa - Dezinstalator",
+    "description": "Tytuł deinstalatora"
+  },
+  "checking_deps": {
+    "message": "Sprawdzam zależności...",
+    "description": "Sprawdzanie komunikatu o zależnościach"
+  },
+  "all_deps_installed": {
+    "message": "Wszystkie zależności zainstalowane.",
+    "description": "Wszystkie zależności zainstalowane"
+  },
+  "missing_deps": {
+    "message": "Brakujące zależności:",
+    "description": "Brakujące zależności"
+  },
+  "install_command": {
+    "message": "Najpierw je zainstaluj:",
+    "description": "Polecenie instalacji"
+  },
+  "creating_dirs": {
+    "message": "Tworzenie katalogów...",
+    "description": "Tworzenie katalogów"
+  },
+  "installing_wrapper": {
+    "message": "Instaluję natywne opakowanie...",
+    "description": "Instalowanie opakowania"
+  },
+  "generating_manifest": {
+    "message": "Generuję manifest...",
+    "description": "Generowanie manifestu"
+  },
+  "verifying": {
+    "message": "Sprawdzanie instalacji...",
+    "description": "Weryfikacja"
+  },
+  "verified": {
+    "message": "Zweryfikowano pomyślnie!",
+    "description": "Zweryfikowano"
+  },
+  "failed": {
+    "message": "Nie udało się zainstalować",
+    "description": "Przegrany"
+  },
+  "testing": {
+    "message": "Testowanie komunikacji z hostem natywnym...",
+    "description": "Testowanie"
+  },
+  "test_passed": {
+    "message": "Test hosta natywnego przeszedł pomyślnie",
+    "description": "Test zaliczony"
+  },
+  "test_failed": {
+    "message": "Test hosta natywnego nie powiódł się",
+    "description": "Test nie powiódł się"
+  },
+  "complete": {
+    "message": "Instalacja zakończyła się pomyślnie!",
+    "description": "Kompletny"
+  },
+  "ready": {
+    "message": "MPV Opener dla Firefoksa jest gotowy do użycia!",
+    "description": "Gotowy"
+  },
+  "restart": {
+    "message": "Aby zmiany zaczęły obowiązywać, może być konieczne ponowne uruchomienie Firefoksa.",
+    "description": "Uruchom ponownie"
+  },
+  "next_steps": {
+    "message": "Kolejne kroki:",
+    "description": "Kolejne kroki"
+  },
+  "click_icon": {
+    "message": "Kliknij ikonę rozszerzenia, aby przetestować",
+    "description": "Kliknij ikonę"
+  },
+  "shortcut_video": {
+    "message": "Użyj Ctrl+Alt+M, aby wysłać wideo do MPV",
+    "description": "Skrót wideo"
+  },
+  "shortcut_sniffer": {
+    "message": "Użyj Ctrl+Alt+V, aby otworzyć narzędzie Media Sniffer",
+    "description": "Skaner skrótów"
+  },
+  "links": {
+    "message": "Spinki do mankietów:",
+    "description": "Spinki do mankietów"
+  },
+  "addon_store": {
+    "message": "Sklep z dodatkami",
+    "description": "Sklep z dodatkami"
+  },
+  "github": {
+    "message": "GitHub",
+    "description": "GitHub"
+  },
+  "already_installed": {
+    "message": "Wygląda na to, że host natywny jest już zainstalowany.",
+    "description": "Już zainstalowany"
+  },
+  "reinstall": {
+    "message": "Czy chcesz dokonać ponownej instalacji?",
+    "description": "Zainstaluj ponownie"
+  },
+  "cancelled": {
+    "message": "Instalacja anulowana.",
+    "description": "Odwołany"
+  },
+  "error_source": {
+    "message": "Błąd: w folderze hosta natywnego nie znaleziono wymaganych plików",
+    "description": "Źródło błędu"
+  },
+  "removing": {
+    "message": "Usuwanie komponentów...",
+    "description": "Usuwanie"
+  },
+  "removed": {
+    "message": "REMOVED:",
+    "description": "REMOVED"
+  },
+  "not_found": {
+    "message": "Nie znaleziono:",
+    "description": "Nie znaleziono"
+  },
+  "cleaning": {
+    "message": "Czyszczenie pustych katalogów...",
+    "description": "Czyszczenie"
+  },
+  "removed_empty": {
+    "message": "Usunięto puste:",
+    "description": "Usunięto puste"
+  },
+  "dir_not_empty": {
+    "message": "Katalog nie jest pusty lub nie został znaleziony:",
+    "description": "Katalog nie jest pusty"
+  },
+  "uninstall_complete": {
+    "message": "Dezinstalacja zakończyła się pomyślnie!",
+    "description": "Odinstalowanie zakończone"
+  },
+  "uninstall_confirm": {
+    "message": "Spowoduje to usunięcie MPV Opener z systemu.",
+    "description": "Odinstaluj, potwierdź"
+  },
+  "continue_prompt": {
+    "message": "Kontynuować?",
+    "description": "Kontynuuj monit"
+  },
+  "deps_mpv": {
+    "message": "mpv",
+    "description": "zależność mpv"
+  },
+  "deps_ytdlp": {
+    "message": "yt-dlp",
+    "description": "zależność yt-dlp"
+  },
+  "deps_mpv_mpris": {
+    "message": "mpv-mpris",
+    "description": "zależność mpv-mpris"
+  },
+  "deps_python": {
+    "message": "Python3",
+    "description": "zależność od Pythona3"
+  },
+  "deps_curl": {
+    "message": "kędzior",
+    "description": "zależność curl"
+  },
+  "deps_socat": {
+    "message": "zszokowany",
+    "description": "zszokowana zależność"
+  },
+  "language": {
+    "message": "Język",
+    "description": "Etykieta języka"
+  }
+}

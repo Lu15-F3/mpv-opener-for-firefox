@@ -4,7 +4,7 @@
     "description": "The name of the extension displayed in the browser"
   },
   "extensionDescription": {
-    "message": "Send video links directly from Firefox to your local mpv player.",
+    "message": "Send video links directly from Firefox to your local mpv player with queue support.",
     "description": "The extension description shown in the addons manager"
   },
   "sendToMpv": {
@@ -27,6 +27,10 @@
     "message": "History",
     "description": "History tab title in the popup interface"
   },
+  "tabQueue": {
+    "message": "Queue",
+    "description": "Queue tab title in the popup interface"
+  },
   "clearHistory": {
     "message": "Clear History",
     "description": "Button text to wipe the local history storage"
@@ -34,6 +38,42 @@
   "emptyHistory": {
     "message": "No videos sent yet.",
     "description": "Placeholder text when there is no history to display"
+  },
+  "emptyQueue": {
+    "message": "Queue is empty.",
+    "description": "Placeholder text when there is no queue items"
+  },
+  "queueCount": {
+    "message": "items in queue",
+    "description": "Label showing queue count"
+  },
+  "queueEnabled": {
+    "message": "Queue Mode",
+    "description": "Label for queue mode toggle"
+  },
+  "queueEnabledDesc": {
+    "message": "When enabled, videos are added to queue instead of opening new windows",
+    "description": "Description for queue mode toggle"
+  },
+  "stopQueue": {
+    "message": "Stop Queue",
+    "description": "Button to stop current queue playback"
+  },
+  "clearQueue": {
+    "message": "Clear All",
+    "description": "Button to clear all queue items"
+  },
+  "playNext": {
+    "message": "Play Next",
+    "description": "Button to play next item in queue"
+  },
+  "playPrev": {
+    "message": "Play Previous",
+    "description": "Button to play previous item in queue"
+  },
+  "removeItem": {
+    "message": "Remove",
+    "description": "Button to remove item from queue"
   },
   "optionsTitle": {
     "message": "MPV Opener Settings",
@@ -140,7 +180,7 @@
     "description": "Main title header inside the media stream fisher view page"
   },
   "snifferSubtitle": {
-    "message": "Captured Streams (Ads Automatically Filtered):",
+    "message": "Captured Streams",
     "description": "List subtitle tracking successfully trapped elements"
   },
   "snifferInstructions": {
@@ -152,19 +192,19 @@
     "description": "Label applied dynamically into page right-click contextual menus"
   },
   "sendToMpvBtnText": {
-    "message": "🚀 Send to MPV",
+    "message": "Send to MPV",
     "description": "Functional action trigger assigned to items found inside the sniffer interface"
   },
   "welcomeTitle": {
-    "message": "Almost Ready! Setup Required 🐧",
+    "message": "Almost Ready! Setup Required",
     "description": "First install on-boarding welcoming view header"
   },
   "welcomeIntro": {
-    "message": "The <strong>MPV Opener for Firefox</strong> has been added to your browser, but it cannot communicate with your Fedora system yet. Follow these two quick steps:",
+    "message": "The MPV Opener for Firefox has been added to your browser, but it cannot communicate with your system yet. Follow these two quick steps:",
     "description": "Intro paragraph emphasizing local host execution handshake issues"
   },
   "welcomeStep1Title": {
-    "message": "1. Install Fedora Dependencies",
+    "message": "1. Install Dependencies",
     "description": "Header title explaining operating package dependencies"
   },
   "welcomeStep1Desc": {
@@ -200,7 +240,271 @@
     "description": "Hotkeys mapping explanation targeting listening profile setup"
   },
   "shortcutOpenSnifferDesc": {
-    "message": "Open Media Sniffer Mode (Modo Pesca)",
+    "message": "Open Media Sniffer Mode",
     "description": "Hotkeys mapping notice outlining access paths directly into media trap tabs"
+  },
+  "snifferCapturedCount": {
+    "message": "captured",
+    "description": "Label showing count of captured streams"
+  },
+  "snifferCopyLink": {
+    "message": "Copy",
+    "description": "Button to copy a link"
+  },
+  "snifferOpenTab": {
+    "message": "Open",
+    "description": "Button to open link in new tab"
+  },
+  "snifferExportAll": {
+    "message": "Export All",
+    "description": "Button to export all captured links"
+  },
+  "snifferClearAll": {
+    "message": "Clear All",
+    "description": "Button to clear all captured links"
+  },
+  "snifferSendAll": {
+    "message": "Send All",
+    "description": "Button to send all captured links to mpv"
+  },
+  "snifferCopied": {
+    "message": "Copied!",
+    "description": "Confirmation when link is copied"
+  },
+  "snifferExportSuccess": {
+    "message": "Links exported to console",
+    "description": "Confirmation when links are exported"
+  },
+  "snifferEmpty": {
+    "message": "No streams captured yet. Follow the instructions above.",
+    "description": "Empty state message in sniffer"
+  },
+  "nowPlaying": {
+    "message": "Now Playing",
+    "description": "Mini player now playing label"
+  },
+  "volumeUp": {
+    "message": "Volume Up",
+    "description": "Volume up button tooltip"
+  },
+  "volumeDown": {
+    "message": "Volume Down",
+    "description": "Volume down button tooltip"
+  },
+  "previousTrack": {
+    "message": "Previous",
+    "description": "Previous track button tooltip"
+  },
+  "nextTrack": {
+    "message": "Next",
+    "description": "Next track button tooltip"
+  },
+  "playPause": {
+    "message": "Play/Pause",
+    "description": "Play pause button tooltip"
+  },
+  "snifferChecking": {
+    "message": "Checking...",
+    "description": "Status message while checking a link"
+  },
+  "snifferValid": {
+    "message": "Valid",
+    "description": "Status message when link is valid"
+  },
+  "snifferInvalid": {
+    "message": "Invalid",
+    "description": "Status message when link is invalid"
+  },
+  "snifferInvalidTooltip": {
+    "message": "Link not accessible",
+    "description": "Tooltip for invalid links"
+  },
+  "snifferTestLink": {
+    "message": "Test",
+    "description": "Button to test a link"
+  },
+  "snifferTestLinkTooltip": {
+    "message": "Test if this link is accessible",
+    "description": "Tooltip for test button"
+  },
+  "snifferTestAll": {
+    "message": "Test All",
+    "description": "Button to test all links"
+  },
+  "snifferTestAllTooltip": {
+    "message": "Test all captured links",
+    "description": "Tooltip for test all button"
+  },
+  "snifferTestResult": {
+    "message": "Test Result:",
+    "description": "Test result dialog title"
+  },
+  "snifferStatus": {
+    "message": "Status",
+    "description": "Status label in test dialog"
+  },
+  "snifferType": {
+    "message": "Type",
+    "description": "Type label in test dialog"
+  },
+  "snifferIsVideo": {
+    "message": "Is Video",
+    "description": "Is video label in test dialog"
+  },
+  "snifferReason": {
+    "message": "Reason",
+    "description": "Reason label in test dialog"
+  },
+  "snifferYes": {
+    "message": "Yes",
+    "description": "Yes in test dialog"
+  },
+  "snifferNo": {
+    "message": "No",
+    "description": "No in test dialog"
+  },
+  "snifferTesting": {
+    "message": "Testing...",
+    "description": "Status while testing a link"
+  },
+  "snifferWait": {
+    "message": "Please wait...",
+    "description": "Wait message"
+  },
+  "snifferNoLinks": {
+    "message": "No links to test",
+    "description": "No links to test"
+  },
+  "snifferNoUrls": {
+    "message": "No URLs to export",
+    "description": "No URLs to export"
+  },
+  "snifferNoStreams": {
+    "message": "No streams to send",
+    "description": "No streams to send"
+  },
+  "snifferLinks": {
+    "message": "links?",
+    "description": "Links question"
+  },
+  "snifferStreams": {
+    "message": "streams to mpv?",
+    "description": "Streams question"
+  },
+  "snifferFilter": {
+    "message": "Filter",
+    "description": "Filter label"
+  },
+  "snifferAllQualities": {
+    "message": "All Qualities",
+    "description": "All qualities option"
+  },
+  "snifferTestAllConfirm": {
+    "message": "Test all ",
+    "description": "Test all confirm message"
+  },
+  "snifferSendAllConfirm": {
+    "message": "Send all ",
+    "description": "Send all confirm message"
+  },
+  "snifferClearConfirm": {
+    "message": "Clear all captured streams?",
+    "description": "Clear confirm message"
+  },
+  "popupResolutionCap": {
+    "message": "Resolution Cap:",
+    "description": "Label for resolution selector in popup"
+  },
+  "popupBestQuality": {
+    "message": "Best (Max)",
+    "description": "Option for best quality"
+  },
+  "popup1080p": {
+    "message": "1080p",
+    "description": "1080p option"
+  },
+  "popup720p": {
+    "message": "720p",
+    "description": "720p option"
+  },
+  "popup480p": {
+    "message": "480p",
+    "description": "480p option"
+  },
+  "playerIdle": {
+    "message": "Idle",
+    "description": "Player idle status"
+  },
+  "noVideoPlaying": {
+    "message": "No video playing",
+    "description": "Placeholder when no video is playing"
+  },
+  "timeSeparator": {
+    "message": "/",
+    "description": "Time separator in player"
+  },
+  "playerPrevious": {
+    "message": "Previous",
+    "description": "Previous track button"
+  },
+  "playerNext": {
+    "message": "Next",
+    "description": "Next track button"
+  },
+  "playerVolume": {
+    "message": "Volume",
+    "description": "Volume label"
+  },
+  "openQueueManager": {
+    "message": "Open Queue Manager",
+    "description": "Button to open queue manager page"
+  },
+  "viewQueue": {
+    "message": "View Queue",
+    "description": "Context menu item to view queue"
+  },
+  "queueManagerTitle": {
+    "message": "Queue Manager",
+    "description": "Title of the queue manager page"
+  },
+  "queueEmptyStatus": {
+    "message": "Queue is empty.",
+    "description": "Empty queue status"
+  },
+  "queueCompleted": {
+    "message": "Completed",
+    "description": "Queue completed status"
+  },
+  "queuePaused": {
+    "message": "Paused",
+    "description": "Queue paused status"
+  },
+  "queuePlaying": {
+    "message": "Playing",
+    "description": "Queue playing status"
+  },
+  "queueRemaining": {
+    "message": "remaining",
+    "description": "Remaining items in queue"
+  },
+  "queueStatusCompleted": {
+    "message": "✓ Completed ({current} / {total})",
+    "description": "Queue completed status with counts"
+  },
+  "queueStatusPlaying": {
+    "message": "▶ Playing ({remaining} remaining)",
+    "description": "Queue status playing with remaining count"
+  },
+  "queueStatusPaused": {
+    "message": "⏸ Paused ({count} items)",
+    "description": "Queue paused status with item count"
+  },
+  "queueStatusIdle": {
+    "message": "⏹ Idle",
+    "description": "Queue idle status"
+  },
+  "queueItemsLabel": {
+    "message": "items",
+    "description": "Items label in queue"
   }
 }

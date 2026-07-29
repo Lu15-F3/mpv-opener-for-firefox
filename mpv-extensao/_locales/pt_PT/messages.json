@@ -1,14 +1,14 @@
 {
   "extensionName": {
-    "message": "MPV Opener for Firefox",
+    "message": "Abridor de MPV para Firefox",
     "description": "O nome da extensão exibida no navegador"
   },
   "extensionDescription": {
-    "message": "Envie links de vídeo diretamente do Firefox para o seu mpv player local.",
+    "message": "Envie links de vídeo diretamente do Firefox para o seu mpv player local com suporte a fila.",
     "description": "A descrição da extensão mostrada no gerenciador de complementos"
   },
   "sendToMpv": {
-    "message": "Enviar para mpv",
+    "message": "Enviar para MPV",
     "description": "Etiqueta para enviar link de vídeo para mpv"
   },
   "sendAudioToMpv": {
@@ -24,8 +24,12 @@
     "description": "Título da guia principal na interface pop-up"
   },
   "tabHistory": {
-    "message": "Histórico",
+    "message": "História",
     "description": "Título da guia Histórico na interface pop-up"
+  },
+  "tabQueue": {
+    "message": "Fila",
+    "description": "Título da guia Fila na interface pop-up"
   },
   "clearHistory": {
     "message": "Limpar histórico",
@@ -35,8 +39,44 @@
     "message": "Nenhum vídeo enviado ainda.",
     "description": "Texto de espaço reservado quando não há histórico para exibir"
   },
+  "emptyQueue": {
+    "message": "A fila está vazia.",
+    "description": "Texto de espaço reservado quando não há itens na fila"
+  },
+  "queueCount": {
+    "message": "itens na fila",
+    "description": "Etiqueta mostrando a contagem de filas"
+  },
+  "queueEnabled": {
+    "message": "Moda de cauda",
+    "description": "Rótulo para alternância do modo de fila"
+  },
+  "queueEnabledDesc": {
+    "message": "Quando ativado, os vídeos são adicionados à fila em vez de abrir novas janelas",
+    "description": "Descrição da alternância do modo de fila"
+  },
+  "stopQueue": {
+    "message": "Parar fila",
+    "description": "Botão para interromper a reprodução da fila atual"
+  },
+  "clearQueue": {
+    "message": "Limpar tudo",
+    "description": "Botão para limpar todos os itens da fila"
+  },
+  "playNext": {
+    "message": "Jogue a seguir",
+    "description": "Botão para reproduzir o próximo item da fila"
+  },
+  "playPrev": {
+    "message": "Jogar anterior",
+    "description": "Botão para reproduzir o item anterior da fila"
+  },
+  "removeItem": {
+    "message": "Remover",
+    "description": "Botão para remover item da fila"
+  },
   "optionsTitle": {
-    "message": "Configurações do MPV Opener for Firefox",
+    "message": "Configurações do abridor de MPV",
     "description": "Título principal na página do painel de preferências"
   },
   "playbackSettings": {
@@ -64,7 +104,7 @@
     "description": "Rótulo especificando se o vídeo começa a ser reproduzido ou pausado"
   },
   "statePlaying": {
-    "message": "Reproduzindo",
+    "message": "Jogando",
     "description": "Valor inicial para execução imediata de mídia"
   },
   "statePaused": {
@@ -140,7 +180,7 @@
     "description": "Cabeçalho do título principal dentro da página de visualização do pescador de fluxo de mídia"
   },
   "snifferSubtitle": {
-    "message": "Streams capturados (anúncios filtrados automaticamente):",
+    "message": "Fluxos capturados",
     "description": "Listar elementos capturados com sucesso no rastreamento de legendas"
   },
   "snifferInstructions": {
@@ -152,24 +192,24 @@
     "description": "Rótulo aplicado dinamicamente nos menus contextuais do botão direito da página"
   },
   "sendToMpvBtnText": {
-    "message": "🚀 Enviar para MPV",
+    "message": "Enviar para MPV",
     "description": "Gatilho de ação funcional atribuído a itens encontrados dentro da interface do sniffer"
   },
   "welcomeTitle": {
-    "message": "Quase pronto! Configuração necessária 🐧",
+    "message": "Quase pronto! Configuração necessária",
     "description": "Primeiro instale o cabeçalho de visualização de boas-vindas de integração"
   },
   "welcomeIntro": {
-    "message": "O <strong>MPV Opener para Firefox</strong> foi adicionado ao seu navegador, mas ainda não pode se comunicar com o seu sistema Fedora. Siga estas duas etapas rápidas:",
+    "message": "O MPV Opener para Firefox foi adicionado ao seu navegador, mas ainda não consegue se comunicar com o seu sistema. Siga estas duas etapas rápidas:",
     "description": "Parágrafo de introdução enfatizando problemas de handshake de execução de host local"
   },
   "welcomeStep1Title": {
-    "message": "1. Instale as dependências do Fedora",
+    "message": "1. Instale dependências",
     "description": "Título do cabeçalho explicando as dependências do pacote operacional"
   },
   "welcomeStep1Desc": {
     "message": "Abra seu terminal e execute este comando para instalar o player, mecanismo extrator e plugin de mídia:",
-    "description": "Detalhes da descrição da instrução bloqueiam o bloco CLI anterior"
+    "description": "Bloco de detalhes da descrição da instrução anterior ao bloco CLI"
   },
   "welcomeStep2Title": {
     "message": "2. Habilite a ponte de comunicação (host nativo)",
@@ -200,7 +240,271 @@
     "description": "Explicação do mapeamento de teclas de atalho visando a configuração do perfil de escuta"
   },
   "shortcutOpenSnifferDesc": {
-    "message": "Abrir Modo Pesca de Mídia",
+    "message": "Abra o modo Sniffer de mídia",
     "description": "Aviso de mapeamento de teclas de atalho descrevendo caminhos de acesso diretamente nas guias de interceptação de mídia"
+  },
+  "snifferCapturedCount": {
+    "message": "capturado",
+    "description": "Rótulo mostrando a contagem de streams capturados"
+  },
+  "snifferCopyLink": {
+    "message": "Cópia",
+    "description": "Botão para copiar um link"
+  },
+  "snifferOpenTab": {
+    "message": "Abrir",
+    "description": "Botão para abrir link em nova aba"
+  },
+  "snifferExportAll": {
+    "message": "Exportar tudo",
+    "description": "Botão para exportar todos os links capturados"
+  },
+  "snifferClearAll": {
+    "message": "Limpar tudo",
+    "description": "Botão para limpar todos os links capturados"
+  },
+  "snifferSendAll": {
+    "message": "Enviar tudo",
+    "description": "Botão para enviar todos os links capturados para mpv"
+  },
+  "snifferCopied": {
+    "message": "Copiado!",
+    "description": "Confirmação quando o link é copiado"
+  },
+  "snifferExportSuccess": {
+    "message": "Links exportados para o console",
+    "description": "Confirmação quando os links são exportados"
+  },
+  "snifferEmpty": {
+    "message": "Nenhum stream capturado ainda. Siga as instruções acima.",
+    "description": "Mensagem de estado vazia no sniffer"
+  },
+  "nowPlaying": {
+    "message": "Agora jogando",
+    "description": "Mini player agora reproduzindo rótulo"
+  },
+  "volumeUp": {
+    "message": "Aumentar o volume",
+    "description": "Dica do botão Aumentar volume"
+  },
+  "volumeDown": {
+    "message": "Diminuir volume",
+    "description": "Dica do botão diminuir volume"
+  },
+  "previousTrack": {
+    "message": "Anterior",
+    "description": "Dica do botão da faixa anterior"
+  },
+  "nextTrack": {
+    "message": "Próximo",
+    "description": "Dica do botão da próxima faixa"
+  },
+  "playPause": {
+    "message": "Reproduzir/Pausar",
+    "description": "Dica do botão de pausa da reprodução"
+  },
+  "snifferChecking": {
+    "message": "Verificando...",
+    "description": "Mensagem de status ao verificar um link"
+  },
+  "snifferValid": {
+    "message": "Válido",
+    "description": "Mensagem de status quando o link é válido"
+  },
+  "snifferInvalid": {
+    "message": "Inválido",
+    "description": "Mensagem de status quando o link é inválido"
+  },
+  "snifferInvalidTooltip": {
+    "message": "Link não acessível",
+    "description": "Dica para links inválidos"
+  },
+  "snifferTestLink": {
+    "message": "Teste",
+    "description": "Botão para testar um link"
+  },
+  "snifferTestLinkTooltip": {
+    "message": "Teste se este link está acessível",
+    "description": "Dica para botão de teste"
+  },
+  "snifferTestAll": {
+    "message": "Teste tudo",
+    "description": "Botão para testar todos os links"
+  },
+  "snifferTestAllTooltip": {
+    "message": "Teste todos os links capturados",
+    "description": "Dica para o botão testar tudo"
+  },
+  "snifferTestResult": {
+    "message": "Resultado do teste:",
+    "description": "Título da caixa de diálogo do resultado do teste"
+  },
+  "snifferStatus": {
+    "message": "Status",
+    "description": "Etiqueta de status na caixa de diálogo de teste"
+  },
+  "snifferType": {
+    "message": "Tipo",
+    "description": "Digite o rótulo na caixa de diálogo de teste"
+  },
+  "snifferIsVideo": {
+    "message": "É vídeo",
+    "description": "O rótulo do vídeo está na caixa de diálogo de teste"
+  },
+  "snifferReason": {
+    "message": "Razão",
+    "description": "Rótulo do motivo na caixa de diálogo de teste"
+  },
+  "snifferYes": {
+    "message": "Sim",
+    "description": "Sim na caixa de diálogo de teste"
+  },
+  "snifferNo": {
+    "message": "No",
+    "description": "Não na caixa de diálogo de teste"
+  },
+  "snifferTesting": {
+    "message": "Testando...",
+    "description": "Status ao testar um link"
+  },
+  "snifferWait": {
+    "message": "Por favor, aguarde...",
+    "description": "Aguarde mensagem"
+  },
+  "snifferNoLinks": {
+    "message": "Sem links para testar",
+    "description": "Sem links para testar"
+  },
+  "snifferNoUrls": {
+    "message": "Nenhum URL para exportar",
+    "description": "Nenhum URL para exportar"
+  },
+  "snifferNoStreams": {
+    "message": "Não há streams para enviar",
+    "description": "Não há streams para enviar"
+  },
+  "snifferLinks": {
+    "message": "links?",
+    "description": "Pergunta sobre links"
+  },
+  "snifferStreams": {
+    "message": "transmite para mpv?",
+    "description": "Pergunta sobre fluxos"
+  },
+  "snifferFilter": {
+    "message": "Filtro",
+    "description": "Etiqueta do filtro"
+  },
+  "snifferAllQualities": {
+    "message": "Todas as qualidades",
+    "description": "Opção de todas as qualidades"
+  },
+  "snifferTestAllConfirm": {
+    "message": "Teste tudo",
+    "description": "Teste todas as mensagens de confirmação"
+  },
+  "snifferSendAllConfirm": {
+    "message": "Enviar tudo",
+    "description": "Enviar todas as mensagens de confirmação"
+  },
+  "snifferClearConfirm": {
+    "message": "Limpar todos os fluxos capturados?",
+    "description": "Limpar mensagem de confirmação"
+  },
+  "popupResolutionCap": {
+    "message": "Limite de resolução:",
+    "description": "Rótulo para seletor de resolução no pop-up"
+  },
+  "popupBestQuality": {
+    "message": "Melhor (máx.)",
+    "description": "Opção pela melhor qualidade"
+  },
+  "popup1080p": {
+    "message": "1080p",
+    "description": "Opção 1080p"
+  },
+  "popup720p": {
+    "message": "720b",
+    "description": "Opção 720p"
+  },
+  "popup480p": {
+    "message": "480p",
+    "description": "Opção 480p"
+  },
+  "playerIdle": {
+    "message": "Parado",
+    "description": "Status ocioso do jogador"
+  },
+  "noVideoPlaying": {
+    "message": "Nenhum vídeo sendo reproduzido",
+    "description": "Espaço reservado quando nenhum vídeo está sendo reproduzido"
+  },
+  "timeSeparator": {
+    "message": "/",
+    "description": "Separador de tempo no player"
+  },
+  "playerPrevious": {
+    "message": "Anterior",
+    "description": "Botão de faixa anterior"
+  },
+  "playerNext": {
+    "message": "Próximo",
+    "description": "Botão próxima faixa"
+  },
+  "playerVolume": {
+    "message": "Volume",
+    "description": "Etiqueta de volume"
+  },
+  "openQueueManager": {
+    "message": "Abrir gerenciador de filas",
+    "description": "Botão para abrir a página do gerenciador de filas"
+  },
+  "viewQueue": {
+    "message": "Ver fila",
+    "description": "Item do menu de contexto para visualizar a fila"
+  },
+  "queueManagerTitle": {
+    "message": "Gerenciador de filas",
+    "description": "Título da página do gerenciador de filas"
+  },
+  "queueEmptyStatus": {
+    "message": "A fila está vazia.",
+    "description": "Status da fila vazia"
+  },
+  "queueCompleted": {
+    "message": "Concluído",
+    "description": "Status de fila concluída"
+  },
+  "queuePaused": {
+    "message": "Pausado",
+    "description": "Status da fila pausada"
+  },
+  "queuePlaying": {
+    "message": "Jogando",
+    "description": "Status de reprodução na fila"
+  },
+  "queueRemaining": {
+    "message": "restante",
+    "description": "Restantes itens na fila"
+  },
+  "queueStatusCompleted": {
+    "message": "✓ Concluído ({atual} / {total})",
+    "description": "Status de fila concluída com contagens"
+  },
+  "queueStatusPlaying": {
+    "message": "▶ Jogando ({remaining} restante)",
+    "description": "Status da fila em reprodução com contagem restante"
+  },
+  "queueStatusPaused": {
+    "message": "⏸ Pausado ({count} itens)",
+    "description": "Status da fila pausada com contagem de itens"
+  },
+  "queueStatusIdle": {
+    "message": "⏹ Inativo",
+    "description": "Status de fila inativa"
+  },
+  "queueItemsLabel": {
+    "message": "Unid",
+    "description": "Etiqueta de itens na fila"
   }
 }

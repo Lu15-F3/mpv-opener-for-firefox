@@ -1,0 +1,182 @@
+{
+  "installer": {
+    "message": "MPV Opener for Firefox - Installer v7.0",
+    "description": "Installer title"
+  },
+  "uninstaller": {
+    "message": "MPV Opener for Firefox - Uninstaller",
+    "description": "Uninstaller title"
+  },
+  "checking_deps": {
+    "message": "Checking dependencies...",
+    "description": "Checking dependencies message"
+  },
+  "all_deps_installed": {
+    "message": "All dependencies installed.",
+    "description": "All dependencies installed"
+  },
+  "missing_deps": {
+    "message": "Missing dependencies:",
+    "description": "Missing dependencies"
+  },
+  "install_command": {
+    "message": "Please install them first:",
+    "description": "Install command"
+  },
+  "creating_dirs": {
+    "message": "Creating directories...",
+    "description": "Creating directories"
+  },
+  "installing_wrapper": {
+    "message": "Installing native wrapper...",
+    "description": "Installing wrapper"
+  },
+  "generating_manifest": {
+    "message": "Generating manifest...",
+    "description": "Generating manifest"
+  },
+  "verifying": {
+    "message": "Verifying installation...",
+    "description": "Verifying"
+  },
+  "verified": {
+    "message": "Verified successfully!",
+    "description": "Verified"
+  },
+  "failed": {
+    "message": "Failed to install",
+    "description": "Failed"
+  },
+  "testing": {
+    "message": "Testing Native Host communication...",
+    "description": "Testing"
+  },
+  "test_passed": {
+    "message": "Native Host test passed",
+    "description": "Test passed"
+  },
+  "test_failed": {
+    "message": "Native Host test failed",
+    "description": "Test failed"
+  },
+  "complete": {
+    "message": "Installation completed successfully!",
+    "description": "Complete"
+  },
+  "ready": {
+    "message": "MPV Opener for Firefox is ready to use!",
+    "description": "Ready"
+  },
+  "restart": {
+    "message": "You may need to restart Firefox for changes to take effect.",
+    "description": "Restart"
+  },
+  "next_steps": {
+    "message": "Next steps:",
+    "description": "Next steps"
+  },
+  "click_icon": {
+    "message": "Click the extension icon to test",
+    "description": "Click icon"
+  },
+  "shortcut_video": {
+    "message": "Use Ctrl+Alt+M to send video to mpv",
+    "description": "Shortcut video"
+  },
+  "shortcut_sniffer": {
+    "message": "Use Ctrl+Alt+V to open the Media Sniffer",
+    "description": "Shortcut sniffer"
+  },
+  "links": {
+    "message": "Links:",
+    "description": "Links"
+  },
+  "addon_store": {
+    "message": "Add-on Store",
+    "description": "Addon store"
+  },
+  "github": {
+    "message": "GitHub",
+    "description": "GitHub"
+  },
+  "already_installed": {
+    "message": "Native Host already appears to be installed.",
+    "description": "Already installed"
+  },
+  "reinstall": {
+    "message": "Do you want to reinstall?",
+    "description": "Reinstall"
+  },
+  "cancelled": {
+    "message": "Installation cancelled.",
+    "description": "Cancelled"
+  },
+  "error_source": {
+    "message": "Error: Required files not found in native-host folder",
+    "description": "Error source"
+  },
+  "removing": {
+    "message": "Removing components...",
+    "description": "Removing"
+  },
+  "removed": {
+    "message": "Removed:",
+    "description": "Removed"
+  },
+  "not_found": {
+    "message": "Not found:",
+    "description": "Not found"
+  },
+  "cleaning": {
+    "message": "Cleaning empty directories...",
+    "description": "Cleaning"
+  },
+  "removed_empty": {
+    "message": "Removed empty:",
+    "description": "Removed empty"
+  },
+  "dir_not_empty": {
+    "message": "Directory not empty or not found:",
+    "description": "Directory not empty"
+  },
+  "uninstall_complete": {
+    "message": "Uninstallation completed successfully!",
+    "description": "Uninstall complete"
+  },
+  "uninstall_confirm": {
+    "message": "This will remove MPV Opener from your system.",
+    "description": "Uninstall confirm"
+  },
+  "continue_prompt": {
+    "message": "Continue?",
+    "description": "Continue prompt"
+  },
+  "deps_mpv": {
+    "message": "mpv",
+    "description": "mpv dependency"
+  },
+  "deps_ytdlp": {
+    "message": "yt-dlp",
+    "description": "yt-dlp dependency"
+  },
+  "deps_mpv_mpris": {
+    "message": "mpv-mpris",
+    "description": "mpv-mpris dependency"
+  },
+  "deps_python": {
+    "message": "python3",
+    "description": "python3 dependency"
+  },
+  "deps_curl": {
+    "message": "curl",
+    "description": "curl dependency"
+  },
+  "deps_socat": {
+    "message": "socat",
+    "description": "socat dependency"
+  },
+  "language": {
+    "message": "Language",
+    "description": "Language label"
+  }
+}

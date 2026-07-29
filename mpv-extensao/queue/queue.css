@@ -1,0 +1,499 @@
+/* ============================================================
+   queue.css - MPV Opener for Firefox v7.0
+   ============================================================ */
+
+:root {
+  --bg-color: #1a1b26;
+  --card-bg: #24283b;
+  --text-color: #c0caf5;
+  --text-muted: #565f89;
+  --text-light: #a9b1d6;
+  --accent-color: #7aa2f7;
+  --accent-hover: #3b4261;
+  --accent-pink: #f5c2e7;
+  --success-green: #9ece6a;
+  --warning-yellow: #e0af68;
+  --danger-color: #f7768e;
+  --border-color: #3b4261;
+  --border-radius: 8px;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.queue-container {
+  max-width: 700px;
+  width: 100%;
+  background-color: var(--card-bg);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+}
+
+h1 {
+  font-size: 22px;
+  margin: 0;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================================
+   Mini Player (Controlador Definitivo)
+   ============================================================ */
+.mini-player {
+  background: var(--bg-color);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  transition: var(--transition);
+}
+
+.mini-player-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.mini-player-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.mini-player-status {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 4px;
+  background: var(--text-muted);
+  color: var(--bg-color);
+  transition: background 0.3s ease;
+}
+
+.mini-player-status.playing {
+  background: var(--success-green);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.mini-player-status.paused {
+  background: var(--warning-yellow);
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(0.95); }
+}
+
+.mini-player-info {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.mini-player-thumbnail {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  border-radius: 6px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+
+.mini-player-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mini-player-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.mini-player-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.mini-player-title-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mini-player-title-text.empty {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.mini-player-time {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-family: 'SFMono-Regular', Consolas, monospace;
+  margin-top: 2px;
+}
+
+.mini-player-timeline {
+  margin-bottom: 10px;
+}
+
+.mini-player-timeline input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--border-color);
+  outline: none;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+.mini-player-timeline input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.mini-player-timeline input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.mini-player-timeline input[type="range"]:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.mini-player-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.mp-btn {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mp-btn:hover {
+  border-color: var(--accent-color);
+  background: var(--bg-color);
+  transform: translateY(-2px) scale(1.05);
+}
+
+.mp-btn:active {
+  transform: scale(0.85) !important;
+}
+
+.mp-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.mp-play-btn {
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-pink));
+  border-color: transparent;
+  color: var(--bg-color);
+  width: 44px;
+  height: 44px;
+  font-size: 18px;
+}
+
+.mp-play-btn:hover {
+  transform: translateY(-2px) scale(1.08);
+  box-shadow: 0 4px 16px rgba(122, 162, 247, 0.4);
+}
+
+.mp-play-btn.playing {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.mp-vol-btn {
+  font-size: 12px;
+  width: 30px;
+  height: 30px;
+}
+
+.volume-indicator {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  padding: 6px 12px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.volume-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  min-width: 45px;
+}
+
+.volume-bar {
+  flex: 1;
+  height: 4px;
+  background: var(--border-color);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.volume-level {
+  height: 100%;
+  background: var(--accent-color);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.volume-percent {
+  font-size: 11px;
+  color: var(--text-muted);
+  min-width: 40px;
+  text-align: right;
+  font-family: 'SFMono-Regular', Consolas, monospace;
+}
+
+/* ============================================================
+   Queue Status
+   ============================================================ */
+.queue-status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  background: var(--bg-color);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+}
+
+#queue-status-text {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+#queue-status-text.active {
+  color: var(--success-green);
+}
+
+#queue-status-text.idle {
+  color: var(--text-muted);
+}
+
+#queue-count {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.queue-actions-bar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+
+.btn-warning {
+  background: linear-gradient(135deg, var(--warning-yellow), #565f89);
+  color: var(--text-color);
+  border: none;
+  padding: 6px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-warning:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(224, 175, 104, 0.3);
+}
+
+/* ============================================================
+   Queue List
+   ============================================================ */
+#queue-list-container {
+  background-color: var(--bg-color);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  max-height: 450px;
+  overflow-y: auto;
+}
+
+#queue-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.queue-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.queue-item:last-child {
+  border-bottom: none;
+}
+
+.queue-item:hover {
+  background-color: var(--card-bg);
+}
+
+.queue-item-active {
+  border-left: 3px solid var(--accent-color);
+  background-color: rgba(122, 162, 247, 0.08);
+}
+
+.queue-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-width: 78%;
+}
+
+.queue-item-title {
+  font-size: 13px;
+  color: var(--text-color);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.queue-item-status {
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.queue-item-status.playing {
+  color: var(--success-green);
+}
+
+.queue-item-status.waiting {
+  color: var(--text-muted);
+}
+
+.queue-item-status.played {
+  color: var(--text-muted);
+}
+
+.queue-item-remove {
+  background: none;
+  border: none;
+  color: var(--danger-color);
+  cursor: pointer;
+  font-size: 16px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.queue-item-remove:hover {
+  background-color: rgba(247, 118, 142, 0.15);
+  transform: scale(1.1);
+}
+
+.empty-queue {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* ============================================================
+   Scrollbar
+   ============================================================ */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}

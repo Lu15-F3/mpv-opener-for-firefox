@@ -4,7 +4,7 @@
     "description": "ﺢﻔﺼﺘﻤﻟﺍ ﻲﻓ ﺽﻭﺮﻌﻤﻟﺍ ﺩﺍﺪﺘﻣﻻ﻿ﺍ ﻢﺳﺍ"
   },
   "extensionDescription": {
-    "message": ".ﻚﻳﺪﻟ ﻲﻠﺤﻤﻟﺍ mpv ﻞﻐﺸﻣ ﻰﻟﺇ Firefox ﻦﻣ ﺓﺮﺷﺎﺒﻣ ﻮﻳﺪﻴﻔﻟﺍ ﻂﺑﺍﻭﺭ ﻞﺳﺭﺃ",
+    "message": ".ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ ﻢﻋﺩ ﻊﻣ ﻚﺑ ﺹﺎﺨﻟﺍ ﻲﻠﺤﻤﻟﺍ mpv ﻞﻐﺸﻣ ﻰﻟﺇ Firefox ﻦﻣ ﺓﺮﺷﺎﺒﻣ ﻮﻳﺪﻴﻔﻟﺍ ﻂ",
     "description": "ﺕﺎﻓﺎﺿﻹ﻿ﺍ ﺮﻳﺪﻣ ﻲﻓ ﺢﺿﻮﻤﻟﺍ ﺩﺍﺪﺘﻣﻻ﻿ﺍ ﻒﺻﻭ"
   },
   "sendToMpv": {
@@ -27,6 +27,10 @@
     "message": "ﺦﻳﺭﺎﺗ",
     "description": "ﺔﻘﺜﺒﻨﻤﻟﺍ ﺔﻬﺟﺍﻮﻟﺍ ﻲﻓ \"ﻞﺠﺴﻟﺍ\" ﺐﻳﻮﺒﺘﻟﺍ ﺔﻣﻼ﻿ﻋ ﻥﺍﻮﻨﻋ"
   },
+  "tabQueue": {
+    "message": "ﺭﻮﺑﺎﻃ",
+    "description": "ﺔﻘﺜﺒﻨﻤﻟﺍ ﺔﻬﺟﺍﻮﻟﺍ ﻲﻓ ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ ﺐﻳﻮﺒﺗ ﺔﻣﻼ﻿ﻋ ﻥﺍﻮﻨﻋ"
+  },
   "clearHistory": {
     "message": "ﺦﻳﺭﺎﺘﻟﺍ ﺢﺴﻣ",
     "description": "ﻲﻠﺤﻤﻟﺍ ﺦﻳﺭﺎﺘﻟﺍ ﻦﻳﺰﺨﺗ ﺢﺴﻤﻟ ﺭﺰﻟﺍ ﺺﻧ"
@@ -34,6 +38,42 @@
   "emptyHistory": {
     "message": ".ﺪﻌﺑ ﻮﻳﺪﻴﻓ ﻊﻃﺎﻘﻣ ﻝﺎﺳﺭﺇ ﻢﺘﻳ ﻢﻟ",
     "description": "ﻪﺿﺮﻌﻟ ﻞﺠﺳ ﻙﺎﻨﻫ ﻥﻮﻜﻳ ﻻ﻿ ﺎﻣﺪﻨﻋ ﺐﺋﺎﻨﻟﺍ ﺮﺼﻨﻌﻟﺍ ﺺﻧ"
+  },
+  "emptyQueue": {
+    "message": ".ﺔﻏﺭﺎﻓ ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ",
+    "description": "ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ ﺮﺻﺎﻨﻋ ﺩﻮﺟﻭ ﻡﺪﻋ ﺪﻨﻋ ﺐﺋﺎﻨﻟﺍ ﺮﺼﻨﻌﻟﺍ ﺺﻧ"
+  },
+  "queueCount": {
+    "message": "ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ ﻲﻓ ﺮﺻﺎﻨﻌﻟﺍ",
+    "description": "ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﻢﺋﺍﻮﻗ ﺩﺪﻋ ﺮﻬﻈﺗ ﺔﻣﻼ﻿ﻋ"
+  },
+  "queueEnabled": {
+    "message": "ﻞﻳﺬﻟﺍ ءﺎﻳﺯﺃ",
+    "description": "ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ ﻊﺿﻭ ﻞﻳﺪﺒﺘﻟ ﺔﻴﻤﺴﺗ"
+  },
+  "queueEnabledDesc": {
+    "message": "ﺓﺪﻳﺪﺟ ﺬﻓﺍﻮﻧ ﺢﺘﻓ ﻦﻣ ﻻً﻿ﺪﺑ ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ ﻰﻟﺇ ﻮﻳﺪﻴﻔﻟﺍ ﻊﻃﺎﻘﻣ ﺔﻓﺎﺿﺇ ﻢﺘﺗ ،ﻦﻴﻜﻤﺘﻟﺍ ﺪﻨﻋ",
+    "description": "ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ ﻊﺿﻭ ﻞﻳﺪﺒﺘﻟ ﻒﺻﻭ"
+  },
+  "stopQueue": {
+    "message": "ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ ﻑﺎﻘﻳﺇ",
+    "description": "ﺔﻴﻟﺎﺤﻟﺍ ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ ﻞﻴﻐﺸﺗ ﻑﺎﻘﻳﻹ﻿ ﺭﺯ"
+  },
+  "clearQueue": {
+    "message": "ﻞﻜﻟﺍ ﺢﺴﻣ",
+    "description": "ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ ﺮﺻﺎﻨﻋ ﺔﻓﺎﻛ ﺢﺴﻤﻟ ﺭﺯ"
+  },
+  "playNext": {
+    "message": "ﻲﻟﺎﺘﻟﺍ ﺐﻌﻟﺍ",
+    "description": "ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ ﻲﻓ ﻲﻟﺎﺘﻟﺍ ﺮﺼﻨﻌﻟﺍ ﻞﻴﻐﺸﺘﻟ ﺭﺯ"
+  },
+  "playPrev": {
+    "message": "ﻖﺑﺎﺴﻟﺍ ﺐﻌﻟﺍ",
+    "description": "ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ ﻲﻓ ﻖﺑﺎﺴﻟﺍ ﺮﺼﻨﻌﻟﺍ ﻞﻴﻐﺸﺘﻟ ﺭﺯ"
+  },
+  "removeItem": {
+    "message": "ﻞﻳﺰﻳ",
+    "description": "ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ ﻦﻣ ﺮﺼﻨﻌﻟﺍ ﺔﻟﺍﺯﻹ﻿ ﺭﺯ"
   },
   "optionsTitle": {
     "message": "MPV ﺢﺘﻓ ﺕﺍﺩﺍﺪﻋﺇ",
@@ -140,7 +180,7 @@
     "description": "ﻂﺋﺎﺳﻮﻟﺍ ﻖﻓﺩ ﺮﺸﻴﻓ ﺽﺮﻋ ﺔﺤﻔﺻ ﻞﺧﺍﺩ ﻲﺴﻴﺋﺮﻟﺍ ﻥﺍﻮﻨﻌﻟﺍ ﺱﺃﺭ"
   },
   "snifferSubtitle": {
-    "message": ":(ﺎﻴًﺋﺎﻘﻠﺗ ﺕﺎﻧﻼ﻿ﻋﻹ﻿ﺍ ﺔﻴﻔﺼﺗ) ﺔﻄﻘﺘﻠﻤﻟﺍ ﺕﺎﻘﻓﺪﺘﻟﺍ",
+    "message": "ﺔﻄﻘﺘﻠﻤﻟﺍ ﺕﺎﻘﻓﺪﺘﻟﺍ",
     "description": "ﺡﺎﺠﻨﺑ ﻦﻳﺮﺻﺎﺤﻤﻟﺍ ﺮﺻﺎﻨﻌﻟﺍ ﺔﻤﺟﺮﺘﻟﺍ ﻊﺒﺘﺗ ﺔﻤﺋﺎﻗ"
   },
   "snifferInstructions": {
@@ -152,19 +192,19 @@
     "description": "ﺔﺤﻔﺼﻟﺍ ﻰﻠﻋ ﻦﻤﻳﻷ﻿ﺍ ﺱﻭﺎﻤﻟﺍ ﺭﺰﺑ ﺮﻘﻨﻠﻟ ﺔﻴﻗﺎﻴﺴﻟﺍ ﻢﺋﺍﻮﻘﻟﺍ ﻰﻠﻋ ﺎﻴًﻜﻴﻣﺎﻨﻳﺩ ﻒﻴﻨﺼﺘﻟﺍ ﻖﻴﺒﻄﺗ"
   },
   "sendToMpvBtnText": {
-    "message": "MPV ﻰﻟﺇ ﻞﺳﺭﺃ 🚀",
+    "message": "MPV ﻰﻟﺇ ﻝﺎﺳﺭﺇ",
     "description": "ﻢﺸﻟﺍ ﺔﻬﺟﺍﻭ ﻞﺧﺍﺩ ﺓﺩﻮﺟﻮﻤﻟﺍ ﺮﺻﺎﻨﻌﻠﻟ ﻲﻔﻴﻇﻮﻟﺍ ءﺍﺮﺟﻹ﻿ﺍ ﻞﻐﺸﻣ ﻦﻴﻴﻌﺗ ﻢﺗ"
   },
   "welcomeTitle": {
-    "message": "🐧 ﺏﻮﻠﻄﻣ ﺩﺍﺪﻋﻹ﻿ﺍ !ﺎﺒًﻳﺮﻘﺗ ﺰﻫﺎﺟ",
+    "message": "ﺏﻮﻠﻄﻣ ﺩﺍﺪﻋﻹ﻿ﺍ !ﺎﺒًﻳﺮﻘﺗ ﺰﻫﺎﺟ",
     "description": "ﺓﺮﺋﺎﻄﻟﺍ ﻦﺘﻣ ﻰﻠﻋ ﻲﺒﻴﺣﺮﺘﻟﺍ ﺽﺮﻌﻟﺍ ﺱﺃﺭ ﺖﻴﺒﺜﺘﺑ ﻻً﻿ﻭﺃ ﻢﻗ"
   },
   "welcomeIntro": {
-    "message": ":ﻦﻴﺘﻌﻳﺮﺴﻟﺍ ﻦﻴﺗﻮﻄﺨﻟﺍ ﻦﻴﺗﺎﻫ ﻊﺒﺗﺍ .ﻥﻵ﻿ﺍ ﻰﺘﺣ ﻚﺑ ﺹﺎﺨﻟﺍ Fedora ﻡﺎﻈﻨﺑ ﻝﺎﺼﺗﻻ﻿ﺍ ﻪﻨﻜﻤﻳ ﻻ﻿ ﻦ",
+    "message": ":ﻦﻴﺘﻌﻳﺮﺴﻟﺍ ﻦﻴﺗﻮﻄﺨﻟﺍ ﻦﻴﺗﺎﻫ ﻊﺒﺗﺍ .ﻥﻵ﻿ﺍ ﻰﺘﺣ ﻚﻣﺎﻈﻨﺑ ﻝﺎﺼﺗﻻ﻿ﺍ ﻪﻨﻜﻤﻳ ﻻ﻿ ﻦﻜﻟ ،ﻚﺤﻔﺼﺘﻣ ﻰﻟﺇ",
     "description": "ﻲﻠﺤﻤﻟﺍ ﻒﻴﻀﻤﻟﺍ ﺬﻴﻔﻨﺗ ﺪﻨﻋ ﺔﺤﻓﺎﺼﻤﻟﺍ ﺕﻼ﻿ﻜﺸﻣ ﻰﻠﻋ ﺪﻛﺆﺗ ﺔﻣﺪﻘﻣ ﺓﺮﻘﻓ"
   },
   "welcomeStep1Title": {
-    "message": "ﺍﺭﻭﺪﻴﻓ ﺕﺎﻴﻌﺒﺗ ﺖﻴﺒﺜﺗ .1",
+    "message": "ﺕﺎﻴﻌﺒﺘﻟﺍ ﺖﻴﺒﺜﺗ .1",
     "description": "ﻞﻴﻐﺸﺘﻟﺍ ﺔﻣﺰﺣ ﺕﺎﻴﻌﺒﺗ ﺡﺮﺸﻳ ﺱﺃﺮﻟﺍ ﻥﺍﻮﻨﻋ"
   },
   "welcomeStep1Desc": {
@@ -173,10 +213,10 @@
   },
   "welcomeStep2Title": {
     "message": "(ﻲﻠﺻﻷ﻿ﺍ ﻒﻴﻀﻤﻟﺍ) ﻝﺎﺼﺗﻻ﻿ﺍ ﺮﺴﺟ ﻦﻴﻜﻤﺗ .2",
-    "description": "ﺐﻴﺴﻨﺘﻟﺍ ﺕﺎﻧﻭﺫﺃ ﻡﺎﻬﻣ ﻞﻴﺼﻔﺘﻟﺎﺑ ﺢﺿﻮﻳ ﺱﺃﺭ"
+    "description": "ﻊﺿﻮﻤﻟﺍ ﺕﺎﻧﻭﺫﺃ ﻡﺎﻬﻣ ﻞﻴﺼﻔﺘﻟﺎﺑ ﺢﺿﻮﻳ ﺱﺃﺭ"
   },
   "welcomeStep2Desc": {
-    "message": ":ﻲﻠﺤﻤﻟﺍ ﻞﻣﺎﻜﺘﻟﺍ ﺕﺎﻧﺎﻴﺑ ﻞﻴﺠﺴﺘﻟ ﺖﺒﺜﻤﻠﻟ ﻲﻤﺳﺮﻟﺍ ﻲﺼﻨﻟﺍ ﺞﻣﺎﻧﺮﺒﻟﺍ ﺬﻴﻔﻨﺘﺑ ﻢﻗ ﻥﻵ﻿ﺍ",
+    "message": ":ﻲﻠﺤﻤﻟﺍ ﻞﻣﺎﻜﺘﻟﺍ ﺕﺎﻧﺎﻴﺑ ﻞﻴﺠﺴﺘﻟ ﻲﻤﺳﺮﻟﺍ ﺖﻴﺒﺜﺘﻟﺍ ﺞﻣﺎﻧﺮﺑ ﺬﻴﻔﻨﺘﺑ ﻢﻗ ﻥﻵ﻿ﺍ",
     "description": "ﺖﻧﺮﺘﻧﻹ﻿ﺍ ﺮﺒﻋ ﺓﺮﻴﻔﻀﻟﺍ ﺖﻴﺒﺜﺗ ﺓﺍﺩﺃ ﺬﻴﻔﻨﺘﻟ ﺔﻴﺼﻨﻟﺍ ﺞﻣﺍﺮﺒﻟﺍ ﻰﻟﺇ ﺮﻴﺸﺗ ﻲﺘﻟﺍ ﻞﻴﺻﺎﻔﺘﻟﺍ"
   },
   "welcomeFooter": {
@@ -202,5 +242,269 @@
   "shortcutOpenSnifferDesc": {
     "message": "ﻂﺋﺎﺳﻮﻟﺍ ﻢﺷ ﻊﺿﻭ ﺢﺘﻓﺍ",
     "description": "ﻂﺋﺎﺳﻮﻟﺍ ﺽﺍﺮﺘﻋﺍ ﺐﻳﻮﺒﺗ ﺕﺎﻣﻼ﻿ﻋ ﻰﻟﺇ ﺓًﺮﺷﺎﺒﻣ ﻝﻮﺻﻮﻟﺍ ﺕﺍﺭﺎﺴﻣ ﺩﺪﺤﻳ ﻱﺬﻟﺍ ﻊﻳﺮﺴﻟﺍ ﻞﻴﻐﺸﺘﻟﺍ ﺢ"
+  },
+  "snifferCapturedCount": {
+    "message": "ﺎﻬﻴﻠﻋ ءﻼ﻿ﻴﺘﺳﻻ﻿ﺍ ﻢﺗ",
+    "description": "ﺎﻬﻃﺎﻘﺘﻟﺍ ﻢﺗ ﻲﺘﻟﺍ ﺕﺎﻘﻓﺪﺘﻟﺍ ﺩﺪﻋ ﺢﺿﻮﺗ ﺔﻣﻼ﻿ﻋ"
+  },
+  "snifferCopyLink": {
+    "message": "ﺦﺴﻨﻳ",
+    "description": "ﻂﺑﺍﺮﻟﺍ ﺦﺴﻨﻟ ﺭﺯ"
+  },
+  "snifferOpenTab": {
+    "message": "ﺢﺘﻔﻳ",
+    "description": "ﺓﺪﻳﺪﺟ ﺐﻳﻮﺒﺗ ﺔﻣﻼ﻿ﻋ ﻲﻓ ﻂﺑﺍﺮﻟﺍ ﺢﺘﻔﻟ ﺭﺯ"
+  },
+  "snifferExportAll": {
+    "message": "ﻞﻜﻟﺍ ﺮﻳﺪﺼﺗ",
+    "description": "ﺎﻬﻃﺎﻘﺘﻟﺍ ﻢﺗ ﻲﺘﻟﺍ ﻂﺑﺍﻭﺮﻟﺍ ﺔﻓﺎﻛ ﺮﻳﺪﺼﺘﻟ ﺭﺯ"
+  },
+  "snifferClearAll": {
+    "message": "ﻞﻜﻟﺍ ﺢﺴﻣ",
+    "description": "ﺎﻬﻃﺎﻘﺘﻟﺍ ﻢﺗ ﻲﺘﻟﺍ ﻂﺑﺍﻭﺮﻟﺍ ﻊﻴﻤﺟ ﺢﺴﻤﻟ ﺭﺯ"
+  },
+  "snifferSendAll": {
+    "message": "ﻞﻜﻟﺍ ﻞﺳﺭﺃ",
+    "description": "mpv ﻰﻟﺇ ﺔﻄﻘﺘﻠﻤﻟﺍ ﻂﺑﺍﻭﺮﻟﺍ ﻊﻴﻤﺟ ﻝﺎﺳﺭﻹ﻿ ﺭﺯ"
+  },
+  "snifferCopied": {
+    "message": "!ﺥﻮﺴﻨﻣ",
+    "description": "ﻂﺑﺍﺮﻟﺍ ﺦﺴﻧ ﺪﻨﻋ ﺪﻴﻛﺄﺘﻟﺍ"
+  },
+  "snifferExportSuccess": {
+    "message": "ﻢﻜﺤﺘﻟﺍ ﺓﺪﺣﻭ ﻰﻟﺇ ﻂﺑﺍﻭﺮﻟﺍ ﺮﻳﺪﺼﺗ ﻢﺗ",
+    "description": "ﻂﺑﺍﻭﺮﻟﺍ ﺮﻳﺪﺼﺗ ﺪﻨﻋ ﺪﻴﻛﺄﺘﻟﺍ"
+  },
+  "snifferEmpty": {
+    "message": ".ﻩﻼ﻿ﻋﺃ ﺓﺭﻮﻛﺬﻤﻟﺍ ﺕﺎﻤﻴﻠﻌﺘﻟﺍ ﻊﺒﺗﺍ .ﻥﻵ﻿ﺍ ﻰﺘﺣ ﺕﺍﺭﺎﻴﺗ ﻱﺃ ﻁﺎﻘﺘﻟﺍ ﻢﺘﻳ ﻢﻟ",
+    "description": "ﻢﺸﻟﺍ ﻲﻓ ﺔﻏﺭﺎﻓ ﺔﻟﺎﺣ ﺔﻟﺎﺳﺭ"
+  },
+  "nowPlaying": {
+    "message": "ﻥﻵ﻿ﺍ ﻞﻴﻐﺸﺘﻟﺍ",
+    "description": "ﺔﻴﻤﺴﺘﻟﺍ ﻥﻵ﻿ﺍ ﺐﻌﻠﻳ ﺮﻴﻐﺻ ﺐﻋﻻ﻿"
+  },
+  "volumeUp": {
+    "message": "ﺕﻮﺼﻟﺍ ﻯﻮﺘﺴﻣ ﻊﻓﺭ",
+    "description": "ﺕﻮﺼﻟﺍ ﻊﻓﺭ ﺭﺯ ﺓﺍﺩﺃ ﺢﻴﻤﻠﺗ"
+  },
+  "volumeDown": {
+    "message": "ﺕﻮﺼﻟﺍ ﻯﻮﺘﺴﻣ ﺾﻔﺧ",
+    "description": "ﺕﻮﺼﻟﺍ ﺾﻔﺧ ﺭﺯ ﺓﺍﺩﺃ ﺢﻴﻤﻠﺗ"
+  },
+  "previousTrack": {
+    "message": "ﻖﺑﺎﺳ",
+    "description": "ﻖﺑﺎﺴﻟﺍ ﺭﺎﺴﻤﻟﺍ ﺭﺯ ﺓﺍﺩﺃ ﺢﻴﻤﻠﺗ"
+  },
+  "nextTrack": {
+    "message": "ﻲﻟﺎﺘﻟﺍ",
+    "description": "ﻲﻟﺎﺘﻟﺍ ﺭﺎﺴﻤﻟﺍ ﺭﺯ ﺓﺍﺩﺃ ﺢﻴﻤﻠﺗ"
+  },
+  "playPause": {
+    "message": "ﺖﻗﺆﻣ ﻑﺎﻘﻳﺇ/ﻞﻴﻐﺸﺗ",
+    "description": "ﺖﻗﺆﻤﻟﺍ ﻑﺎﻘﻳﻹ﻿ﺍ ﺭﺯ ﺢﻴﻤﻠﺗ ﻞﻴﻐﺸﺗ"
+  },
+  "snifferChecking": {
+    "message": "...ﻖﻘﺤﺘﻟﺍ ﺭٍﺎﺟ",
+    "description": "ﻁﺎﺒﺗﺭﻻ﻿ﺍ ﻦﻣ ﻖﻘﺤﺘﻟﺍ ءﺎﻨﺛﺃ ﺔﻟﺎﺤﻟﺍ ﺔﻟﺎﺳﺭ"
+  },
+  "snifferValid": {
+    "message": "ﺢﻟﺎﺻ",
+    "description": "ﺎﺤًﻟﺎﺻ ﻁﺎﺒﺗﺭﻻ﻿ﺍ ﻥﻮﻜﻳ ﺎﻣﺪﻨﻋ ﺔﻟﺎﺤﻟﺍ ﺔﻟﺎﺳﺭ"
+  },
+  "snifferInvalid": {
+    "message": "ﺢﻟﺎﺻ ﺮﻴﻏ",
+    "description": "ﺢﻟﺎﺻ ﺮﻴﻏ ﻁﺎﺒﺗﺭﻻ﻿ﺍ ﻥﻮﻜﻳ ﺎﻣﺪﻨﻋ ﺔﻟﺎﺤﻟﺍ ﺔﻟﺎﺳﺭ"
+  },
+  "snifferInvalidTooltip": {
+    "message": "ﻪﻴﻟﺇ ﻝﻮﺻﻮﻟﺍ ﻦﻜﻤﻳ ﻻ﻿ ﻂﺑﺍﺮﻟﺍ",
+    "description": "ﺔﺤﻟﺎﺼﻟﺍ ﺮﻴﻏ ﻂﺑﺍﻭﺮﻠﻟ ﺢﻴﻤﻠﺗ"
+  },
+  "snifferTestLink": {
+    "message": "ﻥﺎﺤﺘﻣﺍ",
+    "description": "ﻁﺎﺒﺗﺭﻻ﻿ﺍ ﺭﺎﺒﺘﺧﻻ﻿ ﺭﺯ"
+  },
+  "snifferTestLinkTooltip": {
+    "message": "ﻪﻴﻟﺇ ﻝﻮﺻﻮﻟﺍ ﻦﻜﻤﻳ ﻂﺑﺍﺮﻟﺍ ﺍﺬﻫ ﻥﺎﻛ ﺍﺫﺇ ﺎﻣ ﺭﺎﺒﺘﺧﺍ",
+    "description": "ﺭﺎﺒﺘﺧﻻ﻿ﺍ ﺭﺰﻟ ﺓﺍﺩﺃ ﺢﻴﻤﻠﺗ"
+  },
+  "snifferTestAll": {
+    "message": "ﻞﻜﻟﺍ ﺭﺎﺒﺘﺧﺍ",
+    "description": "ﻂﺑﺍﻭﺮﻟﺍ ﺔﻓﺎﻛ ﺭﺎﺒﺘﺧﻻ﻿ ﺭﺯ"
+  },
+  "snifferTestAllTooltip": {
+    "message": "ﺎﻬﻃﺎﻘﺘﻟﺍ ﻢﺗ ﻲﺘﻟﺍ ﻂﺑﺍﻭﺮﻟﺍ ﺔﻓﺎﻛ ﺭﺎﺒﺘﺧﺍ",
+    "description": "ﺭﺯ ﻞﻛ ﺭﺎﺒﺘﺧﻻ﻿ ﺓﺍﺩﺃ ﺢﻴﻤﻠﺗ"
+  },
+  "snifferTestResult": {
+    "message": ":ﺭﺎﺒﺘﺧﻻ﻿ﺍ ﺔﺠﻴﺘﻧ",
+    "description": "ﺭﺎﺒﺘﺧﻻ﻿ﺍ ﺔﺠﻴﺘﻧ ﺭﺍﻮﺣ ﻥﺍﻮﻨﻋ"
+  },
+  "snifferStatus": {
+    "message": "ﺔﻟﺎﺣ",
+    "description": "ﺭﺎﺒﺘﺧﻻ﻿ﺍ ﺭﺍﻮﺣ ﻊﺑﺮﻣ ﻲﻓ ﺔﻟﺎﺤﻟﺍ ﺔﻴﻤﺴﺗ"
+  },
+  "snifferType": {
+    "message": "ﺐﺘﻜﻳ",
+    "description": "ﺭﺎﺒﺘﺧﻻ﻿ﺍ ﺭﺍﻮﺣ ﻊﺑﺮﻣ ﻲﻓ ﺔﻴﻤﺴﺘﻟﺍ ﺐﺘﻛﺍ"
+  },
+  "snifferIsVideo": {
+    "message": "ﻮﻳﺪﻴﻓ ﻞﻫ",
+    "description": "ﺭﺎﺒﺘﺧﻻ﻿ﺍ ﺭﺍﻮﺣ ﻊﺑﺮﻣ ﻲﻓ ﻮﻳﺪﻴﻔﻟﺍ ﺔﻴﻤﺴﺗ ﻮﻫ"
+  },
+  "snifferReason": {
+    "message": "ﺐﺒﺳ",
+    "description": "ﺭﺎﺒﺘﺧﻻ﻿ﺍ ﺭﺍﻮﺣ ﻊﺑﺮﻣ ﻲﻓ ﺐﺒﺴﻟﺍ ﺔﻴﻤﺴﺗ"
+  },
+  "snifferYes": {
+    "message": "ﻢﻌﻧ",
+    "description": "ﺭﺎﺒﺘﺧﻻ﻿ﺍ ﺭﺍﻮﺣ ﻊﺑﺮﻣ ﻲﻓ ﻢﻌﻧ"
+  },
+  "snifferNo": {
+    "message": "No",
+    "description": "ﺭﺎﺒﺘﺧﻻ﻿ﺍ ﺭﺍﻮﺣ ﻊﺑﺮﻣ ﻲﻓ ﺪﺟﻮﻳ ﻻ﻿"
+  },
+  "snifferTesting": {
+    "message": "...ﺭﺎﺒﺘﺧﺍ",
+    "description": "ﻁﺎﺒﺗﺭﻻ﻿ﺍ ﺭﺎﺒﺘﺧﺍ ءﺎﻨﺛﺃ ﺔﻟﺎﺤﻟﺍ"
+  },
+  "snifferWait": {
+    "message": "...ﻚﻠﻀﻓ ﻦﻣ ﺮﻈﺘﻧﺍ",
+    "description": "ﺔﻟﺎﺳﺮﻟﺍ ﺮﻈﺘﻧﺍ"
+  },
+  "snifferNoLinks": {
+    "message": "ﺭﺎﺒﺘﺧﻼ﻿ﻟ ﻂﺑﺍﻭﺭ ﺪﺟﻮﺗ ﻻ﻿",
+    "description": "ﺭﺎﺒﺘﺧﻼ﻿ﻟ ﻂﺑﺍﻭﺭ ﺪﺟﻮﺗ ﻻ﻿"
+  },
+  "snifferNoUrls": {
+    "message": "ﺮﻳﺪﺼﺘﻠﻟ URL ﻦﻳﻭﺎﻨﻋ ﺪﺟﻮﺗ ﻻ﻿",
+    "description": "ﺮﻳﺪﺼﺘﻠﻟ URL ﻦﻳﻭﺎﻨﻋ ﺪﺟﻮﺗ ﻻ﻿"
+  },
+  "snifferNoStreams": {
+    "message": "ﺎﻬﻟﺎﺳﺭﻹ﻿ ﺕﺍﺭﺎﻴﺗ ﺪﺟﻮﺗ ﻻ﻿",
+    "description": "ﺎﻬﻟﺎﺳﺭﻹ﻿ ﺕﺍﺭﺎﻴﺗ ﺪﺟﻮﺗ ﻻ﻿"
+  },
+  "snifferLinks": {
+    "message": "؟ﻂﺑﺍﻭﺮﻟﺍ",
+    "description": "ﻂﺑﺍﻭﺮﻟﺍ ﻝﺍﺆﺳ"
+  },
+  "snifferStreams": {
+    "message": "؟mpv ﻰﻟﺇ ﺕﺍﺭﺎﻴﺗ",
+    "description": "ﺕﺍﺭﺎﻴﺗ ﻝﺍﺆﺳ"
+  },
+  "snifferFilter": {
+    "message": "ﺮﺘﻠﻓ",
+    "description": "ﺔﻴﻔﺼﺘﻟﺍ ﺔﻴﻤﺴﺗ"
+  },
+  "snifferAllQualities": {
+    "message": "ﺕﺎﻔﺼﻟﺍ ﻊﻴﻤﺟ",
+    "description": "ﺭﺎﻴﺨﻟﺍ ﺕﺎﻔﺼﻟﺍ ﻊﻴﻤﺟ"
+  },
+  "snifferTestAllConfirm": {
+    "message": "ﻞﻜﻟﺍ ﺭﺎﺒﺘﺧﺍ",
+    "description": "ﺪﻴﻛﺄﺘﻟﺍ ﻞﺋﺎﺳﺭ ﺔﻓﺎﻛ ﺭﺎﺒﺘﺧﺍ"
+  },
+  "snifferSendAllConfirm": {
+    "message": "ﻞﻜﻟﺍ ﻞﺳﺭﺃ",
+    "description": "ﺪﻴﻛﺄﺘﻟﺍ ﺔﻟﺎﺳﺭ ﺔﻓﺎﻛ ﻝﺎﺳﺭﺇ"
+  },
+  "snifferClearConfirm": {
+    "message": "؟ﺎﻬﻃﺎﻘﺘﻟﺍ ﻢﺗ ﻲﺘﻟﺍ ﺕﺎﻘﻓﺪﺘﻟﺍ ﺔﻓﺎﻛ ﺢﺴﻣ ﺪﻳﺮﺗ ﻞﻫ",
+    "description": "ﺪﻴﻛﺄﺘﻟﺍ ﺔﻟﺎﺳﺭ ﺢﺴﻣ"
+  },
+  "popupResolutionCap": {
+    "message": ":ﺭﺍﺮﻘﻠﻟ ﻰﺼﻗﻷ﻿ﺍ ﺪﺤﻟﺍ",
+    "description": "ﺔﻘﺜﺒﻨﻤﻟﺍ ﺓﺬﻓﺎﻨﻟﺍ ﻲﻓ ﺔﻗﺪﻟﺍ ﺩﺪﺤﻤﻟ ﺔﻴﻤﺴﺗ"
+  },
+  "popupBestQuality": {
+    "message": "(ﻰﺼﻗﻷ﻿ﺍ ﺪﺤﻟﺍ) ﻞﻀﻓﻷ﻿ﺍ",
+    "description": "ﺓﺩﻮﺟ ﻞﻀﻓﺃ ﻰﻠﻋ ﻝﻮﺼﺤﻠﻟ ﺭﺎﻴﺧ"
+  },
+  "popup1080p": {
+    "message": "ﻞﺴﻜﺑ 1080",
+    "description": "1080p ﺭﺎﻴﺧ"
+  },
+  "popup720p": {
+    "message": "ﻞﺴﻜﺑ 720",
+    "description": "720p ﺭﺎﻴﺧ"
+  },
+  "popup480p": {
+    "message": "ﺹ 480",
+    "description": "480p ﺭﺎﻴﺧ"
+  },
+  "playerIdle": {
+    "message": "ﻞﻃﺎﻋ",
+    "description": "ﺐﻋﻼ﻿ﻟ ﻝﻮﻤﺨﻟﺍ ﺔﻟﺎﺣ"
+  },
+  "noVideoPlaying": {
+    "message": "ﻮﻳﺪﻴﻓ ﻞﻴﻐﺸﺗ ﺪﺟﻮﻳ ﻻ﻿",
+    "description": "ﻮﻳﺪﻴﻓ ﻱﺃ ﻞﻴﻐﺸﺗ ﻡﺪﻋ ﺪﻨﻋ ﺐﺋﺎﻨﻟﺍ ﺮﺼﻨﻌﻟﺍ"
+  },
+  "timeSeparator": {
+    "message": "/",
+    "description": "ﻞﻐﺸﻤﻟﺍ ﻲﻓ ﻲﻨﻣﺰﻟﺍ ﻞﺻﺎﻔﻟﺍ"
+  },
+  "playerPrevious": {
+    "message": "ﻖﺑﺎﺳ",
+    "description": "ﻖﺑﺎﺴﻟﺍ ﺭﺎﺴﻤﻟﺍ ﺭﺯ"
+  },
+  "playerNext": {
+    "message": "ﻲﻟﺎﺘﻟﺍ",
+    "description": "ﻲﻟﺎﺘﻟﺍ ﺭﺎﺴﻤﻟﺍ ﺭﺯ"
+  },
+  "playerVolume": {
+    "message": "ﺭﺍﺪﻘﻣ",
+    "description": "ﻢﺠﺤﻟﺍ ﺔﻴﻤﺴﺗ"
+  },
+  "openQueueManager": {
+    "message": "ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ ﺮﻳﺪﻣ ﺢﺘﻓﺍ",
+    "description": "ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ ﺮﻳﺪﻣ ﺔﺤﻔﺻ ﺢﺘﻔﻟ ﺭﺯ"
+  },
+  "viewQueue": {
+    "message": "ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ ﺽﺮﻋ",
+    "description": "ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ ﺽﺮﻌﻟ ﻕﺎﻴﺴﻟﺍ ﺔﻤﺋﺎﻗ ﺮﺼﻨﻋ"
+  },
+  "queueManagerTitle": {
+    "message": "ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ ﺮﻳﺪﻣ",
+    "description": "ﺭﻮﺑﺎﻄﻟﺍ ﺮﻳﺪﻣ ﺔﺤﻔﺻ ﻥﺍﻮﻨﻋ"
+  },
+  "queueEmptyStatus": {
+    "message": ".ﺔﻏﺭﺎﻓ ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ",
+    "description": "ﺔﻏﺭﺎﻓ ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ ﺔﻟﺎﺣ"
+  },
+  "queueCompleted": {
+    "message": "ﻞﻤﺘﻜﻣ",
+    "description": "ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ ﻝﺎﻤﺘﻛﺍ ﺔﻟﺎﺣ"
+  },
+  "queuePaused": {
+    "message": "ﺎﺘًﻗﺆﻣ ﻒﻗﻮﺘﻣ",
+    "description": "ﺎﺘًﻗﺆﻣ ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ ﻒﻗﻮﺗ ﺔﻟﺎﺣ"
+  },
+  "queuePlaying": {
+    "message": "ﺐﻌﻠﻟﺍ",
+    "description": "ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ ﻲﻓ ﺐﻌﻠﻟﺍ ﺔﻟﺎﺣ"
+  },
+  "queueRemaining": {
+    "message": "ﻲﻘﺒﺘﻣ",
+    "description": "ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ ﻲﻓ ﺔﻴﻘﺒﺘﻤﻟﺍ ﺮﺻﺎﻨﻌﻟﺍ"
+  },
+  "queueStatusCompleted": {
+    "message": "({ﻲﻟﺎﻤﺟﻹ﻿ﺍ} / {ﻲﻟﺎﺤﻟﺍ}) ﻞﻤﺘﻜﻣ ✓",
+    "description": "ﻢﻬﺘﻟﺍ ﻊﻣ ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ ﻝﺎﻤﺘﻛﺍ ﺔﻟﺎﺣ"
+  },
+  "queueStatusPlaying": {
+    "message": "(ﻲﻘﺒﺘﻤﻟﺍ {ﻲﻘﺒﺘﻤﻟﺍ}) ﺐﻌﻠﻟﺍ ◀",
+    "description": "ﻲﻘﺒﺘﻤﻟﺍ ﺩﺪﻌﻟﺍ ﻊﻣ ﺐﻌﻠﺗ ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ ﺔﻟﺎﺣ"
+  },
+  "queueStatusPaused": {
+    "message": "(ﺮﺼﻨﻋ {count}) ﺎﺘًﻗﺆﻣ ﻒﻗﻮﺘﻣ ⏸",
+    "description": "ﺮﺻﺎﻨﻌﻟﺍ ﺩﺪﻋ ﻊﻣ ﺎﺘًﻗﺆﻣ ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ ﻒﻗﻮﺗ ﺔﻟﺎﺣ"
+  },
+  "queueStatusIdle": {
+    "message": "ﻼً﻿ﻣﺎﺧ ⏹",
+    "description": "ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ ﻲﻓ ﻝﻮﻤﺨﻟﺍ ﺔﻟﺎﺣ"
+  },
+  "queueItemsLabel": {
+    "message": "ﺽﺍﺮﻏﺃ",
+    "description": "ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ ﻲﻓ ﺮﺻﺎﻨﻌﻟﺍ ﺔﻴﻤﺴﺗ"
   }
 }

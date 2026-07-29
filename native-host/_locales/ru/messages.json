@@ -1,0 +1,182 @@
+{
+  "installer": {
+    "message": "MPV Opener для Firefox — установщик v7.0",
+    "description": "Название установщика"
+  },
+  "uninstaller": {
+    "message": "MPV Opener для Firefox — Программа удаления",
+    "description": "Название деинсталлятора"
+  },
+  "checking_deps": {
+    "message": "Проверка зависимостей...",
+    "description": "Сообщение о проверке зависимостей"
+  },
+  "all_deps_installed": {
+    "message": "Все зависимости установлены.",
+    "description": "Все зависимости установлены"
+  },
+  "missing_deps": {
+    "message": "Отсутствующие зависимости:",
+    "description": "Отсутствующие зависимости"
+  },
+  "install_command": {
+    "message": "Пожалуйста, сначала установите их:",
+    "description": "Команда установки"
+  },
+  "creating_dirs": {
+    "message": "Создание каталогов...",
+    "description": "Создание каталогов"
+  },
+  "installing_wrapper": {
+    "message": "Установка родной оболочки...",
+    "description": "Установка обертки"
+  },
+  "generating_manifest": {
+    "message": "Создание манифеста...",
+    "description": "Создание манифеста"
+  },
+  "verifying": {
+    "message": "Проверка установки...",
+    "description": "Проверка"
+  },
+  "verified": {
+    "message": "Проверено успешно!",
+    "description": "Проверено"
+  },
+  "failed": {
+    "message": "Не удалось установить",
+    "description": "Неуспешный"
+  },
+  "testing": {
+    "message": "Тестирование связи с собственным хостом...",
+    "description": "Тестирование"
+  },
+  "test_passed": {
+    "message": "Тест собственного хоста пройден",
+    "description": "Тест пройден"
+  },
+  "test_failed": {
+    "message": "Тест собственного хоста не пройден",
+    "description": "Тест не пройден"
+  },
+  "complete": {
+    "message": "Установка завершена успешно!",
+    "description": "Полный"
+  },
+  "ready": {
+    "message": "MPV Opener для Firefox готов к использованию!",
+    "description": "Готовый"
+  },
+  "restart": {
+    "message": "Возможно, вам придется перезапустить Firefox, чтобы изменения вступили в силу.",
+    "description": "Перезапуск"
+  },
+  "next_steps": {
+    "message": "Следующие шаги:",
+    "description": "Следующие шаги"
+  },
+  "click_icon": {
+    "message": "Нажмите значок расширения, чтобы проверить",
+    "description": "Нажмите значок"
+  },
+  "shortcut_video": {
+    "message": "Используйте Ctrl+Alt+M, чтобы отправить видео в mpv.",
+    "description": "Ярлык видео"
+  },
+  "shortcut_sniffer": {
+    "message": "Используйте Ctrl+Alt+V, чтобы открыть Media Sniffer.",
+    "description": "Сниффер ярлыков"
+  },
+  "links": {
+    "message": "Ссылки:",
+    "description": "Ссылки"
+  },
+  "addon_store": {
+    "message": "Магазин дополнений",
+    "description": "Магазин дополнений"
+  },
+  "github": {
+    "message": "GitHub",
+    "description": "GitHub"
+  },
+  "already_installed": {
+    "message": "Кажется, что Native Host уже установлен.",
+    "description": "Уже установлено"
+  },
+  "reinstall": {
+    "message": "Хотите переустановить?",
+    "description": "Переустановить"
+  },
+  "cancelled": {
+    "message": "Установка отменена.",
+    "description": "Отменено"
+  },
+  "error_source": {
+    "message": "Ошибка: необходимые файлы не найдены в папке собственного хоста.",
+    "description": "Источник ошибки"
+  },
+  "removing": {
+    "message": "Удаление компонентов...",
+    "description": "Удаление"
+  },
+  "removed": {
+    "message": "Удаленный:",
+    "description": "Удаленный"
+  },
+  "not_found": {
+    "message": "Не найдено:",
+    "description": "Не найдено"
+  },
+  "cleaning": {
+    "message": "Очистка пустых каталогов...",
+    "description": "Очистка"
+  },
+  "removed_empty": {
+    "message": "Удален пустой:",
+    "description": "Удален пустой"
+  },
+  "dir_not_empty": {
+    "message": "Каталог не пуст или не найден:",
+    "description": "Каталог не пустой"
+  },
+  "uninstall_complete": {
+    "message": "Удаление завершено успешно!",
+    "description": "Удаление завершено"
+  },
+  "uninstall_confirm": {
+    "message": "Это удалит MPV Opener из вашей системы.",
+    "description": "Удалить, подтвердить"
+  },
+  "continue_prompt": {
+    "message": "Продолжать?",
+    "description": "Продолжить подсказку"
+  },
+  "deps_mpv": {
+    "message": "минивэн",
+    "description": "зависимость от MPV"
+  },
+  "deps_ytdlp": {
+    "message": "yt-dlp",
+    "description": "зависимость yt-dlp"
+  },
+  "deps_mpv_mpris": {
+    "message": "мпв-мприс",
+    "description": "Зависимость mpv-mpris"
+  },
+  "deps_python": {
+    "message": "python3",
+    "description": "зависимость python3"
+  },
+  "deps_curl": {
+    "message": "завиток",
+    "description": "зависимость curl"
+  },
+  "deps_socat": {
+    "message": "шокирован",
+    "description": "шокированная зависимость"
+  },
+  "language": {
+    "message": "Язык",
+    "description": "Языковая метка"
+  }
+}

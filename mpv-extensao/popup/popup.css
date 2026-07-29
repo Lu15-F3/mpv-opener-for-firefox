@@ -1,29 +1,48 @@
+/* ============================================================
+   popup.css - MPV Opener for Firefox v7.0
+   ============================================================ */
+
 :root {
-  --bg-color: #232629;
-  --card-bg: #31363b;
-  --text-color: #fcfcfc;
-  --text-muted: #a5a8aa;
-  --accent-color: #3daee9;
-  --accent-hover: #1d99f3;
-  --border-color: #4d5053;
-  --danger-color: #da4453;
-  --border-radius: 4px;
+  --bg-color: #1a1b26;
+  --card-bg: #24283b;
+  --text-color: #c0caf5;
+  --text-muted: #565f89;
+  --text-light: #a9b1d6;
+  --accent-color: #7aa2f7;
+  --accent-hover: #3b4261;
+  --accent-pink: #f5c2e7;
+  --success-green: #9ece6a;
+  --warning-yellow: #e0af68;
+  --danger-color: #f7768e;
+  --border-color: #3b4261;
+  --border-radius: 8px;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
-  font-family: "Noto Sans", sans-serif;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
   margin: 0;
   padding: 0;
-  width: 260px;
+  width: 320px;
+  min-height: 420px;
 }
 
-/* Estilização das Abas */
+/* ============================================================
+   Tabs Navigation
+   ============================================================ */
 .tabs-nav {
   display: flex;
-  background-color: #1b1e20;
+  background-color: #1a1b26;
   border-bottom: 1px solid var(--border-color);
+  padding: 4px 8px 0 8px;
+  gap: 4px;
 }
 
 .tab-link {
@@ -31,89 +50,701 @@ body {
   background: none;
   border: none;
   color: var(--text-muted);
-  padding: 8px 0;
+  padding: 10px 0 8px 0;
   font-size: 12px;
   font-weight: 600;
   cursor: pointer;
   text-align: center;
-  transition: all 0.2s ease;
+  transition: var(--transition);
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  position: relative;
 }
 
 .tab-link:hover {
-  color: var(--text-color);
+  color: var(--text-light);
   background-color: rgba(255, 255, 255, 0.03);
 }
 
 .tab-link.active {
   color: var(--accent-color);
-  border-bottom: 2px solid var(--accent-color);
-  background-color: var(--bg-color);
+  background-color: var(--card-bg);
+}
+
+.tab-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  right: 20%;
+  height: 2px;
+  background: var(--accent-color);
+  border-radius: 2px;
+}
+
+/* ============================================================
+   Botão de Preferências
+   ============================================================ */
+.settings-btn {
+  flex: 0 0 auto !important;
+  width: 36px !important;
+  font-size: 16px !important;
+  padding: 10px 0 8px 0 !important;
+  background: none !important;
+  border: none !important;
+  color: var(--text-muted) !important;
+  cursor: pointer !important;
+  transition: var(--transition) !important;
+  border-radius: var(--border-radius) var(--border-radius) 0 0 !important;
+  position: relative !important;
+}
+
+.settings-btn:hover {
+  color: var(--accent-color) !important;
+  background-color: rgba(255, 255, 255, 0.03) !important;
+}
+
+.settings-btn.active {
+  color: var(--accent-color) !important;
+  background-color: var(--card-bg) !important;
+}
+
+.settings-btn.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  right: 20%;
+  height: 2px;
+  background: var(--accent-color);
+  border-radius: 2px;
 }
 
 .tab-content {
   display: none;
-  padding: 12px;
+  padding: 16px;
+  animation: fadeIn 0.3s ease;
 }
 
 .tab-content.active {
   display: block;
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   Main Container
+   ============================================================ */
 .container {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
-/* Botões */
-.btn-primary, .btn-secondary, .btn-danger {
-  color: var(--text-color);
-  border: none;
-  padding: 8px 12px;
-  font-size: 13px;
-  font-weight: bold;
-  border-radius: var(--border-radius);
-  cursor: pointer;
-  width: 100%;
-  transition: background 0.15s ease;
-}
-
-.btn-primary { background-color: var(--accent-color); }
-.btn-primary:hover { background-color: var(--accent-hover); }
-
-.btn-secondary { background-color: #4d5053; }
-.btn-secondary:hover { background-color: #606366; }
-
-.btn-danger { background-color: var(--danger-color); font-size: 11px; padding: 4px 8px; margin-top: 8px;}
-.btn-danger:hover { background-color: #c82333; }
-
-/* Seleção Rápida */
+/* ============================================================
+   Quick Select
+   ============================================================ */
 .quick-select {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #1b1e20;
-  padding: 6px 8px;
+  background-color: var(--card-bg);
+  padding: 8px 12px;
   border-radius: var(--border-radius);
-  margin-bottom: 4px;
+  border: 1px solid var(--border-color);
 }
 
 .quick-select label {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--text-muted);
+  font-weight: 500;
 }
 
 .quick-select select {
   background-color: var(--bg-color);
   color: var(--text-color);
   border: 1px solid var(--border-color);
-  font-size: 11px;
-  padding: 2px 4px;
-  border-radius: 3px;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
   outline: none;
+  cursor: pointer;
+  transition: var(--transition);
 }
 
-/* Histórico */
+.quick-select select:focus {
+  border-color: var(--accent-color);
+}
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+.btn-primary, .btn-secondary, .btn-sniffer {
+  color: var(--text-color);
+  border: none;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  width: 100%;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #7aa2f7, #565f89);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(122, 162, 247, 0.3);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #9ece6a, #565f89);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(158, 206, 106, 0.3);
+}
+
+.btn-sniffer {
+  background: linear-gradient(135deg, #f5c2e7, #7dcfff);
+  color: #1a1b26;
+}
+
+.btn-sniffer:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(245, 194, 231, 0.3);
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #f7768e, #565f89);
+  color: var(--text-color);
+  border: none;
+  padding: 8px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-danger:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(247, 118, 142, 0.3);
+}
+
+.btn-warning {
+  background: linear-gradient(135deg, #e0af68, #565f89);
+  color: var(--text-color);
+  border: none;
+  padding: 8px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-warning:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(224, 175, 104, 0.3);
+}
+
+.btn-small {
+  padding: 4px 10px;
+  font-size: 10px;
+}
+
+.icon {
+  font-size: 16px;
+}
+
+/* ============================================================
+   Queue Toggle
+   ============================================================ */
+.queue-toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--card-bg);
+  padding: 8px 12px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+}
+
+.toggle-switch {
+  position: relative;
+  width: 40px;
+  height: 22px;
+  display: inline-block;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--text-muted);
+  transition: var(--transition);
+  border-radius: 22px;
+}
+
+.toggle-slider::before {
+  content: "";
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: var(--transition);
+  border-radius: 50%;
+}
+
+.toggle-switch input:checked + .toggle-slider {
+  background-color: var(--accent-color);
+}
+
+.toggle-switch input:checked + .toggle-slider::before {
+  transform: translateX(18px);
+}
+
+.toggle-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+/* ============================================================
+   Mini Player (Controlador Definitivo)
+   ============================================================ */
+.mini-player {
+  background: var(--bg-color);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  transition: var(--transition);
+  animation: fadeInMini 0.4s ease;
+}
+
+@keyframes fadeInMini {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.mini-player-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.mini-player-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.mini-player-status {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 4px;
+  background: var(--text-muted);
+  color: var(--bg-color);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.mini-player-status.playing {
+  background: var(--success-green);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.mini-player-status.paused {
+  background: var(--warning-yellow);
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(0.95); }
+}
+
+.mini-player-info {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.mini-player-thumbnail {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  border-radius: 6px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+
+.mini-player-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mini-player-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.mini-player-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.mini-player-title-text {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.3s ease;
+}
+
+.mini-player-title-text.empty {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.mini-player-time {
+  font-size: 10px;
+  color: var(--text-muted);
+  font-family: 'SFMono-Regular', Consolas, monospace;
+  margin-top: 2px;
+}
+
+.mini-player-timeline {
+  margin-bottom: 10px;
+}
+
+.mini-player-timeline input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--border-color);
+  outline: none;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+.mini-player-timeline input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.mini-player-timeline input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.mini-player-timeline input[type="range"]:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.mini-player-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.mp-btn {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 12px;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mp-btn:hover {
+  border-color: var(--accent-color);
+  background: var(--bg-color);
+  transform: translateY(-2px) scale(1.05);
+}
+
+.mp-btn:active {
+  transform: scale(0.85) !important;
+}
+
+.mp-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.mp-play-btn {
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-pink));
+  border-color: transparent;
+  color: var(--bg-color);
+  width: 38px;
+  height: 38px;
+  font-size: 16px;
+}
+
+.mp-play-btn:hover {
+  transform: translateY(-2px) scale(1.08);
+  box-shadow: 0 4px 16px rgba(122, 162, 247, 0.4);
+}
+
+.mp-play-btn.playing {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.mp-vol-btn {
+  font-size: 11px;
+  width: 28px;
+  height: 28px;
+}
+
+/* Volume Indicator */
+.volume-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 4px 8px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.volume-label {
+  font-size: 10px;
+  color: var(--text-muted);
+  min-width: 40px;
+}
+
+.volume-bar {
+  flex: 1;
+  height: 4px;
+  background: var(--border-color);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.volume-level {
+  height: 100%;
+  background: var(--accent-color);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.volume-percent {
+  font-size: 10px;
+  color: var(--text-muted);
+  min-width: 35px;
+  text-align: right;
+  font-family: 'SFMono-Regular', Consolas, monospace;
+}
+
+/* ============================================================
+   Queue Tab (Apenas Lista)
+   ============================================================ */
+.queue-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.queue-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.queue-count {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.queue-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.queue-extra-actions {
+  display: flex;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+.btn-queue-manager {
+  background: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 4px 10px;
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-queue-manager:hover {
+  border-color: var(--accent-color);
+  background: var(--bg-color);
+}
+
+#queue-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+.queue-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: var(--border-radius);
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-color);
+  margin-bottom: 4px;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.queue-item:hover {
+  background-color: var(--card-bg);
+}
+
+.queue-item-active {
+  border-left: 3px solid var(--accent-color);
+  background-color: rgba(122, 162, 247, 0.08);
+}
+
+.queue-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-width: 75%;
+}
+
+.queue-item-title {
+  font-size: 12px;
+  color: var(--text-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.queue-item-index {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.queue-item-status-badge {
+  font-size: 9px;
+  font-weight: 600;
+  padding: 1px 6px;
+  border-radius: 3px;
+}
+
+.queue-item-status-badge.playing {
+  color: var(--success-green);
+  background: rgba(158, 206, 106, 0.15);
+}
+
+.queue-item-status-badge.played {
+  color: var(--text-muted);
+  background: rgba(86, 95, 137, 0.15);
+}
+
+.queue-item-status-badge.waiting {
+  color: var(--text-muted);
+  background: rgba(86, 95, 137, 0.08);
+}
+
+.queue-item-remove {
+  background: none;
+  border: none;
+  color: var(--danger-color);
+  cursor: pointer;
+  font-size: 16px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.queue-item-remove:hover {
+  background-color: rgba(247, 118, 142, 0.15);
+  transform: scale(1.1);
+}
+
+.empty-queue {
+  text-align: center;
+  padding: 30px 20px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+/* ============================================================
+   History Tab
+   ============================================================ */
 .history-container {
   display: flex;
   flex-direction: column;
@@ -123,19 +754,23 @@ body {
   list-style: none;
   padding: 0;
   margin: 0;
-  max-height: 160px;
+  max-height: 180px;
   overflow-y: auto;
 }
 
 .history-item {
-  padding: 6px 8px;
-  border-bottom: 1px solid #3a3f43;
+  padding: 8px 10px;
+  border-radius: var(--border-radius);
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-color);
+  margin-bottom: 4px;
   cursor: pointer;
-  font-size: 11px;
+  font-size: 12px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   color: var(--text-muted);
+  transition: var(--transition);
 }
 
 .history-item:hover {
@@ -144,8 +779,29 @@ body {
 }
 
 .no-history {
-  font-size: 11px;
-  color: var(--text-muted);
   text-align: center;
-  padding: 15px 0;
+  padding: 30px 0;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+/* ============================================================
+   Scrollbar
+   ============================================================ */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
 }

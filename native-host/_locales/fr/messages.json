@@ -1,0 +1,182 @@
+{
+  "installer": {
+    "message": "MPV Opener pour Firefox - Installateur v7.0",
+    "description": "Titre de l'installateur"
+  },
+  "uninstaller": {
+    "message": "MPV Opener pour Firefox - Programme de désinstallation",
+    "description": "Titre du programme de désinstallation"
+  },
+  "checking_deps": {
+    "message": "Vérification des dépendances...",
+    "description": "Message de vérification des dépendances"
+  },
+  "all_deps_installed": {
+    "message": "Toutes les dépendances installées.",
+    "description": "Toutes les dépendances installées"
+  },
+  "missing_deps": {
+    "message": "Dépendances manquantes :",
+    "description": "Dépendances manquantes"
+  },
+  "install_command": {
+    "message": "Veuillez d'abord les installer :",
+    "description": "Commande d'installation"
+  },
+  "creating_dirs": {
+    "message": "Création de répertoires...",
+    "description": "Création de répertoires"
+  },
+  "installing_wrapper": {
+    "message": "Installation du wrapper natif...",
+    "description": "Installation du wrapper"
+  },
+  "generating_manifest": {
+    "message": "Génération du manifeste...",
+    "description": "Générer un manifeste"
+  },
+  "verifying": {
+    "message": "Vérification de l'installation...",
+    "description": "Vérification"
+  },
+  "verified": {
+    "message": "Vérifié avec succès !",
+    "description": "Vérifié"
+  },
+  "failed": {
+    "message": "Échec de l'installation",
+    "description": "Échoué"
+  },
+  "testing": {
+    "message": "Test de la communication de l'hôte natif...",
+    "description": "Essai"
+  },
+  "test_passed": {
+    "message": "Test d'hôte natif réussi",
+    "description": "Test réussi"
+  },
+  "test_failed": {
+    "message": "Le test de l'hôte natif a échoué",
+    "description": "Le test a échoué"
+  },
+  "complete": {
+    "message": "Installation terminée avec succès !",
+    "description": "Complet"
+  },
+  "ready": {
+    "message": "MPV Opener pour Firefox est prêt à être utilisé !",
+    "description": "Prêt"
+  },
+  "restart": {
+    "message": "Vous devrez peut-être redémarrer Firefox pour que les modifications prennent effet.",
+    "description": "Redémarrage"
+  },
+  "next_steps": {
+    "message": "Prochaines étapes :",
+    "description": "Prochaines étapes"
+  },
+  "click_icon": {
+    "message": "Cliquez sur l'icône d'extension pour tester",
+    "description": "Cliquez sur l'icône"
+  },
+  "shortcut_video": {
+    "message": "Utilisez Ctrl+Alt+M pour envoyer la vidéo en mpv",
+    "description": "Vidéo de raccourci"
+  },
+  "shortcut_sniffer": {
+    "message": "Utilisez Ctrl+Alt+V pour ouvrir Media Sniffer",
+    "description": "Renifleur de raccourci"
+  },
+  "links": {
+    "message": "Liens :",
+    "description": "Liens"
+  },
+  "addon_store": {
+    "message": "Boutique de modules complémentaires",
+    "description": "Boutique de modules complémentaires"
+  },
+  "github": {
+    "message": "GitHub",
+    "description": "GitHub"
+  },
+  "already_installed": {
+    "message": "L'hôte natif semble déjà être installé.",
+    "description": "Déjà installé"
+  },
+  "reinstall": {
+    "message": "Voulez-vous réinstaller ?",
+    "description": "Réinstaller"
+  },
+  "cancelled": {
+    "message": "Installation annulée.",
+    "description": "Annulé"
+  },
+  "error_source": {
+    "message": "Erreur : les fichiers requis sont introuvables dans le dossier de l'hôte natif",
+    "description": "Origine de l'erreur"
+  },
+  "removing": {
+    "message": "Suppression de composants...",
+    "description": "Suppression"
+  },
+  "removed": {
+    "message": "Supprimé:",
+    "description": "Supprimé"
+  },
+  "not_found": {
+    "message": "Introuvable :",
+    "description": "Pas trouvé"
+  },
+  "cleaning": {
+    "message": "Nettoyage des répertoires vides...",
+    "description": "Nettoyage"
+  },
+  "removed_empty": {
+    "message": "Supprimé vide :",
+    "description": "Supprimé vide"
+  },
+  "dir_not_empty": {
+    "message": "Répertoire non vide ou introuvable :",
+    "description": "Répertoire non vide"
+  },
+  "uninstall_complete": {
+    "message": "Désinstallation terminée avec succès !",
+    "description": "Désinstallation terminée"
+  },
+  "uninstall_confirm": {
+    "message": "Cela supprimera MPV Opener de votre système.",
+    "description": "Confirmer la désinstallation"
+  },
+  "continue_prompt": {
+    "message": "Continuer?",
+    "description": "Continuer l'invite"
+  },
+  "deps_mpv": {
+    "message": "monospace",
+    "description": "dépendance MPV"
+  },
+  "deps_ytdlp": {
+    "message": "yt-dlp",
+    "description": "dépendance yt-dlp"
+  },
+  "deps_mpv_mpris": {
+    "message": "mpv-mpris",
+    "description": "dépendance mpv-mpris"
+  },
+  "deps_python": {
+    "message": "python3",
+    "description": "dépendance python3"
+  },
+  "deps_curl": {
+    "message": "boucle",
+    "description": "dépendance curl"
+  },
+  "deps_socat": {
+    "message": "choqué",
+    "description": "dépendance choquée"
+  },
+  "language": {
+    "message": "Langue",
+    "description": "Etiquette de langue"
+  }
+}

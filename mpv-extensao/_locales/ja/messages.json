@@ -4,7 +4,7 @@
     "description": "ブラウザに表示される拡張機能の名前"
   },
   "extensionDescription": {
-    "message": "Firefox からローカル mpv プレーヤーにビデオ リンクを直接送信します。",
+    "message": "キューサポートを使用して、Firefox からローカル MPV プレーヤーにビデオリンクを直接送信します。",
     "description": "アドオンマネージャーに表示される拡張機能の説明"
   },
   "sendToMpv": {
@@ -27,6 +27,10 @@
     "message": "歴史",
     "description": "ポップアップインターフェイスの履歴タブのタイトル"
   },
+  "tabQueue": {
+    "message": "列",
+    "description": "ポップアップインターフェースの「キュー」タブのタイトル"
+  },
   "clearHistory": {
     "message": "履歴をクリアする",
     "description": "ローカル履歴ストレージを消去するためのボタンのテキスト"
@@ -34,6 +38,42 @@
   "emptyHistory": {
     "message": "まだビデオは送信されていません。",
     "description": "表示する履歴がない場合のプレースホルダー テキスト"
+  },
+  "emptyQueue": {
+    "message": "キューが空です。",
+    "description": "キューアイテムがない場合のプレースホルダーテキスト"
+  },
+  "queueCount": {
+    "message": "キュー内のアイテム",
+    "description": "キュー数を示すラベル"
+  },
+  "queueEnabled": {
+    "message": "テールファッション",
+    "description": "キューモード切り替えのラベル"
+  },
+  "queueEnabledDesc": {
+    "message": "有効にすると、新しいウィンドウを開く代わりに、ビデオがキューに追加されます。",
+    "description": "キューモード切り替えの説明"
+  },
+  "stopQueue": {
+    "message": "キューの停止",
+    "description": "現在のキューの再生を停止するボタン"
+  },
+  "clearQueue": {
+    "message": "すべてクリア",
+    "description": "すべてのキュー項目をクリアするボタン"
+  },
+  "playNext": {
+    "message": "次にプレイ",
+    "description": "キュー内の次のアイテムを再生するボタン"
+  },
+  "playPrev": {
+    "message": "前へ再生",
+    "description": "キュー内の前のアイテムを再生するボタン"
+  },
+  "removeItem": {
+    "message": "取り除く",
+    "description": "キューから項目を削除するボタン"
   },
   "optionsTitle": {
     "message": "MPV オープナーの設定",
@@ -80,7 +120,7 @@
     "description": "フローティング プレーヤー レイヤーのチェックボックスの説明テキスト"
   },
   "audioSettings": {
-    "message": "オーディオデバイスの設定",
+    "message": "オーディオデバイスの構成",
     "description": "高度なオーディオ出力のセクションヘッダー"
   },
   "audioDeviceLabel": {
@@ -89,7 +129,7 @@
   },
   "audioDevicePlaceholder": {
     "message": "例: alsa/hdmi、pulse/device_name",
-    "description": "テキスト入力ボックス内のプレースホルダー ヒント構文"
+    "description": "テキスト入力ボックス内のプレースホルダーヒント構文"
   },
   "tabBehavior": {
     "message": "タブの動作",
@@ -140,7 +180,7 @@
     "description": "メディア ストリーム フィッシャー ビュー ページ内のメイン タイトル ヘッダー"
   },
   "snifferSubtitle": {
-    "message": "キャプチャされたストリーム (広告は自動的にフィルタリングされます):",
+    "message": "キャプチャされたストリーム",
     "description": "字幕追跡が成功してトラップされた要素をリストする"
   },
   "snifferInstructions": {
@@ -152,19 +192,19 @@
     "description": "ページの右クリックのコンテキスト メニューに動的に適用されるラベル"
   },
   "sendToMpvBtnText": {
-    "message": "🚀 MPV に送信",
+    "message": "MPV に送信",
     "description": "スニファーインターフェイス内で見つかったアイテムに割り当てられた機能アクショントリガー"
   },
   "welcomeTitle": {
-    "message": "ほぼ準備完了です！セットアップが必要です 🐧",
+    "message": "ほぼ準備完了です！セットアップが必要です",
     "description": "最初にオンボーディングのウェルカム ビュー ヘッダーをインストールします"
   },
   "welcomeIntro": {
-    "message": "<strong>Firefox 用 MPV オープナー</strong> がブラウザに追加されましたが、まだ Fedora システムと通信できません。次の 2 つの簡単な手順に従ってください。",
+    "message": "Firefox 用 MPV Opener がブラウザに追加されましたが、まだシステムと通信できません。次の 2 つの簡単な手順に従ってください。",
     "description": "ローカルホスト実行ハンドシェイクの問題を強調する導入段落"
   },
   "welcomeStep1Title": {
-    "message": "1. Fedora の依存関係をインストールする",
+    "message": "1. 依存関係をインストールする",
     "description": "動作パッケージの依存関係を説明するヘッダー タイトル"
   },
   "welcomeStep1Desc": {
@@ -202,5 +242,269 @@
   "shortcutOpenSnifferDesc": {
     "message": "メディア スニファー モードを開く",
     "description": "メディア トラップ タブへの直接アクセス パスの概要を示すホットキー マッピング通知"
+  },
+  "snifferCapturedCount": {
+    "message": "捕らえられた",
+    "description": "キャプチャされたストリームの数を示すラベル"
+  },
+  "snifferCopyLink": {
+    "message": "コピー",
+    "description": "リンクをコピーするボタン"
+  },
+  "snifferOpenTab": {
+    "message": "開ける",
+    "description": "リンクを新しいタブで開くボタン"
+  },
+  "snifferExportAll": {
+    "message": "すべてエクスポート",
+    "description": "キャプチャされたすべてのリンクをエクスポートするボタン"
+  },
+  "snifferClearAll": {
+    "message": "すべてクリア",
+    "description": "キャプチャされたすべてのリンクをクリアするボタン"
+  },
+  "snifferSendAll": {
+    "message": "すべて送信",
+    "description": "キャプチャしたすべてのリンクを mpv に送信するボタン"
+  },
+  "snifferCopied": {
+    "message": "コピーしました！",
+    "description": "リンクコピー時の確認"
+  },
+  "snifferExportSuccess": {
+    "message": "コンソールにエクスポートされたリンク",
+    "description": "リンクエクスポート時の確認"
+  },
+  "snifferEmpty": {
+    "message": "まだキャプチャされたストリームはありません。上記の指示に従ってください。",
+    "description": "スニッファー内の空の状態メッセージ"
+  },
+  "nowPlaying": {
+    "message": "プレイ中",
+    "description": "ミニプレーヤー再生中のラベル"
+  },
+  "volumeUp": {
+    "message": "ボリュームアップ",
+    "description": "音量を上げるボタンのツールチップ"
+  },
+  "volumeDown": {
+    "message": "音量を下げる",
+    "description": "音量ダウンボタンのツールチップ"
+  },
+  "previousTrack": {
+    "message": "前の",
+    "description": "前のトラックボタンのツールチップ"
+  },
+  "nextTrack": {
+    "message": "次",
+    "description": "次のトラックボタンのツールチップ"
+  },
+  "playPause": {
+    "message": "再生/一時停止",
+    "description": "再生一時停止ボタンのツールチップ"
+  },
+  "snifferChecking": {
+    "message": "チェック中...",
+    "description": "リンクチェック中のステータスメッセージ"
+  },
+  "snifferValid": {
+    "message": "有効",
+    "description": "リンクが有効な場合のステータス メッセージ"
+  },
+  "snifferInvalid": {
+    "message": "無効",
+    "description": "リンクが無効な場合のステータス メッセージ"
+  },
+  "snifferInvalidTooltip": {
+    "message": "リンクにアクセスできません",
+    "description": "無効なリンクのツールチップ"
+  },
+  "snifferTestLink": {
+    "message": "テスト",
+    "description": "リンクをテストするボタン"
+  },
+  "snifferTestLinkTooltip": {
+    "message": "このリンクがアクセス可能かどうかをテストする",
+    "description": "テストボタンのツールチップ"
+  },
+  "snifferTestAll": {
+    "message": "すべてをテストする",
+    "description": "すべてのリンクをテストするボタン"
+  },
+  "snifferTestAllTooltip": {
+    "message": "キャプチャされたすべてのリンクをテストする",
+    "description": "「すべてテスト」ボタンのツールチップ"
+  },
+  "snifferTestResult": {
+    "message": "テスト結果:",
+    "description": "テスト結果ダイアログのタイトル"
+  },
+  "snifferStatus": {
+    "message": "状態",
+    "description": "テストダイアログのステータスラベル"
+  },
+  "snifferType": {
+    "message": "タイプ",
+    "description": "テストダイアログにラベルを入力します"
+  },
+  "snifferIsVideo": {
+    "message": "ビデオです",
+    "description": "テストダイアログにビデオラベルがありますか"
+  },
+  "snifferReason": {
+    "message": "理由",
+    "description": "テストダイアログの理由ラベル"
+  },
+  "snifferYes": {
+    "message": "はい",
+    "description": "テストダイアログでははい"
+  },
+  "snifferNo": {
+    "message": "No",
+    "description": "テストダイアログではいいえ"
+  },
+  "snifferTesting": {
+    "message": "テスト中...",
+    "description": "リンクのテスト中のステータス"
+  },
+  "snifferWait": {
+    "message": "お待ちください...",
+    "description": "待機メッセージ"
+  },
+  "snifferNoLinks": {
+    "message": "テストするリンクがありません",
+    "description": "テストするリンクがありません"
+  },
+  "snifferNoUrls": {
+    "message": "エクスポートする URL がありません",
+    "description": "エクスポートする URL がありません"
+  },
+  "snifferNoStreams": {
+    "message": "送信するストリームがありません",
+    "description": "送信するストリームがありません"
+  },
+  "snifferLinks": {
+    "message": "リンク？",
+    "description": "リンクの質問"
+  },
+  "snifferStreams": {
+    "message": "mpvにストリームしますか？",
+    "description": "ストリームの質問"
+  },
+  "snifferFilter": {
+    "message": "フィルター",
+    "description": "フィルターラベル"
+  },
+  "snifferAllQualities": {
+    "message": "すべての資質",
+    "description": "すべての品質オプション"
+  },
+  "snifferTestAllConfirm": {
+    "message": "すべてテストする",
+    "description": "すべての確認メッセージをテストする"
+  },
+  "snifferSendAllConfirm": {
+    "message": "すべて送信",
+    "description": "すべての確認メッセージを送信する"
+  },
+  "snifferClearConfirm": {
+    "message": "キャプチャされたストリームをすべてクリアしますか?",
+    "description": "確認メッセージをクリアする"
+  },
+  "popupResolutionCap": {
+    "message": "解像度の上限:",
+    "description": "ポップアップの解像度セレクターのラベル"
+  },
+  "popupBestQuality": {
+    "message": "ベスト（マックス）",
+    "description": "最高の品質を実現するオプション"
+  },
+  "popup1080p": {
+    "message": "1080p",
+    "description": "1080pオプション"
+  },
+  "popup720p": {
+    "message": "720b",
+    "description": "720p オプション"
+  },
+  "popup480p": {
+    "message": "480p",
+    "description": "480pオプション"
+  },
+  "playerIdle": {
+    "message": "アイドル状態",
+    "description": "プレイヤーのアイドル状態"
+  },
+  "noVideoPlaying": {
+    "message": "ビデオが再生されていません",
+    "description": "ビデオが再生されていない場合のプレースホルダー"
+  },
+  "timeSeparator": {
+    "message": "/",
+    "description": "プレーヤーの時間区切り文字"
+  },
+  "playerPrevious": {
+    "message": "前の",
+    "description": "前のトラックボタン"
+  },
+  "playerNext": {
+    "message": "次",
+    "description": "次のトラックボタン"
+  },
+  "playerVolume": {
+    "message": "音量",
+    "description": "ボリュームラベル"
+  },
+  "openQueueManager": {
+    "message": "キューマネージャーを開く",
+    "description": "キューマネージャーページを開くボタン"
+  },
+  "viewQueue": {
+    "message": "キューの表示",
+    "description": "キューを表示するコンテキスト メニュー項目"
+  },
+  "queueManagerTitle": {
+    "message": "キューマネージャー",
+    "description": "キューマネージャーページのタイトル"
+  },
+  "queueEmptyStatus": {
+    "message": "キューが空です。",
+    "description": "空のキューのステータス"
+  },
+  "queueCompleted": {
+    "message": "完了しました",
+    "description": "キュー完了ステータス"
+  },
+  "queuePaused": {
+    "message": "一時停止中",
+    "description": "キューの一時停止ステータス"
+  },
+  "queuePlaying": {
+    "message": "遊ぶ",
+    "description": "キューの再生ステータス"
+  },
+  "queueRemaining": {
+    "message": "残り",
+    "description": "キューに残っているアイテム"
+  },
+  "queueStatusCompleted": {
+    "message": "✓ 完了 ({現在} / {合計})",
+    "description": "キューの完了ステータスとカウント"
+  },
+  "queueStatusPlaying": {
+    "message": "▶ 再生中 (残り {remaining})",
+    "description": "残り数で再生中のキューステータス"
+  },
+  "queueStatusPaused": {
+    "message": "⏸ 一時停止中 ({count} 個のアイテム)",
+    "description": "アイテム数を含むキューの一時停止ステータス"
+  },
+  "queueStatusIdle": {
+    "message": "⏹ アイドル状態",
+    "description": "キューのアイドル状態"
+  },
+  "queueItemsLabel": {
+    "message": "アイテム",
+    "description": "キュー内の項目ラベル"
   }
 }

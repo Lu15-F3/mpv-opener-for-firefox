@@ -4,7 +4,7 @@
     "description": "Nazwa rozszerzenia wyświetlana w przeglądarce"
   },
   "extensionDescription": {
-    "message": "Wysyłaj łącza wideo bezpośrednio z przeglądarki Firefox do lokalnego odtwarzacza MPV.",
+    "message": "Wysyłaj linki wideo bezpośrednio z Firefoksa do lokalnego odtwarzacza MPV z obsługą kolejki.",
     "description": "Opis rozszerzenia wyświetlany w menedżerze dodatków"
   },
   "sendToMpv": {
@@ -13,7 +13,7 @@
   },
   "sendAudioToMpv": {
     "message": "Słuchaj (tylko dźwięk)",
-    "description": "Etykieta do wysyłania samego strumienia audio do formatu mpv"
+    "description": "Etykieta wysyłająca tylko strumień audio do formatu mpv"
   },
   "contextMenuOptions": {
     "message": "Preferencje rozszerzenia",
@@ -27,6 +27,10 @@
     "message": "Historia",
     "description": "Tytuł karty historii w wyskakującym interfejsie"
   },
+  "tabQueue": {
+    "message": "Kolejka",
+    "description": "Tytuł karty kolejki w wyskakującym interfejsie"
+  },
   "clearHistory": {
     "message": "Wyczyść historię",
     "description": "Tekst przycisku umożliwiający wyczyszczenie pamięci lokalnej"
@@ -34,6 +38,42 @@
   "emptyHistory": {
     "message": "Nie przesłano jeszcze żadnych filmów.",
     "description": "Tekst zastępczy, gdy nie ma historii do wyświetlenia"
+  },
+  "emptyQueue": {
+    "message": "Kolejka jest pusta.",
+    "description": "Tekst zastępczy, gdy nie ma elementów w kolejce"
+  },
+  "queueCount": {
+    "message": "pozycje w kolejce",
+    "description": "Etykieta pokazująca liczbę kolejek"
+  },
+  "queueEnabled": {
+    "message": "Moda na ogon",
+    "description": "Etykieta przełącznika trybu kolejki"
+  },
+  "queueEnabledDesc": {
+    "message": "Po włączeniu filmy są dodawane do kolejki zamiast otwierania nowych okien",
+    "description": "Opis przełącznika trybu kolejki"
+  },
+  "stopQueue": {
+    "message": "Zatrzymaj kolejkę",
+    "description": "Przycisk zatrzymujący odtwarzanie bieżącej kolejki"
+  },
+  "clearQueue": {
+    "message": "Wyczyść wszystko",
+    "description": "Przycisk umożliwiający wyczyszczenie wszystkich pozycji w kolejce"
+  },
+  "playNext": {
+    "message": "Graj dalej",
+    "description": "Przycisk odtwarzania następnego elementu w kolejce"
+  },
+  "playPrev": {
+    "message": "Odtwórz poprzednie",
+    "description": "Przycisk odtwarzania poprzedniego elementu w kolejce"
+  },
+  "removeItem": {
+    "message": "Usunąć",
+    "description": "Przycisk usuwania pozycji z kolejki"
   },
   "optionsTitle": {
     "message": "Ustawienia otwieracza MPV",
@@ -89,7 +129,7 @@
   },
   "audioDevicePlaceholder": {
     "message": "np. alsa/hdmi, impuls/nazwa_urządzenia",
-    "description": "Składnia wskazówki zastępczej w polu wprowadzania tekstu"
+    "description": "Składnia podpowiedzi zastępczej w polu wprowadzania tekstu"
   },
   "tabBehavior": {
     "message": "Zachowanie karty",
@@ -108,7 +148,7 @@
     "description": "Tekst alertu na banerze pływającej wiadomości w przypadku aktualizacji operacyjnej"
   },
   "sendingNotification": {
-    "message": "Wysyłanie wideo do mpv...",
+    "message": "Wysyłanie wideo do MPV...",
     "description": "Tekst używany w natywnym banerze powiadomień w tle przeglądarki"
   },
   "fedoraSettings": {
@@ -140,7 +180,7 @@
     "description": "Główny nagłówek tytułu na stronie widoku strumienia multimediów"
   },
   "snifferSubtitle": {
-    "message": "Przechwycone strumienie (reklamy automatycznie filtrowane):",
+    "message": "Przechwycone strumienie",
     "description": "Lista elementów śledzenia napisów, które pomyślnie przechwycono"
   },
   "snifferInstructions": {
@@ -149,22 +189,22 @@
   },
   "ctxSniffMedia": {
     "message": "🎣 Uruchom tryb wyszukiwania multimediów",
-    "description": "Etykieta zastosowana dynamicznie do menu kontekstowych strony wyświetlanych po kliknięciu prawym przyciskiem myszy"
+    "description": "Etykieta stosowana dynamicznie w menu kontekstowym strony wyświetlanym po kliknięciu prawym przyciskiem myszy"
   },
   "sendToMpvBtnText": {
-    "message": "🚀 Wyślij do MPV",
+    "message": "Wyślij do MPV",
     "description": "Funkcjonalny wyzwalacz akcji przypisany do elementów znalezionych w interfejsie sniffera"
   },
   "welcomeTitle": {
-    "message": "Prawie gotowe! Wymagana konfiguracja 🐧",
+    "message": "Prawie gotowe! Wymagana konfiguracja",
     "description": "Najpierw zainstaluj nagłówek powitalnego widoku pokładowego"
   },
   "welcomeIntro": {
-    "message": "<strong>Otwieracz MPV dla przeglądarki Firefox</strong> został dodany do Twojej przeglądarki, ale nie może jeszcze komunikować się z Twoim systemem Fedora. Wykonaj te dwa szybkie kroki:",
+    "message": "Do Twojej przeglądarki dodano MPV Opener dla Firefoksa, ale nie może on jeszcze komunikować się z Twoim systemem. Wykonaj te dwa szybkie kroki:",
     "description": "Akapit wprowadzający podkreślający problemy z uzgadnianiem wykonania lokalnego hosta"
   },
   "welcomeStep1Title": {
-    "message": "1. Zainstaluj zależności Fedory",
+    "message": "1. Zainstaluj zależności",
     "description": "Tytuł nagłówka wyjaśniający zależności pakietu operacyjnego"
   },
   "welcomeStep1Desc": {
@@ -173,7 +213,7 @@
   },
   "welcomeStep2Title": {
     "message": "2. Włącz most komunikacyjny (host natywny)",
-    "description": "Nagłówek zawierający szczegółowe informacje o zadaniach związanych z uprawnieniami do umieszczania manifestu"
+    "description": "Nagłówek zawierający szczegółowe informacje na temat zadań związanych z uprawnieniami do umieszczania manifestu"
   },
   "welcomeStep2Desc": {
     "message": "Teraz uruchom oficjalny skrypt instalatora, aby zarejestrować manifesty lokalnej integracji:",
@@ -202,5 +242,269 @@
   "shortcutOpenSnifferDesc": {
     "message": "Otwórz tryb wyszukiwania multimediów",
     "description": "Uwaga dotycząca mapowania skrótów klawiszowych przedstawiająca ścieżki dostępu bezpośrednio do zakładek pułapek multimediów"
+  },
+  "snifferCapturedCount": {
+    "message": "złapany",
+    "description": "Etykieta pokazująca liczbę przechwyconych strumieni"
+  },
+  "snifferCopyLink": {
+    "message": "Kopia",
+    "description": "Przycisk kopiujący link"
+  },
+  "snifferOpenTab": {
+    "message": "Otwarte",
+    "description": "Przycisk otwierający link w nowej karcie"
+  },
+  "snifferExportAll": {
+    "message": "Eksportuj wszystko",
+    "description": "Przycisk eksportu wszystkich przechwyconych linków"
+  },
+  "snifferClearAll": {
+    "message": "Wyczyść wszystko",
+    "description": "Przycisk umożliwiający usunięcie wszystkich przechwyconych linków"
+  },
+  "snifferSendAll": {
+    "message": "Wyślij wszystko",
+    "description": "Przycisk wysyłający wszystkie przechwycone linki do formatu mpv"
+  },
+  "snifferCopied": {
+    "message": "Skopiowano!",
+    "description": "Potwierdzenie kopiowania linku"
+  },
+  "snifferExportSuccess": {
+    "message": "Linki wyeksportowane do konsoli",
+    "description": "Potwierdzenie eksportu linków"
+  },
+  "snifferEmpty": {
+    "message": "Nie przechwycono jeszcze żadnych strumieni. Postępuj zgodnie z instrukcjami powyżej.",
+    "description": "Pusty komunikat o stanie w snifferze"
+  },
+  "nowPlaying": {
+    "message": "Teraz odtwarzane",
+    "description": "Miniodtwarzacz odtwarzający teraz etykietę"
+  },
+  "volumeUp": {
+    "message": "Zwiększ głośność",
+    "description": "Etykietka przycisku zwiększania głośności"
+  },
+  "volumeDown": {
+    "message": "Zmniejsz głośność",
+    "description": "Etykietka przycisku zmniejszania głośności"
+  },
+  "previousTrack": {
+    "message": "Poprzedni",
+    "description": "Etykietka przycisku poprzedniej ścieżki"
+  },
+  "nextTrack": {
+    "message": "Następny",
+    "description": "Etykietka przycisku następnej ścieżki"
+  },
+  "playPause": {
+    "message": "Odtwórz/Wstrzymaj",
+    "description": "Etykietka przycisku pauzy odtwarzania"
+  },
+  "snifferChecking": {
+    "message": "Kontrola...",
+    "description": "Komunikat o stanie podczas sprawdzania łącza"
+  },
+  "snifferValid": {
+    "message": "Ważny",
+    "description": "Komunikat o statusie, gdy łącze jest ważne"
+  },
+  "snifferInvalid": {
+    "message": "Nieważny",
+    "description": "Komunikat o statusie, gdy łącze jest nieprawidłowe"
+  },
+  "snifferInvalidTooltip": {
+    "message": "Link niedostępny",
+    "description": "Etykietka dotycząca nieprawidłowych linków"
+  },
+  "snifferTestLink": {
+    "message": "Test",
+    "description": "Przycisk testujący łącze"
+  },
+  "snifferTestLinkTooltip": {
+    "message": "Sprawdź, czy ten link jest dostępny",
+    "description": "Etykietka przycisku testowego"
+  },
+  "snifferTestAll": {
+    "message": "Przetestuj wszystko",
+    "description": "Przycisk do testowania wszystkich linków"
+  },
+  "snifferTestAllTooltip": {
+    "message": "Przetestuj wszystkie przechwycone linki",
+    "description": "Etykietka przycisku Testuj wszystko"
+  },
+  "snifferTestResult": {
+    "message": "Wynik testu:",
+    "description": "Tytuł okna dialogowego z wynikami testu"
+  },
+  "snifferStatus": {
+    "message": "Status",
+    "description": "Etykieta stanu w oknie dialogowym testu"
+  },
+  "snifferType": {
+    "message": "Typ",
+    "description": "Wpisz etykietę w oknie dialogowym testu"
+  },
+  "snifferIsVideo": {
+    "message": "Czy Wideo",
+    "description": "Czy etykieta wideo znajduje się w oknie testowym"
+  },
+  "snifferReason": {
+    "message": "Powód",
+    "description": "Etykieta przyczyny w oknie testowym"
+  },
+  "snifferYes": {
+    "message": "Tak",
+    "description": "Tak, w oknie testowym"
+  },
+  "snifferNo": {
+    "message": "No",
+    "description": "Nie w oknie testowym"
+  },
+  "snifferTesting": {
+    "message": "Testowanie...",
+    "description": "Stan podczas testowania łącza"
+  },
+  "snifferWait": {
+    "message": "Proszę czekać...",
+    "description": "Czekaj na wiadomość"
+  },
+  "snifferNoLinks": {
+    "message": "Brak linków do testowania",
+    "description": "Brak linków do testowania"
+  },
+  "snifferNoUrls": {
+    "message": "Brak adresów URL do wyeksportowania",
+    "description": "Brak adresów URL do wyeksportowania"
+  },
+  "snifferNoStreams": {
+    "message": "Brak strumieni do wysłania",
+    "description": "Brak strumieni do wysłania"
+  },
+  "snifferLinks": {
+    "message": "spinki do mankietów?",
+    "description": "Pytanie o linki"
+  },
+  "snifferStreams": {
+    "message": "strumienie do mpv?",
+    "description": "Pytanie o strumienie"
+  },
+  "snifferFilter": {
+    "message": "Filtr",
+    "description": "Etykieta filtra"
+  },
+  "snifferAllQualities": {
+    "message": "Wszystkie cechy",
+    "description": "Opcja wszystkich cech"
+  },
+  "snifferTestAllConfirm": {
+    "message": "Przetestuj wszystko",
+    "description": "Przetestuj wszystko i potwierdź wiadomość"
+  },
+  "snifferSendAllConfirm": {
+    "message": "Wyślij wszystko",
+    "description": "Wyślij całą wiadomość potwierdzającą"
+  },
+  "snifferClearConfirm": {
+    "message": "Wyczyścić wszystkie przechwycone strumienie?",
+    "description": "Wyczyść komunikat potwierdzający"
+  },
+  "popupResolutionCap": {
+    "message": "Ograniczenie rozdzielczości:",
+    "description": "Etykieta selektora rozdzielczości w wyskakującym okienku"
+  },
+  "popupBestQuality": {
+    "message": "Najlepszy (maks.)",
+    "description": "Opcja najwyższej jakości"
+  },
+  "popup1080p": {
+    "message": "1080p",
+    "description": "Opcja 1080p"
+  },
+  "popup720p": {
+    "message": "720b",
+    "description": "Opcja 720p"
+  },
+  "popup480p": {
+    "message": "480p",
+    "description": "Opcja 480p"
+  },
+  "playerIdle": {
+    "message": "Bezczynny",
+    "description": "Stan bezczynności gracza"
+  },
+  "noVideoPlaying": {
+    "message": "Brak odtwarzania wideo",
+    "description": "Symbol zastępczy, gdy nie jest odtwarzany żaden film"
+  },
+  "timeSeparator": {
+    "message": "/",
+    "description": "Separator czasu w odtwarzaczu"
+  },
+  "playerPrevious": {
+    "message": "Poprzedni",
+    "description": "Przycisk poprzedniego utworu"
+  },
+  "playerNext": {
+    "message": "Następny",
+    "description": "Przycisk następnego utworu"
+  },
+  "playerVolume": {
+    "message": "Tom",
+    "description": "Etykieta woluminu"
+  },
+  "openQueueManager": {
+    "message": "Otwórz Menedżera kolejek",
+    "description": "Przycisk otwierający stronę menedżera kolejek"
+  },
+  "viewQueue": {
+    "message": "Zobacz kolejkę",
+    "description": "Pozycja menu kontekstowego umożliwiająca przeglądanie kolejki"
+  },
+  "queueManagerTitle": {
+    "message": "Menadżer kolejki",
+    "description": "Tytuł strony menedżera kolejek"
+  },
+  "queueEmptyStatus": {
+    "message": "Kolejka jest pusta.",
+    "description": "Stan pustej kolejki"
+  },
+  "queueCompleted": {
+    "message": "Zakończony",
+    "description": "Stan kolejki zakończony"
+  },
+  "queuePaused": {
+    "message": "Wstrzymano",
+    "description": "Stan kolejki wstrzymany"
+  },
+  "queuePlaying": {
+    "message": "Gra",
+    "description": "Stan odtwarzania w kolejce"
+  },
+  "queueRemaining": {
+    "message": "pozostały",
+    "description": "Pozostałe pozycje w kolejce"
+  },
+  "queueStatusCompleted": {
+    "message": "✓ Ukończono ({bieżące} / {łącznie})",
+    "description": "Stan kolejki zakończony z licznikami"
+  },
+  "queueStatusPlaying": {
+    "message": "▶ Odtwarzam (pozostało: {remaining})",
+    "description": "Status kolejki odtwarzanie z pozostałą liczbą"
+  },
+  "queueStatusPaused": {
+    "message": "⏸ Wstrzymano ({count} elementów)",
+    "description": "Stan kolejki wstrzymany z liczbą pozycji"
+  },
+  "queueStatusIdle": {
+    "message": "⏹ Bezczynny",
+    "description": "Stan kolejki bezczynności"
+  },
+  "queueItemsLabel": {
+    "message": "rzeczy",
+    "description": "Etykieta pozycji w kolejce"
   }
 }

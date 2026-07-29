@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>MPV Opener - Queue Manager</title>
+  <link rel="stylesheet" href="queue.css">
+</head>
+<body>
+  <div class="queue-container">
+    <div class="header">
+      <img src="../icons/icon-48.png" alt="MPV Opener" class="header-icon">
+      <h1 data-i18n="queueManagerTitle">Queue Manager</h1>
+    </div>
+    
+    <!-- MINI PLAYER INTEGRADO (Controlador Definitivo) -->
+    <div class="mini-player" id="mini-player">
+      <div class="mini-player-header">
+        <span class="mini-player-title" data-i18n="nowPlaying">▶ Now Playing</span>
+        <span class="mini-player-status" id="mp-status-text" data-i18n="playerIdle">Idle</span>
+      </div>
+      <div class="mini-player-info">
+        <div class="mini-player-thumbnail">
+          <img id="mp-thumbnail" src="../icons/icon-48.png" alt="Thumbnail">
+          <span class="mini-player-overlay" id="mp-play-status">▶</span>
+        </div>
+        <div class="mini-player-details">
+          <div class="mini-player-title-text" id="mp-title" data-i18n="noVideoPlaying">No video playing</div>
+          <div class="mini-player-time" id="mp-time">00:00 <span data-i18n="timeSeparator">/</span> 00:00</div>
+        </div>
+      </div>
+      <div class="mini-player-timeline">
+        <input type="range" id="mp-timeline" min="0" max="100" value="0" step="0.1">
+      </div>
+      <div class="mini-player-controls">
+        <button id="mp-prev" class="mp-btn" title="Previous">◀◀</button>
+        <button id="mp-play-pause" class="mp-btn mp-play-btn" title="Play/Pause">▶</button>
+        <button id="mp-next" class="mp-btn" title="Next">▶▶</button>
+        <button id="mp-volume-down" class="mp-btn mp-vol-btn" title="Volume Down">🔉</button>
+        <button id="mp-volume-up" class="mp-btn mp-vol-btn" title="Volume Up">🔊</button>
+      </div>
+      <div class="volume-indicator">
+        <span class="volume-label" data-i18n="playerVolume">Volume</span>
+        <div class="volume-bar">
+          <div class="volume-level" id="volume-level" style="width: 100%"></div>
+        </div>
+        <span class="volume-percent" id="volume-percent">100%</span>
+      </div>
+    </div>
+    
+    <!-- QUEUE LIST (Apenas lista) -->
+    <div class="queue-status-bar">
+      <span id="queue-status-text" class="idle">⏸ Idle</span>
+      <span id="queue-count" data-i18n="queueItemsLabel">0 items</span>
+    </div>
+    
+    <div class="queue-actions-bar">
+      <button id="clear-queue-btn" class="btn-warning" data-i18n="clearQueue">✕ Clear All</button>
+    </div>
+    
+    <div id="queue-list-container">
+      <ul id="queue-list"></ul>
+    </div>
+  </div>
+  
+  <script src="queue.js"></script>
+</body>
+</html>
