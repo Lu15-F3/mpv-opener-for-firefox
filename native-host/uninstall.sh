@@ -16,6 +16,18 @@ CYAN='\033[0;36m'
 BOLD='\033[1m'
 NC='\033[0m'
 
+# ============================================================
+# Parse arguments
+# ============================================================
+FORCE=false
+for arg in "$@"; do
+    case $arg in
+        --force|-y|--yes)
+            FORCE=true
+            ;;
+    esac
+done
+
 # Get the directory where this script is located
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
@@ -75,6 +87,37 @@ VERSION_FILE="$HOME/.local/share/mpv-opener/version.txt"
 VERSION_DIR="$(dirname "$VERSION_FILE")"
 
 # ============================================================
+# Função para ler input do terminal
+# ============================================================
+confirm_uninstall() {
+    # Se --force foi passado, pular confirmação
+    if [ "$FORCE" = true ]; then
+        return 0
+    fi
+    
+    # Redirecionar stdin para o terminal real
+    local answer
+    if [ -t 0 ]; then
+        # Estamos em um terminal interativo
+        printf "${YELLOW}⚠ $MSG_uninstall_confirm ($MSG_continue_prompt) (y/N) ${NC}"
+        read -r answer
+    else
+        # Não estamos em um terminal interativo (curl | bash)
+        # Tentar abrir o terminal diretamente
+        if [ -e /dev/tty ]; then
+            printf "${YELLOW}⚠ $MSG_uninstall_confirm ($MSG_continue_prompt) (y/N) ${NC}" > /dev/tty
+            read -r answer < /dev/tty
+        else
+            # Fallback: se não for interativo e não tiver --force, cancelar
+            echo -e "${YELLOW}⚠ Non-interactive mode. Use --force to skip confirmation.${NC}"
+            return 1
+        fi
+    fi
+
+    [[ $answer =~ ^[Yy]$ ]]
+}
+
+# ============================================================
 # Display header
 # ============================================================
 echo -e "${CYAN}╔══════════════════════════════════════════════════════════════╗${NC}"
@@ -83,9 +126,11 @@ echo -e "${CYAN}╚════════════════════�
 echo -e "${CYAN}  ${MSG_language:-Language}: ${BOLD}${LANG_CODE}${NC}\n"
 
 echo -e "${YELLOW}⚠ $MSG_uninstall_confirm${NC}"
-read -p "$MSG_continue_prompt (y/N) " -n 1 -r
-echo
-if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+
+# ============================================================
+# Confirmação de desinstalação
+# ============================================================
+if ! confirm_uninstall; then
     echo -e "${GREEN}✔ $MSG_cancelled${NC}"
     exit 0
 fi
