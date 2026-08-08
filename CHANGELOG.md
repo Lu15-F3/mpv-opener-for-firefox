@@ -9,30 +9,30 @@ O histórico completo de lançamentos simulados do ecossistema de desenvolviment
 
 ## 🎯 Principais Novidades
 
-* **Modo Picture-in-Picture (PiP) Inteligente e Multiplataforma**: O recurso de PiP foi completamente reformulado para oferecer uma experiência mais robusta e personalizável.
-* **Posicionamento em Quatro Cantos**: Agora você pode escolher em qual canto da tela a janela do PiP deve aparecer: Superior Esquerdo, Superior Direito, Inferior Esquerdo ou Inferior Direito.
-* **Controle de Tamanho Dinâmico**: Adicionada a opção para ajustar o tamanho da janela do PiP em porcentagem da tela (15%, 20%, 25%, 30%, 40%), permitindo um controle mais granular sobre o espaço ocupado.
-* **Detecção Automática de Ambiente**: O wrapper (`mpv_wrapper.py`) agora detecta inteligentemente se você está usando Wayland ou X11, aplicando as configurações ideais para cada ambiente. Isso inclui o uso de `QT_QPA_PLATFORM=xcb` e opções específicas como `--x11-netwm=no` para garantir a compatibilidade.
-* **Compatibilidade com Versões Modernas do MPV**: Removidas opções obsoletas (`--focus-on-open`, `--focus-on=no`, `--wid=0`) que causavam erros em versões recentes do MPV, substituindo-as por uma abordagem mais universal e estável.
-* **Controle de Volume Inicial**: Adicionada uma opção na interface (popup e página de opções) para definir o volume inicial dos vídeos enviados ao mpv. Você pode escolher entre predefinições (Mudo, Baixo, Médio, Alto, Máximo) ou definir um valor personalizado (0-100%), garantindo que os vídeos iniciem sempre no nível de áudio desejado.
+* **Modo Picture-in-Picture (PiP) Inteligente e Multiplataforma:** O recurso de PiP foi completamente reformulado para oferecer uma experiência mais robusta e personalizável.
+* **Posicionamento em Quatro Cantos:** Agora você pode escolher em qual canto da tela a janela do PiP deve aparecer: Superior Esquerdo, Superior Direito, Inferior Esquerdo ou Inferior Direito.
+* **Controle de Tamanho Dinâmico:** Adicionada a opção para ajustar o tamanho da janela do PiP em porcentagem da tela (15%, 20%, 25%, 30%, 40%), permitindo um controle mais granular sobre o espaço ocupado.
+* **Detecção Automática de Ambiente:** O wrapper (`mpv_wrapper.py`) agora detecta inteligentemente se você está usando Wayland ou X11, aplicando as configurações ideais para cada ambiente. Isso inclui o uso de `QT_QPA_PLATFORM=xcb` e opções específicas como `--x11-netwm=no` para garantir a compatibilidade.
+* **Compatibilidade com Versões Modernas do MPV:** Removidas opções obsoletas (`--focus-on-open`, `--focus-on=no`, `--wid=0`) que causavam erros em versões recentes do MPV, substituindo-as por uma abordagem mais universal e estável.
+* **Controle de Volume Inicial:** Adicionada uma opção na interface (popup e página de opções) para definir o volume inicial dos vídeos enviados ao mpv. Você pode escolher entre predefinições (Mudo, Baixo, Médio, Alto, Máximo) ou definir um valor personalizado (0-100%), garantindo que os vídeos iniciem sempre no nível de áudio desejado.
 
 ## 🛠️ Corrigido
 
-* **Falha no Modo PiP em Wayland**: Corrigido o problema crítico onde o modo Picture-in-Picture não abria a janela do vídeo em sistemas com Wayland (como Fedora KDE). A correção envolveu a adaptação do comando de inicialização para usar `QT_QPA_PLATFORM=xcb` e a remoção de opções de geometria que não eram mais compatíveis.
-* **Erro de Opção no MPV**: Corrigidos os erros *Error parsing option focus-on-open* e *Invalid value for option focus-on* que ocorriam em versões mais novas do MPV. O wrapper agora detecta a versão e aplica apenas as opções suportadas ou as omite para garantir a compatibilidade.
-* **Mensagem de Erro Falsa no Native Host**: Resolvido o problema onde a extensão exibia a mensagem *"Failed to send to mpv. Check if Native Host is installed"* mesmo com o host instalado e funcionando. A correção estabilizou a comunicação e o parsing de mensagens JSON no wrapper.
+* **Falha no Modo PiP em Wayland:** Corrigido o problema crítico onde o modo Picture-in-Picture não abria a janela do vídeo em sistemas com Wayland (como Fedora KDE). A correção envolveu a adaptação do comando de inicialização para usar `QT_QPA_PLATFORM=xcb` e a remoção de opções de geometria que não eram mais compatíveis.
+* **Erro de Opção no MPV:** Corrigidos os erros *Error parsing option focus-on-open* e *Invalid value for option focus-on* que ocorriam em versões mais novas do MPV. O wrapper agora detecta a versão e aplica apenas as opções suportadas ou as omite para garantir a compatibilidade.
+* **Mensagem de Erro Falsa no Native Host:** Resolvido o problema onde a extensão exibia a mensagem *"Failed to send to mpv. Check if Native Host is installed"* mesmo com o host instalado e funcionando. A correção estabilizou a comunicação e o parsing de mensagens JSON no wrapper.
 
 ## ✨ Adicionado
 
-* **Internacionalização das Opções de PiP**: Adicionadas entradas de tradução para todos os novos termos relacionados ao PiP nos arquivos `messages.json` (`pipCorner`, `pipTopLeft`, `pipSizeSmall`, etc.), garantindo que a interface esteja totalmente traduzida para os idiomas suportados.
-* **Opção de Volume no Popup**: Integrado um seletor de volume rápido diretamente no popup da extensão, permitindo ajustar o volume do próximo vídeo sem precisar abrir a página de configurações.
-* **Configurações de PiP na Página de Opções**: As novas opções de canto e tamanho do PiP foram adicionadas à página principal de configurações (`options.html`), oferecendo um local central para personalização.
+* **Internacionalização das Opções de PiP:** Adicionadas entradas de tradução para todos os novos termos relacionados ao PiP nos arquivos `messages.json` (`pipCorner`, `pipTopLeft`, `pipSizeSmall`, etc.), garantindo que a interface esteja totalmente traduzida para os idiomas suportados.
+* **Opção de Volume no Popup:** Integrado um seletor de volume rápido diretamente no popup da extensão, permitindo ajustar o volume do próximo vídeo sem precisar abrir a página de configurações.
+* **Configurações de PiP na Página de Opções:** As novas opções de canto e tamanho do PiP foram adicionadas à página principal de configurações (`options.html`), oferecendo um local central para personalização.
 
 ## ⚡ Alterado
 
-* **Refatoração do mpv_wrapper.py**: O código do wrapper foi significativamente simplificado e estabilizado. A lógica de construção do comando MPV foi revisada para priorizar opções universais e seguras, removendo parâmetros problemáticos e adicionando detecção de ambiente para Wayland.
-* **Atualização do popup.js e popup.css**: A interface do popup foi reorganizada para acomodar os novos controles de PiP e Volume, com um design mais limpo e intuitivo.
-* **Atualização do background.js**: O script de background foi ajustado para carregar e passar as novas configurações (`pipCorner`, `pipSize`, `initialVolume`) para o wrapper, garantindo que as preferências do usuário sejam aplicadas.
+* **Refatoração do mpv_wrapper.py:** O código do wrapper foi significativamente simplificado e estabilizado. A lógica de construção do comando MPV foi revisada para priorizar opções universais e seguras, removendo parâmetros problemáticos e adicionando detecção de ambiente para Wayland.
+* **Atualização do popup.js e popup.css:** A interface do popup foi reorganizada para acomodar os novos controles de PiP e Volume, com um design mais limpo e intuitivo.
+* **Atualização do background.js:** O script de background foi ajustado para carregar e passar as novas configurações (`pipCorner`, `pipSize`, `initialVolume`) para o wrapper, garantindo que as preferências do usuário sejam aplicadas.
 
 ---
 
