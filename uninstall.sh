@@ -106,7 +106,7 @@ echo -e "${BLUE}▶ Creating temporary directory: $TEMP_DIR${NC}"
 if download_uninstaller "$TEMP_DIR"; then
     echo -e "\n${BLUE}▶ Running native-host uninstaller...${NC}"
     cd "$TEMP_DIR"
-    bash "$TEMP_DIR/uninstall.sh"
+    bash "$TEMP_DIR/uninstall.sh" --force
     cd - > /dev/null
 else
     # ============================================================
