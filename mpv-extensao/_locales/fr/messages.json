@@ -55,6 +55,10 @@
     "message": "Lorsqu'elles sont activées, les vidéos sont ajoutées à la file d'attente au lieu d'ouvrir de nouvelles fenêtres",
     "description": "Description du basculement du mode file d'attente"
   },
+  "queueSettings": {
+    "message": "Paramètres de file d'attente",
+    "description": "En-tête de la section des paramètres de file d'attente dans la page d'options"
+  },
   "stopQueue": {
     "message": "Arrêter la file d'attente",
     "description": "Bouton pour arrêter la lecture de la file d'attente en cours"
@@ -96,12 +100,56 @@
     "description": "Option pour lancer mpv remplissant directement le moniteur"
   },
   "pipMode": {
-    "message": "Image dans l'image (en bas à droite)",
+    "message": "Image dans l'image",
     "description": "Option pour positionner le joueur coincé à l'écran"
+  },
+  "pipCorner": {
+    "message": "Le coin PiP",
+    "description": "Étiquette pour la sélection du coin PiP"
+  },
+  "pipSize": {
+    "message": "Taille",
+    "description": "Étiquette pour la sélection de la taille PiP"
+  },
+  "pipTopLeft": {
+    "message": "En haut à gauche",
+    "description": "Option coin supérieur gauche"
+  },
+  "pipTopRight": {
+    "message": "En haut à droite",
+    "description": "Option du coin supérieur droit"
+  },
+  "pipBottomLeft": {
+    "message": "En bas à gauche",
+    "description": "Option coin inférieur gauche"
+  },
+  "pipBottomRight": {
+    "message": "En bas à droite",
+    "description": "Option coin inférieur droit"
+  },
+  "pipSizeSmall": {
+    "message": "Petit (15%)",
+    "description": "Option petite taille"
+  },
+  "pipSizeMedium": {
+    "message": "Moyen (20%)",
+    "description": "Option de taille moyenne"
+  },
+  "pipSizeDefault": {
+    "message": "Par défaut (25%)",
+    "description": "Option de taille par défaut"
+  },
+  "pipSizeLarge": {
+    "message": "Grand (30%)",
+    "description": "Option grande taille"
+  },
+  "pipSizeXL": {
+    "message": "Très grand (40%)",
+    "description": "Option de très grande taille"
   },
   "initialState": {
     "message": "État initial",
-    "description": "Étiquette spécifiant si la lecture de la vidéo démarre ou est en pause"
+    "description": "Étiquette spécifiant si la lecture de la vidéo commence ou est en pause"
   },
   "statePlaying": {
     "message": "Jouant",
@@ -111,12 +159,92 @@
     "message": "En pause",
     "description": "Valeur de démarrage pour l'attente dans une image en pause"
   },
+  "volumeSettings": {
+    "message": "Paramètres de volume",
+    "description": "En-tête de la section Paramètres de volume"
+  },
+  "initialVolumeLabel": {
+    "message": "Volume initial",
+    "description": "Étiquette pour le réglage initial du volume"
+  },
+  "volumeLow": {
+    "message": "Faible (20%)",
+    "description": "Option faible volume"
+  },
+  "volumeMedium": {
+    "message": "Moyen (50%)",
+    "description": "Option volume moyen"
+  },
+  "volumeHigh": {
+    "message": "Élevé (80%)",
+    "description": "Option volume élevé"
+  },
+  "volumeFull": {
+    "message": "Complet (100%)",
+    "description": "Option volume complet"
+  },
+  "volumeMuted": {
+    "message": "Muet (0%)",
+    "description": "Option de volume coupé"
+  },
+  "volumeCustom": {
+    "message": "Coutume (%)",
+    "description": "Option de volume personnalisé"
+  },
+  "volumePlaceholder": {
+    "message": "par exemple, 30",
+    "description": "Espace réservé au volume"
+  },
+  "historyCleanup": {
+    "message": "Nettoyage de l'historique",
+    "description": "En-tête de la section de nettoyage de l'historique"
+  },
+  "historyCleanupLabel": {
+    "message": "Historique du nettoyage automatique",
+    "description": "Étiquette pour la bascule de nettoyage automatique"
+  },
+  "historyCleanupManual": {
+    "message": "Manuel (désactivé)",
+    "description": "Option de nettoyage manuel"
+  },
+  "historyCleanupDaily": {
+    "message": "Tous les jours",
+    "description": "Option de nettoyage quotidien"
+  },
+  "historyCleanupWeekly": {
+    "message": "Chaque semaine",
+    "description": "Option de nettoyage hebdomadaire"
+  },
+  "historyCleanupMonthly": {
+    "message": "Chaque mois",
+    "description": "Option de nettoyage mensuel"
+  },
+  "historyCleanupOnClose": {
+    "message": "À la fermeture du navigateur",
+    "description": "Option de nettoyage à la fermeture du navigateur"
+  },
+  "historyCleanupRetention": {
+    "message": "Garder en dernier",
+    "description": "Étiquette de rétention"
+  },
+  "historyCleanupRetentionDesc": {
+    "message": "Nombre d'éléments à conserver dans l'historique",
+    "description": "Description de la rétention"
+  },
+  "historyCleanupSuccess": {
+    "message": "Historique nettoyé avec succès !",
+    "description": "Message de réussite du nettoyage"
+  },
+  "historyCleanupCount": {
+    "message": "Suppression de {count} anciennes entrées de l'historique",
+    "description": "Message du nombre de nettoyages"
+  },
   "windowBehavior": {
     "message": "Comportement de la fenêtre",
     "description": "Sous-en-tête pour les configurations de comportement du bureau"
   },
   "alwaysOnTopLabel": {
-    "message": "Gardez la fenêtre MPV toujours au premier plan",
+    "message": "Gardez la fenêtre mpv toujours au premier plan",
     "description": "Texte de description de la case à cocher pour la couche de lecteur flottante"
   },
   "audioSettings": {
@@ -185,7 +313,7 @@
   },
   "snifferInstructions": {
     "message": "<strong>Instructions :</strong> Revenez à l'onglet du site Web, appuyez sur <strong>PLAY</strong> sur le lecteur vidéo (et fermez toutes les fenêtres contextuelles qui apparaissent). Les flux réels masqués s’afficheront instantanément ci-dessous.",
-    "description": "Notice explicative expliquant la méthodologie de capture d'images actives"
+    "description": "Notice explicative expliquant la méthodologie de capture d'image active"
   },
   "ctxSniffMedia": {
     "message": "🎣 Démarrez le mode Renifleur de médias",
@@ -301,7 +429,7 @@
   },
   "playPause": {
     "message": "Lecture/Pause",
-    "description": "Info-bulle du bouton de pause de lecture"
+    "description": "Info-bulle du bouton Pause de lecture"
   },
   "snifferChecking": {
     "message": "Vérification...",
@@ -425,7 +553,7 @@
   },
   "popup720p": {
     "message": "720b",
-    "description": "Option 720p"
+    "description": "option 720p"
   },
   "popup480p": {
     "message": "480p",
@@ -485,7 +613,7 @@
   },
   "queueRemaining": {
     "message": "restant",
-    "description": "Articles restants dans la file d'attente"
+    "description": "Éléments restants dans la file d'attente"
   },
   "queueStatusCompleted": {
     "message": "✓ Terminé ({actuel} / {total})",
@@ -501,10 +629,10 @@
   },
   "queueStatusIdle": {
     "message": "⏹ Au ralenti",
-    "description": "Statut inactif de la file"
+    "description": "État d'inactivité de la file d'attente"
   },
   "queueItemsLabel": {
     "message": "articles",
-    "description": "Étiquettes des articles en attente"
+    "description": "Étiquette des éléments dans la file d'attente"
   }
 }

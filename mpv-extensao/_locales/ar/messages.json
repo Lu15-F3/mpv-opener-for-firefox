@@ -55,6 +55,10 @@
     "message": "ﺓﺪﻳﺪﺟ ﺬﻓﺍﻮﻧ ﺢﺘﻓ ﻦﻣ ﻻً﻿ﺪﺑ ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ ﻰﻟﺇ ﻮﻳﺪﻴﻔﻟﺍ ﻊﻃﺎﻘﻣ ﺔﻓﺎﺿﺇ ﻢﺘﺗ ،ﻦﻴﻜﻤﺘﻟﺍ ﺪﻨﻋ",
     "description": "ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ ﻊﺿﻭ ﻞﻳﺪﺒﺘﻟ ﻒﺻﻭ"
   },
+  "queueSettings": {
+    "message": "ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ ﺕﺍﺩﺍﺪﻋﺇ",
+    "description": "ﺕﺍﺭﺎﻴﺨﻟﺍ ﺔﺤﻔﺻ ﻲﻓ ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ ﺕﺍﺩﺍﺪﻋﺇ ﻢﺴﻗ ﺱﺃﺭ"
+  },
   "stopQueue": {
     "message": "ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ ﻑﺎﻘﻳﺇ",
     "description": "ﺔﻴﻟﺎﺤﻟﺍ ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ ﻞﻴﻐﺸﺗ ﻑﺎﻘﻳﻹ﻿ ﺭﺯ"
@@ -89,15 +93,59 @@
   },
   "standardWindow": {
     "message": "ﺔﻴﺳﺎﻴﻗ ﺓﺬﻓﺎﻧ",
-    "description": "ﻱﺩﺎﻋ ﻙﺮﺤﺘﻣ ﺐﻋﻻ﻿ ﻂﻴﻄﺨﺘﻟ ﺭﺎﻴﺧ"
+    "description": "ﻢﻈﺘﻨﻣ ﻙﺮﺤﺘﻣ ﺐﻋﻻ﻿ ﻂﻴﻄﺨﺘﻟ ﺭﺎﻴﺧ"
   },
   "fullscreen": {
     "message": "ﺔﺷﺎﺸﻟﺍ ءﻞﻣ",
     "description": "ﺔﺷﺎﺸﻟﺍ ءﻞﻤﻟ ﺓﺮﺷﺎﺒﻣ mpv ﻕﻼ﻿ﻃﺇ ﺭﺎﻴﺧ"
   },
   "pipMode": {
-    "message": "(ﻦﻴﻤﻴﻟﺍ ﻞﻔﺳﺃ) ﺓﺭﻮﺻ ﻞﺧﺍﺩ ﺓﺭﻮﺻ",
+    "message": "ﺓﺭﻮﺻ ﻞﺧﺍﺩ ﺓﺭﻮﺻ",
     "description": "ﺔﺷﺎﺸﻟﺍ ﻰﻠﻋ ﺔﻳﻭﺍﺰﻟﺍ ﻲﻓ ﺐﻋﻼ﻿ﻟﺍ ﻊﺿﻮﻟ ﺭﺎﻴﺧ"
+  },
+  "pipCorner": {
+    "message": "ﺐﻴﺑ ﻦﻛﺭ",
+    "description": "PiP ﺔﻳﻭﺍﺯ ﺭﺎﻴﺘﺧﻻ﻿ ﺔﻴﻤﺴﺗ"
+  },
+  "pipSize": {
+    "message": "ﺱﺎﻘﻣ",
+    "description": "PiP ﻢﺠﺣ ﺭﺎﻴﺘﺧﻻ﻿ ﻖﺼﻠﻣ"
+  },
+  "pipTopLeft": {
+    "message": "ﺭﺎﺴﻴﻟﺍ ﻰﻠﻋﺃ",
+    "description": "ﺎﻴﻠﻌﻟﺍ ﻯﺮﺴﻴﻟﺍ ﺔﻳﻭﺍﺰﻟﺍ ﺭﺎﻴﺧ"
+  },
+  "pipTopRight": {
+    "message": "ﻦﻴﻤﻴﻟﺍ ﻰﻠﻋﺃ",
+    "description": "ﺎﻴﻠﻌﻟﺍ ﻰﻨﻤﻴﻟﺍ ﺔﻳﻭﺍﺰﻟﺍ ﺭﺎﻴﺧ"
+  },
+  "pipBottomLeft": {
+    "message": "ﺭﺎﺴﻴﻟﺍ ﻞﻔﺳﺃ",
+    "description": "ﺔﻴﻠﻔﺴﻟﺍ ﻯﺮﺴﻴﻟﺍ ﺔﻳﻭﺍﺰﻟﺍ ﺭﺎﻴﺧ"
+  },
+  "pipBottomRight": {
+    "message": "ﻦﻴﻤﻴﻟﺍ ﻞﻔﺳﺃ",
+    "description": "ﻰﻠﻔﺴﻟﺍ ﻰﻨﻤﻴﻟﺍ ﺔﻳﻭﺍﺰﻟﺍ ﺭﺎﻴﺧ"
+  },
+  "pipSizeSmall": {
+    "message": "(%15) ﺮﻴﻐﺻ",
+    "description": "ﺮﻴﻐﺼﻟﺍ ﻢﺠﺤﻟﺍ ﺭﺎﻴﺧ"
+  },
+  "pipSizeMedium": {
+    "message": "(%20) ﺔﻄﺳﻮﺘﻣ",
+    "description": "ﻂﺳﻮﺘﻤﻟﺍ ﻢﺠﺤﻟﺍ ﺭﺎﻴﺧ"
+  },
+  "pipSizeDefault": {
+    "message": "(%25) ﻲﺿﺍﺮﺘﻓﻻ﻿ﺍ",
+    "description": "ﻲﺿﺍﺮﺘﻓﻻ﻿ﺍ ﻢﺠﺤﻟﺍ ﺭﺎﻴﺧ"
+  },
+  "pipSizeLarge": {
+    "message": "(%30) ﺮﻴﺒﻛ",
+    "description": "ﺮﻴﺒﻜﻟﺍ ﻢﺠﺤﻟﺍ ﺭﺎﻴﺧ"
+  },
+  "pipSizeXL": {
+    "message": "(%40) ﺍًﺪﺟ ﺮﻴﺒﻛ",
+    "description": "ﺍﺪًﺟ ﺮﻴﺒﻛ ﻢﺠﺣ ﺭﺎﻴﺧ"
   },
   "initialState": {
     "message": "ﺔﻴﻟﻭﻷ﻿ﺍ ﺔﻟﺎﺤﻟﺍ",
@@ -110,6 +158,86 @@
   "statePaused": {
     "message": "ﺎﺘًﻗﺆﻣ ﻒﻗﻮﺘﻣ",
     "description": "ﺎﺘًﻗﺆﻣ ﻒﻗﻮﺘﻣ ﺭﺎﻃﺇ ﻲﻓ ﺭﺎﻈﺘﻧﻼ﻿ﻟ ﻞﻴﻐﺸﺘﻟﺍ ءﺪﺑ ﺔﻤﻴﻗ"
+  },
+  "volumeSettings": {
+    "message": "ﺕﻮﺼﻟﺍ ﻯﻮﺘﺴﻣ ﺕﺍﺩﺍﺪﻋﺇ",
+    "description": "ﺕﻮﺼﻟﺍ ﻯﻮﺘﺴﻣ ﺕﺍﺩﺍﺪﻋﺇ ﻢﺴﻗ ﺱﺃﺭ"
+  },
+  "initialVolumeLabel": {
+    "message": "ﻲﻟﻭﻷ﻿ﺍ ﻢﺠﺤﻟﺍ",
+    "description": "ﻲﻟﻭﻷ﻿ﺍ ﺕﻮﺼﻟﺍ ﻯﻮﺘﺴﻣ ﺩﺍﺪﻋﻹ﻿ ﻖﺼﻠﻣ"
+  },
+  "volumeLow": {
+    "message": "(%20) ﺾﻔﺨﻨﻣ",
+    "description": "ﺾﻔﺨﻨﻤﻟﺍ ﻢﺠﺤﻟﺍ ﺭﺎﻴﺧ"
+  },
+  "volumeMedium": {
+    "message": "(%50) ﺔﻄﺳﻮﺘﻣ",
+    "description": "ﻂﺳﻮﺘﻤﻟﺍ ﻢﺠﺤﻟﺍ ﺭﺎﻴﺧ"
+  },
+  "volumeHigh": {
+    "message": "(%80) ﺔﻴﻟﺎﻋ",
+    "description": "ﻲﻟﺎﻌﻟﺍ ﻢﺠﺤﻟﺍ ﺭﺎﻴﺧ"
+  },
+  "volumeFull": {
+    "message": "(%100) ﻞﻣﺎﻛ",
+    "description": "ﻞﻣﺎﻜﻟﺍ ﻢﺠﺤﻟﺍ ﺭﺎﻴﺧ"
+  },
+  "volumeMuted": {
+    "message": "(%0) ﺕﻮﺼﻟﺍ ﻢﺘﻛ",
+    "description": "ﺕﻮﺼﻟﺍ ﻢﺘﻛ ﺭﺎﻴﺧ"
+  },
+  "volumeCustom": {
+    "message": "(٪) ﺺﺼﺨﻣ",
+    "description": "ﺺﺼﺨﻣ ﻢﺠﺣ ﺭﺎﻴﺧ"
+  },
+  "volumePlaceholder": {
+    "message": "30 ،ﻝﺎﺜﻤﻟﺍ ﻞﻴﺒﺳ ﻰﻠﻋ",
+    "description": "ﺕﻮﺼﻟﺍ ﻢﺠﺤﻟ ﺐﺋﺎﻨﻟﺍ ﺮﺼﻨﻌﻟﺍ"
+  },
+  "historyCleanup": {
+    "message": "ﺦﻳﺭﺎﺘﻟﺍ ﻒﻴﻈﻨﺗ",
+    "description": "ﺦﻳﺭﺎﺘﻟﺍ ﻒﻴﻈﻨﺗ ﻢﺴﻗ ﺱﺃﺭ"
+  },
+  "historyCleanupLabel": {
+    "message": "ﻲﺋﺎﻘﻠﺘﻟﺍ ﻒﻴﻈﻨﺘﻟﺍ ﺦﻳﺭﺎﺗ",
+    "description": "ﻲﺋﺎﻘﻠﺘﻟﺍ ﻒﻴﻈﻨﺘﻟﺍ ﻞﻳﺪﺒﺘﻟ ﺔﻴﻤﺴﺗ"
+  },
+  "historyCleanupManual": {
+    "message": "(ﻞﻄﻌﻣ) ﻱﻭﺪﻳ",
+    "description": "ﻱﻭﺪﻴﻟﺍ ﻒﻴﻈﻨﺘﻟﺍ ﺭﺎﻴﺧ"
+  },
+  "historyCleanupDaily": {
+    "message": "ﻡﻮﻳ ﻞﻛ",
+    "description": "ﻲﻣﻮﻴﻟﺍ ﻒﻴﻈﻨﺘﻟﺍ ﺭﺎﻴﺧ"
+  },
+  "historyCleanupWeekly": {
+    "message": "ﻉﻮﺒﺳﺃ ﻞﻛ",
+    "description": "ﻲﻋﻮﺒﺳﻷ﻿ﺍ ﻒﻴﻈﻨﺘﻟﺍ ﺭﺎﻴﺧ"
+  },
+  "historyCleanupMonthly": {
+    "message": "ﺮﻬﺷ ﻞﻛ",
+    "description": "ﻱﺮﻬﺸﻟﺍ ﻒﻴﻈﻨﺘﻟﺍ ﺭﺎﻴﺧ"
+  },
+  "historyCleanupOnClose": {
+    "message": "ﺢﻔﺼﺘﻤﻟﺍ ﻕﻼ﻿ﻏﺇ ﻰﻠﻋ",
+    "description": "ﺢﻔﺼﺘﻤﻟﺍ ﻕﻼ﻿ﻏﺇ ﻰﻠﻋ ﻒﻴﻈﻨﺘﻟﺍ ﺭﺎﻴﺧ"
+  },
+  "historyCleanupRetention": {
+    "message": "ﺮﻴﺧﻷ﻿ﺎﺑ ﻆﻔﺘﺣﺍ",
+    "description": "ﻅﺎﻔﺘﺣﻻ﻿ﺍ ﺔﻴﻤﺴﺗ"
+  },
+  "historyCleanupRetentionDesc": {
+    "message": "ﻞﺠﺴﻟﺍ ﻲﻓ ﺎﻬﺑ ﻅﺎﻔﺘﺣﻻ﻿ﺍ ﺐﺠﻳ ﻲﺘﻟﺍ ﺮﺻﺎﻨﻌﻟﺍ ﺩﺪﻋ",
+    "description": "ﻅﺎﻔﺘﺣﻻ﻿ﺍ ﻒﺻﻭ"
+  },
+  "historyCleanupSuccess": {
+    "message": "!ﺡﺎﺠﻨﺑ ﺦﻳﺭﺎﺘﻟﺍ ﻒﻴﻈﻨﺗ ﻢﺗ",
+    "description": "ﻒﻴﻈﻨﺘﻟﺍ ﺡﺎﺠﻧ ﺔﻟﺎﺳﺭ"
+  },
+  "historyCleanupCount": {
+    "message": "ﻢﻳﺪﻘﻟﺍ ﻞﺠﺴﻟﺍ ﺕﻻ﻿ﺎﺧﺩﺇ ﻦﻣ {count} ﺔﻟﺍﺯﺇ ﺖﻤﺗ",
+    "description": "ﻒﻴﻈﻨﺘﻟﺍ ﺩﺪﻋ ﺔﻟﺎﺳﺭ"
   },
   "windowBehavior": {
     "message": "ﺓﺬﻓﺎﻨﻟﺍ ﻙﻮﻠﺳ",
@@ -200,7 +328,7 @@
     "description": "ﺓﺮﺋﺎﻄﻟﺍ ﻦﺘﻣ ﻰﻠﻋ ﻲﺒﻴﺣﺮﺘﻟﺍ ﺽﺮﻌﻟﺍ ﺱﺃﺭ ﺖﻴﺒﺜﺘﺑ ﻻً﻿ﻭﺃ ﻢﻗ"
   },
   "welcomeIntro": {
-    "message": ":ﻦﻴﺘﻌﻳﺮﺴﻟﺍ ﻦﻴﺗﻮﻄﺨﻟﺍ ﻦﻴﺗﺎﻫ ﻊﺒﺗﺍ .ﻥﻵ﻿ﺍ ﻰﺘﺣ ﻚﻣﺎﻈﻨﺑ ﻝﺎﺼﺗﻻ﻿ﺍ ﻪﻨﻜﻤﻳ ﻻ﻿ ﻦﻜﻟ ،ﻚﺤﻔﺼﺘﻣ ﻰﻟﺇ",
+    "message": ":ﻦﻴﺘﻌﻳﺮﺴﻟﺍ ﻦﻴﺗﻮﻄﺨﻟﺍ ﻦﻴﺗﺎﻫ ﻊﺒﺗﺍ .ﻥﻵ﻿ﺍ ﻰﺘﺣ ﻚﻣﺎﻈﻨﺑ ﻝﺎﺼﺗﻻ﻿ﺍ ﻪﻨﻜﻤﻳ ﻻ﻿ ﻦﻜﻟﻭ ،ﻚﺤﻔﺼﺘﻣ ﻰﻟﺇ",
     "description": "ﻲﻠﺤﻤﻟﺍ ﻒﻴﻀﻤﻟﺍ ﺬﻴﻔﻨﺗ ﺪﻨﻋ ﺔﺤﻓﺎﺼﻤﻟﺍ ﺕﻼ﻿ﻜﺸﻣ ﻰﻠﻋ ﺪﻛﺆﺗ ﺔﻣﺪﻘﻣ ﺓﺮﻘﻓ"
   },
   "welcomeStep1Title": {
@@ -225,7 +353,7 @@
   },
   "copyBtn": {
     "message": "ﺦﺴﻨﻳ",
-    "description": "ﻢﻜﺤﺘﻟﺍ ﺔﺣﻮﻠﻟ ﺔﻴﺳﺎﻴﻘﻟﺍ ﺔﻴﻠﻋﺎﻔﺘﻟﺍ ﺔﻈﻓﺎﺤﻟﺍ ﺮﺻﺎﻨﻌﻟ ﺔﻴﻤﺴﺗ"
+    "description": "ﺓﺩﺎﻴﻘﻟﺍ ﺔﺣﻮﻠﻟ ﺔﻴﺳﺎﻴﻘﻟﺍ ﺔﻴﻠﻋﺎﻔﺘﻟﺍ ﺔﻈﻓﺎﺤﻟﺍ ﺮﺻﺎﻨﻌﻟ ﺔﻴﻤﺴﺗ"
   },
   "copiedBtn": {
     "message": "!ﺥﻮﺴﻨﻣ",
@@ -465,7 +593,7 @@
   },
   "queueManagerTitle": {
     "message": "ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ ﺮﻳﺪﻣ",
-    "description": "ﺭﻮﺑﺎﻄﻟﺍ ﺮﻳﺪﻣ ﺔﺤﻔﺻ ﻥﺍﻮﻨﻋ"
+    "description": "ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ ﺮﻳﺪﻣ ﺔﺤﻔﺻ ﻥﺍﻮﻨﻋ"
   },
   "queueEmptyStatus": {
     "message": ".ﺔﻏﺭﺎﻓ ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ",

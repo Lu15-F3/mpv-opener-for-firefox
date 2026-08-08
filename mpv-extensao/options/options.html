@@ -21,6 +21,30 @@
           <option value="pip" id="opt-pip">Picture-in-Picture</option>
         </select>
       </div>
+
+      <!-- PiP Settings (mostra apenas quando pip está selecionado) -->
+      <div id="pip-settings-options" style="display:none; margin-top: 12px; padding: 12px; background: var(--bg-color); border-radius: var(--border-radius); border: 1px solid var(--border-color);">
+        <div class="form-group">
+          <label for="pipCorner" data-i18n="pipCorner">PiP Corner:</label>
+          <select id="pipCorner">
+            <option value="topLeft" data-i18n="pipTopLeft">Top Left</option>
+            <option value="topRight" data-i18n="pipTopRight">Top Right</option>
+            <option value="bottomLeft" data-i18n="pipBottomLeft">Bottom Left</option>
+            <option value="bottomRight" data-i18n="pipBottomRight" selected>Bottom Right</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="pipSize" data-i18n="pipSize">Size:</label>
+          <select id="pipSize">
+            <option value="15" data-i18n="pipSizeSmall">Small (15%)</option>
+            <option value="20" data-i18n="pipSizeMedium">Medium (20%)</option>
+            <option value="25" data-i18n="pipSizeDefault" selected>Default (25%)</option>
+            <option value="30" data-i18n="pipSizeLarge">Large (30%)</option>
+            <option value="40" data-i18n="pipSizeXL">Extra Large (40%)</option>
+          </select>
+        </div>
+      </div>
+
       <div class="form-group">
         <label id="label-state" for="initialState">Initial State:</label>
         <select id="initialState">
@@ -30,6 +54,26 @@
       </div>
     </div>
     
+    <!-- Nova seção para Volume -->
+    <div class="section">
+      <h2 id="header-volume">Volume Settings</h2>
+      <div class="form-group">
+        <label id="label-initialVolume" for="initialVolume">Initial Volume:</label>
+        <select id="initialVolume">
+          <option value="0" id="opt-volumeMuted">Muted (0%)</option>
+          <option value="20" id="opt-volumeLow">Low (20%)</option>
+          <option value="50" id="opt-volumeMedium" selected>Medium (50%)</option>
+          <option value="80" id="opt-volumeHigh">High (80%)</option>
+          <option value="100" id="opt-volumeFull">Full (100%)</option>
+          <option value="custom" id="opt-volumeCustom">Custom (%)</option>
+        </select>
+      </div>
+      <div class="form-group" id="custom-volume-group" style="display:none;">
+        <label for="customVolume">Custom Volume:</label>
+        <input type="number" id="customVolume" min="0" max="100" value="30" placeholder="e.g., 30">
+      </div>
+    </div>
+
     <div class="section">
       <h2 id="header-quality">Quality & Stream Filters</h2>
       <div class="form-group">
@@ -84,13 +128,47 @@
     </div>
     
     <div class="section">
-      <h2 id="header-queue" data-i18n="queueSettings">Queue Settings</h2>
+      <h2 id="header-queue">Queue Settings</h2>
       <div class="checkbox-group">
         <input type="checkbox" id="queueModeEnabled" checked>
-        <label for="queueModeEnabled" id="label-queueMode" data-i18n="queueEnabled">Enable Queue Mode</label>
+        <label for="queueModeEnabled" id="label-queueMode">Enable Queue Mode</label>
       </div>
     </div>
     
+    <div class="section">
+      <h2 id="header-history">History Settings</h2>
+      
+      <div class="form-group">
+        <label id="label-historyCleanup" for="historyCleanupMode">Auto Cleanup History:</label>
+        <select id="historyCleanupMode">
+          <option value="manual" id="opt-cleanupManual">Manual (Disabled)</option>
+          <option value="daily" id="opt-cleanupDaily">Every Day</option>
+          <option value="weekly" id="opt-cleanupWeekly">Every Week</option>
+          <option value="monthly" id="opt-cleanupMonthly">Every Month</option>
+          <option value="onClose" id="opt-cleanupOnClose">On Browser Close</option>
+        </select>
+      </div>
+      
+      <div class="form-group" id="retention-group">
+        <label id="label-historyRetention" for="historyRetention">Keep Last:</label>
+        <select id="historyRetention">
+          <option value="5">5 items</option>
+          <option value="10" selected>10 items</option>
+          <option value="20">20 items</option>
+          <option value="50">50 items</option>
+          <option value="100">100 items</option>
+          <option value="0">All (No limit)</option>
+        </select>
+      </div>
+      
+      <div style="margin-top: 10px; display: flex; gap: 10px;">
+        <button id="cleanup-now-btn" class="btn-warning" style="padding: 6px 14px; font-size: 12px; border-radius: var(--border-radius); border: none; cursor: pointer; background: linear-gradient(135deg, var(--accent-color), #565f89); color: var(--text-color);">
+          🧹 Clean Now
+        </button>
+        <span id="cleanup-status" style="font-size: 12px; color: var(--text-muted); display: flex; align-items: center;"></span>
+      </div>
+    </div>
+
     <button id="save-btn" class="btn-save">Save Settings</button>
     <div id="status" class="status-msg"></div>
     

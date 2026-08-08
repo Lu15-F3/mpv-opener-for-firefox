@@ -1,5 +1,5 @@
 /* ============================================================
-   options.css - MPV Opener for Firefox v7.0
+   options.css - MPV Opener for Firefox v7.2
    ============================================================ */
 
 :root {
@@ -236,6 +236,30 @@ input[type="text"]::placeholder {
 .footer-link:hover {
   color: var(--accent-color);
   transform: translateY(-1px);
+}
+
+/* ============================================================
+   Controles de Limpeza de Histórico
+   ============================================================ */
+#cleanup-now-btn {
+  transition: var(--transition);
+}
+
+#cleanup-now-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#cleanup-status {
+  transition: var(--transition);
+}
+
+#retention-group {
+  transition: var(--transition);
+}
+
+#historyCleanupMode {
+  min-width: 180px;
 }
 
 /* ============================================================

@@ -1,10 +1,10 @@
 {
   "installer": {
-    "message": "MPV Opener для Firefox - інсталятор v7.0",
+    "message": "MPV Opener для Firefox – Інсталятор 7.0.2",
     "description": "Назва інсталятора"
   },
   "uninstaller": {
-    "message": "MPV Opener для Firefox - Програма видалення",
+    "message": "MPV Opener для Firefox - Uninstaller 7.0.2",
     "description": "Назва деінсталятора"
   },
   "checking_deps": {
@@ -57,7 +57,7 @@
   },
   "test_failed": {
     "message": "Не вдалося перевірити рідний хост",
-    "description": "Перевірка не виконана"
+    "description": "Тест не вдалося"
   },
   "complete": {
     "message": "Встановлення успішно завершено!",
@@ -80,7 +80,7 @@
     "description": "Натисніть значок"
   },
   "shortcut_video": {
-    "message": "Використовуйте Ctrl+Alt+M, щоб надіслати відео в mpv",
+    "message": "Використовуйте Ctrl+Alt+M, щоб надіслати відео у формат mpv",
     "description": "Ярлик відео"
   },
   "shortcut_sniffer": {

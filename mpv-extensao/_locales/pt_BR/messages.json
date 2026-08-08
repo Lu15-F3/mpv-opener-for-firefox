@@ -8,7 +8,7 @@
     "description": "A descrição da extensão mostrada no gerenciador de complementos"
   },
   "sendToMpv": {
-    "message": "Enviar para MPV",
+    "message": "Enviar para mpv",
     "description": "Etiqueta para enviar link de vídeo para mpv"
   },
   "sendAudioToMpv": {
@@ -48,12 +48,16 @@
     "description": "Etiqueta mostrando a contagem de filas"
   },
   "queueEnabled": {
-    "message": "Modo Fila",
+    "message": "Modo fila",
     "description": "Rótulo para alternância do modo de fila"
   },
   "queueEnabledDesc": {
     "message": "Quando ativado, os vídeos são adicionados à fila em vez de abrir novas janelas",
     "description": "Descrição da alternância do modo de fila"
+  },
+  "queueSettings": {
+    "message": "Configurações de fila",
+    "description": "Cabeçalho da seção de configurações da fila na página de opções"
   },
   "stopQueue": {
     "message": "Parar fila",
@@ -96,8 +100,52 @@
     "description": "Opção para iniciar o mpv preenchendo diretamente o monitor"
   },
   "pipMode": {
-    "message": "Picture-in-Picture (canto inferior direito)",
+    "message": "Picture-in-Picture",
     "description": "Opção para posicionar o jogador encurralado na tela"
+  },
+  "pipCorner": {
+    "message": "Canto PiP",
+    "description": "Etiqueta para seleção de canto PiP"
+  },
+  "pipSize": {
+    "message": "Tamanho",
+    "description": "Etiqueta para seleção de tamanho PiP"
+  },
+  "pipTopLeft": {
+    "message": "Canto superior esquerdo",
+    "description": "Opção no canto superior esquerdo"
+  },
+  "pipTopRight": {
+    "message": "Canto superior direito",
+    "description": "Opção no canto superior direito"
+  },
+  "pipBottomLeft": {
+    "message": "Canto inferior Esquerdo",
+    "description": "Opção no canto inferior esquerdo"
+  },
+  "pipBottomRight": {
+    "message": "Canto inferior direito",
+    "description": "Opção no canto inferior direito"
+  },
+  "pipSizeSmall": {
+    "message": "Pequeno (15%)",
+    "description": "Opção de tamanho pequeno"
+  },
+  "pipSizeMedium": {
+    "message": "Médio (20%)",
+    "description": "Opção de tamanho médio"
+  },
+  "pipSizeDefault": {
+    "message": "Padrão (25%)",
+    "description": "Opção de tamanho padrão"
+  },
+  "pipSizeLarge": {
+    "message": "Grande (30%)",
+    "description": "Opção de tamanho grande"
+  },
+  "pipSizeXL": {
+    "message": "Extra Grande (40%)",
+    "description": "Opção de tamanho extra grande"
   },
   "initialState": {
     "message": "Estado inicial",
@@ -110,6 +158,86 @@
   "statePaused": {
     "message": "Pausado",
     "description": "Valor de inicialização para espera em um quadro pausado"
+  },
+  "volumeSettings": {
+    "message": "Configurações de volume",
+    "description": "Cabeçalho da seção de configurações de volume"
+  },
+  "initialVolumeLabel": {
+    "message": "Volume Inicial",
+    "description": "Etiqueta para configuração de volume inicial"
+  },
+  "volumeLow": {
+    "message": "Baixo (20%)",
+    "description": "Opção de baixo volume"
+  },
+  "volumeMedium": {
+    "message": "Médio (50%)",
+    "description": "Opção de volume médio"
+  },
+  "volumeHigh": {
+    "message": "Alto (80%)",
+    "description": "Opção de alto volume"
+  },
+  "volumeFull": {
+    "message": "Completo (100%)",
+    "description": "Opção de volume total"
+  },
+  "volumeMuted": {
+    "message": "Silenciado (0%)",
+    "description": "Opção de volume silenciado"
+  },
+  "volumeCustom": {
+    "message": "Personalizado (%)",
+    "description": "Opção de volume personalizado"
+  },
+  "volumePlaceholder": {
+    "message": "por exemplo, 30",
+    "description": "Espaço reservado para volume"
+  },
+  "historyCleanup": {
+    "message": "Limpeza de histórico",
+    "description": "Cabeçalho da seção de limpeza do histórico"
+  },
+  "historyCleanupLabel": {
+    "message": "Histórico de limpeza automática",
+    "description": "Rótulo para alternância de limpeza automática"
+  },
+  "historyCleanupManual": {
+    "message": "Manual (Desativado)",
+    "description": "Opção de limpeza manual"
+  },
+  "historyCleanupDaily": {
+    "message": "Diariamente",
+    "description": "Opção de limpeza diária"
+  },
+  "historyCleanupWeekly": {
+    "message": "Todas as semanas",
+    "description": "Opção de limpeza semanal"
+  },
+  "historyCleanupMonthly": {
+    "message": "Todos os meses",
+    "description": "Opção de limpeza mensal"
+  },
+  "historyCleanupOnClose": {
+    "message": "Ao fechar o navegador",
+    "description": "Opção de limpeza ao fechar o navegador"
+  },
+  "historyCleanupRetention": {
+    "message": "Mantenha o último",
+    "description": "Etiqueta de retenção"
+  },
+  "historyCleanupRetentionDesc": {
+    "message": "Número de itens a serem mantidos no histórico",
+    "description": "Descrição da retenção"
+  },
+  "historyCleanupSuccess": {
+    "message": "Histórico limpo com sucesso!",
+    "description": "Mensagem de sucesso de limpeza"
+  },
+  "historyCleanupCount": {
+    "message": "Foram removidas {count} entradas antigas do histórico",
+    "description": "Mensagem de contagem de limpeza"
   },
   "windowBehavior": {
     "message": "Comportamento da janela",
@@ -209,7 +337,7 @@
   },
   "welcomeStep1Desc": {
     "message": "Abra seu terminal e execute este comando para instalar o player, mecanismo extrator e plugin de mídia:",
-    "description": "Bloco de detalhes da descrição da instrução anterior ao bloco CLI"
+    "description": "Detalhes da descrição da instrução bloqueiam o bloco CLI anterior"
   },
   "welcomeStep2Title": {
     "message": "2. Habilite a ponte de comunicação (host nativo)",
@@ -280,7 +408,7 @@
     "description": "Mensagem de estado vazia no sniffer"
   },
   "nowPlaying": {
-    "message": "Reproduzindo Agora",
+    "message": "Reproduzindo agora",
     "description": "Mini player agora reproduzindo rótulo"
   },
   "volumeUp": {
@@ -504,7 +632,7 @@
     "description": "Status de fila inativa"
   },
   "queueItemsLabel": {
-    "message": "Unid",
+    "message": "Itens",
     "description": "Etiqueta de itens na fila"
   }
 }

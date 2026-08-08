@@ -1,10 +1,10 @@
 {
   "installer": {
-    "message": "MPV Opener для Firefox — установщик v7.0",
+    "message": "MPV Opener для Firefox — установщик 7.0.2",
     "description": "Название установщика"
   },
   "uninstaller": {
-    "message": "MPV Opener для Firefox — Программа удаления",
+    "message": "MPV Opener для Firefox - Деинсталлятор 7.0.2",
     "description": "Название деинсталлятора"
   },
   "checking_deps": {
@@ -169,7 +169,7 @@
   },
   "deps_curl": {
     "message": "завиток",
-    "description": "зависимость curl"
+    "description": "зависимость от завитка"
   },
   "deps_socat": {
     "message": "шокирован",

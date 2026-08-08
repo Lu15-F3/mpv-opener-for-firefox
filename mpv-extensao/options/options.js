@@ -1,5 +1,5 @@
 // ============================================================
-// options.js - MPV Opener for Firefox v7.0
+// options.js - MPV Opener for Firefox v7.2
 // ============================================================
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -34,10 +34,96 @@ document.addEventListener("DOMContentLoaded", function() {
   document.getElementById("header-tab").textContent = browser.i18n.getMessage("tabBehavior");
   document.getElementById("label-close").textContent = browser.i18n.getMessage("closeTabLabel");
   
-  document.getElementById("header-queue").textContent = "Queue Settings";
-  document.getElementById("label-queueMode").textContent = browser.i18n.getMessage("queueEnabled");
+  // ============================================================
+  // Automatic data-i18n Translations (Processa PiP e outros)
+  // ============================================================
+  document.querySelectorAll("[data-i18n]").forEach(function(el) {
+    var key = el.getAttribute("data-i18n");
+    var msg = browser.i18n.getMessage(key);
+    if (msg) {
+      if (el.tagName === "LABEL") {
+        el.textContent = msg.endsWith(":") ? msg : msg + ":";
+      } else {
+        el.textContent = msg;
+      }
+    }
+  });
+
+  // ============================================================
+  // Volume Translations
+  // ============================================================
+  document.getElementById("header-volume").textContent = browser.i18n.getMessage("volumeSettings") || "Volume Settings";
+  document.getElementById("label-initialVolume").textContent = browser.i18n.getMessage("initialVolumeLabel") + ":";
+  document.getElementById("opt-volumeMuted").textContent = browser.i18n.getMessage("volumeMuted") || "Muted (0%)";
+  document.getElementById("opt-volumeLow").textContent = browser.i18n.getMessage("volumeLow") || "Low (20%)";
+  document.getElementById("opt-volumeMedium").textContent = browser.i18n.getMessage("volumeMedium") || "Medium (50%)";
+  document.getElementById("opt-volumeHigh").textContent = browser.i18n.getMessage("volumeHigh") || "High (80%)";
+  document.getElementById("opt-volumeFull").textContent = browser.i18n.getMessage("volumeFull") || "Full (100%)";
+  document.getElementById("opt-volumeCustom").textContent = browser.i18n.getMessage("volumeCustom") || "Custom (%)";
+  document.getElementById("customVolume").placeholder = browser.i18n.getMessage("volumePlaceholder") || "e.g., 30";
+
+  // ============================================================
+  // Queue Settings (fallback)
+  // ============================================================
+  var queueHeader = document.getElementById("header-queue");
+  var queueTranslation = browser.i18n.getMessage("queueSettings");
+  if (queueTranslation) {
+    queueHeader.textContent = queueTranslation;
+  } else {
+    queueHeader.textContent = "Queue Settings";
+  }
+
+  var queueLabel = document.getElementById("label-queueMode");
+  var queueLabelTranslation = browser.i18n.getMessage("queueEnabled");
+  if (queueLabelTranslation) {
+    queueLabel.textContent = queueLabelTranslation;
+  }
+
+  // ============================================================
+  // History Cleanup Translations
+  // ============================================================
+  document.getElementById("header-history").textContent = browser.i18n.getMessage("historyCleanup") || "History Settings";
+  document.getElementById("label-historyCleanup").textContent = browser.i18n.getMessage("historyCleanupLabel") + ":";
+  document.getElementById("opt-cleanupManual").textContent = browser.i18n.getMessage("historyCleanupManual") || "Manual (Disabled)";
+  document.getElementById("opt-cleanupDaily").textContent = browser.i18n.getMessage("historyCleanupDaily") || "Every Day";
+  document.getElementById("opt-cleanupWeekly").textContent = browser.i18n.getMessage("historyCleanupWeekly") || "Every Week";
+  document.getElementById("opt-cleanupMonthly").textContent = browser.i18n.getMessage("historyCleanupMonthly") || "Every Month";
+  document.getElementById("opt-cleanupOnClose").textContent = browser.i18n.getMessage("historyCleanupOnClose") || "On Browser Close";
+  document.getElementById("label-historyRetention").textContent = browser.i18n.getMessage("historyCleanupRetention") + ":";
   
   document.getElementById("save-btn").textContent = browser.i18n.getMessage("saveButton");
+  
+  // ============================================================
+  // PiP Toggle Logic
+  // ============================================================
+  var displayModeSelect = document.getElementById("displayMode");
+  var pipSettingsDiv = document.getElementById("pip-settings-options");
+  
+  if (displayModeSelect && pipSettingsDiv) {
+    displayModeSelect.addEventListener("change", function() {
+      if (this.value === "pip") {
+        pipSettingsDiv.style.display = "block";
+      } else {
+        pipSettingsDiv.style.display = "none";
+      }
+    });
+  }
+  
+  // ============================================================
+  // Volume Custom Logic
+  // ============================================================
+  var initialVolumeSelect = document.getElementById("initialVolume");
+  var customVolumeGroup = document.getElementById("custom-volume-group");
+  
+  if (initialVolumeSelect && customVolumeGroup) {
+    initialVolumeSelect.addEventListener("change", function() {
+      if (this.value === "custom") {
+        customVolumeGroup.style.display = "flex";
+      } else {
+        customVolumeGroup.style.display = "none";
+      }
+    });
+  }
   
   // ============================================================
   // Load Saved Data
@@ -52,9 +138,22 @@ document.addEventListener("DOMContentLoaded", function() {
     closeTab: false,
     aggressiveCache: false,
     inhibitSleep: true,
-    queueModeEnabled: true
+    queueModeEnabled: true,
+    initialVolume: 50,
+    pipCorner: "bottomRight",
+    pipSize: 25,
+    historyCleanupMode: "manual",
+    historyRetention: 10,
+    lastCleanupDate: null
   }).then(function(items) {
-    document.getElementById("displayMode").value = items.displayMode;
+    // Display Mode
+    if (displayModeSelect) {
+      displayModeSelect.value = items.displayMode;
+      if (items.displayMode === "pip" && pipSettingsDiv) {
+        pipSettingsDiv.style.display = "block";
+      }
+    }
+    
     document.getElementById("initialState").value = items.initialState;
     document.getElementById("maxResolution").value = items.maxResolution;
     document.getElementById("autoSubtitles").checked = items.autoSubtitles;
@@ -64,12 +163,87 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("aggressiveCache").checked = items.aggressiveCache;
     document.getElementById("inhibitSleep").checked = items.inhibitSleep;
     document.getElementById("queueModeEnabled").checked = items.queueModeEnabled !== false;
+    
+    // History Settings
+    document.getElementById("historyCleanupMode").value = items.historyCleanupMode;
+    document.getElementById("historyRetention").value = items.historyRetention;
+
+    // PiP Settings
+    var pipCornerEl = document.getElementById("pipCorner");
+    if (pipCornerEl) pipCornerEl.value = items.pipCorner;
+    
+    var pipSizeEl = document.getElementById("pipSize");
+    if (pipSizeEl) pipSizeEl.value = items.pipSize.toString();
+    
+    // Volume
+    if (initialVolumeSelect) {
+      var volume = items.initialVolume;
+      if (volume !== undefined) {
+        var predefined = [0, 20, 50, 80, 100];
+        if (predefined.includes(volume)) {
+          initialVolumeSelect.value = volume.toString();
+          if (customVolumeGroup) customVolumeGroup.style.display = "none";
+        } else {
+          initialVolumeSelect.value = "custom";
+          if (customVolumeGroup) customVolumeGroup.style.display = "flex";
+          var customVolEl = document.getElementById("customVolume");
+          if (customVolEl) customVolEl.value = volume;
+        }
+      }
+    }
   });
   
+  // ============================================================
+  // Clean Now Button
+  // ============================================================
+  document.getElementById("cleanup-now-btn").addEventListener("click", function() {
+    var btn = this;
+    var status = document.getElementById("cleanup-status");
+    
+    btn.disabled = true;
+    btn.textContent = "⏳ Cleaning...";
+    status.textContent = "Cleaning history...";
+    
+    browser.runtime.sendMessage({ action: "cleanHistoryNow" }, function(response) {
+      if (response && response.success) {
+        var msg = browser.i18n.getMessage("historyCleanupCount");
+        if (msg) {
+          status.textContent = msg.replace("{count}", response.removed || 0);
+        } else {
+          status.textContent = "🧹 Removed " + (response.removed || 0) + " old entries";
+        }
+        status.style.color = "var(--success-green)";
+      } else {
+        status.textContent = "❌ Failed to clean history";
+        status.style.color = "var(--danger-color)";
+      }
+      
+      btn.disabled = false;
+      btn.textContent = "🧹 Clean Now";
+      
+      setTimeout(function() {
+        status.textContent = "";
+        status.style.color = "";
+      }, 5000);
+    });
+  });
+
   // ============================================================
   // Save Settings
   // ============================================================
   document.getElementById("save-btn").addEventListener("click", function() {
+    // Volume
+    var initialVolume = document.getElementById("initialVolume").value;
+    if (initialVolume === "custom") {
+      initialVolume = parseInt(document.getElementById("customVolume").value) || 30;
+    } else {
+      initialVolume = parseInt(initialVolume);
+    }
+    
+    // PiP
+    var pipCornerEl = document.getElementById("pipCorner");
+    var pipSizeEl = document.getElementById("pipSize");
+    
     var settings = {
       displayMode: document.getElementById("displayMode").value,
       initialState: document.getElementById("initialState").value,
@@ -80,7 +254,12 @@ document.addEventListener("DOMContentLoaded", function() {
       closeTab: document.getElementById("closeTab").checked,
       aggressiveCache: document.getElementById("aggressiveCache").checked,
       inhibitSleep: document.getElementById("inhibitSleep").checked,
-      queueModeEnabled: document.getElementById("queueModeEnabled").checked
+      queueModeEnabled: document.getElementById("queueModeEnabled").checked,
+      initialVolume: initialVolume,
+      pipCorner: pipCornerEl ? pipCornerEl.value : "bottomRight",
+      pipSize: pipSizeEl ? parseInt(pipSizeEl.value, 10) : 25,
+      historyCleanupMode: document.getElementById("historyCleanupMode").value,
+      historyRetention: parseInt(document.getElementById("historyRetention").value, 10)
     };
     
     browser.storage.local.set(settings).then(function() {

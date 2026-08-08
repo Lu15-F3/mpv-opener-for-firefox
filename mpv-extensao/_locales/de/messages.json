@@ -29,7 +29,7 @@
   },
   "tabQueue": {
     "message": "Warteschlange",
-    "description": "Titel der Warteschlangen-Registerkarte in der Popup-Oberfläche"
+    "description": "Titel der Registerkarte „Warteschlange“ in der Popup-Oberfläche"
   },
   "clearHistory": {
     "message": "Verlauf löschen",
@@ -37,7 +37,7 @@
   },
   "emptyHistory": {
     "message": "Noch keine Videos gesendet.",
-    "description": "Platzhaltertext, wenn kein Verlauf zur Anzeige vorhanden ist"
+    "description": "Platzhaltertext, wenn kein Verlauf angezeigt werden kann"
   },
   "emptyQueue": {
     "message": "Die Warteschlange ist leer.",
@@ -54,6 +54,10 @@
   "queueEnabledDesc": {
     "message": "Wenn diese Option aktiviert ist, werden Videos zur Warteschlange hinzugefügt, anstatt neue Fenster zu öffnen",
     "description": "Beschreibung für das Umschalten des Warteschlangenmodus"
+  },
+  "queueSettings": {
+    "message": "Warteschlangeneinstellungen",
+    "description": "Überschrift des Abschnitts „Warteschlangeneinstellungen“ auf der Optionsseite"
   },
   "stopQueue": {
     "message": "Warteschlange stoppen",
@@ -85,7 +89,7 @@
   },
   "displayMode": {
     "message": "Anzeigemodus",
-    "description": "Titel der Dropdown-Auswahl für Fensterbeschränkungen"
+    "description": "Dropdown-Auswahltitel für Fenstereinschränkungen"
   },
   "standardWindow": {
     "message": "Standardfenster",
@@ -96,8 +100,52 @@
     "description": "Option zum Starten von MPV, das den Monitor direkt ausfüllt"
   },
   "pipMode": {
-    "message": "Bild-in-Bild (unten rechts)",
+    "message": "Bild-in-Bild",
     "description": "Option, den Spieler auf dem Bildschirm in die Enge zu treiben"
+  },
+  "pipCorner": {
+    "message": "PiP-Ecke",
+    "description": "Beschriftung für die Auswahl der PiP-Ecke"
+  },
+  "pipSize": {
+    "message": "Größe",
+    "description": "Beschriftung für die Auswahl der PiP-Größe"
+  },
+  "pipTopLeft": {
+    "message": "Oben links",
+    "description": "Option für die obere linke Ecke"
+  },
+  "pipTopRight": {
+    "message": "Oben rechts",
+    "description": "Option für die obere rechte Ecke"
+  },
+  "pipBottomLeft": {
+    "message": "Unten links",
+    "description": "Option für die untere linke Ecke"
+  },
+  "pipBottomRight": {
+    "message": "Unten rechts",
+    "description": "Option für die untere rechte Ecke"
+  },
+  "pipSizeSmall": {
+    "message": "Klein (15 %)",
+    "description": "Kleine Option"
+  },
+  "pipSizeMedium": {
+    "message": "Mittel (20 %)",
+    "description": "Mittelgroße Option"
+  },
+  "pipSizeDefault": {
+    "message": "Standard (25 %)",
+    "description": "Standardgrößenoption"
+  },
+  "pipSizeLarge": {
+    "message": "Groß (30 %)",
+    "description": "Große Option"
+  },
+  "pipSizeXL": {
+    "message": "Extra groß (40 %)",
+    "description": "Extragroße Option"
   },
   "initialState": {
     "message": "Ausgangszustand",
@@ -110,6 +158,86 @@
   "statePaused": {
     "message": "Angehalten",
     "description": "Startwert für das Warten in einem angehaltenen Frame"
+  },
+  "volumeSettings": {
+    "message": "Lautstärkeeinstellungen",
+    "description": "Überschrift des Abschnitts „Lautstärkeeinstellungen“."
+  },
+  "initialVolumeLabel": {
+    "message": "Anfangsvolumen",
+    "description": "Beschriftung für die anfängliche Lautstärkeeinstellung"
+  },
+  "volumeLow": {
+    "message": "Niedrig (20 %)",
+    "description": "Option mit geringer Lautstärke"
+  },
+  "volumeMedium": {
+    "message": "Mittel (50 %)",
+    "description": "Option mit mittlerer Lautstärke"
+  },
+  "volumeHigh": {
+    "message": "Hoch (80 %)",
+    "description": "Option für hohe Lautstärke"
+  },
+  "volumeFull": {
+    "message": "Voll (100 %)",
+    "description": "Option mit voller Lautstärke"
+  },
+  "volumeMuted": {
+    "message": "Stummgeschaltet (0 %)",
+    "description": "Option für gedämpfte Lautstärke"
+  },
+  "volumeCustom": {
+    "message": "Brauch (%)",
+    "description": "Option für benutzerdefinierte Lautstärke"
+  },
+  "volumePlaceholder": {
+    "message": "z.B. 30",
+    "description": "Volume-Platzhalter"
+  },
+  "historyCleanup": {
+    "message": "Verlaufsbereinigung",
+    "description": "Überschrift des Abschnitts „Verlaufsbereinigung“."
+  },
+  "historyCleanupLabel": {
+    "message": "Verlauf der automatischen Bereinigung",
+    "description": "Beschriftung zum Umschalten der automatischen Bereinigung"
+  },
+  "historyCleanupManual": {
+    "message": "Manuell (deaktiviert)",
+    "description": "Manuelle Bereinigungsoption"
+  },
+  "historyCleanupDaily": {
+    "message": "Täglich",
+    "description": "Tägliche Reinigungsoption"
+  },
+  "historyCleanupWeekly": {
+    "message": "Jede Woche",
+    "description": "Wöchentliche Reinigungsoption"
+  },
+  "historyCleanupMonthly": {
+    "message": "Jeden Monat",
+    "description": "Monatliche Reinigungsoption"
+  },
+  "historyCleanupOnClose": {
+    "message": "Beim Schließen des Browsers",
+    "description": "Option „Bereinigung beim Schließen des Browsers“."
+  },
+  "historyCleanupRetention": {
+    "message": "Als Letztes behalten",
+    "description": "Aufbewahrungsetikett"
+  },
+  "historyCleanupRetentionDesc": {
+    "message": "Anzahl der im Verlauf aufzubewahrenden Elemente",
+    "description": "Aufbewahrungsbeschreibung"
+  },
+  "historyCleanupSuccess": {
+    "message": "Verlauf erfolgreich bereinigt!",
+    "description": "Erfolgsmeldung der Bereinigung"
+  },
+  "historyCleanupCount": {
+    "message": "{count} alte Verlaufseinträge entfernt",
+    "description": "Meldung zur Bereinigungsanzahl"
   },
   "windowBehavior": {
     "message": "Fensterverhalten",
@@ -153,7 +281,7 @@
   },
   "fedoraSettings": {
     "message": "Fedora- und KDE-Plasma-Integration",
-    "description": "Abschnittsüberschrift für bestimmte Optionen der Linux-Betriebsumgebung"
+    "description": "Abschnittsüberschrift für bestimmte Optionen der Linux-Betriebssystemumgebung"
   },
   "inhibitSleepLabel": {
     "message": "Bildschirmschoner und Ruhezustand des Systems während der Wiedergabe sperren",
@@ -181,7 +309,7 @@
   },
   "snifferSubtitle": {
     "message": "Aufgenommene Streams",
-    "description": "Listen Sie die erfolgreich erfassten Untertitel-Tracking-Elemente auf"
+    "description": "Liste der erfolgreich erfassten Untertitel-Tracking-Elemente"
   },
   "snifferInstructions": {
     "message": "<strong>Anleitung:</strong> Gehen Sie zurück zum Website-Tab, drücken Sie im Videoplayer auf <strong>PLAY</strong> (und schließen Sie alle angezeigten Popups). Versteckte tatsächliche Streams werden sofort unten angezeigt.",
@@ -273,7 +401,7 @@
   },
   "snifferExportSuccess": {
     "message": "Links zur Konsole exportiert",
-    "description": "Bestätigung, wenn Links exportiert werden"
+    "description": "Bestätigung beim Exportieren von Links"
   },
   "snifferEmpty": {
     "message": "Noch keine Streams erfasst. Befolgen Sie die obigen Anweisungen.",
@@ -409,7 +537,7 @@
   },
   "snifferClearConfirm": {
     "message": "Alle erfassten Streams löschen?",
-    "description": "Klare Bestätigungsnachricht"
+    "description": "Klare Bestätigungsmeldung"
   },
   "popupResolutionCap": {
     "message": "Auflösungsobergrenze:",
@@ -461,7 +589,7 @@
   },
   "viewQueue": {
     "message": "Warteschlange anzeigen",
-    "description": "Kontextmenüeintrag zur Anzeige der Warteschlange"
+    "description": "Kontextmenüpunkt zum Anzeigen der Warteschlange"
   },
   "queueManagerTitle": {
     "message": "Warteschlangenmanager",
@@ -497,7 +625,7 @@
   },
   "queueStatusPaused": {
     "message": "⏸ Angehalten ({count} Elemente)",
-    "description": "Status „Warteschlange angehalten“ mit Anzahl der Elemente"
+    "description": "Status „Warteschlange angehalten“ mit Artikelanzahl"
   },
   "queueStatusIdle": {
     "message": "⏹ Leerlauf",

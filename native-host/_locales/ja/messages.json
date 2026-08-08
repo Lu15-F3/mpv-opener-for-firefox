@@ -1,10 +1,10 @@
 {
   "installer": {
-    "message": "Firefox 用 MPV オープナー - インストーラー v7.0",
+    "message": "Firefox 用 MPV オープナー - インストーラー 7.0.2",
     "description": "インストーラーのタイトル"
   },
   "uninstaller": {
-    "message": "Firefox 用 MPV オープナー - アンインストーラー",
+    "message": "Firefox 用 MPV オープナー - アンインストーラー 7.0.2",
     "description": "アンインストーラーのタイトル"
   },
   "checking_deps": {
@@ -141,7 +141,7 @@
   },
   "uninstall_complete": {
     "message": "アンインストールが無事完了しました！",
-    "description": "アンインストール完了"
+    "description": "アンインストールが完了しました"
   },
   "uninstall_confirm": {
     "message": "これにより、MPV Opener がシステムから削除されます。",

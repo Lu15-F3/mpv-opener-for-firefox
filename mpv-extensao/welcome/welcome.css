@@ -1,5 +1,5 @@
 /* ============================================================
-   welcome.css - MPV Opener for Firefox v7.0
+   welcome.css - MPV Opener for Firefox v7.2
    ============================================================ */
 
 :root {
@@ -248,4 +248,75 @@ p {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-muted);
+}
+
+/* ============================================================
+   Distro Selector
+   ============================================================ */
+.distro-selector {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 12px 0 10px 0;
+  padding: 10px 14px;
+  background: var(--bg-color);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  flex-wrap: wrap;
+}
+
+.distro-selector label {
+  font-size: 13px;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.distro-selector select {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 6px 12px;
+  border-radius: var(--border-radius);
+  outline: none;
+  font-size: 13px;
+  cursor: pointer;
+  transition: var(--transition);
+  flex: 1;
+  min-width: 150px;
+}
+
+.distro-selector select:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(122, 162, 247, 0.1);
+}
+
+.hint-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  margin: 8px 0 12px 0;
+  background: rgba(224, 175, 104, 0.1);
+  border-left: 3px solid var(--warning-yellow);
+  border-radius: var(--border-radius);
+  font-size: 13px;
+  color: var(--text-light);
+}
+
+.hint-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.hint-text {
+  line-height: 1.5;
+}
+
+.hint-text code {
+  background: var(--card-bg);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: 'SFMono-Regular', Consolas, monospace;
+  font-size: 12px;
+  color: var(--success-green);
 }

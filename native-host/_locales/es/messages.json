@@ -1,10 +1,10 @@
 {
   "installer": {
-    "message": "MPV Opener para Firefox - Instalador v7.0",
+    "message": "MPV Opener para Firefox - Instalador 7.0.2",
     "description": "Título del instalador"
   },
   "uninstaller": {
-    "message": "MPV Opener para Firefox - Desinstalador",
+    "message": "MPV Opener para Firefox - Desinstalador 7.0.2",
     "description": "Título del desinstalador"
   },
   "checking_deps": {
@@ -48,7 +48,7 @@
     "description": "Fallido"
   },
   "testing": {
-    "message": "Probando la comunicación con el host nativo...",
+    "message": "Probando la comunicación del host nativo...",
     "description": "Pruebas"
   },
   "test_passed": {
@@ -80,7 +80,7 @@
     "description": "Haga clic en el icono"
   },
   "shortcut_video": {
-    "message": "Utilice Ctrl+Alt+M para enviar vídeo a mpv",
+    "message": "Usa Ctrl+Alt+M para enviar el video a mpv",
     "description": "Vídeo de acceso directo"
   },
   "shortcut_sniffer": {
@@ -93,7 +93,7 @@
   },
   "addon_store": {
     "message": "Tienda complementaria",
-    "description": "tienda de complementos"
+    "description": "Tienda de complementos"
   },
   "github": {
     "message": "GitHub",
@@ -124,7 +124,7 @@
     "description": "Remoto"
   },
   "not_found": {
-    "message": "No encontrado:",
+    "message": "Extraviado:",
     "description": "Extraviado"
   },
   "cleaning": {
@@ -145,11 +145,11 @@
   },
   "uninstall_confirm": {
     "message": "Esto eliminará MPV Opener de su sistema.",
-    "description": "Confirmar desinstalación"
+    "description": "Desinstalar confirmar"
   },
   "continue_prompt": {
     "message": "¿Continuar?",
-    "description": "Continuar el aviso"
+    "description": "Continuar mensaje"
   },
   "deps_mpv": {
     "message": "monovolumen",
@@ -169,7 +169,7 @@
   },
   "deps_curl": {
     "message": "rizo",
-    "description": "dependencia de rizo"
+    "description": "dependencia de curl"
   },
   "deps_socat": {
     "message": "sorprendido",

@@ -37,7 +37,7 @@
   },
   "emptyHistory": {
     "message": "아직 전송된 동영상이 없습니다.",
-    "description": "표시할 기록이 없을 때 자리 표시자 텍스트"
+    "description": "표시할 기록이 없을 때 자리표시자 텍스트"
   },
   "emptyQueue": {
     "message": "대기열이 비어 있습니다.",
@@ -54,6 +54,10 @@
   "queueEnabledDesc": {
     "message": "활성화하면 새 창을 여는 대신 비디오가 대기열에 추가됩니다.",
     "description": "대기열 모드 전환에 대한 설명"
+  },
+  "queueSettings": {
+    "message": "대기열 설정",
+    "description": "옵션 페이지의 대기열 설정 섹션 헤더"
   },
   "stopQueue": {
     "message": "대기열 중지",
@@ -96,8 +100,52 @@
     "description": "모니터를 직접 채우는 mpv를 실행하는 옵션"
   },
   "pipMode": {
-    "message": "PIP(Picture-in-Picture)(오른쪽 하단)",
+    "message": "PIP(Picture-in-Picture)",
     "description": "화면에 코너에 몰린 플레이어 위치 지정 옵션"
+  },
+  "pipCorner": {
+    "message": "PiP 코너",
+    "description": "PiP 코너 선택 라벨"
+  },
+  "pipSize": {
+    "message": "크기",
+    "description": "PiP 크기 선택 라벨"
+  },
+  "pipTopLeft": {
+    "message": "왼쪽 위",
+    "description": "왼쪽 상단 옵션"
+  },
+  "pipTopRight": {
+    "message": "오른쪽 상단",
+    "description": "오른쪽 상단 코너 옵션"
+  },
+  "pipBottomLeft": {
+    "message": "왼쪽 하단",
+    "description": "왼쪽 하단 모서리 옵션"
+  },
+  "pipBottomRight": {
+    "message": "오른쪽 하단",
+    "description": "오른쪽 하단 옵션"
+  },
+  "pipSizeSmall": {
+    "message": "작음(15%)",
+    "description": "소형 옵션"
+  },
+  "pipSizeMedium": {
+    "message": "중간 (20%)",
+    "description": "중간 크기 옵션"
+  },
+  "pipSizeDefault": {
+    "message": "기본값(25%)",
+    "description": "기본 크기 옵션"
+  },
+  "pipSizeLarge": {
+    "message": "대형 (30%)",
+    "description": "대형 옵션"
+  },
+  "pipSizeXL": {
+    "message": "특대 (40%)",
+    "description": "초대형 크기 옵션"
   },
   "initialState": {
     "message": "초기 상태",
@@ -110,6 +158,86 @@
   "statePaused": {
     "message": "일시중지됨",
     "description": "일시정지된 프레임에서 대기하기 위한 시작 값"
+  },
+  "volumeSettings": {
+    "message": "볼륨 설정",
+    "description": "볼륨 설정 섹션 헤더"
+  },
+  "initialVolumeLabel": {
+    "message": "초기 볼륨",
+    "description": "초기 볼륨 설정 라벨"
+  },
+  "volumeLow": {
+    "message": "낮음(20%)",
+    "description": "낮은 볼륨 옵션"
+  },
+  "volumeMedium": {
+    "message": "중간 (50%)",
+    "description": "중간 볼륨 옵션"
+  },
+  "volumeHigh": {
+    "message": "높음(80%)",
+    "description": "대용량 옵션"
+  },
+  "volumeFull": {
+    "message": "전체(100%)",
+    "description": "전체 볼륨 옵션"
+  },
+  "volumeMuted": {
+    "message": "음소거됨(0%)",
+    "description": "음소거 볼륨 옵션"
+  },
+  "volumeCustom": {
+    "message": "관습 (%)",
+    "description": "맞춤형 볼륨 옵션"
+  },
+  "volumePlaceholder": {
+    "message": "예: 30",
+    "description": "볼륨 자리 표시자"
+  },
+  "historyCleanup": {
+    "message": "기록 정리",
+    "description": "기록 정리 섹션 헤더"
+  },
+  "historyCleanupLabel": {
+    "message": "자동 정리 기록",
+    "description": "자동 정리 토글 라벨"
+  },
+  "historyCleanupManual": {
+    "message": "수동(비활성화)",
+    "description": "수동 정리 옵션"
+  },
+  "historyCleanupDaily": {
+    "message": "매일",
+    "description": "일일 정리 옵션"
+  },
+  "historyCleanupWeekly": {
+    "message": "매주",
+    "description": "주간 정리 옵션"
+  },
+  "historyCleanupMonthly": {
+    "message": "매달",
+    "description": "월별 정리 옵션"
+  },
+  "historyCleanupOnClose": {
+    "message": "브라우저를 닫을 때",
+    "description": "브라우저 닫기 옵션 정리"
+  },
+  "historyCleanupRetention": {
+    "message": "마지막으로 유지",
+    "description": "보존 레이블"
+  },
+  "historyCleanupRetentionDesc": {
+    "message": "기록에 보관할 항목 수",
+    "description": "보존 설명"
+  },
+  "historyCleanupSuccess": {
+    "message": "기록이 성공적으로 정리되었습니다!",
+    "description": "정리 성공 메시지"
+  },
+  "historyCleanupCount": {
+    "message": "{count}개의 오래된 기록 항목을 제거했습니다.",
+    "description": "정리 횟수 메시지"
   },
   "windowBehavior": {
     "message": "창 동작",
@@ -129,7 +257,7 @@
   },
   "audioDevicePlaceholder": {
     "message": "예: alsa/hdmi, 펄스/장치_이름",
-    "description": "텍스트 입력 상자 내부의 자리표시자 힌트 구문"
+    "description": "텍스트 입력 상자 내부의 자리 표시자 힌트 구문"
   },
   "tabBehavior": {
     "message": "탭 동작",
@@ -144,7 +272,7 @@
     "description": "옵션 양식 커밋 버튼 내부의 작업 텍스트"
   },
   "saveSuccess": {
-    "message": "설정이 성공적으로 저장되었습니다!",
+    "message": "설정이 저장되었습니다!",
     "description": "운영 업데이트 시 플로팅 메시지 배너 알림 텍스트"
   },
   "sendingNotification": {
@@ -208,7 +336,7 @@
     "description": "운영 패키지 종속성을 설명하는 헤더 제목"
   },
   "welcomeStep1Desc": {
-    "message": "터미널을 열고 다음 명령을 실행하여 플레이어, 추출기 엔진 및 미디어 플러그인을 설치하십시오.",
+    "message": "터미널을 열고 다음 명령을 실행하여 플레이어, 추출기 엔진 및 미디어 플러그인을 설치합니다.",
     "description": "CLI 블록 앞의 명령 설명 세부 정보 블록"
   },
   "welcomeStep2Title": {
@@ -216,7 +344,7 @@
     "description": "매니페스트 배치 권한 작업을 자세히 설명하는 헤더"
   },
   "welcomeStep2Desc": {
-    "message": "이제 공식 설치 프로그램 스크립트를 실행하여 로컬 통합 매니페스트를 등록합니다.",
+    "message": "이제 공식 설치 프로그램 스크립트를 실행하여 로컬 통합 매니페스트를 등록하세요.",
     "description": "온라인 컬 설치 프로그램 실행 스크립트를 나타내는 세부 정보"
   },
   "welcomeFooter": {
@@ -341,7 +469,7 @@
   },
   "snifferStatus": {
     "message": "상태",
-    "description": "테스트 대화 상자의 상태 라벨"
+    "description": "테스트 대화상자의 상태 라벨"
   },
   "snifferType": {
     "message": "유형",
@@ -372,8 +500,8 @@
     "description": "대기 메시지"
   },
   "snifferNoLinks": {
-    "message": "테스트할 링크가 없습니다",
-    "description": "테스트할 링크가 없습니다"
+    "message": "테스트할 링크가 없습니다.",
+    "description": "테스트할 링크가 없습니다."
   },
   "snifferNoUrls": {
     "message": "내보낼 URL이 없습니다.",
@@ -437,7 +565,7 @@
   },
   "noVideoPlaying": {
     "message": "재생 중인 동영상 없음",
-    "description": "비디오가 재생되지 않을 때의 자리표시자"
+    "description": "비디오가 재생되지 않을 때의 자리 표시자"
   },
   "timeSeparator": {
     "message": "/",
@@ -497,7 +625,7 @@
   },
   "queueStatusPaused": {
     "message": "⏸ 일시중지됨({count}개 항목)",
-    "description": "항목 개수가 포함된 대기열 일시 중지 상태"
+    "description": "항목 개수가 포함된 대기열 일시중지 상태"
   },
   "queueStatusIdle": {
     "message": "⏹ 유휴",

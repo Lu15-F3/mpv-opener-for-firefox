@@ -1,10 +1,10 @@
 {
   "installer": {
-    "message": "MPV Opener dla przeglądarki Firefox - Instalator v7.0",
+    "message": "MPV Opener dla Firefoksa - Instalator 7.0.2",
     "description": "Tytuł instalatora"
   },
   "uninstaller": {
-    "message": "MPV Opener dla Firefoksa - Dezinstalator",
+    "message": "MPV Opener dla Firefoksa - Dezinstalator 7.0.2",
     "description": "Tytuł deinstalatora"
   },
   "checking_deps": {
@@ -37,7 +37,7 @@
   },
   "verifying": {
     "message": "Sprawdzanie instalacji...",
-    "description": "Weryfikacja"
+    "description": "Weryfikowanie"
   },
   "verified": {
     "message": "Zweryfikowano pomyślnie!",
@@ -85,7 +85,7 @@
   },
   "shortcut_sniffer": {
     "message": "Użyj Ctrl+Alt+V, aby otworzyć narzędzie Media Sniffer",
-    "description": "Skaner skrótów"
+    "description": "Detektor skrótów"
   },
   "links": {
     "message": "Spinki do mankietów:",

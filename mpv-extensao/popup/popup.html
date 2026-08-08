@@ -6,14 +6,29 @@
 </head>
 <body>
   <div class="tabs-nav">
-    <button id="tab-btn-main" class="tab-link active">Control</button>
-    <button id="tab-btn-queue" class="tab-link">Queue</button>
-    <button id="tab-btn-history" class="tab-link">History</button>
+    <button id="tab-btn-main" class="tab-link active" data-i18n="tabMain">Control</button>
+    <button id="tab-btn-queue" class="tab-link" data-i18n="tabQueue">Queue</button>
+    <button id="tab-btn-history" class="tab-link" data-i18n="tabHistory">History</button>
     <button id="settings-btn" class="tab-link settings-btn" title="Preferences">⚙️</button>
   </div>
   
   <div id="tab-main" class="tab-content active">
     <div class="container">
+      <!-- ========================================================== -->
+      <!-- Display Mode Selector -->
+      <!-- ========================================================== -->
+      <div class="quick-select">
+        <label for="displayMode" data-i18n="displayMode">Display Mode:</label>
+        <select id="displayMode">
+          <option value="standard" data-i18n="standardWindow">Standard Window</option>
+          <option value="fullscreen" data-i18n="fullscreen">Fullscreen</option>
+          <option value="pip" data-i18n="pipMode">Picture-in-Picture</option>
+        </select>
+      </div>
+
+      <!-- ========================================================== -->
+      <!-- Resolution Cap -->
+      <!-- ========================================================== -->
       <div class="quick-select">
         <label for="quickRes" data-i18n="popupResolutionCap">Resolution Cap:</label>
         <select id="quickRes">
@@ -23,6 +38,49 @@
           <option value="480" data-i18n="popup480p">480p</option>
         </select>
       </div>
+
+      <!-- ========================================================== -->
+      <!-- PiP Settings (mostra apenas quando pip está selecionado) -->
+      <!-- ========================================================== -->
+      <div class="pip-settings" id="pip-settings" style="display:none;">
+        <div class="form-group">
+          <label for="pipCorner" data-i18n="pipCorner">PiP Corner:</label>
+          <select id="pipCorner">
+            <option value="topLeft" data-i18n="pipTopLeft">Top Left</option>
+            <option value="topRight" data-i18n="pipTopRight">Top Right</option>
+            <option value="bottomLeft" data-i18n="pipBottomLeft">Bottom Left</option>
+            <option value="bottomRight" data-i18n="pipBottomRight" selected>Bottom Right</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="pipSize" data-i18n="pipSize">Size:</label>
+          <select id="pipSize">
+            <option value="15" data-i18n="pipSizeSmall">Small (15%)</option>
+            <option value="20" data-i18n="pipSizeMedium">Medium (20%)</option>
+            <option value="25" data-i18n="pipSizeDefault" selected>Default (25%)</option>
+            <option value="30" data-i18n="pipSizeLarge">Large (30%)</option>
+            <option value="40" data-i18n="pipSizeXL">Extra Large (40%)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- ========================================================== -->
+      <!-- Quick Volume Control -->
+      <!-- ========================================================== -->
+      <div class="quick-select">
+        <label for="quickVolume" data-i18n="initialVolumeLabel">Volume:</label>
+        <select id="quickVolume">
+          <option value="0" data-i18n="volumeMuted">Muted (0%)</option>
+          <option value="20" data-i18n="volumeLow">Low (20%)</option>
+          <option value="50" data-i18n="volumeMedium" selected>Medium (50%)</option>
+          <option value="80" data-i18n="volumeHigh">High (80%)</option>
+          <option value="100" data-i18n="volumeFull">Full (100%)</option>
+        </select>
+      </div>
+
+      <!-- ========================================================== -->
+      <!-- Action Buttons -->
+      <!-- ========================================================== -->
       <button id="send-btn" class="btn-primary">
         <span class="icon">▶</span> Send to mpv
       </button>
@@ -30,8 +88,12 @@
         <span class="icon">♪</span> Listen Only
       </button>
       <button id="sniff-btn" class="btn-sniffer">
-        <span class="icon">🎣</span> Modo Pesca (Sniffer)
+        <span class="icon">🎣</span> Start Media Sniffer Mode
       </button>
+      
+      <!-- ========================================================== -->
+      <!-- Queue Toggle -->
+      <!-- ========================================================== -->
       <div class="queue-toggle-container">
         <label class="toggle-switch">
           <input type="checkbox" id="queue-toggle">
@@ -44,7 +106,7 @@
   
   <div id="tab-queue" class="tab-content">
     <div class="queue-container">
-      <!-- MINI PLAYER INTEGRADO (Controlador Definitivo) -->
+      <!-- MINI PLAYER INTEGRADO -->
       <div class="mini-player" id="mini-player">
         <div class="mini-player-header">
           <span class="mini-player-title" data-i18n="nowPlaying">▶ Now Playing</span>
@@ -64,13 +126,12 @@
           <input type="range" id="mp-timeline" min="0" max="100" value="0" step="0.1">
         </div>
         <div class="mini-player-controls">
-          <button id="mp-prev" class="mp-btn" title="__MSG_playerPrevious__">◀◀</button>
-          <button id="mp-play-pause" class="mp-btn mp-play-btn" title="__MSG_playPause__">▶</button>
-          <button id="mp-next" class="mp-btn" title="__MSG_playerNext__">▶▶</button>
-          <button id="mp-volume-down" class="mp-btn mp-vol-btn" title="Volume Down">🔉</button>
-          <button id="mp-volume-up" class="mp-btn mp-vol-btn" title="Volume Up">🔊</button>
+          <button id="mp-prev" class="mp-btn" data-i18n-title="previousTrack">◀◀</button>
+          <button id="mp-play-pause" class="mp-btn mp-play-btn" data-i18n-title="playPause">▶</button>
+          <button id="mp-next" class="mp-btn" data-i18n-title="nextTrack">▶▶</button>
+          <button id="mp-volume-down" class="mp-btn mp-vol-btn" data-i18n-title="volumeDown">🔉</button>
+          <button id="mp-volume-up" class="mp-btn mp-vol-btn" data-i18n-title="volumeUp">🔊</button>
         </div>
-        <!-- Volume indicator -->
         <div class="volume-indicator" id="volume-indicator">
           <span class="volume-label" data-i18n="playerVolume">Volume</span>
           <div class="volume-bar">
@@ -80,7 +141,7 @@
         </div>
       </div>
       
-      <!-- QUEUE LIST (Apenas lista, sem botões de controle) -->
+      <!-- QUEUE LIST -->
       <div class="queue-header">
         <span class="queue-count" id="queue-count">0 items in queue</span>
         <div class="queue-actions">
@@ -88,7 +149,6 @@
         </div>
       </div>
       
-      <!-- Botão para abrir o Queue Manager -->
       <div class="queue-extra-actions">
         <button id="open-queue-manager-btn" class="btn-queue-manager" data-i18n="openQueueManager">📋 Open Queue Manager</button>
       </div>
@@ -100,7 +160,13 @@
   <div id="tab-history" class="tab-content">
     <div class="history-container">
       <ul id="history-list"></ul>
-      <button id="clear-history-btn" class="btn-danger">Clear History</button>
+      <div style="display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap;">
+        <button id="clear-history-btn" class="btn-danger">Clear History</button>
+        <button id="cleanup-history-btn" class="btn-warning" style="background: linear-gradient(135deg, var(--accent-color), #565f89); color: var(--text-color); border: none; padding: 8px 14px; font-size: 11px; font-weight: 600; border-radius: var(--border-radius); cursor: pointer; transition: var(--transition);">
+          🧹 Clean Old
+        </button>
+      </div>
+      <div id="cleanup-info" style="font-size: 10px; color: var(--text-muted); margin-top: 6px;"></div>
     </div>
   </div>
   

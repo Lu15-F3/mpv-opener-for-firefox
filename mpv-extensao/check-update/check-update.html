@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>MPV Opener - Update Check</title>
+  <link rel="stylesheet" href="options.css">
+  <style>
+    .update-container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 30px;
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      border: 1px solid var(--border-color);
+    }
+    .update-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .update-status {
+      padding: 12px 16px;
+      border-radius: var(--border-radius);
+      margin: 16px 0;
+    }
+    .update-status.ok {
+      background: rgba(158, 206, 106, 0.15);
+      border-left: 4px solid var(--success-green);
+    }
+    .update-status.warning {
+      background: rgba(224, 175, 104, 0.15);
+      border-left: 4px solid var(--warning-yellow);
+    }
+    .update-status.error {
+      background: rgba(247, 118, 142, 0.15);
+      border-left: 4px solid var(--danger-color);
+    }
+    .version-info {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 12px;
+      background: var(--bg-color);
+      border-radius: 4px;
+      margin: 8px 0;
+    }
+    .version-label {
+      color: var(--text-muted);
+    }
+    .version-value {
+      font-weight: 600;
+      font-family: monospace;
+    }
+    .version-value.outdated {
+      color: var(--danger-color);
+    }
+    .version-value.current {
+      color: var(--success-green);
+    }
+    .btn-update {
+      background: linear-gradient(135deg, var(--accent-color), var(--accent-pink));
+      color: var(--bg-color);
+      border: none;
+      padding: 12px 24px;
+      border-radius: var(--border-radius);
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+      width: 100%;
+      margin-top: 16px;
+    }
+    .btn-update:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(122, 162, 247, 0.3);
+    }
+    .btn-update:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+    .check-btn {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      color: var(--text-color);
+      padding: 8px 16px;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: var(--transition);
+      margin-top: 8px;
+    }
+    .check-btn:hover {
+      border-color: var(--accent-color);
+    }
+    .spinner {
+      display: inline-block;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="update-container">
+    <div class="update-header">
+      <img src="../icons/icon-48.png" alt="MPV Opener" style="width:40px;height:40px;border-radius:8px;">
+      <h1 style="margin:0;">MPV Opener - Update Check</h1>
+    </div>
+    
+    <div id="status-container" class="update-status">
+      <span id="status-icon">🔍</span>
+      <span id="status-text">Checking versions...</span>
+    </div>
+    
+    <div class="version-info">
+      <span class="version-label">Extension Version:</span>
+      <span class="version-value" id="ext-version">Checking...</span>
+    </div>
+    
+    <div class="version-info">
+      <span class="version-label">Wrapper Version:</span>
+      <span class="version-value" id="wrapper-version">Checking...</span>
+    </div>
+    
+    <div class="version-info">
+      <span class="version-label">Required Wrapper Version:</span>
+      <span class="version-value" id="required-version">Checking...</span>
+    </div>
+    
+    <div id="update-actions" style="display:none;">
+      <button class="btn-update" id="update-btn">
+        🔄 Update Native Host
+      </button>
+    </div>
+    
+    <button class="check-btn" id="check-btn">🔄 Check Again</button>
+  </div>
+  
+  <script src="check-update.js"></script>
+</body>
+</html>

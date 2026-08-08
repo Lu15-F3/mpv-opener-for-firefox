@@ -1,10 +1,10 @@
 {
   "installer": {
-    "message": "Abridor MPV para Firefox - Instalador v7.0",
+    "message": "Abridor MPV para Firefox - Instalador 7.0.2",
     "description": "Título do instalador"
   },
   "uninstaller": {
-    "message": "Abridor MPV para Firefox - Desinstalador",
+    "message": "Abridor MPV para Firefox - Desinstalador 7.0.2",
     "description": "Título do desinstalador"
   },
   "checking_deps": {
@@ -153,7 +153,7 @@
   },
   "deps_mpv": {
     "message": "MPV",
-    "description": "dependência do mpv"
+    "description": "dependência de mpv"
   },
   "deps_ytdlp": {
     "message": "yt-dlp",

@@ -25,7 +25,7 @@
   },
   "tabHistory": {
     "message": "Historia",
-    "description": "Título de la pestaña Historial en la interfaz emergente"
+    "description": "Título de la pestaña de historial en la interfaz emergente"
   },
   "tabQueue": {
     "message": "Cola",
@@ -54,6 +54,10 @@
   "queueEnabledDesc": {
     "message": "Cuando está habilitado, los videos se agregan a la cola en lugar de abrir nuevas ventanas",
     "description": "Descripción para alternar el modo de cola"
+  },
+  "queueSettings": {
+    "message": "Configuración de cola",
+    "description": "Encabezado de la sección de configuración de cola en la página de opciones"
   },
   "stopQueue": {
     "message": "Detener cola",
@@ -96,8 +100,52 @@
     "description": "Opción de lanzar mpv directamente llenando el monitor."
   },
   "pipMode": {
-    "message": "Imagen en imagen (abajo a la derecha)",
+    "message": "Imagen en imagen",
     "description": "Opción para posicionar al jugador acorralado en la pantalla."
+  },
+  "pipCorner": {
+    "message": "Esquina de imágenes",
+    "description": "Etiqueta para la selección de esquina de PiP"
+  },
+  "pipSize": {
+    "message": "Tamaño",
+    "description": "Etiqueta para selección de tamaño de PiP"
+  },
+  "pipTopLeft": {
+    "message": "Arriba a la izquierda",
+    "description": "Opción de la esquina superior izquierda"
+  },
+  "pipTopRight": {
+    "message": "Arriba a la derecha",
+    "description": "Opción de la esquina superior derecha"
+  },
+  "pipBottomLeft": {
+    "message": "Abajo a la izquierda",
+    "description": "Opción de esquina inferior izquierda"
+  },
+  "pipBottomRight": {
+    "message": "Abajo a la derecha",
+    "description": "Opción de la esquina inferior derecha"
+  },
+  "pipSizeSmall": {
+    "message": "Pequeño (15%)",
+    "description": "Opción de tamaño pequeño"
+  },
+  "pipSizeMedium": {
+    "message": "Medio (20%)",
+    "description": "Opción de tamaño mediano"
+  },
+  "pipSizeDefault": {
+    "message": "Predeterminado (25%)",
+    "description": "Opción de tamaño predeterminado"
+  },
+  "pipSizeLarge": {
+    "message": "Grande (30%)",
+    "description": "Opción de tamaño grande"
+  },
+  "pipSizeXL": {
+    "message": "Extra grande (40%)",
+    "description": "Opción de tamaño extra grande"
   },
   "initialState": {
     "message": "Estado inicial",
@@ -110,6 +158,86 @@
   "statePaused": {
     "message": "En pausa",
     "description": "Valor de inicio para esperar en un cuadro pausado"
+  },
+  "volumeSettings": {
+    "message": "Configuración de volumen",
+    "description": "Encabezado de la sección de configuración de volumen"
+  },
+  "initialVolumeLabel": {
+    "message": "Volumen inicial",
+    "description": "Etiqueta para la configuración de volumen inicial"
+  },
+  "volumeLow": {
+    "message": "Bajo (20%)",
+    "description": "Opción de bajo volumen"
+  },
+  "volumeMedium": {
+    "message": "Medio (50%)",
+    "description": "Opción de volumen medio"
+  },
+  "volumeHigh": {
+    "message": "Alto (80%)",
+    "description": "Opción de alto volumen"
+  },
+  "volumeFull": {
+    "message": "Completo (100%)",
+    "description": "Opción de volumen completo"
+  },
+  "volumeMuted": {
+    "message": "Silenciado (0%)",
+    "description": "Opción de volumen silenciado"
+  },
+  "volumeCustom": {
+    "message": "Costumbre (%)",
+    "description": "Opción de volumen personalizado"
+  },
+  "volumePlaceholder": {
+    "message": "por ejemplo, 30",
+    "description": "Marcador de posición de volumen"
+  },
+  "historyCleanup": {
+    "message": "Limpieza de la historia",
+    "description": "Encabezado de la sección de limpieza del historial"
+  },
+  "historyCleanupLabel": {
+    "message": "Historial de limpieza automática",
+    "description": "Etiqueta para alternar limpieza automática"
+  },
+  "historyCleanupManual": {
+    "message": "Manual (deshabilitado)",
+    "description": "Opción de limpieza manual"
+  },
+  "historyCleanupDaily": {
+    "message": "Cada día",
+    "description": "Opción de limpieza diaria"
+  },
+  "historyCleanupWeekly": {
+    "message": "Cada semana",
+    "description": "Opción de limpieza semanal"
+  },
+  "historyCleanupMonthly": {
+    "message": "Cada mes",
+    "description": "Opción de limpieza mensual"
+  },
+  "historyCleanupOnClose": {
+    "message": "En el navegador Cerrar",
+    "description": "Opción de limpieza al cerrar el navegador"
+  },
+  "historyCleanupRetention": {
+    "message": "Mantener al final",
+    "description": "Etiqueta de retención"
+  },
+  "historyCleanupRetentionDesc": {
+    "message": "Número de elementos a mantener en el historial.",
+    "description": "Descripción de retención"
+  },
+  "historyCleanupSuccess": {
+    "message": "¡Historial limpiado exitosamente!",
+    "description": "Mensaje de éxito de limpieza"
+  },
+  "historyCleanupCount": {
+    "message": "Se eliminaron {count} entradas del historial antiguo",
+    "description": "Mensaje de recuento de limpieza"
   },
   "windowBehavior": {
     "message": "Comportamiento de la ventana",
@@ -177,7 +305,7 @@
   },
   "snifferTitle": {
     "message": "Rastreador de enlaces multimedia",
-    "description": "Encabezado del título principal dentro de la página de Fisher View del flujo de medios"
+    "description": "Encabezado del título principal dentro de la página de vista de Fisher de la transmisión de medios"
   },
   "snifferSubtitle": {
     "message": "Secuencias capturadas",
@@ -201,7 +329,7 @@
   },
   "welcomeIntro": {
     "message": "El MPV Opener para Firefox se ha agregado a su navegador, pero aún no puede comunicarse con su sistema. Siga estos dos pasos rápidos:",
-    "description": "Párrafo introductorio que enfatiza los problemas de saludo de ejecución en el host local"
+    "description": "Párrafo de introducción que enfatiza los problemas de protocolo de enlace de ejecución del host local"
   },
   "welcomeStep1Title": {
     "message": "1. Instalar dependencias",
@@ -221,7 +349,7 @@
   },
   "welcomeFooter": {
     "message": "Después de ejecutar los comandos, la extensión funcionará instantáneamente. No es necesario reiniciar Firefox.",
-    "description": "Mensaje final alentador que confirma la operatividad inmediata de la plataforma"
+    "description": "Mensaje final alentador que confirma la operatividad inmediata de la plataforma."
   },
   "copyBtn": {
     "message": "Copiar",
@@ -465,7 +593,7 @@
   },
   "queueManagerTitle": {
     "message": "Administrador de colas",
-    "description": "Título de la página del gestor de colas"
+    "description": "Título de la página del administrador de colas"
   },
   "queueEmptyStatus": {
     "message": "La cola está vacía.",
@@ -488,11 +616,11 @@
     "description": "Artículos restantes en cola"
   },
   "queueStatusCompleted": {
-    "message": "✓ Completado ({current} / {total})",
+    "message": "✓ Completado ({actual} / {total})",
     "description": "Estado de cola completada con recuentos"
   },
   "queueStatusPlaying": {
-    "message": "▶ Reproduciendo ({remaining} restantes)",
+    "message": "▶ Jugando (quedan {restantes})",
     "description": "Estado de la cola reproduciéndose con el recuento restante"
   },
   "queueStatusPaused": {

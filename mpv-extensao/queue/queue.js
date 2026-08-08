@@ -1,5 +1,5 @@
 // ============================================================
-// queue.js - MPV Opener for Firefox v7.0
+// queue.js - MPV Opener for Firefox v7.2
 // SIMPLIFICADO - Removidos botões duplicados
 // ============================================================
 

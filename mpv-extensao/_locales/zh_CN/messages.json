@@ -40,7 +40,7 @@
     "description": "没有可显示的历史记录时的占位符文本"
   },
   "emptyQueue": {
-    "message": "队列为空。",
+    "message": "队列是空的。",
     "description": "没有队列项目时的占位符文本"
   },
   "queueCount": {
@@ -54,6 +54,10 @@
   "queueEnabledDesc": {
     "message": "启用后，视频将添加到队列中，而不是打开新窗口",
     "description": "队列模式切换说明"
+  },
+  "queueSettings": {
+    "message": "队列设置",
+    "description": "选项页面中的队列设置部分标题"
   },
   "stopQueue": {
     "message": "停止队列",
@@ -96,8 +100,52 @@
     "description": "可选择启动 mpv 直接填充显示器"
   },
   "pipMode": {
-    "message": "画中画（右下）",
+    "message": "画中画",
     "description": "将玩家定位在屏幕角落的选项"
+  },
+  "pipCorner": {
+    "message": "画中画角",
+    "description": "PiP 角选择的标签"
+  },
+  "pipSize": {
+    "message": "尺寸",
+    "description": "用于画中画尺寸选择的标签"
+  },
+  "pipTopLeft": {
+    "message": "左上",
+    "description": "左上角选项"
+  },
+  "pipTopRight": {
+    "message": "右上",
+    "description": "右上角选项"
+  },
+  "pipBottomLeft": {
+    "message": "左下角",
+    "description": "左下角选项"
+  },
+  "pipBottomRight": {
+    "message": "右下角",
+    "description": "右下角选项"
+  },
+  "pipSizeSmall": {
+    "message": "小 (15%)",
+    "description": "小尺寸选项"
+  },
+  "pipSizeMedium": {
+    "message": "中（20%）",
+    "description": "中号选项"
+  },
+  "pipSizeDefault": {
+    "message": "默认 (25%)",
+    "description": "默认尺寸选项"
+  },
+  "pipSizeLarge": {
+    "message": "大 (30%)",
+    "description": "大尺寸选项"
+  },
+  "pipSizeXL": {
+    "message": "特大号 (40%)",
+    "description": "超大尺寸选项"
   },
   "initialState": {
     "message": "初始状态",
@@ -110,6 +158,86 @@
   "statePaused": {
     "message": "已暂停",
     "description": "在暂停帧中等待的启动值"
+  },
+  "volumeSettings": {
+    "message": "音量设置",
+    "description": "音量设置部分标题"
+  },
+  "initialVolumeLabel": {
+    "message": "初始量",
+    "description": "初始音量设置标签"
+  },
+  "volumeLow": {
+    "message": "低（20%）",
+    "description": "低音量选项"
+  },
+  "volumeMedium": {
+    "message": "中（50%）",
+    "description": "中等容量选项"
+  },
+  "volumeHigh": {
+    "message": "高（80%）",
+    "description": "高容量选项"
+  },
+  "volumeFull": {
+    "message": "满（100%）",
+    "description": "全音量选项"
+  },
+  "volumeMuted": {
+    "message": "静音 (0%)",
+    "description": "静音音量选项"
+  },
+  "volumeCustom": {
+    "message": "风俗 （％）",
+    "description": "自定义音量选项"
+  },
+  "volumePlaceholder": {
+    "message": "例如，30",
+    "description": "音量占位符"
+  },
+  "historyCleanup": {
+    "message": "历史清理",
+    "description": "历史清理节标题"
+  },
+  "historyCleanupLabel": {
+    "message": "自动清理历史记录",
+    "description": "自动清理切换标签"
+  },
+  "historyCleanupManual": {
+    "message": "手动（禁用）",
+    "description": "手动清理选项"
+  },
+  "historyCleanupDaily": {
+    "message": "每天",
+    "description": "每日清理选项"
+  },
+  "historyCleanupWeekly": {
+    "message": "每周",
+    "description": "每周清理选项"
+  },
+  "historyCleanupMonthly": {
+    "message": "每个月",
+    "description": "每月清理选项"
+  },
+  "historyCleanupOnClose": {
+    "message": "浏览器关闭时",
+    "description": "浏览器关闭选项中的清理"
+  },
+  "historyCleanupRetention": {
+    "message": "保持最后",
+    "description": "保留标签"
+  },
+  "historyCleanupRetentionDesc": {
+    "message": "要保留在历史记录中的项目数",
+    "description": "保留说明"
+  },
+  "historyCleanupSuccess": {
+    "message": "历史清理成功！",
+    "description": "清理成功消息"
+  },
+  "historyCleanupCount": {
+    "message": "已删除 {count} 个旧历史记录条目",
+    "description": "清理计数消息"
   },
   "windowBehavior": {
     "message": "窗口行为",
@@ -468,7 +596,7 @@
     "description": "队列管理器页面的标题"
   },
   "queueEmptyStatus": {
-    "message": "队列为空。",
+    "message": "队列是空的。",
     "description": "空队列状态"
   },
   "queueCompleted": {

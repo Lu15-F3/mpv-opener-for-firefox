@@ -2,17 +2,12 @@
   "manifest_version": 2,
   "name": "MPV Opener for Firefox",
   "description": "__MSG_extensionDescription__",
-  "version": "7.0.0",
+  "version": "7.0.2",
   "default_locale": "en",
   "browser_specific_settings": {
     "gecko": {
       "id": "mpv-opener@lu15-f3-dev.org",
-      "strict_min_version": "142.0",
-      "data_collection_permissions": {
-        "required": [
-          "none"
-        ]
-      }
+      "strict_min_version": "142.0"
     }
   },
   "permissions": [
@@ -71,6 +66,7 @@
     "128": "icons/icon-128.png"
   },
   "web_accessible_resources": [
-    "icons/*"
+    "icons/*",
+    "check-update/*"
   ]
 }

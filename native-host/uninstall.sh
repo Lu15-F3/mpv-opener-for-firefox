@@ -1,7 +1,7 @@
 #!/bin/bash
 # ============================================================
-# uninstall.sh - MPV Opener for Firefox v7.0
-# Native Host Uninstaller - Multilingual
+# uninstall.sh - MPV Opener for Firefox v7.2
+# Native Host Uninstaller - Multi-Distro Support
 # ============================================================
 
 set -e
@@ -19,35 +19,60 @@ NC='\033[0m'
 # Get the directory where this script is located
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-echo "DEBUG: Script directory: $SCRIPT_DIR" >&2
-
 # ============================================================
 # Load locale system
 # ============================================================
-source "$SCRIPT_DIR/locale_loader.sh"
+if [ -f "$SCRIPT_DIR/locale_loader.sh" ]; then
+    source "$SCRIPT_DIR/locale_loader.sh"
+elif [ -f "$(dirname "$SCRIPT_DIR")/locale_loader.sh" ]; then
+    source "$(dirname "$SCRIPT_DIR")/locale_loader.sh"
+else
+    # Fallback functions
+    detect_language() {
+        local lang="${LANG:-en_US}"
+        lang="${lang%%.*}"
+        lang="${lang%%:*}"
+        lang="${lang//_/-}"
+        case "$lang" in pt-BR|pt_PT|pt*) echo "pt_BR" ;; es*) echo "es" ;; *) echo "en" ;; esac
+    }
+    load_locale() { load_fallback_messages; }
+    load_fallback_messages() {
+        MSG_uninstaller="MPV Opener for Firefox - Uninstaller"
+        MSG_language="Language"
+        MSG_uninstall_confirm="This will remove MPV Opener from your system."
+        MSG_continue_prompt="Continue?"
+        MSG_cancelled="Installation cancelled."
+        MSG_removing="Removing components..."
+        MSG_removed="Removed:"
+        MSG_not_found="Not found:"
+        MSG_cleaning="Cleaning empty directories..."
+        MSG_removed_empty="Removed empty:"
+        MSG_dir_not_empty="Directory not empty or not found:"
+        MSG_uninstall_complete="Uninstallation completed successfully!"
+        MSG_restart="You may need to restart Firefox for changes to take effect."
+        MSG_removing_version="Removing version information..."
+    }
+fi
 
 # Detect language
 LANG_CODE="$(detect_language)"
-echo "DEBUG: Detected language: $LANG_CODE" >&2
-
-# Load all messages
 load_locale "$LANG_CODE"
 
-# Verificar se as mensagens foram carregadas
 if [ -z "$MSG_uninstaller" ]; then
-    echo "WARNING: Messages not loaded, using fallback" >&2
     load_fallback_messages
 fi
 
-# Debug: Mostrar mensagem carregada
-echo "DEBUG: MSG_uninstaller = ${MSG_uninstaller}" >&2
-echo "DEBUG: MSG_language = ${MSG_language}" >&2
-
+# ============================================================
+# Paths
+# ============================================================
 BIN_DIR="$HOME/.local/bin"
 NATIVE_DIR_NATIVE="$HOME/.mozilla/native-messaging-hosts"
 NATIVE_DIR_FLATPAK="$HOME/.var/app/org.mozilla.firefox/.mozilla/native-messaging-hosts"
+NATIVE_DIR_SNAP="$HOME/snap/firefox/common/.mozilla/native-messaging-hosts"
 MANIFEST_NAME="org.custom.mpv.json"
 WRAPPER_NAME="mpv_wrapper.py"
+VERSION_FILE="$HOME/.local/share/mpv-opener/version.txt"
+VERSION_DIR="$(dirname "$VERSION_FILE")"
 
 # ============================================================
 # Display header
@@ -68,6 +93,22 @@ fi
 echo -e "\n${BLUE}▶ $MSG_removing${NC}"
 
 # ============================================================
+# Remove version file
+# ============================================================
+echo -e "${BLUE}▶ $MSG_removing_version${NC}"
+if [ -f "$VERSION_FILE" ]; then
+    rm "$VERSION_FILE"
+    echo -e "${GREEN}  ✔ $MSG_removed $VERSION_FILE${NC}"
+else
+    echo -e "${YELLOW}  ⚠ $MSG_not_found $VERSION_FILE${NC}"
+fi
+
+# Tentar remover o diretório se estiver vazio
+if [ -d "$VERSION_DIR" ] && [ -z "$(ls -A "$VERSION_DIR" 2>/dev/null)" ]; then
+    rmdir "$VERSION_DIR" 2>/dev/null && echo -e "${GREEN}  ✔ $MSG_removed_empty $VERSION_DIR${NC}"
+fi
+
+# ============================================================
 # Remove wrapper
 # ============================================================
 WRAPPER_PATH="$BIN_DIR/$WRAPPER_NAME"
@@ -81,36 +122,28 @@ fi
 # ============================================================
 # Remove manifest files
 # ============================================================
-if [ -f "$NATIVE_DIR_NATIVE/$MANIFEST_NAME" ]; then
-    rm "$NATIVE_DIR_NATIVE/$MANIFEST_NAME"
-    echo -e "${GREEN}  ✔ $MSG_removed $NATIVE_DIR_NATIVE/$MANIFEST_NAME${NC}"
-else
-    echo -e "${YELLOW}  ⚠ $MSG_not_found $NATIVE_DIR_NATIVE/$MANIFEST_NAME${NC}"
-fi
-
-if [ -f "$NATIVE_DIR_FLATPAK/$MANIFEST_NAME" ]; then
-    rm "$NATIVE_DIR_FLATPAK/$MANIFEST_NAME"
-    echo -e "${GREEN}  ✔ $MSG_removed $NATIVE_DIR_FLATPAK/$MANIFEST_NAME${NC}"
-else
-    echo -e "${YELLOW}  ⚠ $MSG_not_found $NATIVE_DIR_FLATPAK/$MANIFEST_NAME${NC}"
-fi
+for dir in "$NATIVE_DIR_NATIVE" "$NATIVE_DIR_FLATPAK" "$NATIVE_DIR_SNAP"; do
+    MANIFEST_PATH="$dir/$MANIFEST_NAME"
+    if [ -f "$MANIFEST_PATH" ]; then
+        rm "$MANIFEST_PATH"
+        echo -e "${GREEN}  ✔ $MSG_removed $MANIFEST_PATH${NC}"
+    else
+        echo -e "${YELLOW}  ⚠ $MSG_not_found $MANIFEST_PATH${NC}"
+    fi
+done
 
 # ============================================================
 # Clean empty directories
 # ============================================================
 echo -e "\n${BLUE}▶ $MSG_cleaning${NC}"
 
-if [ -d "$NATIVE_DIR_NATIVE" ] && [ -z "$(ls -A "$NATIVE_DIR_NATIVE" 2>/dev/null)" ]; then
-    rmdir "$NATIVE_DIR_NATIVE" 2>/dev/null && echo -e "${GREEN}  ✔ $MSG_removed_empty $NATIVE_DIR_NATIVE${NC}"
-else
-    echo -e "${YELLOW}  ⚠ $MSG_dir_not_empty $NATIVE_DIR_NATIVE${NC}"
-fi
-
-if [ -d "$NATIVE_DIR_FLATPAK" ] && [ -z "$(ls -A "$NATIVE_DIR_FLATPAK" 2>/dev/null)" ]; then
-    rmdir "$NATIVE_DIR_FLATPAK" 2>/dev/null && echo -e "${GREEN}  ✔ $MSG_removed_empty $NATIVE_DIR_FLATPAK${NC}"
-else
-    echo -e "${YELLOW}  ⚠ $MSG_dir_not_empty $NATIVE_DIR_FLATPAK${NC}"
-fi
+for dir in "$NATIVE_DIR_NATIVE" "$NATIVE_DIR_FLATPAK" "$NATIVE_DIR_SNAP"; do
+    if [ -d "$dir" ] && [ -z "$(ls -A "$dir" 2>/dev/null)" ]; then
+        rmdir "$dir" 2>/dev/null && echo -e "${GREEN}  ✔ $MSG_removed_empty $dir${NC}"
+    else
+        echo -e "${YELLOW}  ⚠ $MSG_dir_not_empty $dir${NC}"
+    fi
+done
 
 # ============================================================
 # Final message

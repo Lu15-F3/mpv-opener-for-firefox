@@ -1,10 +1,10 @@
 {
   "installer": {
-    "message": "适用于 Firefox 的 MPV Opener - 安装程序 v7.0",
+    "message": "适用于 Firefox 的 MPV Opener - 安装程序 7.0.2",
     "description": "安装人员头衔"
   },
   "uninstaller": {
-    "message": "适用于 Firefox 的 MPV Opener - 卸载程序",
+    "message": "适用于 Firefox 的 MPV Opener - 卸载程序 7.0.2",
     "description": "卸载程序标题"
   },
   "checking_deps": {
@@ -13,7 +13,7 @@
   },
   "all_deps_installed": {
     "message": "已安装所有依赖项。",
-    "description": "已安装所有依赖项"
+    "description": "所有依赖已安装"
   },
   "missing_deps": {
     "message": "缺少依赖项：",

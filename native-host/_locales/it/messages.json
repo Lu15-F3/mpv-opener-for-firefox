@@ -1,10 +1,10 @@
 {
   "installer": {
-    "message": "MPV Opener per Firefox - Programma di installazione v7.0",
+    "message": "MPV Opener per Firefox - Programma di installazione 7.0.2",
     "description": "Titolo dell'installatore"
   },
   "uninstaller": {
-    "message": "MPV Opener per Firefox - Programma di disinstallazione",
+    "message": "MPV Opener per Firefox - Programma di disinstallazione 7.0.2",
     "description": "Titolo del programma di disinstallazione"
   },
   "checking_deps": {
@@ -33,10 +33,10 @@
   },
   "generating_manifest": {
     "message": "Generazione manifesto...",
-    "description": "Generazione manifesto"
+    "description": "Generazione del manifesto"
   },
   "verifying": {
-    "message": "Verifica dell'installazione...",
+    "message": "Verifica installazione...",
     "description": "Verifica"
   },
   "verified": {
@@ -121,7 +121,7 @@
   },
   "removed": {
     "message": "RIMOSSO:",
-    "description": "Rimosso"
+    "description": "RIMOSSO"
   },
   "not_found": {
     "message": "Non trovato:",

@@ -55,6 +55,10 @@
     "message": "Po włączeniu filmy są dodawane do kolejki zamiast otwierania nowych okien",
     "description": "Opis przełącznika trybu kolejki"
   },
+  "queueSettings": {
+    "message": "Ustawienia kolejki",
+    "description": "Nagłówek sekcji ustawień kolejki na stronie opcji"
+  },
   "stopQueue": {
     "message": "Zatrzymaj kolejkę",
     "description": "Przycisk zatrzymujący odtwarzanie bieżącej kolejki"
@@ -96,8 +100,52 @@
     "description": "Możliwość uruchomienia MPV bezpośrednio wypełniając monitor"
   },
   "pipMode": {
-    "message": "Obraz w obrazie (prawy dolny róg)",
+    "message": "Obraz w obrazie",
     "description": "Opcja umieszczenia gracza w narożniku na ekranie"
+  },
+  "pipCorner": {
+    "message": "Kącik PiP",
+    "description": "Etykieta wyboru narożnika PiP"
+  },
+  "pipSize": {
+    "message": "Rozmiar",
+    "description": "Etykieta wyboru rozmiaru PiP"
+  },
+  "pipTopLeft": {
+    "message": "Górny lewy",
+    "description": "Opcja w lewym górnym rogu"
+  },
+  "pipTopRight": {
+    "message": "Prawy górny róg",
+    "description": "Opcja w prawym górnym rogu"
+  },
+  "pipBottomLeft": {
+    "message": "Dolny lewy",
+    "description": "Opcja w lewym dolnym rogu"
+  },
+  "pipBottomRight": {
+    "message": "Dolny prawy",
+    "description": "Opcja w prawym dolnym rogu"
+  },
+  "pipSizeSmall": {
+    "message": "Mały (15%)",
+    "description": "Opcja małego rozmiaru"
+  },
+  "pipSizeMedium": {
+    "message": "Średni (20%)",
+    "description": "Opcja średniej wielkości"
+  },
+  "pipSizeDefault": {
+    "message": "Domyślny (25%)",
+    "description": "Domyślna opcja rozmiaru"
+  },
+  "pipSizeLarge": {
+    "message": "Duży (30%)",
+    "description": "Opcja dużego rozmiaru"
+  },
+  "pipSizeXL": {
+    "message": "Bardzo duży (40%)",
+    "description": "Opcja bardzo dużego rozmiaru"
   },
   "initialState": {
     "message": "Stan początkowy",
@@ -111,12 +159,92 @@
     "message": "Wstrzymano",
     "description": "Wartość początkowa oczekiwania w wstrzymanej ramce"
   },
+  "volumeSettings": {
+    "message": "Ustawienia głośności",
+    "description": "Nagłówek sekcji ustawień głośności"
+  },
+  "initialVolumeLabel": {
+    "message": "Objętość początkowa",
+    "description": "Etykieta początkowego ustawienia głośności"
+  },
+  "volumeLow": {
+    "message": "Niski (20%)",
+    "description": "Opcja niskiej głośności"
+  },
+  "volumeMedium": {
+    "message": "Średni (50%)",
+    "description": "Opcja średniej głośności"
+  },
+  "volumeHigh": {
+    "message": "Wysoka (80%)",
+    "description": "Opcja dużej głośności"
+  },
+  "volumeFull": {
+    "message": "Pełne (100%)",
+    "description": "Opcja pełnej głośności"
+  },
+  "volumeMuted": {
+    "message": "Wyciszony (0%)",
+    "description": "Opcja wyciszenia głośności"
+  },
+  "volumeCustom": {
+    "message": "Zwyczaj (%)",
+    "description": "Opcja niestandardowej głośności"
+  },
+  "volumePlaceholder": {
+    "message": "np. 30",
+    "description": "Symbol zastępczy woluminu"
+  },
+  "historyCleanup": {
+    "message": "Sprzątanie historii",
+    "description": "Nagłówek sekcji czyszczenia historii"
+  },
+  "historyCleanupLabel": {
+    "message": "Historia automatycznego czyszczenia",
+    "description": "Etykieta przełącznika automatycznego czyszczenia"
+  },
+  "historyCleanupManual": {
+    "message": "Ręczny (wyłączony)",
+    "description": "Opcja ręcznego czyszczenia"
+  },
+  "historyCleanupDaily": {
+    "message": "Codziennie",
+    "description": "Opcja codziennego sprzątania"
+  },
+  "historyCleanupWeekly": {
+    "message": "Tygodniowo",
+    "description": "Opcja cotygodniowego czyszczenia"
+  },
+  "historyCleanupMonthly": {
+    "message": "Co miesiąc",
+    "description": "Opcja comiesięcznego czyszczenia"
+  },
+  "historyCleanupOnClose": {
+    "message": "W przeglądarce Zamknij",
+    "description": "Opcja czyszczenia po zamknięciu przeglądarki"
+  },
+  "historyCleanupRetention": {
+    "message": "Zachowaj ostatni",
+    "description": "Etykieta przechowywania"
+  },
+  "historyCleanupRetentionDesc": {
+    "message": "Liczba elementów do zachowania w historii",
+    "description": "Opis przechowywania"
+  },
+  "historyCleanupSuccess": {
+    "message": "Historia została wyczyszczona pomyślnie!",
+    "description": "Komunikat o powodzeniu czyszczenia"
+  },
+  "historyCleanupCount": {
+    "message": "Usunięto {count} starych wpisów w historii",
+    "description": "Komunikat o liczniku czyszczenia"
+  },
   "windowBehavior": {
     "message": "Zachowanie okna",
     "description": "Nagłówek podrzędny dotyczący konfiguracji zachowania pulpitu"
   },
   "alwaysOnTopLabel": {
-    "message": "Utrzymuj okno mpv zawsze na górze",
+    "message": "Utrzymuj okno mpv zawsze na wierzchu",
     "description": "Tekst opisu pola wyboru dla pływającej warstwy gracza"
   },
   "audioSettings": {
@@ -148,7 +276,7 @@
     "description": "Tekst alertu na banerze pływającej wiadomości w przypadku aktualizacji operacyjnej"
   },
   "sendingNotification": {
-    "message": "Wysyłanie wideo do MPV...",
+    "message": "Wysyłanie wideo do mpv...",
     "description": "Tekst używany w natywnym banerze powiadomień w tle przeglądarki"
   },
   "fedoraSettings": {
@@ -213,7 +341,7 @@
   },
   "welcomeStep2Title": {
     "message": "2. Włącz most komunikacyjny (host natywny)",
-    "description": "Nagłówek zawierający szczegółowe informacje na temat zadań związanych z uprawnieniami do umieszczania manifestu"
+    "description": "Nagłówek zawierający szczegółowe informacje o zadaniach związanych z uprawnieniami do umieszczania manifestu"
   },
   "welcomeStep2Desc": {
     "message": "Teraz uruchom oficjalny skrypt instalatora, aby zarejestrować manifesty lokalnej integracji:",
@@ -232,7 +360,7 @@
     "description": "Krótka aktualizacja wizualna stanu potwierdzająca udane interakcje z kopiami"
   },
   "shortcutSendVideoDesc": {
-    "message": "Wyślij wideo z aktywną zakładką do MPV",
+    "message": "Wyślij wideo z aktywnej karty do MPV",
     "description": "Kontekstowe objaśnienie mapowania skrótów klawiszowych pokazane w menu narzędzi systemowych"
   },
   "shortcutSendAudioDesc": {
@@ -341,7 +469,7 @@
   },
   "snifferStatus": {
     "message": "Status",
-    "description": "Etykieta stanu w oknie dialogowym testu"
+    "description": "Etykieta stanu w oknie testowym"
   },
   "snifferType": {
     "message": "Typ",
@@ -389,7 +517,7 @@
   },
   "snifferStreams": {
     "message": "strumienie do mpv?",
-    "description": "Pytanie o strumienie"
+    "description": "Pytanie o streamy"
   },
   "snifferFilter": {
     "message": "Filtr",
@@ -461,10 +589,10 @@
   },
   "viewQueue": {
     "message": "Zobacz kolejkę",
-    "description": "Pozycja menu kontekstowego umożliwiająca przeglądanie kolejki"
+    "description": "Element menu kontekstowego umożliwiający przeglądanie kolejki"
   },
   "queueManagerTitle": {
-    "message": "Menadżer kolejki",
+    "message": "Menedżer kolejek",
     "description": "Tytuł strony menedżera kolejek"
   },
   "queueEmptyStatus": {
@@ -493,7 +621,7 @@
   },
   "queueStatusPlaying": {
     "message": "▶ Odtwarzam (pozostało: {remaining})",
-    "description": "Status kolejki odtwarzanie z pozostałą liczbą"
+    "description": "Odtwarzanie stanu kolejki z pozostałą liczbą"
   },
   "queueStatusPaused": {
     "message": "⏸ Wstrzymano ({count} elementów)",
@@ -501,7 +629,7 @@
   },
   "queueStatusIdle": {
     "message": "⏹ Bezczynny",
-    "description": "Stan kolejki bezczynności"
+    "description": "Stan bezczynności kolejki"
   },
   "queueItemsLabel": {
     "message": "rzeczy",

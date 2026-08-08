@@ -1,11 +1,10 @@
 #!/bin/bash
 # ============================================================
-# locale_loader.sh - MPV Opener for Firefox v7.0
-# Loader para mensagens localizadas
+# locale_loader.sh - MPV Opener for Firefox v7.2
+# Loader para mensagens localizadas - Multi-Distro
 # ============================================================
 
 # IMPORTANTE: SCRIPT_DIR deve ser definido ANTES de source este arquivo
-# Se não estiver definido, tenta descobrir
 if [ -z "$SCRIPT_DIR" ]; then
     SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 fi
@@ -31,51 +30,51 @@ detect_language() {
             echo "pt_BR"
             return
             ;;
-        pt-PT|pt_PT)
+        pt-PT|pt_PT|pt*)
             echo "pt_PT"
             return
             ;;
-        es-*|es_*)
+        es-*|es_*|es)
             echo "es"
             return
             ;;
-        fr-*|fr_*)
+        fr-*|fr_*|fr)
             echo "fr"
             return
             ;;
-        de-*|de_*)
+        de-*|de_*|de)
             echo "de"
             return
             ;;
-        it-*|it_*)
+        it-*|it_*|it)
             echo "it"
             return
             ;;
-        ja-*|ja_*)
+        ja-*|ja_*|ja)
             echo "ja"
             return
             ;;
-        ko-*|ko_*)
+        ko-*|ko_*|ko)
             echo "ko"
             return
             ;;
-        ru-*|ru_*)
+        ru-*|ru_*|ru)
             echo "ru"
             return
             ;;
-        uk-*|uk_*)
+        uk-*|uk_*|uk)
             echo "uk"
             return
             ;;
-        ar-*|ar_*)
+        ar-*|ar_*|ar)
             echo "ar"
             return
             ;;
-        hi-*|hi_*)
+        hi-*|hi_*|hi)
             echo "hi"
             return
             ;;
-        pl-*|pl_*)
+        pl-*|pl_*|pl)
             echo "pl"
             return
             ;;
@@ -83,9 +82,18 @@ detect_language() {
             echo "zh_CN"
             return
             ;;
+        zh-TW|zh_TW)
+            echo "zh_TW"
+            return
+            ;;
         *)
             # Tenta sem o sufixo do país
             local base="${lang%%-*}"
+            if [ -n "$base" ] && [ -d "$SCRIPT_DIR/locales/${base}" ]; then
+                echo "$base"
+                return
+            fi
+            # Tenta no formato _locales (compatibilidade)
             if [ -n "$base" ] && [ -d "$SCRIPT_DIR/_locales/${base}" ]; then
                 echo "$base"
                 return
@@ -98,32 +106,55 @@ detect_language() {
 }
 
 # ============================================================
-# Carregar mensagens do arquivo JSON (formato simplificado)
+# Carregar mensagens do arquivo JSON
 # ============================================================
 load_locale() {
     local lang="$1"
-    local locale_file="$SCRIPT_DIR/_locales/${lang}/messages.json"
     
-    # Debug
-    echo "DEBUG: Looking for locale file: $locale_file" >&2
+    # Tentar diferentes localizações possíveis
+    local possible_paths=(
+        "$SCRIPT_DIR/locales/${lang}/messages.json"
+        "$SCRIPT_DIR/_locales/${lang}/messages.json"
+        "$(dirname "$SCRIPT_DIR")/locales/${lang}/messages.json"
+        "$(dirname "$SCRIPT_DIR")/_locales/${lang}/messages.json"
+    )
     
-    # Se o arquivo não existe, fallback para inglês
-    if [ ! -f "$locale_file" ]; then
-        echo "DEBUG: File not found, trying English fallback" >&2
-        locale_file="$SCRIPT_DIR/_locales/en/messages.json"
-        lang="en"
+    local locale_file=""
+    for path in "${possible_paths[@]}"; do
+        if [ -f "$path" ]; then
+            locale_file="$path"
+            break
+        fi
+    done
+    
+    # Se não encontrou, fallback para inglês
+    if [ -z "$locale_file" ]; then
+        for path in "${possible_paths[@]}"; do
+            if [ -f "${path/en/${lang}/en}" ]; then
+                locale_file="${path/en/${lang}/en}"
+                break
+            fi
+        done
     fi
     
-    # Se ainda não existe, usar fallbacks hardcoded
+    # Se ainda não encontrou, tentar caminhos alternativos
+    if [ -z "$locale_file" ]; then
+        for path in "${possible_paths[@]}"; do
+            local fallback="${path/${lang}/en}"
+            if [ -f "$fallback" ]; then
+                locale_file="$fallback"
+                break
+            fi
+        done
+    fi
+    
+    # Se ainda não encontrou, usar fallback hardcoded
     if [ ! -f "$locale_file" ]; then
-        echo "DEBUG: No locale file found, using hardcoded fallback" >&2
         load_fallback_messages
         return
     fi
     
-    echo "DEBUG: Loading locale from: $locale_file" >&2
-    
-    # Tentar carregar com Python3 (formato simplificado)
+    # Tentar carregar com Python3
     if command -v python3 &> /dev/null; then
         local json_output
         json_output=$(python3 -c "
@@ -134,32 +165,26 @@ try:
     with open('$locale_file', 'r', encoding='utf-8') as f:
         data = json.load(f)
     
-    # Formato simplificado: chave -> valor string
+    # Formato com message aninhado
     for key, value in data.items():
-        if isinstance(value, str):
-            # Escapar aspas simples
-            msg = value.replace(\"'\", \"'\\\\''\")
-            print(f\"MSG_{key}='{msg}'\")
-        elif isinstance(value, dict) and 'message' in value:
-            # Formato com message aninhado
+        if isinstance(value, dict) and 'message' in value:
             msg = value['message'].replace(\"'\", \"'\\\\''\")
             print(f\"MSG_{key}='{msg}'\")
+        elif isinstance(value, str):
+            msg = value.replace(\"'\", \"'\\\\''\")
+            print(f\"MSG_{key}='{msg}'\")
 except Exception as e:
-    print(f'# ERRO: {e}', file=sys.stderr)
-    sys.exit(1)
+    # Fallback silencioso
+    pass
 " 2>/dev/null)
         
         if [ $? -eq 0 ] && [ -n "$json_output" ]; then
             eval "$json_output"
-            echo "DEBUG: Messages loaded successfully" >&2
             return
-        else
-            echo "DEBUG: Failed to load with Python3" >&2
         fi
     fi
     
-    # Se Python3 falhou ou não está disponível, usar fallback
-    echo "DEBUG: Using hardcoded fallback" >&2
+    # Fallback para mensagens hardcoded
     load_fallback_messages
 }
 
@@ -167,7 +192,7 @@ except Exception as e:
 # Fallback messages (hardcoded em inglês)
 # ============================================================
 load_fallback_messages() {
-    MSG_installer="MPV Opener for Firefox - Installer v7.0"
+    MSG_installer="MPV Opener for Firefox - Installer v7.2"
     MSG_uninstaller="MPV Opener for Firefox - Uninstaller"
     MSG_checking_deps="Checking dependencies..."
     MSG_all_deps_installed="All dependencies installed."
@@ -212,4 +237,7 @@ load_fallback_messages() {
     MSG_deps_curl="curl"
     MSG_deps_socat="socat"
     MSG_language="Language"
+    MSG_checking_mpris="Checking mpv-mpris plugin..."
+    MSG_mpris_found="mpv-mpris plugin found"
+    MSG_mpris_not_found="mpv-mpris plugin not found - MPRIS controls will not work"
 }

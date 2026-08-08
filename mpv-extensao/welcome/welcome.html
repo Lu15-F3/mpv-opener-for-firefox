@@ -22,10 +22,32 @@
     
     <div class="step-container">
       <h3 id="step1-title">1. Install Dependencies</h3>
-      <p id="step1-desc">Open your terminal and run this command to install the player, extractor engine, and media plugin:</p>
+      <p id="step1-desc">Open your terminal and run the command for your distribution:</p>
+      
+      <!-- Seletor de Distribuição -->
+      <div class="distro-selector">
+        <label for="distro-select" id="label-distro">Your Distribution:</label>
+        <select id="distro-select">
+          <option value="fedora">Fedora / RHEL</option>
+          <option value="ubuntu">Ubuntu / Debian</option>
+          <option value="arch">Arch Linux</option>
+          <option value="opensuse">openSUSE</option>
+          <option value="alpine">Alpine Linux</option>
+          <option value="gentoo">Gentoo</option>
+          <option value="nixos">NixOS</option>
+          <option value="other">Other (Manual)</option>
+        </select>
+      </div>
+      
       <div class="code-wrapper">
-        <span class="code-text" id="cmd-deps">sudo dnf install mpv yt-dlp mpv-mpris</span>
+        <span class="code-text" id="cmd-deps">sudo dnf install mpv yt-dlp mpv-mpris python3 curl socat</span>
         <button class="copy-btn" id="btn-copy-deps" data-target="cmd-deps">Copy</button>
+      </div>
+      
+      <!-- Mensagem adicional para mpv-mpris -->
+      <div id="mpris-hint" class="hint-box" style="display: none;">
+        <span class="hint-icon">💡</span>
+        <span class="hint-text" id="mpris-hint-text"></span>
       </div>
       
       <h3 id="step2-title">2. Enable the Communication Bridge (Native Host)</h3>

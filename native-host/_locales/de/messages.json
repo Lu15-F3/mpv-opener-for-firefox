@@ -1,10 +1,10 @@
 {
   "installer": {
-    "message": "MPV-Öffner für Firefox – Installer v7.0",
+    "message": "MPV-Öffner für Firefox – Installer 7.0.2",
     "description": "Titel des Installationsprogramms"
   },
   "uninstaller": {
-    "message": "MPV Opener für Firefox – Deinstallationsprogramm",
+    "message": "MPV Opener für Firefox – Uninstaller 7.0.2",
     "description": "Titel des Deinstallationsprogramms"
   },
   "checking_deps": {
@@ -81,7 +81,7 @@
   },
   "shortcut_video": {
     "message": "Verwenden Sie Strg+Alt+M, um Videos an mpv zu senden",
-    "description": "Kurzes Video"
+    "description": "Shortcut-Video"
   },
   "shortcut_sniffer": {
     "message": "Verwenden Sie Strg+Alt+V, um den Media Sniffer zu öffnen",

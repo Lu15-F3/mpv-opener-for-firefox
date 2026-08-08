@@ -1,10 +1,10 @@
 {
   "installer": {
-    "message": "फ़ायरफ़ॉक्स के लिए एमपीवी ओपनर - इंस्टॉलर v7.0",
+    "message": "फ़ायरफ़ॉक्स के लिए एमपीवी ओपनर - इंस्टॉलर 7.0.2",
     "description": "इंस्टॉलर शीर्षक"
   },
   "uninstaller": {
-    "message": "फ़ायरफ़ॉक्स के लिए एमपीवी ओपनर - अनइंस्टॉलर",
+    "message": "फ़ायरफ़ॉक्स के लिए एमपीवी ओपनर - अनइंस्टालर 7.0.2",
     "description": "अनइंस्टॉलर शीर्षक"
   },
   "checking_deps": {
@@ -121,7 +121,7 @@
   },
   "removed": {
     "message": "निकाला गया:",
-    "description": "हटाया गया"
+    "description": "निकाला गया"
   },
   "not_found": {
     "message": "नहीं मिला:",
@@ -161,7 +161,7 @@
   },
   "deps_mpv_mpris": {
     "message": "एमपीवी-एमप्रिस",
-    "description": "mpv-mpris निर्भरता"
+    "description": "एमपीवी-एमप्रिस निर्भरता"
   },
   "deps_python": {
     "message": "Python3",

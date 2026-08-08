@@ -55,8 +55,12 @@
     "message": "有効にすると、新しいウィンドウを開く代わりに、ビデオがキューに追加されます。",
     "description": "キューモード切り替えの説明"
   },
+  "queueSettings": {
+    "message": "キューの設定",
+    "description": "オプションページのキュー設定セクションのヘッダー"
+  },
   "stopQueue": {
-    "message": "キューの停止",
+    "message": "停止キュー",
     "description": "現在のキューの再生を停止するボタン"
   },
   "clearQueue": {
@@ -73,7 +77,7 @@
   },
   "removeItem": {
     "message": "取り除く",
-    "description": "キューから項目を削除するボタン"
+    "description": "キューからアイテムを削除するボタン"
   },
   "optionsTitle": {
     "message": "MPV オープナーの設定",
@@ -96,8 +100,52 @@
     "description": "mpv を起動してモニターに直接表示するオプション"
   },
   "pipMode": {
-    "message": "ピクチャー・イン・ピクチャー (右下)",
+    "message": "ピクチャー・イン・ピクチャー",
     "description": "プレイヤーを画面上の隅に配置するオプション"
+  },
+  "pipCorner": {
+    "message": "PiPコーナー",
+    "description": "PiP コーナー選択のラベル"
+  },
+  "pipSize": {
+    "message": "サイズ",
+    "description": "PiP サイズ選択のラベル"
+  },
+  "pipTopLeft": {
+    "message": "左上",
+    "description": "左上隅のオプション"
+  },
+  "pipTopRight": {
+    "message": "右上",
+    "description": "右上隅のオプション"
+  },
+  "pipBottomLeft": {
+    "message": "左下",
+    "description": "左下隅のオプション"
+  },
+  "pipBottomRight": {
+    "message": "右下",
+    "description": "右下隅のオプション"
+  },
+  "pipSizeSmall": {
+    "message": "小 (15%)",
+    "description": "小さいサイズのオプション"
+  },
+  "pipSizeMedium": {
+    "message": "中 (20%)",
+    "description": "中型サイズのオプション"
+  },
+  "pipSizeDefault": {
+    "message": "デフォルト (25%)",
+    "description": "デフォルトのサイズオプション"
+  },
+  "pipSizeLarge": {
+    "message": "大(30%)",
+    "description": "大きいサイズのオプション"
+  },
+  "pipSizeXL": {
+    "message": "特大 (40%)",
+    "description": "特大サイズオプション"
   },
   "initialState": {
     "message": "初期状態",
@@ -111,6 +159,86 @@
     "message": "一時停止中",
     "description": "一時停止フレームで待機するための開始値"
   },
+  "volumeSettings": {
+    "message": "音量設定",
+    "description": "音量設定セクションのヘッダー"
+  },
+  "initialVolumeLabel": {
+    "message": "初期ボリューム",
+    "description": "初期音量設定のラベル"
+  },
+  "volumeLow": {
+    "message": "低 (20%)",
+    "description": "少量オプション"
+  },
+  "volumeMedium": {
+    "message": "中 (50%)",
+    "description": "中量オプション"
+  },
+  "volumeHigh": {
+    "message": "高 (80%)",
+    "description": "大容量オプション"
+  },
+  "volumeFull": {
+    "message": "フル (100%)",
+    "description": "フルボリュームオプション"
+  },
+  "volumeMuted": {
+    "message": "ミュート (0%)",
+    "description": "ミュート音量オプション"
+  },
+  "volumeCustom": {
+    "message": "カスタム （％）",
+    "description": "カスタムボリュームオプション"
+  },
+  "volumePlaceholder": {
+    "message": "例: 30",
+    "description": "ボリュームプレースホルダ"
+  },
+  "historyCleanup": {
+    "message": "履歴のクリーンアップ",
+    "description": "履歴クリーンアップセクションのヘッダー"
+  },
+  "historyCleanupLabel": {
+    "message": "自動クリーンアップ履歴",
+    "description": "自動クリーンアップ切り替えのラベル"
+  },
+  "historyCleanupManual": {
+    "message": "手動（無効）",
+    "description": "手動クリーンアップ オプション"
+  },
+  "historyCleanupDaily": {
+    "message": "毎日",
+    "description": "毎日のクリーンアップ オプション"
+  },
+  "historyCleanupWeekly": {
+    "message": "毎週",
+    "description": "毎週のクリーンアップ オプション"
+  },
+  "historyCleanupMonthly": {
+    "message": "毎月",
+    "description": "毎月のクリーンアップ オプション"
+  },
+  "historyCleanupOnClose": {
+    "message": "ブラウザを閉じるとき",
+    "description": "ブラウザ終了時のクリーンアップ オプション"
+  },
+  "historyCleanupRetention": {
+    "message": "最後に残す",
+    "description": "保持ラベル"
+  },
+  "historyCleanupRetentionDesc": {
+    "message": "履歴に保存するアイテムの数",
+    "description": "保持の説明"
+  },
+  "historyCleanupSuccess": {
+    "message": "履歴が正常に消去されました。",
+    "description": "クリーンアップ成功メッセージ"
+  },
+  "historyCleanupCount": {
+    "message": "{count} 個の古い履歴エントリを削除しました",
+    "description": "クリーンアップ数メッセージ"
+  },
   "windowBehavior": {
     "message": "ウィンドウの動作",
     "description": "デスクトップ動作設定のサブヘッダー"
@@ -120,7 +248,7 @@
     "description": "フローティング プレーヤー レイヤーのチェックボックスの説明テキスト"
   },
   "audioSettings": {
-    "message": "オーディオデバイスの構成",
+    "message": "オーディオデバイスの設定",
     "description": "高度なオーディオ出力のセクションヘッダー"
   },
   "audioDeviceLabel": {
@@ -129,7 +257,7 @@
   },
   "audioDevicePlaceholder": {
     "message": "例: alsa/hdmi、pulse/device_name",
-    "description": "テキスト入力ボックス内のプレースホルダーヒント構文"
+    "description": "テキスト入力ボックス内のプレースホルダー ヒント構文"
   },
   "tabBehavior": {
     "message": "タブの動作",
@@ -152,7 +280,7 @@
     "description": "ブラウザーのネイティブ バックグラウンド通知バナーで使用されるテキスト"
   },
   "fedoraSettings": {
-    "message": "Fedora と KDE プラズマの統合",
+    "message": "FedoraとKDE Plasmaの統合",
     "description": "特定の Linux オペレーティング環境オプションに特化したセクション ヘッダー"
   },
   "inhibitSleepLabel": {
@@ -253,7 +381,7 @@
   },
   "snifferOpenTab": {
     "message": "開ける",
-    "description": "リンクを新しいタブで開くボタン"
+    "description": "新しいタブでリンクを開くボタン"
   },
   "snifferExportAll": {
     "message": "すべてエクスポート",
@@ -265,7 +393,7 @@
   },
   "snifferSendAll": {
     "message": "すべて送信",
-    "description": "キャプチャしたすべてのリンクを mpv に送信するボタン"
+    "description": "キャプチャされたすべてのリンクを mpv に送信するボタン"
   },
   "snifferCopied": {
     "message": "コピーしました！",
@@ -437,7 +565,7 @@
   },
   "noVideoPlaying": {
     "message": "ビデオが再生されていません",
-    "description": "ビデオが再生されていない場合のプレースホルダー"
+    "description": "ビデオが再生されていないときのプレースホルダー"
   },
   "timeSeparator": {
     "message": "/",
@@ -472,7 +600,7 @@
     "description": "空のキューのステータス"
   },
   "queueCompleted": {
-    "message": "完了しました",
+    "message": "完了",
     "description": "キュー完了ステータス"
   },
   "queuePaused": {

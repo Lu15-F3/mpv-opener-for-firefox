@@ -55,6 +55,10 @@
     "message": "When enabled, videos are added to queue instead of opening new windows",
     "description": "Description for queue mode toggle"
   },
+  "queueSettings": {
+    "message": "Queue Settings",
+    "description": "Queue settings section header in options page"
+  },
   "stopQueue": {
     "message": "Stop Queue",
     "description": "Button to stop current queue playback"
@@ -96,8 +100,52 @@
     "description": "Option to launch mpv directly filling the monitor"
   },
   "pipMode": {
-    "message": "Picture-in-Picture (Bottom Right)",
+    "message": "Picture-in-Picture",
     "description": "Option to position player cornered on screen"
+  },
+  "pipCorner": {
+    "message": "PiP Corner",
+    "description": "Label for PiP corner selection"
+  },
+  "pipSize": {
+    "message": "Size",
+    "description": "Label for PiP size selection"
+  },
+  "pipTopLeft": {
+    "message": "Top Left",
+    "description": "Top left corner option"
+  },
+  "pipTopRight": {
+    "message": "Top Right",
+    "description": "Top right corner option"
+  },
+  "pipBottomLeft": {
+    "message": "Bottom Left",
+    "description": "Bottom left corner option"
+  },
+  "pipBottomRight": {
+    "message": "Bottom Right",
+    "description": "Bottom right corner option"
+  },
+  "pipSizeSmall": {
+    "message": "Small (15%)",
+    "description": "Small size option"
+  },
+  "pipSizeMedium": {
+    "message": "Medium (20%)",
+    "description": "Medium size option"
+  },
+  "pipSizeDefault": {
+    "message": "Default (25%)",
+    "description": "Default size option"
+  },
+  "pipSizeLarge": {
+    "message": "Large (30%)",
+    "description": "Large size option"
+  },
+  "pipSizeXL": {
+    "message": "Extra Large (40%)",
+    "description": "Extra large size option"
   },
   "initialState": {
     "message": "Initial State",
@@ -110,6 +158,86 @@
   "statePaused": {
     "message": "Paused",
     "description": "Startup value for waiting in a paused frame"
+  },
+  "volumeSettings": {
+    "message": "Volume Settings",
+    "description": "Volume settings section header"
+  },
+  "initialVolumeLabel": {
+    "message": "Initial Volume",
+    "description": "Label for initial volume setting"
+  },
+  "volumeLow": {
+    "message": "Low (20%)",
+    "description": "Low volume option"
+  },
+  "volumeMedium": {
+    "message": "Medium (50%)",
+    "description": "Medium volume option"
+  },
+  "volumeHigh": {
+    "message": "High (80%)",
+    "description": "High volume option"
+  },
+  "volumeFull": {
+    "message": "Full (100%)",
+    "description": "Full volume option"
+  },
+  "volumeMuted": {
+    "message": "Muted (0%)",
+    "description": "Muted volume option"
+  },
+  "volumeCustom": {
+    "message": "Custom (%)",
+    "description": "Custom volume option"
+  },
+  "volumePlaceholder": {
+    "message": "e.g., 30",
+    "description": "Volume placeholder"
+  },
+  "historyCleanup": {
+    "message": "History Cleanup",
+    "description": "History cleanup section header"
+  },
+  "historyCleanupLabel": {
+    "message": "Auto Cleanup History",
+    "description": "Label for auto cleanup toggle"
+  },
+  "historyCleanupManual": {
+    "message": "Manual (Disabled)",
+    "description": "Manual cleanup option"
+  },
+  "historyCleanupDaily": {
+    "message": "Every Day",
+    "description": "Daily cleanup option"
+  },
+  "historyCleanupWeekly": {
+    "message": "Every Week",
+    "description": "Weekly cleanup option"
+  },
+  "historyCleanupMonthly": {
+    "message": "Every Month",
+    "description": "Monthly cleanup option"
+  },
+  "historyCleanupOnClose": {
+    "message": "On Browser Close",
+    "description": "Cleanup on browser close option"
+  },
+  "historyCleanupRetention": {
+    "message": "Keep Last",
+    "description": "Retention label"
+  },
+  "historyCleanupRetentionDesc": {
+    "message": "Number of items to keep in history",
+    "description": "Retention description"
+  },
+  "historyCleanupSuccess": {
+    "message": "History cleaned successfully!",
+    "description": "Cleanup success message"
+  },
+  "historyCleanupCount": {
+    "message": "Removed {count} old history entries",
+    "description": "Cleanup count message"
   },
   "windowBehavior": {
     "message": "Window Behavior",

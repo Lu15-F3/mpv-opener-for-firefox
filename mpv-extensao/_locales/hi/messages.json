@@ -55,6 +55,10 @@
     "message": "सक्षम होने पर, वीडियो नई विंडो खोलने के बजाय कतार में जोड़ दिए जाते हैं",
     "description": "कतार मोड टॉगल का विवरण"
   },
+  "queueSettings": {
+    "message": "कतार सेटिंग्स",
+    "description": "विकल्प पृष्ठ में कतार सेटिंग्स अनुभाग शीर्षलेख"
+  },
   "stopQueue": {
     "message": "कतार रोकें",
     "description": "वर्तमान कतार प्लेबैक को रोकने के लिए बटन"
@@ -96,8 +100,52 @@
     "description": "मॉनिटर को सीधे भरते हुए एमपीवी लॉन्च करने का विकल्प"
   },
   "pipMode": {
-    "message": "चित्र-में-चित्र (नीचे दाएँ)",
+    "message": "चित्र में चित्र",
     "description": "खिलाड़ी को स्क्रीन पर कोने में रखने का विकल्प"
+  },
+  "pipCorner": {
+    "message": "पीआईपी कॉर्नर",
+    "description": "PiP कोने के चयन के लिए लेबल"
+  },
+  "pipSize": {
+    "message": "आकार",
+    "description": "PiP आकार चयन के लिए लेबल"
+  },
+  "pipTopLeft": {
+    "message": "बाएं से बाएं",
+    "description": "शीर्ष बाएँ कोने का विकल्प"
+  },
+  "pipTopRight": {
+    "message": "ठीक तरह से ऊपर",
+    "description": "शीर्ष दाएँ कोने का विकल्प"
+  },
+  "pipBottomLeft": {
+    "message": "तली छोड़ें",
+    "description": "निचले बाएँ कोने का विकल्प"
+  },
+  "pipBottomRight": {
+    "message": "नीचे दाएं",
+    "description": "निचले दाएं कोने का विकल्प"
+  },
+  "pipSizeSmall": {
+    "message": "छोटा (15%)",
+    "description": "छोटे आकार का विकल्प"
+  },
+  "pipSizeMedium": {
+    "message": "मध्यम (20%)",
+    "description": "मध्यम आकार का विकल्प"
+  },
+  "pipSizeDefault": {
+    "message": "डिफ़ॉल्ट (25%)",
+    "description": "डिफ़ॉल्ट आकार विकल्प"
+  },
+  "pipSizeLarge": {
+    "message": "बड़ा (30%)",
+    "description": "बड़े आकार का विकल्प"
+  },
+  "pipSizeXL": {
+    "message": "अतिरिक्त बड़ा (40%)",
+    "description": "अतिरिक्त बड़े आकार का विकल्प"
   },
   "initialState": {
     "message": "आरंभिक राज्य",
@@ -111,6 +159,86 @@
     "message": "रुका हुआ",
     "description": "रुके हुए फ्रेम में प्रतीक्षा के लिए स्टार्टअप मान"
   },
+  "volumeSettings": {
+    "message": "वॉल्यूम सेटिंग्स",
+    "description": "वॉल्यूम सेटिंग अनुभाग शीर्षलेख"
+  },
+  "initialVolumeLabel": {
+    "message": "प्रारंभिक मात्रा",
+    "description": "प्रारंभिक वॉल्यूम सेटिंग के लिए लेबल"
+  },
+  "volumeLow": {
+    "message": "निम्न (20%)",
+    "description": "कम मात्रा का विकल्प"
+  },
+  "volumeMedium": {
+    "message": "मध्यम (50%)",
+    "description": "मध्यम मात्रा विकल्प"
+  },
+  "volumeHigh": {
+    "message": "उच्च (80%)",
+    "description": "उच्च मात्रा विकल्प"
+  },
+  "volumeFull": {
+    "message": "पूर्ण (100%)",
+    "description": "पूर्ण वॉल्यूम विकल्प"
+  },
+  "volumeMuted": {
+    "message": "मौन (0%)",
+    "description": "म्यूट वॉल्यूम विकल्प"
+  },
+  "volumeCustom": {
+    "message": "रिवाज़ (%)",
+    "description": "कस्टम वॉल्यूम विकल्प"
+  },
+  "volumePlaceholder": {
+    "message": "जैसे, 30",
+    "description": "वॉल्यूम प्लेसहोल्डर"
+  },
+  "historyCleanup": {
+    "message": "इतिहास सफ़ाई",
+    "description": "इतिहास सफ़ाई अनुभाग शीर्षलेख"
+  },
+  "historyCleanupLabel": {
+    "message": "ऑटो क्लीनअप इतिहास",
+    "description": "ऑटो क्लीनअप टॉगल के लिए लेबल"
+  },
+  "historyCleanupManual": {
+    "message": "मैनुअल (अक्षम)",
+    "description": "मैन्युअल सफ़ाई विकल्प"
+  },
+  "historyCleanupDaily": {
+    "message": "रोज रोज",
+    "description": "दैनिक सफ़ाई का विकल्प"
+  },
+  "historyCleanupWeekly": {
+    "message": "हर हफ्ते",
+    "description": "साप्ताहिक सफ़ाई का विकल्प"
+  },
+  "historyCleanupMonthly": {
+    "message": "प्रत्येक माह",
+    "description": "मासिक सफ़ाई विकल्प"
+  },
+  "historyCleanupOnClose": {
+    "message": "ब्राउज़र पर बंद करें",
+    "description": "ब्राउज़र बंद करने के विकल्प पर क्लीनअप करें"
+  },
+  "historyCleanupRetention": {
+    "message": "अंतिम रखें",
+    "description": "अवधारण लेबल"
+  },
+  "historyCleanupRetentionDesc": {
+    "message": "इतिहास में रखने योग्य वस्तुओं की संख्या",
+    "description": "अवधारण विवरण"
+  },
+  "historyCleanupSuccess": {
+    "message": "इतिहास सफलतापूर्वक साफ़ किया गया!",
+    "description": "सफ़ाई सफलता संदेश"
+  },
+  "historyCleanupCount": {
+    "message": "पुरानी इतिहास प्रविष्टियाँ हटा दी गईं",
+    "description": "सफ़ाई गिनती संदेश"
+  },
   "windowBehavior": {
     "message": "विंडो व्यवहार",
     "description": "डेस्कटॉप व्यवहार कॉन्फ़िगरेशन के लिए उप-शीर्षलेख"
@@ -121,7 +249,7 @@
   },
   "audioSettings": {
     "message": "ऑडियो डिवाइस कॉन्फ़िगरेशन",
-    "description": "उन्नत ऑडियो आउटपुट के लिए अनुभाग शीर्षलेख"
+    "description": "उन्नत ऑडियो आउटपुट के लिए अनुभाग हेडर"
   },
   "audioDeviceLabel": {
     "message": "डिफ़ॉल्ट ऑडियो आउटपुट डिवाइस (एमपीवी --ऑडियो-डिवाइस)",
@@ -213,7 +341,7 @@
   },
   "welcomeStep2Title": {
     "message": "2. संचार ब्रिज सक्षम करें (मूल होस्ट)",
-    "description": "मैनिफ़ेस्ट प्लेसमेंट अनुमति कार्यों का विवरण देने वाला हेडर"
+    "description": "मेनिफ़ेस्ट प्लेसमेंट अनुमति कार्यों का विवरण देने वाला हेडर"
   },
   "welcomeStep2Desc": {
     "message": "अब स्थानीय एकीकरण मैनिफ़ेस्ट को पंजीकृत करने के लिए आधिकारिक इंस्टॉलर स्क्रिप्ट निष्पादित करें:",
@@ -492,12 +620,12 @@
     "description": "गिनती के साथ कतार पूर्ण स्थिति"
   },
   "queueStatusPlaying": {
-    "message": "▶ चल रहा है ({remaining} शेष)",
+    "message": "▶ बजाना ({शेष} शेष)",
     "description": "कतार की स्थिति शेष गिनती के साथ चल रही है"
   },
   "queueStatusPaused": {
     "message": "⏸ रोका गया ({गिनती} आइटम)",
-    "description": "सामान्य गणना के साथ कतार रुकी हुई स्थिति"
+    "description": "आइटम गिनती के साथ कतार रुकी हुई स्थिति"
   },
   "queueStatusIdle": {
     "message": "⏹ निष्क्रिय",

@@ -1,21 +1,26 @@
 // ============================================================
-// welcome.js - MPV Opener for Firefox v7.0
+// welcome.js - MPV Opener for Firefox v7.2
+// Multi-Distro Support
 // ============================================================
 
 document.addEventListener("DOMContentLoaded", function() {
   var btnEn = document.getElementById("btn-en");
   var btnPt = document.getElementById("btn-pt");
   var statusCheck = document.getElementById("status-check");
+  var distroSelect = document.getElementById("distro-select");
+  var cmdDeps = document.getElementById("cmd-deps");
+  var mprisHint = document.getElementById("mpris-hint");
+  var mprisHintText = document.getElementById("mpris-hint-text");
   
   // ============================================================
-  // Translation Dictionary
+  // Translation Dictionary com Comandos por Distribuição
   // ============================================================
   var locales = {
     en: {
       title: "Almost Ready! Setup Required",
       intro: "The MPV Opener for Firefox has been added to your browser, but it cannot communicate with your system yet. Follow these two quick steps:",
       step1Title: "1. Install Dependencies",
-      step1Desc: "Open your terminal and run this command to install the player, extractor engine, and media plugin:",
+      step1Desc: "Open your terminal and run the command for your distribution:",
       step2Title: "2. Enable the Communication Bridge (Native Host)",
       step2Desc: "Now execute the official installer script to register the local integration manifests:",
       footer: "After running the commands, the extension will work instantly. No need to restart Firefox.",
@@ -24,13 +29,38 @@ document.addEventListener("DOMContentLoaded", function() {
       checking: "Checking system status...",
       checkSuccess: "All dependencies are installed!",
       checkError: "Some dependencies are missing. Install them to use the extension.",
-      checkErrorNative: "Native Host not installed. Run the installer script below."
+      checkErrorNative: "Native Host not installed. Run the installer script below.",
+      labelDistro: "Your Distribution:",
+      // Comandos por distribuição
+      commands: {
+        fedora: "sudo dnf install mpv yt-dlp mpv-mpris python3 curl socat",
+        ubuntu: "sudo apt update && sudo apt install mpv yt-dlp python3 curl socat",
+        debian: "sudo apt update && sudo apt install mpv yt-dlp python3 curl socat",
+        arch: "sudo pacman -S --needed mpv yt-dlp python curl socat",
+        opensuse: "sudo zypper install mpv yt-dlp python3 curl socat",
+        alpine: "sudo apk add mpv yt-dlp python3 curl socat",
+        gentoo: "sudo emerge --ask media-video/mpv net-misc/yt-dlp dev-lang/python net-misc/curl sys-apps/socat",
+        nixos: "nix-shell -p mpv yt-dlp python3 curl socat",
+        other: "# Please install mpv, yt-dlp, python3, curl and socat manually"
+      },
+      // Dicas para mpv-mpris
+      mprisHints: {
+        fedora: "mpv-mpris is included in the command above.",
+        ubuntu: "mpv-mpris may not be available in official repositories. Try: sudo apt install mpv-mpris",
+        debian: "mpv-mpris may not be available in official repositories. Try: sudo apt install mpv-mpris",
+        arch: "mpv-mpris is included in the command above.",
+        opensuse: "mpv-mpris is included in the command above.",
+        alpine: "mpv-mpris may need manual compilation: https://github.com/hoyon/mpv-mpris",
+        gentoo: "mpv-mpris may need manual installation.",
+        nixos: "mpv-mpris is available in nixpkgs.",
+        other: "For MPRIS controls, install mpv-mpris from: https://github.com/hoyon/mpv-mpris"
+      }
     },
     pt: {
       title: "Quase Pronto! Configuração Necessária",
       intro: "O MPV Opener for Firefox foi adicionado ao seu navegador, mas ainda não consegue se comunicar com o seu sistema. Siga estes dois passos rápidos:",
       step1Title: "1. Instalar as Dependências",
-      step1Desc: "Abra o seu terminal e rode o comando para instalar o player, o motor extrator e o plugin de mídia:",
+      step1Desc: "Abra o seu terminal e rode o comando para a sua distribuição:",
       step2Title: "2. Ativar a Ponte de Comunicação (Native Host)",
       step2Desc: "Agora execute o script instalador oficial para registrar os manifestos de integração locais:",
       footer: "Após rodar os comandos, a extensão funcionará instantaneamente. Não é necessário reiniciar o Firefox.",
@@ -39,8 +69,45 @@ document.addEventListener("DOMContentLoaded", function() {
       checking: "Verificando status do sistema...",
       checkSuccess: "Todas as dependências estão instaladas!",
       checkError: "Algumas dependências estão faltando. Instale-as para usar a extensão.",
-      checkErrorNative: "Native Host não instalado. Execute o script instalador abaixo."
+      checkErrorNative: "Native Host não instalado. Execute o script instalador abaixo.",
+      labelDistro: "Sua Distribuição:",
+      commands: {
+        fedora: "sudo dnf install mpv yt-dlp mpv-mpris python3 curl socat",
+        ubuntu: "sudo apt update && sudo apt install mpv yt-dlp python3 curl socat",
+        debian: "sudo apt update && sudo apt install mpv yt-dlp python3 curl socat",
+        arch: "sudo pacman -S --needed mpv yt-dlp python curl socat",
+        opensuse: "sudo zypper install mpv yt-dlp python3 curl socat",
+        alpine: "sudo apk add mpv yt-dlp python3 curl socat",
+        gentoo: "sudo emerge --ask media-video/mpv net-misc/yt-dlp dev-lang/python net-misc/curl sys-apps/socat",
+        nixos: "nix-shell -p mpv yt-dlp python3 curl socat",
+        other: "# Por favor instale mpv, yt-dlp, python3, curl e socat manualmente"
+      },
+      mprisHints: {
+        fedora: "mpv-mpris está incluído no comando acima.",
+        ubuntu: "mpv-mpris pode não estar disponível nos repositórios oficiais. Tente: sudo apt install mpv-mpris",
+        debian: "mpv-mpris pode não estar disponível nos repositórios oficiais. Tente: sudo apt install mpv-mpris",
+        arch: "mpv-mpris está incluído no comando acima.",
+        opensuse: "mpv-mpris está incluído no comando acima.",
+        alpine: "mpv-mpris pode precisar de compilação manual: https://github.com/hoyon/mpv-mpris",
+        gentoo: "mpv-mpris pode precisar de instalação manual.",
+        nixos: "mpv-mpris está disponível no nixpkgs.",
+        other: "Para controles MPRIS, instale mpv-mpris de: https://github.com/hoyon/mpv-mpris"
+      }
     }
+  };
+  
+  // ============================================================
+  // Nomes das distribuições para exibição
+  // ============================================================
+  var distroNames = {
+    fedora: "Fedora / RHEL",
+    ubuntu: "Ubuntu / Debian",
+    arch: "Arch Linux",
+    opensuse: "openSUSE",
+    alpine: "Alpine Linux",
+    gentoo: "Gentoo",
+    nixos: "NixOS",
+    other: "Other (Manual)"
   };
   
   // ============================================================
@@ -48,6 +115,8 @@ document.addEventListener("DOMContentLoaded", function() {
   // ============================================================
   function updateUI(lang) {
     var data = locales[lang];
+    if (!data) return;
+    
     document.getElementById("welcome-title").textContent = data.title;
     
     var introEl = document.getElementById("welcome-intro");
@@ -72,6 +141,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("step2-title").textContent = data.step2Title;
     document.getElementById("step2-desc").textContent = data.step2Desc;
     document.getElementById("welcome-footer").textContent = data.footer;
+    document.getElementById("label-distro").textContent = data.labelDistro;
     
     document.querySelectorAll(".copy-btn").forEach(function(btn) {
       if (!btn.classList.contains("copied")) {
@@ -86,10 +156,75 @@ document.addEventListener("DOMContentLoaded", function() {
       btnEn.classList.add("active");
       btnPt.classList.remove("active");
     }
+    
+    // Atualizar comando baseado na distribuição selecionada
+    updateDistroCommand(lang);
   }
   
   // ============================================================
-  // System Status Check
+  // Atualizar comando baseado na distribuição selecionada
+  // ============================================================
+  function updateDistroCommand(lang) {
+    var data = locales[lang];
+    if (!data) return;
+    
+    var distro = distroSelect.value;
+    var command = data.commands[distro] || data.commands.other;
+    cmdDeps.textContent = command;
+    
+    // Atualizar dica do mpv-mpris
+    var hint = data.mprisHints[distro] || data.mprisHints.other;
+    if (hint && distro !== 'fedora' && distro !== 'arch' && distro !== 'opensuse') {
+      mprisHint.style.display = 'flex';
+      mprisHintText.textContent = hint;
+    } else if (hint) {
+      mprisHint.style.display = 'flex';
+      mprisHintText.textContent = hint;
+    } else {
+      mprisHint.style.display = 'none';
+    }
+  }
+  
+  // ============================================================
+  // Detectar distribuição atual (tenta identificar)
+  // ============================================================
+  function detectCurrentDistro() {
+    // Tentar detectar via user agent ou outras heurísticas
+    // Como estamos no Firefox, podemos usar navigator
+    
+    // Verificar se é Linux
+    if (navigator.platform && navigator.platform.toLowerCase().includes('linux')) {
+      // Tentar detectar via pacotes instalados (só funciona se o usuário tiver)
+      // Vamos usar uma abordagem mais simples: verificar comandos disponíveis
+      
+      // Para simplificar, vamos usar uma lista de distribuições comuns
+      // O usuário pode selecionar manualmente se a detecção falhar
+      
+      // Verificar se temos informações do sistema via User-Agent
+      var ua = navigator.userAgent.toLowerCase();
+      
+      if (ua.includes('fedora')) return 'fedora';
+      if (ua.includes('ubuntu')) return 'ubuntu';
+      if (ua.includes('debian')) return 'debian';
+      if (ua.includes('arch')) return 'arch';
+      if (ua.includes('opensuse') || ua.includes('suse')) return 'opensuse';
+      if (ua.includes('alpine')) return 'alpine';
+      if (ua.includes('gentoo')) return 'gentoo';
+      if (ua.includes('nixos')) return 'nixos';
+    }
+    
+    // Tentar detectar via navigator.platform
+    var platform = navigator.platform || '';
+    if (platform.toLowerCase().includes('linux')) {
+      // Se não conseguiu detectar, deixar o usuário escolher
+      return 'fedora'; // Fallback padrão (o mais comum)
+    }
+    
+    return 'fedora'; // Fallback
+  }
+  
+  // ============================================================
+  // System Status Check (melhorado)
   // ============================================================
   function checkSystemStatus() {
     var currentLang = btnPt.classList.contains("active") ? "pt" : "en";
@@ -142,6 +277,17 @@ document.addEventListener("DOMContentLoaded", function() {
   // Initialization
   // ============================================================
   var userLang = browser.i18n.getUILanguage().startsWith("pt") ? "pt" : "en";
+  
+  // Detectar distribuição
+  var detectedDistro = detectCurrentDistro();
+  var distroOptions = distroSelect.options;
+  for (var i = 0; i < distroOptions.length; i++) {
+    if (distroOptions[i].value === detectedDistro) {
+      distroSelect.selectedIndex = i;
+      break;
+    }
+  }
+  
   updateUI(userLang);
   setTimeout(checkSystemStatus, 500);
   
@@ -156,6 +302,11 @@ document.addEventListener("DOMContentLoaded", function() {
   btnPt.addEventListener("click", function() {
     updateUI("pt");
     setTimeout(checkSystemStatus, 300);
+  });
+  
+  distroSelect.addEventListener("change", function() {
+    var currentLang = btnPt.classList.contains("active") ? "pt" : "en";
+    updateDistroCommand(currentLang);
   });
   
   document.querySelectorAll(".copy-btn").forEach(function(button) {

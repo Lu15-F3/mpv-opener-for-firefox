@@ -1,5 +1,5 @@
 /* ============================================================
-   popup.css - MPV Opener for Firefox v7.0
+   popup.css - MPV Opener for Firefox v7.2
    ============================================================ */
 
 :root {
@@ -25,7 +25,11 @@
 }
 
 body {
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-family:
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
   margin: 0;
@@ -130,8 +134,14 @@ body {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ============================================================
@@ -178,10 +188,60 @@ body {
   border-color: var(--accent-color);
 }
 
+/* Quick Volume Select */
+#quickVolume {
+  min-width: 100px;
+}
+
+/* ============================================================
+   PiP Settings
+   ============================================================ */
+.pip-settings {
+  background: var(--bg-color);
+  border-radius: var(--border-radius);
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  border: 1px solid var(--border-color);
+}
+
+.pip-settings .form-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.pip-settings .form-group:last-child {
+  margin-bottom: 0;
+}
+
+.pip-settings .form-group label {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.pip-settings .form-group select {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  outline: none;
+  cursor: pointer;
+  min-width: 120px;
+}
+
+.pip-settings .form-group select:focus {
+  border-color: var(--accent-color);
+}
+
 /* ============================================================
    Buttons
    ============================================================ */
-.btn-primary, .btn-secondary, .btn-sniffer {
+.btn-primary,
+.btn-secondary,
+.btn-sniffer {
   color: var(--text-color);
   border: none;
   padding: 10px 14px;
@@ -346,8 +406,14 @@ body {
 }
 
 @keyframes fadeInMini {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .mini-player-header {
@@ -374,7 +440,9 @@ body {
   border-radius: 4px;
   background: var(--text-muted);
   color: var(--bg-color);
-  transition: background 0.3s ease, color 0.3s ease;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
 }
 
 .mini-player-status.playing {
@@ -387,8 +455,15 @@ body {
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.7; transform: scale(0.95); }
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(0.95);
+  }
 }
 
 .mini-player-info {
@@ -450,7 +525,7 @@ body {
 .mini-player-time {
   font-size: 10px;
   color: var(--text-muted);
-  font-family: 'SFMono-Regular', Consolas, monospace;
+  font-family: "SFMono-Regular", Consolas, monospace;
   margin-top: 2px;
 }
 
@@ -478,7 +553,9 @@ body {
   border-radius: 50%;
   background: var(--accent-color);
   cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
 }
 
 .mini-player-timeline input[type="range"]::-webkit-slider-thumb:hover {
@@ -506,7 +583,11 @@ body {
   border-radius: 50%;
   font-size: 12px;
   cursor: pointer;
-  transition: transform 0.15s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.15s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -589,7 +670,7 @@ body {
   color: var(--text-muted);
   min-width: 35px;
   text-align: right;
-  font-family: 'SFMono-Regular', Consolas, monospace;
+  font-family: "SFMono-Regular", Consolas, monospace;
 }
 
 /* ============================================================
@@ -664,8 +745,14 @@ body {
 }
 
 @keyframes slideIn {
-  from { opacity: 0; transform: translateX(-10px); }
-  to { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .queue-item:hover {

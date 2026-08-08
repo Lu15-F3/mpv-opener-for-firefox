@@ -1,10 +1,10 @@
 {
   "installer": {
-    "message": "MPV Opener for Firefox - Installer v7.0",
+    "message": "MPV Opener for Firefox - Installer 7.0.2",
     "description": "Installer title"
   },
   "uninstaller": {
-    "message": "MPV Opener for Firefox - Uninstaller",
+    "message": "MPV Opener for Firefox - Uninstaller 7.0.2",
     "description": "Uninstaller title"
   },
   "checking_deps": {

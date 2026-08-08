@@ -1,10 +1,10 @@
 {
   "installer": {
-    "message": "MPV Opener for Firefox - Instalador v7.0",
+    "message": "MPV Opener for Firefox - Instalador 7.0.2",
     "description": "Título do instalador"
   },
   "uninstaller": {
-    "message": "MPV Opener for Firefox - Desinstalador",
+    "message": "MPV Opener for Firefox - Desinstalador 7.0.2",
     "description": "Título do desinstalador"
   },
   "checking_deps": {
@@ -153,11 +153,11 @@
   },
   "deps_mpv": {
     "message": "MPV",
-    "description": "dependência de mpv"
+    "description": "dependência mpv"
   },
   "deps_ytdlp": {
     "message": "yt-dlp",
-    "description": "dependência do yt-dlp"
+    "description": "dependência yt-dlp"
   },
   "deps_mpv_mpris": {
     "message": "mpv-mpris",
@@ -168,12 +168,12 @@
     "description": "dependência python3"
   },
   "deps_curl": {
-    "message": "enrolar",
-    "description": "dependência de curl"
+    "message": "curl",
+    "description": "dependência curl"
   },
   "deps_socat": {
-    "message": "chocado",
-    "description": "dependência chocada"
+    "message": "socat",
+    "description": "dependência socat"
   },
   "language": {
     "message": "Linguagem",

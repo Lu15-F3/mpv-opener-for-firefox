@@ -1,6 +1,225 @@
 // ============================================================
-// background.js - MPV Opener for Firefox v7.0
+// background.js - MPV Opener for Firefox v7.2
 // ============================================================
+
+// ============================================================
+// Version Constants
+// ============================================================
+const EXTENSION_VERSION = "7.0.2";
+const MIN_WRAPPER_VERSION = "7.0.2";
+
+// ============================================================
+// Version Check System
+// ============================================================
+function checkWrapperVersion() {
+  browser.storage.local
+    .get({
+      wrapperVersion: null,
+      versionCheckDone: false,
+    })
+    .then(function (data) {
+      if (data.versionCheckDone) {
+        return;
+      }
+
+      browser.runtime
+        .sendNativeMessage("org.custom.mpv", {
+          url: "",
+          extension_version: EXTENSION_VERSION,
+        })
+        .then(function (response) {
+          if (response && response.wrapper_version) {
+            browser.storage.local.set({
+              wrapperVersion: response.wrapper_version,
+              wrapperCheckDate: Date.now(),
+            });
+
+            if (response.min_extension_version) {
+              checkCompatibility(response);
+            }
+
+            if (response.update_url) {
+              browser.storage.local.set({
+                wrapperUpdateUrl: response.update_url,
+              });
+            }
+          }
+        })
+        .catch(function (err) {
+          console.log("MPV Opener: Failed to check wrapper version:", err);
+        });
+    });
+}
+
+function checkCompatibility(response) {
+  const wrapperVer = response.wrapper_version;
+  const minExtVer = response.min_extension_version;
+
+  function compareVersions(v1, v2) {
+    const parts1 = v1.split(".").map(Number);
+    const parts2 = v2.split(".").map(Number);
+    for (let i = 0; i < Math.max(parts1.length, parts2.length); i++) {
+      const p1 = parts1[i] || 0;
+      const p2 = parts2[i] || 0;
+      if (p1 > p2) return 1;
+      if (p1 < p2) return -1;
+    }
+    return 0;
+  }
+
+  if (compareVersions(wrapperVer, minExtVer) < 0) {
+    showUpdateNotification(wrapperVer, minExtVer);
+  }
+}
+
+function showUpdateNotification(currentVer, requiredVer) {
+  browser.notifications.create({
+    type: "basic",
+    iconUrl: browser.runtime.getURL("icons/icon-48.png"),
+    title: "⚠️ MPV Opener - Update Required",
+    message: `Your native host (v${currentVer}) is outdated. Please update to v${requiredVer} or newer.`,
+  });
+
+  browser.browserAction.setBadgeText({ text: "!" });
+  browser.browserAction.setBadgeBackgroundColor({ color: "#f7768e" });
+
+  browser.storage.local.set({
+    wrapperUpdatePending: true,
+    wrapperCurrentVer: currentVer,
+    wrapperRequiredVer: requiredVer,
+  });
+}
+
+// ============================================================
+// Verificação periódica de atualizações (a cada 7 dias)
+// ============================================================
+function scheduleVersionCheck() {
+  const CHECK_INTERVAL = 7 * 24 * 60 * 60 * 1000;
+
+  checkWrapperVersion();
+
+  setInterval(function () {
+    checkWrapperVersion();
+  }, CHECK_INTERVAL);
+}
+
+scheduleVersionCheck();
+
+// ============================================================
+// History Cleanup System
+// ============================================================
+
+// Carregar configurações de limpeza
+function loadCleanupSettings() {
+  return browser.storage.local.get({
+    historyCleanupMode: "manual",
+    historyRetention: 10,
+    lastCleanupDate: null
+  }).catch(function(err) {
+    console.error("MPV Opener: Failed to load cleanup settings:", err);
+  });
+}
+
+// Função principal de limpeza
+function cleanHistory() {
+  return browser.storage.local.get({ history: [] }).then(function(data) {
+    var history = data.history || [];
+    var originalLength = history.length;
+    
+    // Carregar configurações
+    return browser.storage.local.get({
+      historyRetention: 10,
+      historyCleanupMode: "manual"
+    }).then(function(settings) {
+      var retention = settings.historyRetention;
+      
+      // Se retention = 0, manter todos (sem limite)
+      if (retention === 0) {
+        return { removed: 0, kept: originalLength };
+      }
+      
+      // Manter apenas os N mais recentes
+      if (history.length > retention) {
+        var removed = history.splice(retention);
+        var removedCount = removed.length;
+        
+        // Salvar histórico atualizado e data
+        return browser.storage.local.set({ history: history }).then(function() {
+          browser.storage.local.set({ lastCleanupDate: Date.now() });
+          console.log("MPV Opener: Cleaned " + removedCount + " old history entries");
+          return { removed: removedCount, kept: history.length };
+        });
+      } else {
+        return { removed: 0, kept: history.length };
+      }
+    });
+  }).catch(function(err) {
+    console.error("MPV Opener: Failed to clean history:", err);
+    return { removed: 0, kept: 0 };
+  });
+}
+
+// Verificar se deve limpar baseado no modo
+function checkAndCleanHistory() {
+  browser.storage.local.get({
+    historyCleanupMode: "manual",
+    historyRetention: 10,
+    lastCleanupDate: null
+  }).then(function(settings) {
+    var mode = settings.historyCleanupMode;
+    
+    // Se for manual ou onClose, não fazer limpeza agendada
+    if (mode === "manual" || mode === "onClose") {
+      return;
+    }
+    
+    // Verificar tempo decorrido
+    var lastDate = settings.lastCleanupDate || 0;
+    var now = Date.now();
+    var shouldClean = false;
+    
+    switch(mode) {
+      case "daily":
+        shouldClean = (now - lastDate) > 24 * 60 * 60 * 1000;
+        break;
+      case "weekly":
+        shouldClean = (now - lastDate) > 7 * 24 * 60 * 60 * 1000;
+        break;
+      case "monthly":
+        shouldClean = (now - lastDate) > 30 * 24 * 60 * 60 * 1000;
+        break;
+    }
+    
+    if (shouldClean) {
+      console.log("MPV Opener: Running scheduled history cleanup (" + mode + ")");
+      cleanHistory();
+    }
+  }).catch(function(err) {
+    console.error("MPV Opener: Failed to check cleanup:", err);
+  });
+}
+
+// Limpeza manual (chamada pelo usuário)
+function cleanHistoryNow() {
+  return cleanHistory().then(function(result) {
+    return result;
+  });
+}
+
+// Agendar verificação periódica
+function scheduleCleanupCheck() {
+  setInterval(function() {
+    checkAndCleanHistory();
+  }, 60 * 60 * 1000); // 1 hora
+}
+
+scheduleCleanupCheck();
+
+// Evento: Startup do Navegador
+browser.runtime.onStartup.addListener(function() {
+  console.log("MPV Opener: Browser started, checking history cleanup...");
+  setTimeout(checkAndCleanHistory, 5000);
+});
 
 // ============================================================
 // Queue Management System
@@ -93,10 +312,9 @@ function clearQueue() {
   isQueueActive = false;
   isProcessingQueue = false;
   stopQueueMonitoring();
-  saveQueueState();
-  updateQueueBadge();
   isFirstVideoProcessed = false;
   saveQueueState();
+  updateQueueBadge();
 }
 
 function getNextInQueue() {
@@ -162,7 +380,6 @@ function playQueueItem(item, retryCount) {
 
   triggerMpvExecutionForQueue(item.url, item.title, function (success) {
     if (success) {
-      // Avançar para o próximo item após sucesso
       setTimeout(function () {
         if (isQueueActive) {
           var nextItem = advanceQueue();
@@ -181,7 +398,6 @@ function playQueueItem(item, retryCount) {
         }
       }, 2000);
     } else if (retryCount < maxQueueRetries) {
-      // Tentar novamente com backoff exponencial
       var delay = Math.pow(2, retryCount) * 1000;
       console.log(
         "MPV Opener: Queue item failed, retrying in " +
@@ -196,7 +412,6 @@ function playQueueItem(item, retryCount) {
         playQueueItem(item, retryCount + 1);
       }, delay);
     } else {
-      // Falha após todas as tentativas - pular para o próximo
       console.error(
         "MPV Opener: Queue item failed after " +
           maxQueueRetries +
@@ -287,6 +502,9 @@ function triggerMpvExecutionForQueue(url, title, callback) {
       inhibitSleep: true,
       maxResolution: "best",
       autoSubtitles: false,
+      initialVolume: 50,
+      pipCorner: "bottomRight",
+      pipSize: 25,
     })
     .then(function (prefs) {
       var payload = {
@@ -302,27 +520,33 @@ function triggerMpvExecutionForQueue(url, title, callback) {
         maxResolution: prefs.maxResolution,
         autoSubtitles: prefs.autoSubtitles,
         fromQueue: true,
+        extension_version: EXTENSION_VERSION,
+        initialVolume: prefs.initialVolume || 50,
+        pipCorner: prefs.pipCorner || "bottomRight",
+        pipSize: prefs.pipSize || 25,
       };
 
       browser.runtime
         .sendNativeMessage("org.custom.mpv", payload)
         .then(function (response) {
-          if (callback) {
-            callback(true);
+          if (response && response.status === "incompatible") {
+            showUpdateNotification(
+              response.wrapper_version || "unknown",
+              response.min_extension_version || "unknown",
+            );
+            if (callback) callback(false);
+            return;
           }
+          if (callback) callback(true);
         })
         .catch(function (err) {
           console.error("MPV Opener: Queue native messaging error:", err);
-          if (callback) {
-            callback(false);
-          }
+          if (callback) callback(false);
         });
     })
     .catch(function (err) {
       console.error("MPV Opener: Queue prefs loading error:", err);
-      if (callback) {
-        callback(false);
-      }
+      if (callback) callback(false);
     });
 }
 
@@ -355,6 +579,9 @@ function triggerMpvExecution(action, url, title, tabId, fromHistory) {
       maxResolution: "best",
       autoSubtitles: false,
       queueModeEnabled: true,
+      initialVolume: 50,
+      pipCorner: "bottomRight",
+      pipSize: 25,
     })
     .then(function (prefs) {
       var isAudioOnly = action === "sendAudioToMpv";
@@ -365,16 +592,13 @@ function triggerMpvExecution(action, url, title, tabId, fromHistory) {
         return;
       }
 
-      // Primeiro vídeo: Sempre reproduzir diretamente, NUNCA adicionar à fila
       if (!isFirstVideoProcessed) {
         isFirstVideoProcessed = true;
         saveQueueState();
-
         sendToMpv(url, prefs, isAudioOnly, tabId, title, fromHistory);
         return;
       }
 
-      // Vídeos subsequentes: Se o modo fila estiver ativado, adicionar à fila
       if (queueModeEnabled && isFirstVideoProcessed) {
         var count = addToQueue(url, title);
         browser.notifications.create({
@@ -389,7 +613,6 @@ function triggerMpvExecution(action, url, title, tabId, fromHistory) {
         return;
       }
 
-      // Modo fila desativado - reproduzir diretamente
       sendToMpv(url, prefs, isAudioOnly, tabId, title, fromHistory);
     })
     .catch(function (err) {
@@ -412,14 +635,27 @@ function sendToMpv(url, prefs, isAudioOnly, tabId, title, fromHistory) {
     maxResolution: prefs.maxResolution,
     autoSubtitles: prefs.autoSubtitles,
     fromQueue: false,
+    extension_version: EXTENSION_VERSION,
+    initialVolume: prefs.initialVolume || 50,
+    pipCorner: prefs.pipCorner || "bottomRight",
+    pipSize: prefs.pipSize || 25,
   };
 
   browser.runtime
     .sendNativeMessage("org.custom.mpv", payload)
     .then(function (response) {
+      if (response && response.status === "incompatible") {
+        showUpdateNotification(
+          response.wrapper_version || "unknown",
+          response.min_extension_version || "unknown",
+        );
+        return;
+      }
+
       if (!fromHistory) {
         addToHistory(url, title);
       }
+
       browser.notifications.create({
         type: "basic",
         iconUrl: browser.runtime.getURL("icons/icon-48.png"),
@@ -427,6 +663,7 @@ function sendToMpv(url, prefs, isAudioOnly, tabId, title, fromHistory) {
         message:
           browser.i18n.getMessage("sendingNotification") || "Sending to mpv...",
       });
+
       if (prefs.closeTab && tabId && !fromHistory) {
         browser.tabs.remove(tabId);
       }
@@ -456,7 +693,6 @@ function addToHistory(url, title) {
     .get({ history: [] })
     .then(function (data) {
       var history = data.history;
-      // Remover duplicatas
       history = history.filter(function (item) {
         return item.url !== url;
       });
@@ -501,7 +737,7 @@ function getPlayerStatus() {
 }
 
 // ============================================================
-// Função para enviar comandos ao player
+// Player Command Function
 // ============================================================
 function sendPlayerCommand(command, params) {
   var payload = {
@@ -535,12 +771,15 @@ function openSnifferPage(tabId) {
 }
 
 // ============================================================
-// Context Menus
+// Context Menus & Life Cycle
 // ============================================================
 browser.runtime.onInstalled.addListener(function (details) {
   if (details.reason === "install") {
     browser.runtime
-      .sendNativeMessage("org.custom.mpv", { url: "" })
+      .sendNativeMessage("org.custom.mpv", {
+        url: "",
+        extension_version: EXTENSION_VERSION,
+      })
       .then(function (response) {
         console.log("MPV Opener: Native Messaging bridge detected.");
       })
@@ -555,7 +794,6 @@ browser.runtime.onInstalled.addListener(function (details) {
       });
   }
 
-  // Limpar menus antigos antes de criar novos
   browser.contextMenus
     .removeAll()
     .then(function () {
@@ -590,6 +828,14 @@ browser.runtime.onInstalled.addListener(function (details) {
         title: browser.i18n.getMessage("viewQueue") || "View Queue",
         contexts: ["browser_action"],
       });
+
+      browser.contextMenus.create({
+        id: "ctx-check-updates",
+        title:
+          "🔍 " +
+          (browser.i18n.getMessage("checkUpdates") || "Check for Updates"),
+        contexts: ["browser_action"],
+      });
     })
     .catch(function (err) {
       console.error("MPV Opener: Failed to create context menus:", err);
@@ -602,6 +848,13 @@ browser.runtime.onInstalled.addListener(function (details) {
 browser.contextMenus.onClicked.addListener(function (info, tab) {
   if (info.menuItemId === "open-preferences") {
     browser.runtime.openOptionsPage();
+    return;
+  }
+
+  if (info.menuItemId === "ctx-check-updates") {
+    browser.tabs.create({
+      url: browser.runtime.getURL("check-update/check-update.html"),
+    });
     return;
   }
 
@@ -670,8 +923,6 @@ browser.runtime.onMessage.addListener(function (message, sender, sendResponse) {
       sendResponse({ success: true });
     } else if (message.action === "clearQueue") {
       clearQueue();
-      isFirstVideoProcessed = false;
-      saveQueueState();
       sendResponse({ success: true });
     } else if (message.action === "toggleQueueMode") {
       isQueueModeEnabled = !isQueueModeEnabled;
@@ -719,19 +970,22 @@ browser.runtime.onMessage.addListener(function (message, sender, sendResponse) {
       sendPlayerCommand(message.command, message.params);
       sendResponse({ success: true });
     } else if (message.action === "scrapedVideoUrl") {
-      // Recebido do content-sniffer.js
       if (message.url) {
-        // Mostrar no console para debug
         console.log(
           "MPV Opener: Scraped URL:",
           message.url,
           "Source:",
           message.source || "unknown",
         );
-        // Opcional: Adicionar à fila ou reproduzir diretamente
-        // Por enquanto, apenas registrar
       }
       sendResponse({ success: true });
+    } else if (message.action === "cleanHistoryNow") {
+      cleanHistoryNow().then(function(result) {
+        sendResponse({ success: true, removed: result.removed || 0 });
+      }).catch(function(err) {
+        sendResponse({ success: false, error: err.message });
+      });
+      return true;
     }
   } catch (err) {
     console.error("MPV Opener: Message handling error:", err);
@@ -781,5 +1035,6 @@ browser.commands.onCommand.addListener(function (command) {
 // ============================================================
 loadQueueState();
 updateQueueBadge();
+setTimeout(checkAndCleanHistory, 3000);
 
-console.log("MPV Opener v7.0 loaded");
+console.log("MPV Opener v7.2 loaded");

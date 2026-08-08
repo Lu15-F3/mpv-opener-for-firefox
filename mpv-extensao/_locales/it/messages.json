@@ -55,6 +55,10 @@
     "message": "Se abilitati, i video vengono aggiunti alla coda invece di aprire nuove finestre",
     "description": "Descrizione per l'attivazione/disattivazione della modalità coda"
   },
+  "queueSettings": {
+    "message": "Impostazioni della coda",
+    "description": "Intestazione della sezione Impostazioni coda nella pagina delle opzioni"
+  },
   "stopQueue": {
     "message": "Interrompi la coda",
     "description": "Pulsante per interrompere la riproduzione della coda corrente"
@@ -96,8 +100,52 @@
     "description": "Opzione per lanciare mpv riempiendo direttamente il monitor"
   },
   "pipMode": {
-    "message": "Picture-in-Picture (in basso a destra)",
+    "message": "Immagine nell'immagine",
     "description": "Opzione per posizionare il giocatore con le spalle al muro sullo schermo"
+  },
+  "pipCorner": {
+    "message": "Angolo PiP",
+    "description": "Etichetta per la selezione dell'angolo PiP"
+  },
+  "pipSize": {
+    "message": "Misurare",
+    "description": "Etichetta per la selezione della dimensione PiP"
+  },
+  "pipTopLeft": {
+    "message": "In alto a sinistra",
+    "description": "Opzione nell'angolo in alto a sinistra"
+  },
+  "pipTopRight": {
+    "message": "In alto a destra",
+    "description": "Opzione nell'angolo in alto a destra"
+  },
+  "pipBottomLeft": {
+    "message": "In basso a sinistra",
+    "description": "Opzione nell'angolo in basso a sinistra"
+  },
+  "pipBottomRight": {
+    "message": "In basso a destra",
+    "description": "Opzione nell'angolo in basso a destra"
+  },
+  "pipSizeSmall": {
+    "message": "Piccolo (15%)",
+    "description": "Opzione di piccole dimensioni"
+  },
+  "pipSizeMedium": {
+    "message": "Medio (20%)",
+    "description": "Opzione di medie dimensioni"
+  },
+  "pipSizeDefault": {
+    "message": "Predefinito (25%)",
+    "description": "Opzione dimensione predefinita"
+  },
+  "pipSizeLarge": {
+    "message": "Grande (30%)",
+    "description": "Opzione di grande formato"
+  },
+  "pipSizeXL": {
+    "message": "Molto grande (40%)",
+    "description": "Opzione di dimensioni extra large"
   },
   "initialState": {
     "message": "Stato iniziale",
@@ -110,6 +158,86 @@
   "statePaused": {
     "message": "In pausa",
     "description": "Valore di avvio per l'attesa in un frame in pausa"
+  },
+  "volumeSettings": {
+    "message": "Impostazioni del volume",
+    "description": "Intestazione della sezione delle impostazioni del volume"
+  },
+  "initialVolumeLabel": {
+    "message": "Volume iniziale",
+    "description": "Etichetta per l'impostazione iniziale del volume"
+  },
+  "volumeLow": {
+    "message": "Basso (20%)",
+    "description": "Opzione a basso volume"
+  },
+  "volumeMedium": {
+    "message": "Medio (50%)",
+    "description": "Opzione di volume medio"
+  },
+  "volumeHigh": {
+    "message": "Alto (80%)",
+    "description": "Opzione ad alto volume"
+  },
+  "volumeFull": {
+    "message": "Completo (100%)",
+    "description": "Opzione a tutto volume"
+  },
+  "volumeMuted": {
+    "message": "Disattivato (0%)",
+    "description": "Opzione volume disattivato"
+  },
+  "volumeCustom": {
+    "message": "Costume (%)",
+    "description": "Opzione volume personalizzato"
+  },
+  "volumePlaceholder": {
+    "message": "ad esempio, 30",
+    "description": "Segnaposto del volume"
+  },
+  "historyCleanup": {
+    "message": "Pulizia della storia",
+    "description": "Intestazione della sezione di pulizia della cronologia"
+  },
+  "historyCleanupLabel": {
+    "message": "Cronologia della pulizia automatica",
+    "description": "Etichetta per l'attivazione/disattivazione della pulizia automatica"
+  },
+  "historyCleanupManual": {
+    "message": "Manuale (disabilitato)",
+    "description": "Opzione di pulizia manuale"
+  },
+  "historyCleanupDaily": {
+    "message": "Ogni giorno",
+    "description": "Opzione di pulizia giornaliera"
+  },
+  "historyCleanupWeekly": {
+    "message": "Ogni settimana",
+    "description": "Opzione di pulizia settimanale"
+  },
+  "historyCleanupMonthly": {
+    "message": "Ogni mese",
+    "description": "Opzione di pulizia mensile"
+  },
+  "historyCleanupOnClose": {
+    "message": "Alla chiusura del browser",
+    "description": "Opzione di pulizia all'uscita del browser"
+  },
+  "historyCleanupRetention": {
+    "message": "Mantieni ultimo",
+    "description": "Etichetta di conservazione"
+  },
+  "historyCleanupRetentionDesc": {
+    "message": "Numero di elementi da conservare nella cronologia",
+    "description": "Descrizione della conservazione"
+  },
+  "historyCleanupSuccess": {
+    "message": "La cronologia è stata pulita con successo!",
+    "description": "Messaggio di successo della pulizia"
+  },
+  "historyCleanupCount": {
+    "message": "Rimosse {count} voci della cronologia precedente",
+    "description": "Messaggio di conteggio delle pulizie"
   },
   "windowBehavior": {
     "message": "Comportamento della finestra",
@@ -208,7 +336,7 @@
     "description": "Titolo dell'intestazione che spiega le dipendenze del pacchetto operativo"
   },
   "welcomeStep1Desc": {
-    "message": "Apri il tuo terminale ed esegui questo comando per installare il lettore, il motore di estrazione e il plug-in multimediale:",
+    "message": "Apri il terminale ed esegui questo comando per installare il lettore, il motore di estrazione e il plug-in multimediale:",
     "description": "La descrizione dell'istruzione dettaglia il blocco che precede il blocco CLI"
   },
   "welcomeStep2Title": {
@@ -357,7 +485,7 @@
   },
   "snifferYes": {
     "message": "SÌ",
-    "description": "Sì nel dialogo di prova"
+    "description": "Sì nella finestra di dialogo di prova"
   },
   "snifferNo": {
     "message": "No",
