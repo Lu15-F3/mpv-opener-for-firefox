@@ -1,6 +1,6 @@
 #!/bin/bash
 # ============================================================
-# MPV Opener for Firefox - Installer via Curl
+# MPV Opener for Firefox - Installer v7.0.2 via Curl
 # ============================================================
 # Usage: curl -sSL https://raw.githubusercontent.com/Lu15-F3/mpv-opener-for-firefox/main/install.sh | bash
 # ============================================================

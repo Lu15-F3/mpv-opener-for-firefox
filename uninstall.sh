@@ -1,6 +1,6 @@
 #!/bin/bash
 # ============================================================
-# MPV Opener for Firefox - Uninstaller via Curl
+# MPV Opener for Firefox - Uninstaller v7.0.2 via Curl
 # ============================================================
 # Usage: curl -sSL https://raw.githubusercontent.com/Lu15-F3/mpv-opener-for-firefox/main/uninstall.sh | bash
 # ============================================================
@@ -23,6 +23,7 @@ NC='\033[0m'
 REPO_OWNER="Lu15-F3"
 REPO_NAME="mpv-opener-for-firefox"
 BRANCH="main"
+VERSION="7.0.2"
 
 BASE_URL="https://raw.githubusercontent.com/$REPO_OWNER/$REPO_NAME/$BRANCH/native-host"
 
@@ -47,7 +48,7 @@ download_uninstaller() {
 # Main Uninstallation
 # ============================================================
 echo -e "${CYAN}╔══════════════════════════════════════════════════════════════╗${NC}"
-echo -e "${CYAN}║${NC} ${BOLD}${MAGENTA}MPV Opener for Firefox - Uninstaller${NC}${CYAN} ║${NC}"
+echo -e "${CYAN}║${NC} ${BOLD}${MAGENTA}MPV Opener for Firefox - Uninstaller v$VERSION${NC}${CYAN} ║${NC}"
 echo -e "${CYAN}╚══════════════════════════════════════════════════════════════╝${NC}"
 echo ""
 
@@ -59,6 +60,7 @@ echo -e "  ${CYAN}• ${BOLD}version.txt${NC} - Version information"
 echo -e "  ${CYAN}• ${BOLD}Empty directories${NC} - Cleaned up"
 echo ""
 
+# CORREÇÃO: Usar read com -p para evitar problemas de echo
 read -p "$(echo -e ${YELLOW}"Continue? (y/N) "${NC})" -n 1 -r
 echo
 if [[ ! $REPLY =~ ^[Yy]$ ]]; then
