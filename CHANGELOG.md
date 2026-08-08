@@ -5,6 +5,37 @@
 
 O histórico completo de lançamentos simulados do ecossistema de desenvolvimento do projeto está detalhado abaixo.
 
+## [v7.0.2] - 2026-08-07
+
+## 🎯 Principais Novidades
+
+* **Modo Picture-in-Picture (PiP) Inteligente e Multiplataforma**: O recurso de PiP foi completamente reformulado para oferecer uma experiência mais robusta e personalizável.
+* **Posicionamento em Quatro Cantos**: Agora você pode escolher em qual canto da tela a janela do PiP deve aparecer: Superior Esquerdo, Superior Direito, Inferior Esquerdo ou Inferior Direito.
+* **Controle de Tamanho Dinâmico**: Adicionada a opção para ajustar o tamanho da janela do PiP em porcentagem da tela (15%, 20%, 25%, 30%, 40%), permitindo um controle mais granular sobre o espaço ocupado.
+* **Detecção Automática de Ambiente**: O wrapper (`mpv_wrapper.py`) agora detecta inteligentemente se você está usando Wayland ou X11, aplicando as configurações ideais para cada ambiente. Isso inclui o uso de `QT_QPA_PLATFORM=xcb` e opções específicas como `--x11-netwm=no` para garantir a compatibilidade.
+* **Compatibilidade com Versões Modernas do MPV**: Removidas opções obsoletas (`--focus-on-open`, `--focus-on=no`, `--wid=0`) que causavam erros em versões recentes do MPV, substituindo-as por uma abordagem mais universal e estável.
+* **Controle de Volume Inicial**: Adicionada uma opção na interface (popup e página de opções) para definir o volume inicial dos vídeos enviados ao mpv. Você pode escolher entre predefinições (Mudo, Baixo, Médio, Alto, Máximo) ou definir um valor personalizado (0-100%), garantindo que os vídeos iniciem sempre no nível de áudio desejado.
+
+## 🛠️ Corrigido
+
+* **Falha no Modo PiP em Wayland**: Corrigido o problema crítico onde o modo Picture-in-Picture não abria a janela do vídeo em sistemas com Wayland (como Fedora KDE). A correção envolveu a adaptação do comando de inicialização para usar `QT_QPA_PLATFORM=xcb` e a remoção de opções de geometria que não eram mais compatíveis.
+* **Erro de Opção no MPV**: Corrigidos os erros *Error parsing option focus-on-open* e *Invalid value for option focus-on* que ocorriam em versões mais novas do MPV. O wrapper agora detecta a versão e aplica apenas as opções suportadas ou as omite para garantir a compatibilidade.
+* **Mensagem de Erro Falsa no Native Host**: Resolvido o problema onde a extensão exibia a mensagem *"Failed to send to mpv. Check if Native Host is installed"* mesmo com o host instalado e funcionando. A correção estabilizou a comunicação e o parsing de mensagens JSON no wrapper.
+
+## ✨ Adicionado
+
+* **Internacionalização das Opções de PiP**: Adicionadas entradas de tradução para todos os novos termos relacionados ao PiP nos arquivos `messages.json` (`pipCorner`, `pipTopLeft`, `pipSizeSmall`, etc.), garantindo que a interface esteja totalmente traduzida para os idiomas suportados.
+* **Opção de Volume no Popup**: Integrado um seletor de volume rápido diretamente no popup da extensão, permitindo ajustar o volume do próximo vídeo sem precisar abrir a página de configurações.
+* **Configurações de PiP na Página de Opções**: As novas opções de canto e tamanho do PiP foram adicionadas à página principal de configurações (`options.html`), oferecendo um local central para personalização.
+
+## ⚡ Alterado
+
+* **Refatoração do mpv_wrapper.py**: O código do wrapper foi significativamente simplificado e estabilizado. A lógica de construção do comando MPV foi revisada para priorizar opções universais e seguras, removendo parâmetros problemáticos e adicionando detecção de ambiente para Wayland.
+* **Atualização do popup.js e popup.css**: A interface do popup foi reorganizada para acomodar os novos controles de PiP e Volume, com um design mais limpo e intuitivo.
+* **Atualização do background.js**: O script de background foi ajustado para carregar e passar as novas configurações (`pipCorner`, `pipSize`, `initialVolume`) para o wrapper, garantindo que as preferências do usuário sejam aplicadas.
+
+---
+
 ## [v7.0.0] - 2026-07-29
 
 ### 🎯 Principais Novidades
@@ -83,77 +114,77 @@ O histórico completo de lançamentos simulados do ecossistema de desenvolviment
 ## [v6.0.0] - 2026-07-02
 
 ### Adicionado
-- **Modo Pesca (Media Link Sniffer):** Nova funcionalidade dedicada à captura avançada de mídias diretamente do tráfego de rede da aba ativa, com capacidade de interceptar manifestos ocultos (.m3u8) e fragmentos de transporte (.ts) em reprodutores web proprietários.
-- **Reconstrução Dinâmica de Links:** Implementado algoritmo inteligente que reconstrói automaticamente streams quebrados nos formatos INDEX, MASTER e MP4, garantindo maior taxa de sucesso na extração.
-- **Filtro Antimídia:** Sistema integrado de blacklist que remove anúncios e scripts de rastreamento (popads, doubleclick) antes da exibição dos links capturados.
-- **Interface Dedicada (sniffer.css):** Nova tela com design premium escuro (estilo Catppuccin) e animações suaves em tempo real durante a detecção de novas mídias.
-- **Internacionalização Completa (i18n):** Arquitetura unificada amarrando nativamente todo o ecossistema da extensão (incluindo Modo Pesca e atalhos) aos dicionários oficiais (_locales/).
-- **Tela Welcome Inteligente:** Página de pós-instalação completamente reformulada com gerenciamento dinâmico de idiomas em tempo real e detecção automática do idioma padrão do sistema operacional.
-- **Atalhos de Teclado Nativos:** Suporte à API commands do Firefox com três atalhos padrão:
+* **Modo Pesca (Media Link Sniffer):** Nova funcionalidade dedicada à captura avançada de mídias diretamente do tráfego de rede da aba ativa, com capacidade de interceptar manifestos ocultos (.m3u8) e fragmentos de transporte (.ts) em reprodutores web proprietários.
+* **Reconstrução Dinâmica de Links:** Implementado algoritmo inteligente que reconstrói automaticamente streams quebrados nos formatos INDEX, MASTER e MP4, garantindo maior taxa de sucesso na extração.
+* **Filtro Antimídia:** Sistema integrado de blacklist que remove anúncios e scripts de rastreamento (popads, doubleclick) antes da exibição dos links capturados.
+* **Interface Dedicada (sniffer.css):** Nova tela com design premium escuro (estilo Catppuccin) e animações suaves em tempo real durante a detecção de novas mídias.
+* **Internacionalização Completa (i18n):** Arquitetura unificada amarrando nativamente todo o ecossistema da extensão (incluindo Modo Pesca e atalhos) aos dicionários oficiais (_locales/).
+* **Tela Welcome Inteligente:** Página de pós-instalação completamente reformulada com gerenciamento dinâmico de idiomas em tempo real e detecção automática do idioma padrão do sistema operacional.
+* **Atalhos de Teclado Nativos:** Suporte à API commands do Firefox com três atalhos padrão:
   - `Ctrl+Alt+M`: Envia o vídeo da aba ativa
   - `Ctrl+Alt+P`: Envia apenas o áudio da aba ativa
   - `Ctrl+Alt+V`: Abre diretamente o Modo Pesca
-- **Customização de Atalhos:** Usuários podem remapear livremente os atalhos através do menu nativo do Firefox (about:addons).
+* **Customização de Atalhos:** Usuários podem remapear livremente os atalhos através do menu nativo do Firefox (about:addons).
 
 ### Corrigido
-- **Restauração de Notificações:** Corrigida a falha onde o balão de notificação nativa do sistema operacional ("Sending video to mpv...") desaparecia após o envio.
-- **Sincronização dos Menus:** Resolvido problema de consistência onde o Modo Pesca sumia do menu de contexto (botão direito); agora opera em perfeita sincronia com o botão visual do popup.
+* **Restauração de Notificações:** Corrigida a falha onde o balão de notificação nativa do sistema operacional ("Sending video to mpv...") desaparecia após o envio.
+* **Sincronização dos Menus:** Resolvido problema de consistência onde o Modo Pesca sumia do menu de contexto (botão direito); agora opera em perfeita sincronia com o botão visual do popup.
 
 ### Alterado
-- **Estrutura de Revisão:** Atualização completa das descrições contextuais ("description") nos arquivos messages.json para agilizar a validação automatizada e humana da Mozilla.
-- **Código da Tela Welcome:** JavaScript refatorado e limpo para melhor manutenibilidade e performance na troca dinâmica de idiomas.
+* **Estrutura de Revisão:** Atualização completa das descrições contextuais ("description") nos arquivos messages.json para agilizar a validação automatizada e humana da Mozilla.
+* **Código da Tela Welcome:** JavaScript refatorado e limpo para melhor manutenibilidade e performance na troca dinâmica de idiomas.
 
 ---
 
 ## [v5.0.1] - 2026-06-28
 
 ### Adicionado
-- **Onboarding Interativo:** Introduzida uma página de boas-vindas dinâmica e bilíngue (`welcome.html`) com botões de cópia instantânea de comandos de terminal com um clique.
-- **Verificação de Handshake de Dependência:** Programada uma rotina de detecção automática segura na instalação da extensão (`runtime.onInstalled`) para verificar o backend do sistema e a disponibilidade de mensagens nativas, evitando falhas de inicialização silenciosas para novos usuários.
+* **Onboarding Interativo:** Introduzida uma página de boas-vindas dinâmica e bilíngue (`welcome.html`) com botões de cópia instantânea de comandos de terminal com um clique.
+* **Verificação de Handshake de Dependência:** Programada uma rotina de detecção automática segura na instalação da extensão (`runtime.onInstalled`) para verificar o backend do sistema e a disponibilidade de mensagens nativas, evitando falhas de inicialização silenciosas para novos usuários.
 
 ---
 
 ## [v5.0.0] - Controle em Tempo Real & Persistência
 
-- Implementação de Servidor IPC estável via sockets UNIX independentes.
-- Adicionado botão "Adicionar à fila" gerenciando playlists ativas diretamente pelo navegador.
-- Controle remoto de mídia completo integrado no popup (Play/Pause, Slider de volume e Barra Seek).
-- Verificação automática do Native Messaging: Agora a extensão testa a comunicação com a ponte Python (`org.custom.mpv`) imediatamente após a instalação.
-- Página de Boas-Vindas (`welcome.html`): Caso o Native Messaging Host não seja detectado no computador do usuário, uma página de ajuda será aberta automaticamente para orientar na instalação.
+* **Implementação de Servidor IPC estável via sockets UNIX independentes.
+* **Adicionado botão "Adicionar à fila" gerenciando playlists ativas diretamente pelo navegador.
+* **Controle remoto de mídia completo integrado no popup (Play/Pause, Slider de volume e Barra Seek).
+* **Verificação automática do Native Messaging: Agora a extensão testa a comunicação com a ponte Python (`org.custom.mpv`) imediatamente após a instalação.
+* **Página de Boas-Vindas (`welcome.html`): Caso o Native Messaging Host não seja detectado no computador do usuário, uma página de ajuda será aberta automaticamente para orientar na instalação.
 
 ### Modificado
-- **Refatoração do `background.js`:** Centralização das rotinas do ciclo de vida da extensão e melhor organização na criação dos menus de contexto (`open-preferences`, `ctx-send-video` e `ctx-send-audio`).
+* **Refatoração do `background.js`:** Centralização das rotinas do ciclo de vida da extensão e melhor organização na criação dos menus de contexto (`open-preferences`, `ctx-send-video` e `ctx-send-audio`).
 
 ---
 
 ## [v4.0.0] - Gerenciamento Inteligente de Legendas e Qualidade
 
-- Criação de menu de resoluções dinâmicas injetadas na propriedade `--ytdl-format`.
-- Suporte a injeção de legendas externas carregadas por arquivos locais e download automático via parâmetros.
+* **Criação de menu de resoluções dinâmicas injetadas na propriedade `--ytdl-format`.
+* **Suporte a injeção de legendas externas carregadas por arquivos locais e download automático via parâmetros.
 
 ---
 
 ## [v3.0.0] - Integração Nativa com Fedora & KDE Plasma
 
-- Integração total com o protocolo MPRIS do KDE Plasma. O reprodutor agora responde ao widget de mídia global do painel.
-- Bloqueio de suspensão automático integrado ao gerenciador de energia do SO durante streams.
+* **Integração total com o protocolo MPRIS do KDE Plasma. O reprodutor agora responde ao widget de mídia global do painel.
+* **Bloqueio de suspensão automático integrado ao gerenciador de energia do SO durante streams.
 
 ---
 
 ## [v2.0.0] - Estética, Recursos de Tela e Áudio
 
-- Integração de parâmetro "Sempre no topo" habilitando multitarefa fluida.
-- Suporte a modo Picture-in-Picture (PiP) com redimensionamento geométrico exato.
-- Adicionado modo "Apenas Áudio" para redução drástica de consumo de CPU/RAM.
+* **Integração de parâmetro "Sempre no topo" habilitando multitarefa fluida.
+* **Suporte a modo Picture-in-Picture (PiP) com redimensionamento geométrico exato.
+* **Adicionado modo "Apenas Áudio" para redução drástica de consumo de CPU/RAM.
 
 ---
 
 ## [v1.0.0] - O MVP Funcional
 
-- Versão inicial do projeto fornecendo comunicação por Native Messaging via Stdio Python.
-- Suporte ao disparo de instâncias do player gerenciando links ativos das abas e opções iniciais de exibição.
+* **Versão inicial do projeto fornecendo comunicação por Native Messaging via Stdio Python.
+* **Suporte ao disparo de instâncias do player gerenciando links ativos das abas e opções iniciais de exibição.
 
 ---
 
 *Para ver as mudanças de código e revisões de arquivos, acesse o painel comparativo:*
-[Compare v1.0.0...v7.0.0](https://github.com/Lu15-F3/mpv-opener-for-firefox/compare/v1.0.0...v7.0.0)
+[Compare v1.0.0...v7.0.2](https://github.com/Lu15-F3/mpv-opener-for-firefox/compare/v1.0.0...v7.0.2)
