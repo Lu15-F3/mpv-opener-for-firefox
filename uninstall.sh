@@ -60,8 +60,11 @@ echo -e "  ${CYAN}• ${BOLD}version.txt${NC} - Version information"
 echo -e "  ${CYAN}• ${BOLD}Empty directories${NC} - Cleaned up"
 echo ""
 
-# CORREÇÃO: Usar read com -p para evitar problemas de echo
-read -p "$(echo -e ${YELLOW}"Continue? (y/N) "${NC})" -n 1 -r
+# ============================================================
+# Confirmação de desinstalação - CORRIGIDO
+# ============================================================
+printf "${YELLOW}⚠ Continue? (y/N) ${NC}"
+read -r -n 1 REPLY
 echo
 if [[ ! $REPLY =~ ^[Yy]$ ]]; then
     echo -e "${GREEN}✔ Uninstallation cancelled.${NC}"
