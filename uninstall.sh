@@ -1,6 +1,6 @@
 #!/bin/bash
 # ============================================================
-# MPV Opener for Firefox - Uninstaller v7.0.2 via Curl
+# MPV Opener for Firefox - Uninstaller v7.0.2
 # ============================================================
 # Usage: curl -sSL https://raw.githubusercontent.com/Lu15-F3/mpv-opener-for-firefox/main/uninstall.sh | bash
 # ============================================================
@@ -33,7 +33,7 @@ BASE_URL="https://raw.githubusercontent.com/$REPO_OWNER/$REPO_NAME/$BRANCH/nativ
 download_uninstaller() {
     local dest=$1
     echo -e "${BLUE}  Downloading uninstaller...${NC}"
-    
+
     if curl -sSL -o "$dest/uninstall.sh" "$BASE_URL/uninstall.sh" 2>/dev/null; then
         chmod +x "$dest/uninstall.sh"
         echo -e "${GREEN}  ✔ Downloaded uninstaller${NC}"
@@ -42,6 +42,32 @@ download_uninstaller() {
         echo -e "${YELLOW}  ⚠ Using fallback uninstaller${NC}"
         return 1
     fi
+}
+
+# ============================================================
+# Função para ler input do terminal (CORRIGIDA)
+# ============================================================
+confirm_uninstall() {
+    # Redirecionar stdin para o terminal real
+    local answer
+    if [ -t 0 ]; then
+        # Estamos em um terminal interativo
+        printf "${YELLOW}⚠ Continue? (y/N) ${NC}"
+        read -r answer
+    else
+        # Não estamos em um terminal interativo (curl | bash)
+        # Tentar abrir o terminal diretamente
+        if [ -e /dev/tty ]; then
+            printf "${YELLOW}⚠ Continue? (y/N) ${NC}" > /dev/tty
+            read -r answer < /dev/tty
+        else
+            # Fallback: assumir que o usuário quer continuar (non-interactive)
+            echo -e "${YELLOW}⚠ Non-interactive mode - proceeding with uninstall${NC}"
+            return 0
+        fi
+    fi
+
+    [[ $answer =~ ^[Yy]$ ]]
 }
 
 # ============================================================
@@ -63,10 +89,7 @@ echo ""
 # ============================================================
 # Confirmação de desinstalação - CORRIGIDO
 # ============================================================
-printf "${YELLOW}⚠ Continue? (y/N) ${NC}"
-read -r -n 1 REPLY
-echo
-if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+if ! confirm_uninstall; then
     echo -e "${GREEN}✔ Uninstallation cancelled.${NC}"
     exit 0
 fi
@@ -90,7 +113,7 @@ else
     # Fallback: Remover manualmente
     # ============================================================
     echo -e "\n${BLUE}▶ Removing components manually...${NC}"
-    
+
     BIN_DIR="$HOME/.local/bin"
     NATIVE_DIR_NATIVE="$HOME/.mozilla/native-messaging-hosts"
     NATIVE_DIR_FLATPAK="$HOME/.var/app/org.mozilla.firefox/.mozilla/native-messaging-hosts"
@@ -99,7 +122,7 @@ else
     WRAPPER_NAME="mpv_wrapper.py"
     VERSION_FILE="$HOME/.local/share/mpv-opener/version.txt"
     VERSION_DIR="$(dirname "$VERSION_FILE")"
-    
+
     # Remover wrapper
     if [ -f "$BIN_DIR/$WRAPPER_NAME" ]; then
         rm "$BIN_DIR/$WRAPPER_NAME"
@@ -107,7 +130,7 @@ else
     else
         echo -e "${YELLOW}  ⚠ Not found: $BIN_DIR/$WRAPPER_NAME${NC}"
     fi
-    
+
     # Remover manifests
     for dir in "$NATIVE_DIR_NATIVE" "$NATIVE_DIR_FLATPAK" "$NATIVE_DIR_SNAP"; do
         if [ -f "$dir/$MANIFEST_NAME" ]; then
@@ -117,17 +140,17 @@ else
             echo -e "${YELLOW}  ⚠ Not found: $dir/$MANIFEST_NAME${NC}"
         fi
     done
-    
+
     # Remover version file
     if [ -f "$VERSION_FILE" ]; then
         rm "$VERSION_FILE"
         echo -e "${GREEN}  ✔ Removed $VERSION_FILE${NC}"
     fi
-    
+
     if [ -d "$VERSION_DIR" ] && [ -z "$(ls -A "$VERSION_DIR" 2>/dev/null)" ]; then
         rmdir "$VERSION_DIR" 2>/dev/null && echo -e "${GREEN}  ✔ Removed empty directory $VERSION_DIR${NC}"
     fi
-    
+
     # Limpar diretórios vazios
     for dir in "$NATIVE_DIR_NATIVE" "$NATIVE_DIR_FLATPAK" "$NATIVE_DIR_SNAP"; do
         if [ -d "$dir" ] && [ -z "$(ls -A "$dir" 2>/dev/null)" ]; then
