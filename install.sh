@@ -23,7 +23,7 @@ NC='\033[0m'
 REPO_OWNER="Lu15-F3"
 REPO_NAME="mpv-opener-for-firefox"
 BRANCH="main"
-VERSION="7.0.1"
+VERSION="7.0.2"
 
 # URLs dos arquivos
 BASE_URL="https://raw.githubusercontent.com/$REPO_OWNER/$REPO_NAME/$BRANCH/native-host"
