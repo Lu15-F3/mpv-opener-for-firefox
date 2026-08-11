@@ -5,9 +5,44 @@
 
 O histórico completo de lançamentos simulados do ecossistema de desenvolvimento do projeto está detalhado abaixo.
 
+## [v7.0.3] - 2026-08-10
+
+### 🎯 Principais Novidades
+
+* **Sistema Avançado de Limpeza de Histórico:** Introduzida uma funcionalidade abrangente para gerenciar o histórico de vídeos, oferecendo três modos de operação:
+* **Limpeza Automática Programada:** Agora você pode configurar a extensão para limpar automaticamente o histórico de vídeos em intervalos regulares (diário, semanal, mensal) ou ao fechar o navegador.
+* **Controle Granular de Retenção:** Adicionada a opção de escolher exatamente quantos itens deseja manter no histórico (de 0 a 100, ou "Sem Limites"), dando controle total sobre os dados armazenados.
+* **Ação "Limpar Agora":** Botão dedicado nas configurações e no popup para executar a limpeza manualmente a qualquer momento, com feedback visual do progresso.
+* **Feedback Visual de Envio de Vídeos:** A experiência de enviar vídeos para o mpv foi significativamente melhorada com um sistema de feedback em tempo real.
+* **Indicadores de Status no Popup:** Um novo elemento visual (`#send-status`) aparece no popup para mostrar o status do envio: *"Enviando..."*, *"Sucesso ✅"* ou *"Falha ❌"*, com mensagens de erro detalhadas.
+* **Notificações de Erro Aprimoradas:** Falhas no envio agora geram notificações nativas do sistema com descrições claras do problema (ex: falha no `yt-dlp`, erro de rede, timeout, host nativo incompatível), auxiliando o usuário a diagnosticar e resolver o problema.
+* **Internacionalização das Mensagens:** Todas as novas mensagens de status e erro foram totalmente traduzidas, garantindo acessibilidade para usuários em diferentes idiomas.
+
+### 🛠️ Corrigido
+
+* **Mensagem de Limpeza de Histórico no Popup:** Corrigido o bug onde a informação sobre a limpeza automática (*"Auto-clean: on browser close"*) exibia incorretamente *"keeping last 10"* mesmo quando configurado para *"Clear All (0 items)"*. A lógica de exibição agora trata corretamente o valor `0`, mostrando a mensagem *"clearing all"*.
+* **Persistência da Opção "Clear All":** Ajustada a lógica de carregamento de configurações para garantir que o valor `0` para retenção de histórico não seja sobrescrito pelo valor padrão (`10`) ao ser interpretado como `false` em operações lógicas.
+* **Notificações do Sistema:** Restaurado o funcionamento pleno das notificações nativas do sistema operacional (*"Sending video to mpv..."*, *"Video sent successfully!"*), que haviam sido afetadas em versões anteriores.
+
+### ✨ Adicionado
+
+* **Opção de Retenção "Clear All (0 items)":** Incluída a opção *"Clear All"* como a primeira escolha no seletor *"Keep Last"* da página de opções, permitindo que os usuários zerem completamente o histórico.
+* **Internacionalização da Limpeza de Histórico:** Adicionadas todas as chaves de tradução necessárias para as novas funcionalidades de limpeza (`historyCleanupAutoLabel`, `historyCleanupActionClearing`, `historyCleanupRetentionAll`, etc.), garantindo que a interface seja exibida corretamente em múltiplos idiomas.
+* **Mensagem "Cleaning..." no Botão "Clean Now":** O botão *"Clean Now"* agora exibe um feedback visual *"⏳ Cleaning..."* enquanto a operação de limpeza está em andamento, evitando múltiplos cliques e informando o progresso.
+* **Detecção de Distribuição no Instalador:** O script `install.sh` agora possui detecção mais robusta para distribuições como Gentoo e NixOS, oferecendo comandos de instalação específicos para cada uma.
+
+### ⚡ Alterado
+
+* **Refatoração do `background.js`:** O script de background foi reorganizado para incluir o novo sistema de limpeza de histórico e o gerenciamento de notificações de erro, melhorando a manutenibilidade e a confiabilidade do código.
+* **Atualização do `popup.js`:** A lógica de renderização do histórico foi refinada para usar a verificação explícita de tipo (`typeof`) ao carregar valores de configuração, prevenindo bugs relacionados a valores "falsy" como `0`.
+* **Atualização do `mpv_wrapper.py`:** Pequenas melhorias na detecção de ambiente e no tratamento de erros para garantir maior estabilidade.
+* **Scripts de Instalação (`install.sh` / `uninstall.sh`):** Corrigido um erro que exibia *"cho: comando não encontrado"* durante a desinstalação. Os scripts agora usam `printf` para a confirmação interativa, garantindo compatibilidade com diferentes shells.
+
+---
+
 ## [v7.0.2] - 2026-08-07
 
-## 🎯 Principais Novidades
+### 🎯 Principais Novidades
 
 * **Modo Picture-in-Picture (PiP) Inteligente e Multiplataforma:** O recurso de PiP foi completamente reformulado para oferecer uma experiência mais robusta e personalizável.
 * **Posicionamento em Quatro Cantos:** Agora você pode escolher em qual canto da tela a janela do PiP deve aparecer: Superior Esquerdo, Superior Direito, Inferior Esquerdo ou Inferior Direito.
@@ -16,19 +51,19 @@ O histórico completo de lançamentos simulados do ecossistema de desenvolviment
 * **Compatibilidade com Versões Modernas do MPV:** Removidas opções obsoletas (`--focus-on-open`, `--focus-on=no`, `--wid=0`) que causavam erros em versões recentes do MPV, substituindo-as por uma abordagem mais universal e estável.
 * **Controle de Volume Inicial:** Adicionada uma opção na interface (popup e página de opções) para definir o volume inicial dos vídeos enviados ao mpv. Você pode escolher entre predefinições (Mudo, Baixo, Médio, Alto, Máximo) ou definir um valor personalizado (0-100%), garantindo que os vídeos iniciem sempre no nível de áudio desejado.
 
-## 🛠️ Corrigido
+### 🛠️ Corrigido
 
 * **Falha no Modo PiP em Wayland:** Corrigido o problema crítico onde o modo Picture-in-Picture não abria a janela do vídeo em sistemas com Wayland (como Fedora KDE). A correção envolveu a adaptação do comando de inicialização para usar `QT_QPA_PLATFORM=xcb` e a remoção de opções de geometria que não eram mais compatíveis.
 * **Erro de Opção no MPV:** Corrigidos os erros *Error parsing option focus-on-open* e *Invalid value for option focus-on* que ocorriam em versões mais novas do MPV. O wrapper agora detecta a versão e aplica apenas as opções suportadas ou as omite para garantir a compatibilidade.
 * **Mensagem de Erro Falsa no Native Host:** Resolvido o problema onde a extensão exibia a mensagem *"Failed to send to mpv. Check if Native Host is installed"* mesmo com o host instalado e funcionando. A correção estabilizou a comunicação e o parsing de mensagens JSON no wrapper.
 
-## ✨ Adicionado
+### ✨ Adicionado
 
 * **Internacionalização das Opções de PiP:** Adicionadas entradas de tradução para todos os novos termos relacionados ao PiP nos arquivos `messages.json` (`pipCorner`, `pipTopLeft`, `pipSizeSmall`, etc.), garantindo que a interface esteja totalmente traduzida para os idiomas suportados.
 * **Opção de Volume no Popup:** Integrado um seletor de volume rápido diretamente no popup da extensão, permitindo ajustar o volume do próximo vídeo sem precisar abrir a página de configurações.
 * **Configurações de PiP na Página de Opções:** As novas opções de canto e tamanho do PiP foram adicionadas à página principal de configurações (`options.html`), oferecendo um local central para personalização.
 
-## ⚡ Alterado
+### ⚡ Alterado
 
 * **Refatoração do mpv_wrapper.py:** O código do wrapper foi significativamente simplificado e estabilizado. A lógica de construção do comando MPV foi revisada para priorizar opções universais e seguras, removendo parâmetros problemáticos e adicionando detecção de ambiente para Wayland.
 * **Atualização do popup.js e popup.css:** A interface do popup foi reorganizada para acomodar os novos controles de PiP e Volume, com um design mais limpo e intuitivo.
@@ -187,4 +222,4 @@ O histórico completo de lançamentos simulados do ecossistema de desenvolviment
 ---
 
 *Para ver as mudanças de código e revisões de arquivos, acesse o painel comparativo:*
-[Compare v1.0.0...v7.0.2](https://github.com/Lu15-F3/mpv-opener-for-firefox/compare/v1.0.0...v7.0.2)
+[Compare v1.0.0...v7.0.3](https://github.com/Lu15-F3/mpv-opener-for-firefox/compare/v1.0.0...v7.0.3)
