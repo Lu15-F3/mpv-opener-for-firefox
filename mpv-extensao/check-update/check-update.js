@@ -2,8 +2,8 @@
 // check-update.js - MPV Opener Update Check
 // ============================================================
 
-const EXTENSION_VERSION = "7.0.2";
-const MIN_WRAPPER_VERSION = "7.0.2";
+const EXTENSION_VERSION = "7.0.3";
+const MIN_WRAPPER_VERSION = "7.0.3";
 
 document.addEventListener("DOMContentLoaded", function() {
     const statusContainer = document.getElementById("status-container");

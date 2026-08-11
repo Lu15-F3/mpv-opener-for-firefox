@@ -93,7 +93,7 @@
   },
   "standardWindow": {
     "message": "ﺔﻴﺳﺎﻴﻗ ﺓﺬﻓﺎﻧ",
-    "description": "ﻢﻈﺘﻨﻣ ﻙﺮﺤﺘﻣ ﺐﻋﻻ﻿ ﻂﻴﻄﺨﺘﻟ ﺭﺎﻴﺧ"
+    "description": "ﻱﺩﺎﻋ ﻙﺮﺤﺘﻣ ﺐﻋﻻ﻿ ﻂﻴﻄﺨﺘﻟ ﺭﺎﻴﺧ"
   },
   "fullscreen": {
     "message": "ﺔﺷﺎﺸﻟﺍ ءﻞﻣ",
@@ -204,8 +204,8 @@
     "description": "ﻲﺋﺎﻘﻠﺘﻟﺍ ﻒﻴﻈﻨﺘﻟﺍ ﻞﻳﺪﺒﺘﻟ ﺔﻴﻤﺴﺗ"
   },
   "historyCleanupManual": {
-    "message": "(ﻞﻄﻌﻣ) ﻱﻭﺪﻳ",
-    "description": "ﻱﻭﺪﻴﻟﺍ ﻒﻴﻈﻨﺘﻟﺍ ﺭﺎﻴﺧ"
+    "message": "(ﻞﻄﻌﻣ) ﻱﻭﺪﻳ :ﻲﺋﺎﻘﻠﺘﻟﺍ ﻒﻴﻈﻨﺘﻟﺍ 🔄",
+    "description": "ﻱﻭﺪﻴﻟﺍ ﻊﺿﻮﻟﺍ ﺔﻴﻤﺴﺗ"
   },
   "historyCleanupDaily": {
     "message": "ﻡﻮﻳ ﻞﻛ",
@@ -223,6 +223,38 @@
     "message": "ﺢﻔﺼﺘﻤﻟﺍ ﻕﻼ﻿ﻏﺇ ﻰﻠﻋ",
     "description": "ﺢﻔﺼﺘﻤﻟﺍ ﻕﻼ﻿ﻏﺇ ﻰﻠﻋ ﻒﻴﻈﻨﺘﻟﺍ ﺭﺎﻴﺧ"
   },
+  "historyCleanupAutoLabel": {
+    "message": "({ءﺍﺮﺟﻹ﻿ﺍ}) {ﻊﺿﻮﻟﺍ} :ﻲﺋﺎﻘﻠﺘﻟﺍ ﻒﻴﻈﻨﺘﻟﺍ 🔄",
+    "description": "ﺔﺒﺋﺎﻨﻟﺍ ﺮﺻﺎﻨﻌﻟﺍ ﻊﻣ ﻲﺋﺎﻘﻠﺘﻟﺍ ﻒﻴﻈﻨﺘﻟﺍ ﺔﻟﺎﺣ ﺔﻴﻤﺴﺗ"
+  },
+  "historyCleanupModeDaily": {
+    "message": "ﺎﻴًﻣﻮﻳ",
+    "description": "ﻲﻣﻮﻴﻟﺍ ﻊﺿﻮﻟﺍ ﻢﺳﺍ"
+  },
+  "historyCleanupModeWeekly": {
+    "message": "ﻲﻋﻮﺒﺳﺃ",
+    "description": "ﻲﻋﻮﺒﺳﻷ﻿ﺍ ﻊﺿﻮﻟﺍ ﻢﺳﺍ"
+  },
+  "historyCleanupModeMonthly": {
+    "message": "ﺎﻳﺮﻬﺷ",
+    "description": "ﻱﺮﻬﺸﻟﺍ ﻊﺿﻮﻟﺍ ﻢﺳﺍ"
+  },
+  "historyCleanupModeOnClose": {
+    "message": "ﺢﻔﺼﺘﻤﻟﺍ ﻕﻼ﻿ﻏﺇ ﻰﻠﻋ",
+    "description": "ﻕﻼ﻿ﻏﻹ﻿ﺍ ﻊﺿﻭ ﻢﺳﺍ ﻰﻠﻋ"
+  },
+  "historyCleanupActionKeeping": {
+    "message": "{count} ﺮﺧﺁ ﻆﻔﺣ",
+    "description": "ﺪﻌﻟﺍ ﻊﻣ ﻞﻤﻌﻟﺍ ﻆﻔﺣ"
+  },
+  "historyCleanupActionClearing": {
+    "message": "ﻞﻜﻟﺍ ﺢﺴﻣ",
+    "description": "ﺕﺍءﺍﺮﺟﻹ﻿ﺍ ﺔﻓﺎﻛ ﺢﺴﻣ"
+  },
+  "historyCleanupActionKeepingAll": {
+    "message": "ﻞﻜﻟﺍ ﻆﻔﺣ",
+    "description": "ﺕﺍءﺍﺮﺟﻹ﻿ﺍ ﻊﻴﻤﺟ ﻆﻔﺣ"
+  },
   "historyCleanupRetention": {
     "message": "ﺮﻴﺧﻷ﻿ﺎﺑ ﻆﻔﺘﺣﺍ",
     "description": "ﻅﺎﻔﺘﺣﻻ﻿ﺍ ﺔﻴﻤﺴﺗ"
@@ -230,6 +262,34 @@
   "historyCleanupRetentionDesc": {
     "message": "ﻞﺠﺴﻟﺍ ﻲﻓ ﺎﻬﺑ ﻅﺎﻔﺘﺣﻻ﻿ﺍ ﺐﺠﻳ ﻲﺘﻟﺍ ﺮﺻﺎﻨﻌﻟﺍ ﺩﺪﻋ",
     "description": "ﻅﺎﻔﺘﺣﻻ﻿ﺍ ﻒﺻﻭ"
+  },
+  "historyCleanupRetentionAll": {
+    "message": "(ﺮﺻﺎﻨﻌﻟﺍ 0) ﻞﻜﻟﺍ ﺢﺴﻣ",
+    "description": "ﺕﺍﺭﺎﻴﺨﻟﺍ ﺔﻓﺎﻛ ﺢﺴﻣ"
+  },
+  "historyCleanupRetention5": {
+    "message": "ﺮﺻﺎﻨﻋ 5",
+    "description": "ﺮﺻﺎﻨﻋ 5 ـﺑ ﻆﻔﺘﺣﺍ"
+  },
+  "historyCleanupRetention10": {
+    "message": "ﺮﺻﺎﻨﻋ 10",
+    "description": "ﺮﺻﺎﻨﻋ 10 ـﺑ ﻆﻔﺘﺣﺍ"
+  },
+  "historyCleanupRetention20": {
+    "message": "ﺓﺩﺎﻣ 20",
+    "description": "ﺍﺮًﺼﻨﻋ 20 ـﺑ ﻆﻔﺘﺣﺍ"
+  },
+  "historyCleanupRetention50": {
+    "message": "ﺓﺩﺎﻣ 50",
+    "description": "ﺍﺮًﺼﻨﻋ 50 ـﺑ ﻆﻔﺘﺣﺍ"
+  },
+  "historyCleanupRetention100": {
+    "message": "ﺓﺩﺎﻣ 100",
+    "description": "ﺮﺼﻨﻋ 100 ـﺑ ﻆﻔﺘﺣﺍ"
+  },
+  "historyCleanupRetentionNoLimit": {
+    "message": "(ﻞﻜﻟﺎﺑ ﻅﺎﻔﺘﺣﻻ﻿ﺍ) ﺩﻭﺪﺣ ﻼ﻿ﺑ",
+    "description": "ﺪﺤﻟﺍ ﺭﺎﻴﺧ ﺪﺟﻮﻳ ﻻ﻿"
   },
   "historyCleanupSuccess": {
     "message": "!ﺡﺎﺠﻨﺑ ﺦﻳﺭﺎﺘﻟﺍ ﻒﻴﻈﻨﺗ ﻢﺗ",
@@ -328,7 +388,7 @@
     "description": "ﺓﺮﺋﺎﻄﻟﺍ ﻦﺘﻣ ﻰﻠﻋ ﻲﺒﻴﺣﺮﺘﻟﺍ ﺽﺮﻌﻟﺍ ﺱﺃﺭ ﺖﻴﺒﺜﺘﺑ ﻻً﻿ﻭﺃ ﻢﻗ"
   },
   "welcomeIntro": {
-    "message": ":ﻦﻴﺘﻌﻳﺮﺴﻟﺍ ﻦﻴﺗﻮﻄﺨﻟﺍ ﻦﻴﺗﺎﻫ ﻊﺒﺗﺍ .ﻥﻵ﻿ﺍ ﻰﺘﺣ ﻚﻣﺎﻈﻨﺑ ﻝﺎﺼﺗﻻ﻿ﺍ ﻪﻨﻜﻤﻳ ﻻ﻿ ﻦﻜﻟﻭ ،ﻚﺤﻔﺼﺘﻣ ﻰﻟﺇ",
+    "message": ":ﻦﻴﺘﻌﻳﺮﺴﻟﺍ ﻦﻴﺗﻮﻄﺨﻟﺍ ﻦﻴﺗﺎﻫ ﻊﺒﺗﺍ .ﻥﻵ﻿ﺍ ﻰﺘﺣ ﻚﻣﺎﻈﻨﺑ ﻝﺎﺼﺗﻻ﻿ﺍ ﻪﻨﻜﻤﻳ ﻻ﻿ ﻦﻜﻟ ،ﻚﺤﻔﺼﺘﻣ ﻰﻟﺇ",
     "description": "ﻲﻠﺤﻤﻟﺍ ﻒﻴﻀﻤﻟﺍ ﺬﻴﻔﻨﺗ ﺪﻨﻋ ﺔﺤﻓﺎﺼﻤﻟﺍ ﺕﻼ﻿ﻜﺸﻣ ﻰﻠﻋ ﺪﻛﺆﺗ ﺔﻣﺪﻘﻣ ﺓﺮﻘﻓ"
   },
   "welcomeStep1Title": {
@@ -341,10 +401,10 @@
   },
   "welcomeStep2Title": {
     "message": "(ﻲﻠﺻﻷ﻿ﺍ ﻒﻴﻀﻤﻟﺍ) ﻝﺎﺼﺗﻻ﻿ﺍ ﺮﺴﺟ ﻦﻴﻜﻤﺗ .2",
-    "description": "ﻊﺿﻮﻤﻟﺍ ﺕﺎﻧﻭﺫﺃ ﻡﺎﻬﻣ ﻞﻴﺼﻔﺘﻟﺎﺑ ﺢﺿﻮﻳ ﺱﺃﺭ"
+    "description": "ﺐﻴﺴﻨﺘﻟﺍ ﺕﺎﻧﻭﺫﺃ ﻡﺎﻬﻣ ﻞﻴﺼﻔﺘﻟﺎﺑ ﺢﺿﻮﻳ ﺱﺃﺭ"
   },
   "welcomeStep2Desc": {
-    "message": ":ﻲﻠﺤﻤﻟﺍ ﻞﻣﺎﻜﺘﻟﺍ ﺕﺎﻧﺎﻴﺑ ﻞﻴﺠﺴﺘﻟ ﻲﻤﺳﺮﻟﺍ ﺖﻴﺒﺜﺘﻟﺍ ﺞﻣﺎﻧﺮﺑ ﺬﻴﻔﻨﺘﺑ ﻢﻗ ﻥﻵ﻿ﺍ",
+    "message": ":ﻲﻠﺤﻤﻟﺍ ﻞﻣﺎﻜﺘﻟﺍ ﺕﺎﻧﺎﻴﺑ ﻞﻴﺠﺴﺘﻟ ﺖﺒﺜﻤﻠﻟ ﻲﻤﺳﺮﻟﺍ ﻲﺼﻨﻟﺍ ﺞﻣﺎﻧﺮﺒﻟﺍ ﺬﻴﻔﻨﺘﺑ ﻢﻗ ﻥﻵ﻿ﺍ",
     "description": "ﺖﻧﺮﺘﻧﻹ﻿ﺍ ﺮﺒﻋ ﺓﺮﻴﻔﻀﻟﺍ ﺖﻴﺒﺜﺗ ﺓﺍﺩﺃ ﺬﻴﻔﻨﺘﻟ ﺔﻴﺼﻨﻟﺍ ﺞﻣﺍﺮﺒﻟﺍ ﻰﻟﺇ ﺮﻴﺸﺗ ﻲﺘﻟﺍ ﻞﻴﺻﺎﻔﺘﻟﺍ"
   },
   "welcomeFooter": {
@@ -353,7 +413,7 @@
   },
   "copyBtn": {
     "message": "ﺦﺴﻨﻳ",
-    "description": "ﺓﺩﺎﻴﻘﻟﺍ ﺔﺣﻮﻠﻟ ﺔﻴﺳﺎﻴﻘﻟﺍ ﺔﻴﻠﻋﺎﻔﺘﻟﺍ ﺔﻈﻓﺎﺤﻟﺍ ﺮﺻﺎﻨﻌﻟ ﺔﻴﻤﺴﺗ"
+    "description": "ﻢﻜﺤﺘﻟﺍ ﺔﺣﻮﻠﻟ ﺔﻴﺳﺎﻴﻘﻟﺍ ﺔﻴﻠﻋﺎﻔﺘﻟﺍ ﺔﻈﻓﺎﺤﻟﺍ ﺮﺻﺎﻨﻌﻟ ﺔﻴﻤﺴﺗ"
   },
   "copiedBtn": {
     "message": "!ﺥﻮﺴﻨﻣ",
@@ -634,5 +694,45 @@
   "queueItemsLabel": {
     "message": "ﺽﺍﺮﻏﺃ",
     "description": "ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ ﻲﻓ ﺮﺻﺎﻨﻌﻟﺍ ﺔﻴﻤﺴﺗ"
+  },
+  "videoSendSuccess": {
+    "message": "!ﺡﺎﺠﻨﺑ mpv ﻰﻟﺇ ﻮﻳﺪﻴﻔﻟﺍ ﻝﺎﺳﺭﺇ ﻢﺗ ✅",
+    "description": "ﻮﻳﺪﻴﻔﻟﺍ ﻝﺎﺳﺭﺇ ﺪﻨﻋ ﺡﺎﺠﻨﻟﺍ ﺔﻟﺎﺳﺭ"
+  },
+  "videoSendFailed": {
+    "message": "mpv ﻰﻟﺇ ﻮﻳﺪﻴﻔﻟﺍ ﻝﺎﺳﺭﺇ ﻞﺸﻓ ❌",
+    "description": "ﻮﻳﺪﻴﻔﻟﺍ ﻞﺸﻓ ﺪﻨﻋ ﺄﻄﺧ ﺔﻟﺎﺳﺭ"
+  },
+  "videoSendFailedReason": {
+    "message": "{ﺐﺒﺴﻟﺍ} :ﺐﺒﺴﻟﺍ",
+    "description": "ﺐﺋﺎﻨﻟﺍ ﺮﺼﻨﻌﻟﺍ ﻊﻣ ﺄﻄﺨﻟﺍ ﺐﺒﺳ"
+  },
+  "videoSendFailedYtDlp": {
+    "message": ".ﺎﻴًﻓﺍﺮﻐﺟ ﺪﻴﻘﻣ ﻭﺃ ﺡﺎﺘﻣ ﺮﻴﻏ ﻮﻳﺪﻴﻔﻟﺍ ﻥﻮﻜﻳ ﺪﻗ .ﻮﻳﺪﻴﻔﻟﺍ ﺝﺍﺮﺨﺘﺳﺍ ﻲﻓ yt-dlp ﻞﺸﻓ",
+    "description": "yt-dlp ﺄﻄﺧ ﺐﺒﺳ"
+  },
+  "videoSendFailedNetwork": {
+    "message": ".ﺖﻧﺮﺘﻧﻹ﻿ﺎﺑ ﻚﻟﺎﺼﺗﺍ ﻦﻣ ﻖﻘﺤﺗ .ﺔﻜﺒﺸﻟﺍ ﻲﻓ ﺄﻄﺧ",
+    "description": "ﺔﻜﺒﺸﻟﺍ ﺄﻄﺧ ﺐﺒﺳ"
+  },
+  "videoSendFailedNative": {
+    "message": ".mpv ﺖﻴﺒﺜﺗ ﻦﻣ ﺪﻛﺄﺗ .ﻲﻠﺻﻷ﻿ﺍ ﻒﻴﻀﻤﻟﺎﺑ ﻝﺎﺼﺗﻻ﻿ﺍ ﻞﺸﻓ",
+    "description": "ﻲﻠﺻﻷ﻿ﺍ ﻒﻴﻀﻤﻟﺍ ﺄﻄﺧ ﺐﺒﺳ"
+  },
+  "videoSendFailedTimeout": {
+    "message": ".ءﻲﻄﺑ ﻡﺩﺎﺨﻟﺍ ﻥﺃ ﻭﺃ ﺍﺪًﺟ ﻼً﻿ﻳﻮﻃ ﻮﻳﺪﻴﻔﻟﺍ ﻥﻮﻜﻳ ﺪﻗ .ﺐﻠﻄﻟﺍ ﺔﻠﻬﻣ ﺖﻬﺘﻧﺍ",
+    "description": "ﺔﻠﻬﻤﻟﺍ ﺄﻄﺧ ﺐﺒﺳ"
+  },
+  "videoSendFailedUnknown": {
+    "message": ".ﻞﻴﺻﺎﻔﺘﻟﺍ ﻰﻠﻋ ﻝﻮﺼﺤﻠﻟ ﺢﻔﺼﺘﻤﻟﺍ ﻢﻜﺤﺗ ﺓﺪﺣﻭ ﻦﻣ ﻖﻘﺤﺗ .ﻑﻭﺮﻌﻣ ﺮﻴﻏ ﺄﻄﺧ ﺙﺪﺣ",
+    "description": "ﻑﻭﺮﻌﻣ ﺮﻴﻏ ﺄﻄﺧ ﺐﺒﺳ"
+  },
+  "videoSendRetrying": {
+    "message": "({max}/{attempt}) ...ﺔﻟﻭﺎﺤﻤﻟﺍ ﺓﺩﺎﻋﺇ ⏳",
+    "description": "ﺔﻟﻭﺎﺤﻤﻟﺍ ﺓﺩﺎﻋﺇ ﺔﻟﺎﺳﺭ"
+  },
+  "videoSendQueueAdded": {
+    "message": "(ﺮﺼﻨﻋ {count}) ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ ﻰﻟﺇ ﺔﻓﺎﺿﻹ﻿ﺍ ﺖﻤﺗ 📋",
+    "description": "ﺭﺎﻈﺘﻧﻻ﻿ﺍ ﺔﻤﺋﺎﻗ ﻰﻟﺇ ﻪﺘﻓﺎﺿﺇ ﺖﻤﺗ"
   }
 }

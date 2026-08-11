@@ -1,12 +1,12 @@
 // ============================================================
-// content-sniffer.js - MPV Opener for Firefox v7.2
+// content-sniffer.js - MPV Opener for Firefox v7.3
 // Content Script for DOM video extraction - Enhanced Version
 // ============================================================
 
 (function () {
   "use strict";
 
-  console.log("MPV Opener: Content Sniffer v7.2 started");
+  console.log("MPV Opener: Content Sniffer v7.3 started");
 
   // ============================================================
   // Configuration
@@ -1309,7 +1309,7 @@
   // 21. Initialization
   // ============================================================
   function init() {
-    console.log("MPV Opener: Initializing content sniffer v7.2...");
+    console.log("MPV Opener: Initializing content sniffer v7.3...");
 
     // Métodos existentes
     scanVideoElements();
@@ -1345,7 +1345,7 @@
       if (scanInterval) clearInterval(scanInterval);
     });
 
-    console.log("MPV Opener: Content sniffer v7.2 ready");
+    console.log("MPV Opener: Content sniffer v7.3 ready");
   }
 
   // ============================================================

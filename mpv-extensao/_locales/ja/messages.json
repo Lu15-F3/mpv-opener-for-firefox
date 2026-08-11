@@ -60,7 +60,7 @@
     "description": "オプションページのキュー設定セクションのヘッダー"
   },
   "stopQueue": {
-    "message": "停止キュー",
+    "message": "キューの停止",
     "description": "現在のキューの再生を停止するボタン"
   },
   "clearQueue": {
@@ -77,7 +77,7 @@
   },
   "removeItem": {
     "message": "取り除く",
-    "description": "キューからアイテムを削除するボタン"
+    "description": "キューから項目を削除するボタン"
   },
   "optionsTitle": {
     "message": "MPV オープナーの設定",
@@ -204,8 +204,8 @@
     "description": "自動クリーンアップ切り替えのラベル"
   },
   "historyCleanupManual": {
-    "message": "手動（無効）",
-    "description": "手動クリーンアップ オプション"
+    "message": "🔄 自動クリーニング: 手動 (無効)",
+    "description": "マニュアルモードラベル"
   },
   "historyCleanupDaily": {
     "message": "毎日",
@@ -223,6 +223,38 @@
     "message": "ブラウザを閉じるとき",
     "description": "ブラウザ終了時のクリーンアップ オプション"
   },
+  "historyCleanupAutoLabel": {
+    "message": "🔄 自動クリーン: {mode} ({action})",
+    "description": "プレースホルダー付きの自動クリーニングステータスラベル"
+  },
+  "historyCleanupModeDaily": {
+    "message": "毎日",
+    "description": "デイリーモード名"
+  },
+  "historyCleanupModeWeekly": {
+    "message": "毎週",
+    "description": "ウィークリーモード名"
+  },
+  "historyCleanupModeMonthly": {
+    "message": "毎月",
+    "description": "マンスリーモード名"
+  },
+  "historyCleanupModeOnClose": {
+    "message": "ブラウザを閉じると",
+    "description": "クローズ時モード名"
+  },
+  "historyCleanupActionKeeping": {
+    "message": "最後に {count} を維持する",
+    "description": "カウントを使ってアクションを続ける"
+  },
+  "historyCleanupActionClearing": {
+    "message": "すべてクリアする",
+    "description": "すべてのアクションをクリアする"
+  },
+  "historyCleanupActionKeepingAll": {
+    "message": "すべてを維持する",
+    "description": "すべてのアクションを維持する"
+  },
   "historyCleanupRetention": {
     "message": "最後に残す",
     "description": "保持ラベル"
@@ -230,6 +262,34 @@
   "historyCleanupRetentionDesc": {
     "message": "履歴に保存するアイテムの数",
     "description": "保持の説明"
+  },
+  "historyCleanupRetentionAll": {
+    "message": "すべてクリア (0 件)",
+    "description": "すべてのオプションをクリア"
+  },
+  "historyCleanupRetention5": {
+    "message": "5件",
+    "description": "5つのアイテムを保持する"
+  },
+  "historyCleanupRetention10": {
+    "message": "10項目",
+    "description": "アイテムを10個保持する"
+  },
+  "historyCleanupRetention20": {
+    "message": "20件",
+    "description": "アイテムを20個保持する"
+  },
+  "historyCleanupRetention50": {
+    "message": "50アイテム",
+    "description": "アイテムを50個保持する"
+  },
+  "historyCleanupRetention100": {
+    "message": "100アイテム",
+    "description": "アイテムを100個保持する"
+  },
+  "historyCleanupRetentionNoLimit": {
+    "message": "制限なし (すべて保持)",
+    "description": "制限なしオプション"
   },
   "historyCleanupSuccess": {
     "message": "履歴が正常に消去されました。",
@@ -248,7 +308,7 @@
     "description": "フローティング プレーヤー レイヤーのチェックボックスの説明テキスト"
   },
   "audioSettings": {
-    "message": "オーディオデバイスの設定",
+    "message": "オーディオデバイスの構成",
     "description": "高度なオーディオ出力のセクションヘッダー"
   },
   "audioDeviceLabel": {
@@ -257,7 +317,7 @@
   },
   "audioDevicePlaceholder": {
     "message": "例: alsa/hdmi、pulse/device_name",
-    "description": "テキスト入力ボックス内のプレースホルダー ヒント構文"
+    "description": "テキスト入力ボックス内のプレースホルダーヒント構文"
   },
   "tabBehavior": {
     "message": "タブの動作",
@@ -280,7 +340,7 @@
     "description": "ブラウザーのネイティブ バックグラウンド通知バナーで使用されるテキスト"
   },
   "fedoraSettings": {
-    "message": "FedoraとKDE Plasmaの統合",
+    "message": "Fedora と KDE プラズマの統合",
     "description": "特定の Linux オペレーティング環境オプションに特化したセクション ヘッダー"
   },
   "inhibitSleepLabel": {
@@ -324,7 +384,7 @@
     "description": "スニファーインターフェイス内で見つかったアイテムに割り当てられた機能アクショントリガー"
   },
   "welcomeTitle": {
-    "message": "ほぼ準備完了です！セットアップが必要です",
+    "message": "ほぼ準備完了!セットアップが必要です",
     "description": "最初にオンボーディングのウェルカム ビュー ヘッダーをインストールします"
   },
   "welcomeIntro": {
@@ -364,7 +424,7 @@
     "description": "システムツールメニューの下に表示されるホットキーマッピングのコンテキスト説明"
   },
   "shortcutSendAudioDesc": {
-    "message": "MPV でアクティブなタブの音声を聞く",
+    "message": "MPV でアクティブなタブのオーディオを聞く",
     "description": "リスニングプロファイルの設定を対象としたホットキーマッピングの説明"
   },
   "shortcutOpenSnifferDesc": {
@@ -393,7 +453,7 @@
   },
   "snifferSendAll": {
     "message": "すべて送信",
-    "description": "キャプチャされたすべてのリンクを mpv に送信するボタン"
+    "description": "キャプチャしたすべてのリンクを mpv に送信するボタン"
   },
   "snifferCopied": {
     "message": "コピーしました！",
@@ -634,5 +694,45 @@
   "queueItemsLabel": {
     "message": "アイテム",
     "description": "キュー内の項目ラベル"
+  },
+  "videoSendSuccess": {
+    "message": "✅ ビデオがmpvに正常に送信されました!",
+    "description": "ビデオ送信時の成功メッセージ"
+  },
+  "videoSendFailed": {
+    "message": "❌ ビデオを mpv に送信できませんでした",
+    "description": "ビデオが失敗した場合のエラー メッセージ"
+  },
+  "videoSendFailedReason": {
+    "message": "理由: {理由}",
+    "description": "プレースホルダー付きのエラー理由"
+  },
+  "videoSendFailedYtDlp": {
+    "message": "yt-dlp はビデオを抽出できませんでした。ビデオは利用できないか、地理的に制限されている可能性があります。",
+    "description": "yt-dlp エラーの理由"
+  },
+  "videoSendFailedNetwork": {
+    "message": "ネットワークエラー。インターネット接続を確認してください。",
+    "description": "ネットワークエラーの理由"
+  },
+  "videoSendFailedNative": {
+    "message": "ネイティブホストの通信に失敗しました。mpv がインストールされていることを確認してください。",
+    "description": "ネイティブホストエラーの理由"
+  },
+  "videoSendFailedTimeout": {
+    "message": "リクエストがタイムアウトしました。ビデオが長すぎるか、サーバーが遅い可能性があります。",
+    "description": "タイムアウトエラーの理由"
+  },
+  "videoSendFailedUnknown": {
+    "message": "不明なエラーが発生しました。詳細については、ブラウザのコンソールを確認してください。",
+    "description": "不明なエラーの理由"
+  },
+  "videoSendRetrying": {
+    "message": "⏳ 再試行中... ({attempt}/{max})",
+    "description": "再試行メッセージ"
+  },
+  "videoSendQueueAdded": {
+    "message": "📋 キューに追加されました ({count} 個のアイテム)",
+    "description": "キューメッセージに追加されました"
   }
 }

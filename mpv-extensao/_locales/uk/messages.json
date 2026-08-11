@@ -29,7 +29,7 @@
   },
   "tabQueue": {
     "message": "Черга",
-    "description": "Заголовок вкладки черги в спливаючому інтерфейсі"
+    "description": "Заголовок вкладки черги у спливаючому інтерфейсі"
   },
   "clearHistory": {
     "message": "Очистити історію",
@@ -104,7 +104,7 @@
     "description": "Можливість розмістити гравця в кутку на екрані"
   },
   "pipCorner": {
-    "message": "Куток PiP",
+    "message": "Куточок PiP",
     "description": "Мітка для вибору кута PiP"
   },
   "pipSize": {
@@ -116,7 +116,7 @@
     "description": "Верхній лівий кут варіант"
   },
   "pipTopRight": {
-    "message": "Верхній правий",
+    "message": "Вгорі праворуч",
     "description": "Верхній правий кут варіант"
   },
   "pipBottomLeft": {
@@ -165,7 +165,7 @@
   },
   "initialVolumeLabel": {
     "message": "Початковий обсяг",
-    "description": "Мітка для початкового налаштування гучності"
+    "description": "Мітка початкового налаштування гучності"
   },
   "volumeLow": {
     "message": "Низький (20%)",
@@ -201,11 +201,11 @@
   },
   "historyCleanupLabel": {
     "message": "Історія автоматичного очищення",
-    "description": "Мітка для перемикання автоматичного очищення"
+    "description": "Мітка для перемикача автоматичного очищення"
   },
   "historyCleanupManual": {
-    "message": "Вручну (вимкнено)",
-    "description": "Можливість ручного очищення"
+    "message": "🔄 Автоматичне очищення: вручну (вимкнено)",
+    "description": "Позначка ручного режиму"
   },
   "historyCleanupDaily": {
     "message": "Кожен день",
@@ -223,6 +223,38 @@
     "message": "У браузері закрити",
     "description": "Очищення при закритті браузера"
   },
+  "historyCleanupAutoLabel": {
+    "message": "🔄 Автоматичне очищення: {mode} ({action})",
+    "description": "Автоматичне очищення мітки статусу з заповнювачами"
+  },
+  "historyCleanupModeDaily": {
+    "message": "щодня",
+    "description": "Назва режиму дня"
+  },
+  "historyCleanupModeWeekly": {
+    "message": "щотижня",
+    "description": "Назва тижневого режиму"
+  },
+  "historyCleanupModeMonthly": {
+    "message": "щомісяця",
+    "description": "Назва місячного режиму"
+  },
+  "historyCleanupModeOnClose": {
+    "message": "при закритті браузера",
+    "description": "Назва режиму закриття"
+  },
+  "historyCleanupActionKeeping": {
+    "message": "збереження останніх {count}",
+    "description": "Ведення дії з підрахунком"
+  },
+  "historyCleanupActionClearing": {
+    "message": "очищення всіх",
+    "description": "Очищення всіх дій"
+  },
+  "historyCleanupActionKeepingAll": {
+    "message": "зберігаючи все",
+    "description": "Зберігаючи всі дії"
+  },
   "historyCleanupRetention": {
     "message": "Тримайте останнім",
     "description": "Мітка збереження"
@@ -230,6 +262,34 @@
   "historyCleanupRetentionDesc": {
     "message": "Кількість елементів, які потрібно зберегти в історії",
     "description": "Опис збереження"
+  },
+  "historyCleanupRetentionAll": {
+    "message": "Очистити все (0 елементів)",
+    "description": "Очистити всі параметри"
+  },
+  "historyCleanupRetention5": {
+    "message": "5 предметів",
+    "description": "Зберігайте 5 предметів"
+  },
+  "historyCleanupRetention10": {
+    "message": "10 предметів",
+    "description": "Зберігайте 10 предметів"
+  },
+  "historyCleanupRetention20": {
+    "message": "20 предметів",
+    "description": "Зберігайте 20 предметів"
+  },
+  "historyCleanupRetention50": {
+    "message": "50 предметів",
+    "description": "Зберігайте 50 предметів"
+  },
+  "historyCleanupRetention100": {
+    "message": "100 предметів",
+    "description": "Зберігайте 100 предметів"
+  },
+  "historyCleanupRetentionNoLimit": {
+    "message": "Без обмежень (зберігати все)",
+    "description": "Без обмежень"
   },
   "historyCleanupSuccess": {
     "message": "Історію успішно очищено!",
@@ -277,11 +337,11 @@
   },
   "sendingNotification": {
     "message": "Надсилання відео в формат mpv...",
-    "description": "Текст, який використовується у фоновому банері сповіщень браузера"
+    "description": "Текст, який використовується у фоновому банері сповіщень веб-переглядача"
   },
   "fedoraSettings": {
     "message": "Інтеграція з плазмою Fedora та KDE",
-    "description": "Заголовок розділу, присвячений конкретним параметрам операційного середовища Linux"
+    "description": "Заголовок розділу, присвячений певним параметрам операційного середовища Linux"
   },
   "inhibitSleepLabel": {
     "message": "Блокування заставки та сну системи під час відтворення",
@@ -305,7 +365,7 @@
   },
   "snifferTitle": {
     "message": "Сніффер медіа-посилань",
-    "description": "Заголовок головного заголовка на сторінці перегляду медіа-потоку"
+    "description": "Головний заголовок на сторінці перегляду медіа-потоку"
   },
   "snifferSubtitle": {
     "message": "Захоплені потоки",
@@ -352,7 +412,7 @@
     "description": "Підбадьорливе остаточне повідомлення, що підтверджує негайну працездатність платформи"
   },
   "copyBtn": {
-    "message": "Копіювати",
+    "message": "Копія",
     "description": "Мітка для стандартних інтерактивних елементів буфера обміну на панелі інструментів"
   },
   "copiedBtn": {
@@ -376,7 +436,7 @@
     "description": "Мітка, яка показує кількість захоплених потоків"
   },
   "snifferCopyLink": {
-    "message": "Копіювати",
+    "message": "Копія",
     "description": "Кнопка для копіювання посилання"
   },
   "snifferOpenTab": {
@@ -581,7 +641,7 @@
   },
   "playerVolume": {
     "message": "Обсяг",
-    "description": "Мітка тому"
+    "description": "Мітка тома"
   },
   "openQueueManager": {
     "message": "Відкрийте диспетчер черги",
@@ -634,5 +694,45 @@
   "queueItemsLabel": {
     "message": "елементи",
     "description": "Позначка елементів у черзі"
+  },
+  "videoSendSuccess": {
+    "message": "✅ Відео успішно надіслано в mpv!",
+    "description": "Повідомлення про успішне надсилання відео"
+  },
+  "videoSendFailed": {
+    "message": "❌ Не вдалося надіслати відео в mpv",
+    "description": "Повідомлення про помилку, коли відео не вдається"
+  },
+  "videoSendFailedReason": {
+    "message": "Причина: {reason}",
+    "description": "Причина помилки з заповнювачем"
+  },
+  "videoSendFailedYtDlp": {
+    "message": "yt-dlp не вдалося розпакувати відео. Відео може бути недоступним або мати геообмеження.",
+    "description": "причина помилки yt-dlp"
+  },
+  "videoSendFailedNetwork": {
+    "message": "Помилка мережі. Перевірте підключення до Інтернету.",
+    "description": "Причина помилки мережі"
+  },
+  "videoSendFailedNative": {
+    "message": "Помилка зв’язку з рідним хостом. Переконайтеся, що mpv встановлено.",
+    "description": "Причина помилки рідного хосту"
+  },
+  "videoSendFailedTimeout": {
+    "message": "Час очікування запиту минув. Відео може бути задовгим або сервер працює повільно.",
+    "description": "Причина помилки тайм-ауту"
+  },
+  "videoSendFailedUnknown": {
+    "message": "Сталася невідома помилка. Перевірте консоль браузера для отримання деталей.",
+    "description": "Невідома причина помилки"
+  },
+  "videoSendRetrying": {
+    "message": "⏳ Повторна спроба... ({attempt}/{max})",
+    "description": "Повідомлення про повторну спробу"
+  },
+  "videoSendQueueAdded": {
+    "message": "📋 Додано до черги ({count} елементів)",
+    "description": "Повідомлення додано до черги"
   }
 }

@@ -25,7 +25,7 @@
   },
   "tabHistory": {
     "message": "Historia",
-    "description": "Título de la pestaña de historial en la interfaz emergente"
+    "description": "Título de la pestaña Historial en la interfaz emergente"
   },
   "tabQueue": {
     "message": "Cola",
@@ -105,7 +105,7 @@
   },
   "pipCorner": {
     "message": "Esquina de imágenes",
-    "description": "Etiqueta para la selección de esquina de PiP"
+    "description": "Etiqueta para la selección de esquinas de PiP"
   },
   "pipSize": {
     "message": "Tamaño",
@@ -204,8 +204,8 @@
     "description": "Etiqueta para alternar limpieza automática"
   },
   "historyCleanupManual": {
-    "message": "Manual (deshabilitado)",
-    "description": "Opción de limpieza manual"
+    "message": "🔄 Limpieza automática: manual (deshabilitada)",
+    "description": "Etiqueta de modo manual"
   },
   "historyCleanupDaily": {
     "message": "Cada día",
@@ -223,6 +223,38 @@
     "message": "En el navegador Cerrar",
     "description": "Opción de limpieza al cerrar el navegador"
   },
+  "historyCleanupAutoLabel": {
+    "message": "🔄 Limpieza automática: {modo} ({acción})",
+    "description": "Etiqueta de estado de limpieza automática con marcadores de posición"
+  },
+  "historyCleanupModeDaily": {
+    "message": "a diario",
+    "description": "Nombre del modo diario"
+  },
+  "historyCleanupModeWeekly": {
+    "message": "semanalmente",
+    "description": "Nombre del modo semanal"
+  },
+  "historyCleanupModeMonthly": {
+    "message": "mensual",
+    "description": "Nombre del modo mensual"
+  },
+  "historyCleanupModeOnClose": {
+    "message": "al cerrar el navegador",
+    "description": "En el nombre del modo de cierre"
+  },
+  "historyCleanupActionKeeping": {
+    "message": "manteniendo el último {count}",
+    "description": "Mantener la acción contando"
+  },
+  "historyCleanupActionClearing": {
+    "message": "limpiando todo",
+    "description": "Borrar toda acción"
+  },
+  "historyCleanupActionKeepingAll": {
+    "message": "manteniendo todo",
+    "description": "Manteniendo toda la acción"
+  },
   "historyCleanupRetention": {
     "message": "Mantener al final",
     "description": "Etiqueta de retención"
@@ -230,6 +262,34 @@
   "historyCleanupRetentionDesc": {
     "message": "Número de elementos a mantener en el historial.",
     "description": "Descripción de retención"
+  },
+  "historyCleanupRetentionAll": {
+    "message": "Borrar todo (0 artículos)",
+    "description": "Borrar todas las opciones"
+  },
+  "historyCleanupRetention5": {
+    "message": "5 artículos",
+    "description": "Mantener 5 artículos"
+  },
+  "historyCleanupRetention10": {
+    "message": "10 artículos",
+    "description": "Conserva 10 artículos"
+  },
+  "historyCleanupRetention20": {
+    "message": "20 artículos",
+    "description": "Quédate con 20 artículos"
+  },
+  "historyCleanupRetention50": {
+    "message": "50 artículos",
+    "description": "Conserva 50 artículos"
+  },
+  "historyCleanupRetention100": {
+    "message": "100 artículos",
+    "description": "Conserva 100 artículos"
+  },
+  "historyCleanupRetentionNoLimit": {
+    "message": "Sin límite (conservar todo)",
+    "description": "Opción sin límite"
   },
   "historyCleanupSuccess": {
     "message": "¡Historial limpiado exitosamente!",
@@ -305,7 +365,7 @@
   },
   "snifferTitle": {
     "message": "Rastreador de enlaces multimedia",
-    "description": "Encabezado del título principal dentro de la página de vista de Fisher de la transmisión de medios"
+    "description": "Encabezado del título principal dentro de la página de Fisher View del flujo de medios"
   },
   "snifferSubtitle": {
     "message": "Secuencias capturadas",
@@ -324,7 +384,7 @@
     "description": "Activador de acción funcional asignado a elementos que se encuentran dentro de la interfaz del rastreador"
   },
   "welcomeTitle": {
-    "message": "¡Casi listo! Configuración requerida",
+    "message": "¡Casi listo! Se requiere configuración",
     "description": "Primero instale el encabezado de vista de bienvenida incorporado"
   },
   "welcomeIntro": {
@@ -609,7 +669,7 @@
   },
   "queuePlaying": {
     "message": "Jugando",
-    "description": "Estado de reproducción en cola"
+    "description": "Estado de reproducción de la cola"
   },
   "queueRemaining": {
     "message": "restante",
@@ -634,5 +694,45 @@
   "queueItemsLabel": {
     "message": "elementos",
     "description": "Etiqueta de artículos en cola"
+  },
+  "videoSendSuccess": {
+    "message": "✅ ¡Video enviado al mpv con éxito!",
+    "description": "Mensaje de éxito cuando se envía el vídeo."
+  },
+  "videoSendFailed": {
+    "message": "❌ Error al enviar el video a mpv",
+    "description": "Mensaje de error cuando falla el vídeo"
+  },
+  "videoSendFailedReason": {
+    "message": "Razón: {razón}",
+    "description": "Motivo del error con marcador de posición"
+  },
+  "videoSendFailedYtDlp": {
+    "message": "yt-dlp no pudo extraer el video. Es posible que el vídeo no esté disponible o esté restringido geográficamente.",
+    "description": "motivo del error yt-dlp"
+  },
+  "videoSendFailedNetwork": {
+    "message": "Error de red. Verifique su conexión a Internet.",
+    "description": "Motivo del error de red"
+  },
+  "videoSendFailedNative": {
+    "message": "La comunicación con el host nativo falló. Asegúrese de que mpv esté instalado.",
+    "description": "Motivo del error del host nativo"
+  },
+  "videoSendFailedTimeout": {
+    "message": "Se agotó el tiempo de espera de la solicitud. El vídeo puede ser demasiado largo o el servidor es lento.",
+    "description": "Motivo del error de tiempo de espera"
+  },
+  "videoSendFailedUnknown": {
+    "message": "Se produjo un error desconocido. Consulte la consola del navegador para obtener más detalles.",
+    "description": "Motivo del error desconocido"
+  },
+  "videoSendRetrying": {
+    "message": "⏳ Reintentando... ({attempt}/{max})",
+    "description": "Mensaje de reintento"
+  },
+  "videoSendQueueAdded": {
+    "message": "📋 Añadido a la cola ({count} elementos)",
+    "description": "Mensaje añadido a la cola"
   }
 }

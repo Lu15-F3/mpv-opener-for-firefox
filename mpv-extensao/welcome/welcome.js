@@ -1,5 +1,5 @@
 // ============================================================
-// welcome.js - MPV Opener for Firefox v7.2
+// welcome.js - MPV Opener for Firefox v7.3
 // Multi-Distro Support
 // ============================================================
 

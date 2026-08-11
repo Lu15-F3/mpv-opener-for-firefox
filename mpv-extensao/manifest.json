@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "MPV Opener for Firefox",
   "description": "__MSG_extensionDescription__",
-  "version": "7.0.2",
+  "version": "7.0.3",
   "default_locale": "en",
   "browser_specific_settings": {
     "gecko": {

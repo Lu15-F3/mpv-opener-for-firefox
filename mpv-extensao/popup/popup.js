@@ -1,7 +1,83 @@
 // ============================================================
-// popup.js - MPV Opener for Firefox v7.2
+// popup.js - MPV Opener for Firefox v7.3
 // COM SUPORTE A data-i18n-title, SUPORTE A PIP E SEM innerHTML
 // ============================================================
+
+// ============================================================
+// Receber status de envio
+// ============================================================
+browser.runtime.onMessage.addListener(function(message) {
+    if (message.action === "sendStatus") {
+        updateSendStatus(message.status, message.message, message.errorType);
+    }
+});
+
+function updateSendStatus(status, message, errorType) {
+    var statusEl = document.getElementById('send-status');
+    if (!statusEl) {
+        // Criar elemento de status se não existir
+        statusEl = document.createElement('div');
+        statusEl.id = 'send-status';
+        statusEl.style.cssText = `
+            padding: 8px 12px;
+            border-radius: var(--border-radius);
+            font-size: 12px;
+            font-weight: 500;
+            margin-top: 8px;
+            text-align: center;
+            animation: fadeIn 0.3s ease;
+            display: none;
+        `;
+        var container = document.querySelector('.container');
+        var sendBtn = document.getElementById('send-btn');
+        if (container && sendBtn) {
+            container.insertBefore(statusEl, sendBtn.nextSibling);
+        }
+    }
+    
+    statusEl.style.display = 'block';
+    
+    if (status === 'sending') {
+        statusEl.style.background = 'rgba(122, 162, 247, 0.15)';
+        statusEl.style.border = '1px solid var(--accent-color)';
+        statusEl.style.color = 'var(--accent-color)';
+        statusEl.textContent = message || '⏳ Sending...';
+    } else if (status === 'success') {
+        statusEl.style.background = 'rgba(158, 206, 106, 0.15)';
+        statusEl.style.border = '1px solid var(--success-green)';
+        statusEl.style.color = 'var(--success-green)';
+        statusEl.textContent = message || '✅ Video sent successfully!';
+        
+        // Limpar após 5 segundos
+        setTimeout(function() {
+            statusEl.style.display = 'none';
+        }, 5000);
+    } else if (status === 'error') {
+        statusEl.style.background = 'rgba(247, 118, 142, 0.15)';
+        statusEl.style.border = '1px solid var(--danger-color)';
+        statusEl.style.color = 'var(--danger-color)';
+        
+        // Mostrar erro com detalhes
+        var errorMsg = message || '❌ Failed to send video';
+        
+        // Adicionar sugestão se disponível
+        var suggestion = '';
+        if (errorType === 'ytdlp_failed') {
+            suggestion = ' Try yt-dlp --verbose for details.';
+        } else if (errorType === 'network_error') {
+            suggestion = ' Check your internet connection.';
+        } else if (errorType === 'native_host_failed') {
+            suggestion = ' Run install.sh to fix native host.';
+        } else if (errorType === 'timeout') {
+            suggestion = ' Try a shorter video or check your connection.';
+        }
+        
+        statusEl.textContent = errorMsg + suggestion;
+        
+        // Não limpar automaticamente para permitir que o usuário veja o erro
+        // O usuário pode fechar o popup e reabrir
+    }
+}
 
 function applyPopupTranslations() {
   // ============================================================
@@ -36,8 +112,8 @@ function applyPopupTranslations() {
   // ============================================================
   // 2. Tradução de TOOLTIPS via data-i18n-title
   // ============================================================
-  document.querySelectorAll('[data-i18n-title]').forEach(function(el) {
-    var key = el.getAttribute('data-i18n-title');
+  document.querySelectorAll("[data-i18n-title]").forEach(function (el) {
+    var key = el.getAttribute("data-i18n-title");
     var translation = browser.i18n.getMessage(key);
     if (translation) {
       el.title = translation;
@@ -46,14 +122,14 @@ function applyPopupTranslations() {
 
   // Tooltips específicos dos controles do mini player
   var tooltipMap = {
-    'mp-play-pause': 'playPause',
-    'mp-prev': 'playerPrevious',
-    'mp-next': 'playerNext',
-    'mp-volume-up': 'volumeUp',
-    'mp-volume-down': 'volumeDown'
+    "mp-play-pause": "playPause",
+    "mp-prev": "playerPrevious",
+    "mp-next": "playerNext",
+    "mp-volume-up": "volumeUp",
+    "mp-volume-down": "volumeDown",
   };
 
-  Object.keys(tooltipMap).forEach(function(id) {
+  Object.keys(tooltipMap).forEach(function (id) {
     var el = document.getElementById(id);
     if (el) {
       var key = tooltipMap[id];
@@ -67,88 +143,90 @@ function applyPopupTranslations() {
   // ============================================================
   // 3. Tradução de TÍTULOS das abas
   // ============================================================
-  var tabMain = document.getElementById('tab-btn-main');
-  if (tabMain) tabMain.textContent = browser.i18n.getMessage('tabMain');
-  
-  var tabQueue = document.getElementById('tab-btn-queue');
-  if (tabQueue) tabQueue.textContent = browser.i18n.getMessage('tabQueue');
-  
-  var tabHistory = document.getElementById('tab-btn-history');
-  if (tabHistory) tabHistory.textContent = browser.i18n.getMessage('tabHistory');
+  var tabMain = document.getElementById("tab-btn-main");
+  if (tabMain) tabMain.textContent = browser.i18n.getMessage("tabMain");
+
+  var tabQueue = document.getElementById("tab-btn-queue");
+  if (tabQueue) tabQueue.textContent = browser.i18n.getMessage("tabQueue");
+
+  var tabHistory = document.getElementById("tab-btn-history");
+  if (tabHistory)
+    tabHistory.textContent = browser.i18n.getMessage("tabHistory");
 
   // ============================================================
   // 4. Tradução de BOTÕES PRINCIPAIS (com ícones)
   // ============================================================
   // Send to mpv
-  var sendBtn = document.getElementById('send-btn');
+  var sendBtn = document.getElementById("send-btn");
   if (sendBtn) {
-    var sendText = browser.i18n.getMessage('sendToMpv');
+    var sendText = browser.i18n.getMessage("sendToMpv");
     if (sendText) {
-      sendBtn.textContent = '';
-      var sendIcon = document.createElement('span');
-      sendIcon.className = 'icon';
-      sendIcon.textContent = '▶';
+      sendBtn.textContent = "";
+      var sendIcon = document.createElement("span");
+      sendIcon.className = "icon";
+      sendIcon.textContent = "▶";
       sendBtn.appendChild(sendIcon);
-      sendBtn.appendChild(document.createTextNode(' ' + sendText));
+      sendBtn.appendChild(document.createTextNode(" " + sendText));
     }
   }
 
   // Listen Only
-  var audioBtn = document.getElementById('send-audio-btn');
+  var audioBtn = document.getElementById("send-audio-btn");
   if (audioBtn) {
-    var audioText = browser.i18n.getMessage('sendAudioToMpv');
+    var audioText = browser.i18n.getMessage("sendAudioToMpv");
     if (audioText) {
-      audioBtn.textContent = '';
-      var audioIcon = document.createElement('span');
-      audioIcon.className = 'icon';
-      audioIcon.textContent = '♪';
+      audioBtn.textContent = "";
+      var audioIcon = document.createElement("span");
+      audioIcon.className = "icon";
+      audioIcon.textContent = "♪";
       audioBtn.appendChild(audioIcon);
-      audioBtn.appendChild(document.createTextNode(' ' + audioText));
+      audioBtn.appendChild(document.createTextNode(" " + audioText));
     }
   }
 
   // Sniffer
-  var sniffBtn = document.getElementById('sniff-btn');
+  var sniffBtn = document.getElementById("sniff-btn");
   if (sniffBtn) {
-    var sniffText = browser.i18n.getMessage('ctxSniffMedia') || '🎣 Start Media Sniffer Mode';
-    sniffBtn.textContent = '';
-    var sniffIcon = document.createElement('span');
-    sniffIcon.className = 'icon';
-    sniffIcon.textContent = '🎣';
+    var sniffText =
+      browser.i18n.getMessage("ctxSniffMedia") || "🎣 Start Media Sniffer Mode";
+    sniffBtn.textContent = "";
+    var sniffIcon = document.createElement("span");
+    sniffIcon.className = "icon";
+    sniffIcon.textContent = "🎣";
     sniffBtn.appendChild(sniffIcon);
-    sniffBtn.appendChild(document.createTextNode(' ' + sniffText));
+    sniffBtn.appendChild(document.createTextNode(" " + sniffText));
   }
 
   // ============================================================
   // 5. Tradução de BOTÕES SECUNDÁRIOS
   // ============================================================
   // Clear History
-  var clearHistoryBtn = document.getElementById('clear-history-btn');
+  var clearHistoryBtn = document.getElementById("clear-history-btn");
   if (clearHistoryBtn) {
-    var clearHistoryText = browser.i18n.getMessage('clearHistory');
+    var clearHistoryText = browser.i18n.getMessage("clearHistory");
     if (clearHistoryText) {
       clearHistoryBtn.textContent = clearHistoryText;
     }
   }
 
   // Clear Queue
-  var clearQueueBtn = document.getElementById('clear-queue-btn');
+  var clearQueueBtn = document.getElementById("clear-queue-btn");
   if (clearQueueBtn) {
-    var clearQueueText = browser.i18n.getMessage('clearQueue');
+    var clearQueueText = browser.i18n.getMessage("clearQueue");
     if (clearQueueText) {
       var icon = clearQueueBtn.textContent.match(/^[✕]+/);
       if (icon) {
-        clearQueueBtn.textContent = icon[0] + ' ' + clearQueueText;
+        clearQueueBtn.textContent = icon[0] + " " + clearQueueText;
       } else {
-        clearQueueBtn.textContent = '✕ ' + clearQueueText;
+        clearQueueBtn.textContent = "✕ " + clearQueueText;
       }
     }
   }
 
   // Open Queue Manager
-  var openQueueBtn = document.getElementById('open-queue-manager-btn');
+  var openQueueBtn = document.getElementById("open-queue-manager-btn");
   if (openQueueBtn) {
-    var queueManagerText = browser.i18n.getMessage('openQueueManager');
+    var queueManagerText = browser.i18n.getMessage("openQueueManager");
     if (queueManagerText) {
       openQueueBtn.textContent = queueManagerText;
     }
@@ -157,9 +235,9 @@ function applyPopupTranslations() {
   // ============================================================
   // 6. Tradução de LABELS
   // ============================================================
-  var toggleLabel = document.querySelector('.toggle-label');
+  var toggleLabel = document.querySelector(".toggle-label");
   if (toggleLabel) {
-    var queueEnabledText = browser.i18n.getMessage('queueEnabled');
+    var queueEnabledText = browser.i18n.getMessage("queueEnabled");
     if (queueEnabledText) {
       toggleLabel.textContent = queueEnabledText;
     }
@@ -173,22 +251,22 @@ function applyPopupTranslations() {
     var translation = browser.i18n.getMessage("pipCorner");
     if (translation) pipCornerLabel.textContent = translation;
   }
-  
+
   var pipSizeLabel = document.querySelector('label[for="pipSize"]');
   if (pipSizeLabel) {
     var translation = browser.i18n.getMessage("pipSize");
     if (translation) pipSizeLabel.textContent = translation;
   }
-  
+
   // Traduzir opções do select de cantos
   var cornerSelect = document.getElementById("pipCorner");
   if (cornerSelect) {
     var cornerOptions = cornerSelect.options;
     var cornerMap = {
-      "topLeft": "pipTopLeft",
-      "topRight": "pipTopRight",
-      "bottomLeft": "pipBottomLeft",
-      "bottomRight": "pipBottomRight"
+      topLeft: "pipTopLeft",
+      topRight: "pipTopRight",
+      bottomLeft: "pipBottomLeft",
+      bottomRight: "pipBottomRight",
     };
     for (var i = 0; i < cornerOptions.length; i++) {
       var key = cornerMap[cornerOptions[i].value];
@@ -198,17 +276,17 @@ function applyPopupTranslations() {
       }
     }
   }
-  
+
   // Traduzir opções do select de tamanho
   var sizeSelect = document.getElementById("pipSize");
   if (sizeSelect) {
     var sizeOptions = sizeSelect.options;
     var sizeMap = {
-      "15": "pipSizeSmall",
-      "20": "pipSizeMedium",
-      "25": "pipSizeDefault",
-      "30": "pipSizeLarge",
-      "40": "pipSizeXL"
+      15: "pipSizeSmall",
+      20: "pipSizeMedium",
+      25: "pipSizeDefault",
+      30: "pipSizeLarge",
+      40: "pipSizeXL",
     };
     for (var i = 0; i < sizeOptions.length; i++) {
       var key = sizeMap[sizeOptions[i].value];
@@ -236,7 +314,7 @@ document.addEventListener("DOMContentLoaded", function () {
       displayMode: "standard",
       pipCorner: "bottomRight",
       pipSize: 25,
-      initialVolume: 50
+      initialVolume: 50,
     })
     .then(function (items) {
       var quickRes = document.getElementById("quickRes");
@@ -248,9 +326,10 @@ document.addEventListener("DOMContentLoaded", function () {
       var displayMode = document.getElementById("displayMode");
       if (displayMode) {
         displayMode.value = items.displayMode;
-        var pipSettings = document.getElementById('pip-settings');
+        var pipSettings = document.getElementById("pip-settings");
         if (pipSettings) {
-          pipSettings.style.display = (items.displayMode === 'pip') ? 'block' : 'none';
+          pipSettings.style.display =
+            items.displayMode === "pip" ? "block" : "none";
         }
       }
 
@@ -267,8 +346,11 @@ document.addEventListener("DOMContentLoaded", function () {
         if (predefined.includes(items.initialVolume)) {
           quickVolume.value = items.initialVolume.toString();
         } else {
-          var closest = predefined.reduce(function(prev, curr) {
-            return (Math.abs(curr - items.initialVolume) < Math.abs(prev - items.initialVolume) ? curr : prev);
+          var closest = predefined.reduce(function (prev, curr) {
+            return Math.abs(curr - items.initialVolume) <
+              Math.abs(prev - items.initialVolume)
+              ? curr
+              : prev;
           });
           quickVolume.value = closest.toString();
         }
@@ -307,15 +389,15 @@ document.addEventListener("DOMContentLoaded", function () {
   // ============================================================
   // PiP Settings Controls
   // ============================================================
-  var displayModeEl = document.getElementById('displayMode');
+  var displayModeEl = document.getElementById("displayMode");
   if (displayModeEl) {
-    displayModeEl.addEventListener('change', function() {
-      var pipSettings = document.getElementById('pip-settings');
+    displayModeEl.addEventListener("change", function () {
+      var pipSettings = document.getElementById("pip-settings");
       if (pipSettings) {
-        if (this.value === 'pip') {
-          pipSettings.style.display = 'block';
+        if (this.value === "pip") {
+          pipSettings.style.display = "block";
         } else {
-          pipSettings.style.display = 'none';
+          pipSettings.style.display = "none";
         }
       }
       browser.storage.local.set({ displayMode: this.value });
@@ -323,26 +405,26 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function savePipSettings() {
-    var pipCornerEl = document.getElementById('pipCorner');
-    var pipSizeEl = document.getElementById('pipSize');
-    
+    var pipCornerEl = document.getElementById("pipCorner");
+    var pipSizeEl = document.getElementById("pipSize");
+
     if (pipCornerEl && pipSizeEl) {
       var settings = {
         pipCorner: pipCornerEl.value,
-        pipSize: parseInt(pipSizeEl.value, 10)
+        pipSize: parseInt(pipSizeEl.value, 10),
       };
       browser.storage.local.set(settings);
     }
   }
 
-  var pipCornerEl = document.getElementById('pipCorner');
+  var pipCornerEl = document.getElementById("pipCorner");
   if (pipCornerEl) {
-    pipCornerEl.addEventListener('change', savePipSettings);
+    pipCornerEl.addEventListener("change", savePipSettings);
   }
 
-  var pipSizeEl = document.getElementById('pipSize');
+  var pipSizeEl = document.getElementById("pipSize");
   if (pipSizeEl) {
-    pipSizeEl.addEventListener('change', savePipSettings);
+    pipSizeEl.addEventListener("change", savePipSettings);
   }
 
   // ============================================================
@@ -425,43 +507,50 @@ document.addEventListener("DOMContentLoaded", function () {
   // ============================================================
   var cleanupHistoryBtnEl = document.getElementById("cleanup-history-btn");
   if (cleanupHistoryBtnEl) {
-    cleanupHistoryBtnEl.addEventListener("click", function() {
+    cleanupHistoryBtnEl.addEventListener("click", function () {
       var btn = this;
       var info = document.getElementById("cleanup-info");
-      
+
       btn.disabled = true;
       btn.textContent = "⏳...";
       if (info) info.textContent = "Cleaning...";
-      
-      browser.runtime.sendMessage({ action: "cleanHistoryNow" }, function(response) {
-        if (response && response.success) {
-          var msg = browser.i18n.getMessage("historyCleanupCount");
-          if (info) {
-            if (msg) {
-              info.textContent = msg.replace("{count}", response.removed || 0);
-            } else {
-              info.textContent = "🧹 Removed " + (response.removed || 0) + " old entries";
+
+      browser.runtime.sendMessage(
+        { action: "cleanHistoryNow" },
+        function (response) {
+          if (response && response.success) {
+            var msg = browser.i18n.getMessage("historyCleanupCount");
+            if (info) {
+              if (msg) {
+                info.textContent = msg.replace(
+                  "{count}",
+                  response.removed || 0,
+                );
+              } else {
+                info.textContent =
+                  "🧹 Removed " + (response.removed || 0) + " old entries";
+              }
+              info.style.color = "var(--success-green)";
             }
-            info.style.color = "var(--success-green)";
+            renderHistory();
+          } else {
+            if (info) {
+              info.textContent = "❌ Failed to clean history";
+              info.style.color = "var(--danger-color)";
+            }
           }
-          renderHistory();
-        } else {
-          if (info) {
-            info.textContent = "❌ Failed to clean history";
-            info.style.color = "var(--danger-color)";
-          }
-        }
-        
-        btn.disabled = false;
-        btn.textContent = "🧹 Clean Old";
-        
-        setTimeout(function() {
-          if (info) {
-            info.textContent = "";
-            info.style.color = "";
-          }
-        }, 5000);
-      });
+
+          btn.disabled = false;
+          btn.textContent = "🧹 Clean Old";
+
+          setTimeout(function () {
+            if (info) {
+              info.textContent = "";
+              info.style.color = "";
+            }
+          }, 5000);
+        },
+      );
     });
   }
 
@@ -763,11 +852,13 @@ document.addEventListener("DOMContentLoaded", function () {
             tabId: tabs[0].id,
             fromHistory: false,
           });
-          window.close();
         }
       });
   }
 
+  // ============================================================
+  // Mostrar informação de limpeza no histórico (traduzida)
+  // ============================================================
   function renderHistory() {
     var list = document.getElementById("history-list");
     if (!list) return;
@@ -779,39 +870,66 @@ document.addEventListener("DOMContentLoaded", function () {
         var clearBtn = document.getElementById("clear-history-btn");
         var info = document.getElementById("cleanup-info");
 
-        // Mostrar informação sobre limpeza automática
+        // ============================================================
+        // CORREÇÃO: Mostrar informação de limpeza corretamente
+        // ============================================================
         if (info) {
           var mode = data.historyCleanupMode || "manual";
-          var retention = data.historyRetention || 10;
+          var retention = (typeof data.historyRetention !== "undefined") ? Number(data.historyRetention) : 10;
 
-          if (mode !== "manual") {
-            var modeText =
-              {
-                daily: "daily",
-                weekly: "weekly",
-                monthly: "monthly",
-                onClose: "on browser close",
-              }[mode] || mode;
-
-            if (retention === 0) {
-              info.textContent = "🔄 Auto-clean: " + modeText + " (keeping all)";
-            } else {
-              info.textContent =
-                "🔄 Auto-clean: " +
-                modeText +
-                " (keeping last " +
-                retention +
-                ")";
-            }
+          if (mode === "manual") {
+            info.textContent =
+              browser.i18n.getMessage("historyCleanupManual") ||
+              "🔄 Auto-clean: Manual (disabled)";
           } else {
-            info.textContent = "🔄 Auto-clean: Manual (disabled)";
+            // Traduzir o modo
+            var modeMap = {
+              daily: "historyCleanupModeDaily",
+              weekly: "historyCleanupModeWeekly",
+              monthly: "historyCleanupModeMonthly",
+              onClose: "historyCleanupModeOnClose",
+            };
+            var modeKey = modeMap[mode] || "historyCleanupModeDaily";
+            var modeText = browser.i18n.getMessage(modeKey) || mode;
+
+            // Traduzir a ação baseado no valor de retention
+            var actionText = "";
+            if (retention === 0) {
+              // 0 = Clear All (zerar histórico)
+              actionText =
+                browser.i18n.getMessage("historyCleanupActionClearing") ||
+                "clearing all";
+            } else if (retention === -1) {
+              // -1 = No Limit (Keep All)
+              actionText =
+                browser.i18n.getMessage("historyCleanupActionKeepingAll") ||
+                "keeping all";
+            } else {
+              // retention > 0 = Manter N itens mais recentes
+              var actionTemplate =
+                browser.i18n.getMessage("historyCleanupActionKeeping") ||
+                "keeping last {count}";
+              actionText = actionTemplate.replace("{count}", retention);
+            }
+
+            // Montar a mensagem final
+            var template =
+              browser.i18n.getMessage("historyCleanupAutoLabel") ||
+              "🔄 Auto-clean: {mode} ({action})";
+            var finalText = template
+              .replace("{mode}", modeText)
+              .replace("{action}", actionText);
+
+            info.textContent = finalText;
           }
         }
 
-        if (data.history.length === 0) {
+        // Renderizar lista de histórico
+        if (!data.history || data.history.length === 0) {
           var noHistoryDiv = document.createElement("div");
           noHistoryDiv.className = "no-history";
-          noHistoryDiv.textContent = browser.i18n.getMessage("emptyHistory");
+          noHistoryDiv.textContent =
+            browser.i18n.getMessage("emptyHistory") || "No history entries";
           list.appendChild(noHistoryDiv);
           if (clearBtn) clearBtn.style.display = "none";
           return;

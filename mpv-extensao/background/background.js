@@ -1,12 +1,35 @@
 // ============================================================
-// background.js - MPV Opener for Firefox v7.2
+// background.js - MPV Opener for Firefox v7.3
 // ============================================================
 
 // ============================================================
 // Version Constants
 // ============================================================
-const EXTENSION_VERSION = "7.0.2";
-const MIN_WRAPPER_VERSION = "7.0.2";
+const EXTENSION_VERSION = "7.0.3";
+const MIN_WRAPPER_VERSION = "7.0.3";
+
+// ============================================================
+// Error Types for Video Sending
+// ============================================================
+const ERROR_TYPES = {
+    YTDLP_FAILED: 'ytdlp_failed',
+    NETWORK_ERROR: 'network_error',
+    NATIVE_HOST_FAILED: 'native_host_failed',
+    TIMEOUT: 'timeout',
+    UNKNOWN: 'unknown'
+};
+
+function getErrorMessage(errorType, details) {
+    const messages = {
+        [ERROR_TYPES.YTDLP_FAILED]: browser.i18n.getMessage('videoSendFailedYtDlp') || 'yt-dlp failed to extract the video. The video may be unavailable or geo-restricted.',
+        [ERROR_TYPES.NETWORK_ERROR]: browser.i18n.getMessage('videoSendFailedNetwork') || 'Network error. Check your internet connection.',
+        [ERROR_TYPES.NATIVE_HOST_FAILED]: browser.i18n.getMessage('videoSendFailedNative') || 'Native Host communication failed. Make sure mpv is installed.',
+        [ERROR_TYPES.TIMEOUT]: browser.i18n.getMessage('videoSendFailedTimeout') || 'Request timed out. The video may be too long or the server is slow.',
+        [ERROR_TYPES.UNKNOWN]: browser.i18n.getMessage('videoSendFailedUnknown') || 'Unknown error occurred.'
+    };
+    
+    return messages[errorType] || messages[ERROR_TYPES.UNKNOWN];
+}
 
 // ============================================================
 // Version Check System
@@ -111,114 +134,201 @@ scheduleVersionCheck();
 
 // Carregar configurações de limpeza
 function loadCleanupSettings() {
-  return browser.storage.local.get({
-    historyCleanupMode: "manual",
-    historyRetention: 10,
-    lastCleanupDate: null
-  }).catch(function(err) {
-    console.error("MPV Opener: Failed to load cleanup settings:", err);
-  });
+  return browser.storage.local
+    .get({
+      historyCleanupMode: "manual",
+      historyRetention: 10,
+      lastCleanupDate: null,
+    })
+    .catch(function (err) {
+      console.error("MPV Opener: Failed to load cleanup settings:", err);
+    });
 }
 
 // Função principal de limpeza
 function cleanHistory() {
-  return browser.storage.local.get({ history: [] }).then(function(data) {
-    var history = data.history || [];
-    var originalLength = history.length;
-    
-    // Carregar configurações
-    return browser.storage.local.get({
-      historyRetention: 10,
-      historyCleanupMode: "manual"
-    }).then(function(settings) {
-      var retention = settings.historyRetention;
-      
-      // Se retention = 0, manter todos (sem limite)
-      if (retention === 0) {
-        return { removed: 0, kept: originalLength };
-      }
-      
-      // Manter apenas os N mais recentes
-      if (history.length > retention) {
-        var removed = history.splice(retention);
-        var removedCount = removed.length;
-        
-        // Salvar histórico atualizado e data
-        return browser.storage.local.set({ history: history }).then(function() {
-          browser.storage.local.set({ lastCleanupDate: Date.now() });
-          console.log("MPV Opener: Cleaned " + removedCount + " old history entries");
-          return { removed: removedCount, kept: history.length };
+  return browser.storage.local
+    .get({ history: [] })
+    .then(function (data) {
+      var history = data.history || [];
+      var originalLength = history.length;
+
+      // Carregar configurações
+      return browser.storage.local
+        .get({
+          historyRetention: 10,
+          historyCleanupMode: "manual",
+        })
+        .then(function (settings) {
+          var retention = settings.historyRetention;
+
+          // ============================================================
+          // NOVA LÓGICA DE RETENÇÃO
+          // ============================================================
+          if (retention === -1) {
+            // -1 = No Limit (Keep All)
+            return { removed: 0, kept: originalLength };
+          }
+
+          if (retention === 0) {
+            // 0 = Clear All (zerar histórico)
+            var removedCount = history.length;
+            return browser.storage.local.set({ history: [] }).then(function () {
+              browser.storage.local.set({ lastCleanupDate: Date.now() });
+              console.log(
+                "MPV Opener: Cleared all history entries (" +
+                  removedCount +
+                  " items)"
+              );
+              return { removed: removedCount, kept: 0 };
+            });
+          }
+
+          // retention > 0 = Manter N itens mais recentes
+          if (history.length > retention) {
+            var removed = history.splice(retention);
+            var removedCount = removed.length;
+
+            // Salvar histórico atualizado e data
+            return browser.storage.local
+              .set({ history: history })
+              .then(function () {
+                browser.storage.local.set({ lastCleanupDate: Date.now() });
+                console.log(
+                  "MPV Opener: Cleaned " +
+                    removedCount +
+                    " old history entries"
+                );
+                return { removed: removedCount, kept: history.length };
+              });
+          } else {
+            return { removed: 0, kept: history.length };
+          }
         });
-      } else {
-        return { removed: 0, kept: history.length };
-      }
+    })
+    .catch(function (err) {
+      console.error("MPV Opener: Failed to clean history:", err);
+      return { removed: 0, kept: 0 };
     });
-  }).catch(function(err) {
-    console.error("MPV Opener: Failed to clean history:", err);
-    return { removed: 0, kept: 0 };
-  });
 }
 
-// Verificar se deve limpar baseado no modo
+// Verificar e limpar histórico na inicialização
+function checkAndCleanOnStartup() {
+  browser.storage.local
+    .get({
+      historyCleanupMode: "manual",
+      historyRetention: 10,
+      lastCleanupDate: null,
+    })
+    .then(function (settings) {
+      var mode = settings.historyCleanupMode;
+      var lastDate = settings.lastCleanupDate || 0;
+      var now = Date.now();
+
+      // Se for manual, não faz nada
+      if (mode === "manual") {
+        console.log("MPV Opener: History cleanup is manual (disabled)");
+        return;
+      }
+
+      // Modo "onClose": limpar na inicialização
+      if (mode === "onClose") {
+        console.log("MPV Opener: Cleaning history on startup (onClose mode)");
+        cleanHistory();
+        return;
+      }
+
+      // Modos com intervalo
+      var intervals = {
+        daily: 24 * 60 * 60 * 1000,
+        weekly: 7 * 24 * 60 * 60 * 1000,
+        monthly: 30 * 24 * 60 * 60 * 1000,
+      };
+
+      var interval = intervals[mode];
+      if (interval && now - lastDate > interval) {
+        console.log("MPV Opener: Cleaning history on startup (" + mode + ")");
+        cleanHistory();
+      } else if (interval) {
+        var nextClean = new Date(lastDate + interval);
+        console.log(
+          "MPV Opener: Next " + mode + " cleanup scheduled for: " + nextClean
+        );
+      }
+    })
+    .catch(function (err) {
+      console.error("MPV Opener: Failed to check cleanup on startup:", err);
+    });
+}
+
+// Verificar se deve limpar baseado no modo durante a execução
 function checkAndCleanHistory() {
-  browser.storage.local.get({
-    historyCleanupMode: "manual",
-    historyRetention: 10,
-    lastCleanupDate: null
-  }).then(function(settings) {
-    var mode = settings.historyCleanupMode;
-    
-    // Se for manual ou onClose, não fazer limpeza agendada
-    if (mode === "manual" || mode === "onClose") {
-      return;
-    }
-    
-    // Verificar tempo decorrido
-    var lastDate = settings.lastCleanupDate || 0;
-    var now = Date.now();
-    var shouldClean = false;
-    
-    switch(mode) {
-      case "daily":
-        shouldClean = (now - lastDate) > 24 * 60 * 60 * 1000;
-        break;
-      case "weekly":
-        shouldClean = (now - lastDate) > 7 * 24 * 60 * 60 * 1000;
-        break;
-      case "monthly":
-        shouldClean = (now - lastDate) > 30 * 24 * 60 * 60 * 1000;
-        break;
-    }
-    
-    if (shouldClean) {
-      console.log("MPV Opener: Running scheduled history cleanup (" + mode + ")");
-      cleanHistory();
-    }
-  }).catch(function(err) {
-    console.error("MPV Opener: Failed to check cleanup:", err);
-  });
+  browser.storage.local
+    .get({
+      historyCleanupMode: "manual",
+      historyRetention: 10,
+      lastCleanupDate: null,
+    })
+    .then(function (settings) {
+      var mode = settings.historyCleanupMode;
+
+      // Se for manual ou onClose, não fazer limpeza agendada
+      if (mode === "manual" || mode === "onClose") {
+        return;
+      }
+
+      // Verificar tempo decorrido
+      var lastDate = settings.lastCleanupDate || 0;
+      var now = Date.now();
+      var shouldClean = false;
+
+      switch (mode) {
+        case "daily":
+          shouldClean = now - lastDate > 24 * 60 * 60 * 1000;
+          break;
+        case "weekly":
+          shouldClean = now - lastDate > 7 * 24 * 60 * 60 * 1000;
+          break;
+        case "monthly":
+          shouldClean = now - lastDate > 30 * 24 * 60 * 60 * 1000;
+          break;
+      }
+
+      if (shouldClean) {
+        console.log(
+          "MPV Opener: Running scheduled history cleanup (" + mode + ")"
+        );
+        cleanHistory();
+      }
+    })
+    .catch(function (err) {
+      console.error("MPV Opener: Failed to check cleanup:", err);
+    });
 }
 
 // Limpeza manual (chamada pelo usuário)
 function cleanHistoryNow() {
-  return cleanHistory().then(function(result) {
+  return cleanHistory().then(function (result) {
     return result;
   });
 }
 
 // Agendar verificação periódica
 function scheduleCleanupCheck() {
-  setInterval(function() {
-    checkAndCleanHistory();
-  }, 60 * 60 * 1000); // 1 hora
+  setInterval(
+    function () {
+      checkAndCleanHistory();
+    },
+    60 * 60 * 1000
+  ); // 1 hora
 }
 
 scheduleCleanupCheck();
 
 // Evento: Startup do Navegador
-browser.runtime.onStartup.addListener(function() {
+browser.runtime.onStartup.addListener(function () {
   console.log("MPV Opener: Browser started, checking history cleanup...");
-  setTimeout(checkAndCleanHistory, 5000);
+  setTimeout(checkAndCleanOnStartup, 5000);
 });
 
 // ============================================================
@@ -406,7 +516,7 @@ function playQueueItem(item, retryCount) {
           (retryCount + 1) +
           "/" +
           maxQueueRetries +
-          ")",
+          ")"
       );
       setTimeout(function () {
         playQueueItem(item, retryCount + 1);
@@ -415,7 +525,7 @@ function playQueueItem(item, retryCount) {
       console.error(
         "MPV Opener: Queue item failed after " +
           maxQueueRetries +
-          " attempts, skipping",
+          " attempts, skipping"
       );
       browser.notifications.create({
         type: "basic",
@@ -521,7 +631,7 @@ function triggerMpvExecutionForQueue(url, title, callback) {
         autoSubtitles: prefs.autoSubtitles,
         fromQueue: true,
         extension_version: EXTENSION_VERSION,
-        initialVolume: prefs.initialVolume || 50,
+        initialVolume: (typeof prefs.initialVolume !== "undefined") ? prefs.initialVolume : 50,
         pipCorner: prefs.pipCorner || "bottomRight",
         pipSize: prefs.pipSize || 25,
       };
@@ -532,7 +642,7 @@ function triggerMpvExecutionForQueue(url, title, callback) {
           if (response && response.status === "incompatible") {
             showUpdateNotification(
               response.wrapper_version || "unknown",
-              response.min_extension_version || "unknown",
+              response.min_extension_version || "unknown"
             );
             if (callback) callback(false);
             return;
@@ -621,68 +731,168 @@ function triggerMpvExecution(action, url, title, tabId, fromHistory) {
     });
 }
 
+// ============================================================
+// Função melhorada de envio com feedback E NOTIFICAÇÕES
+// ============================================================
 function sendToMpv(url, prefs, isAudioOnly, tabId, title, fromHistory) {
-  var payload = {
-    url: url,
-    fullscreen: prefs.displayMode === "fullscreen",
-    pip: prefs.displayMode === "pip",
-    paused: prefs.initialState === "paused",
-    alwaysOnTop: prefs.alwaysOnTop,
-    audioOnly: isAudioOnly,
-    audioDevice: prefs.audioDevice,
-    aggressiveCache: prefs.aggressiveCache,
-    inhibitSleep: prefs.inhibitSleep,
-    maxResolution: prefs.maxResolution,
-    autoSubtitles: prefs.autoSubtitles,
-    fromQueue: false,
-    extension_version: EXTENSION_VERSION,
-    initialVolume: prefs.initialVolume || 50,
-    pipCorner: prefs.pipCorner || "bottomRight",
-    pipSize: prefs.pipSize || 25,
-  };
+    var payload = {
+        url: url,
+        fullscreen: prefs.displayMode === "fullscreen",
+        pip: prefs.displayMode === "pip",
+        paused: prefs.initialState === "paused",
+        alwaysOnTop: prefs.alwaysOnTop,
+        audioOnly: isAudioOnly,
+        audioDevice: prefs.audioDevice,
+        aggressiveCache: prefs.aggressiveCache,
+        inhibitSleep: prefs.inhibitSleep,
+        maxResolution: prefs.maxResolution,
+        autoSubtitles: prefs.autoSubtitles,
+        fromQueue: false,
+        extension_version: EXTENSION_VERSION,
+        initialVolume: (typeof prefs.initialVolume !== "undefined") ? prefs.initialVolume : 50,
+        pipCorner: prefs.pipCorner || "bottomRight",
+        pipSize: prefs.pipSize || 25
+    };
 
-  browser.runtime
-    .sendNativeMessage("org.custom.mpv", payload)
-    .then(function (response) {
-      if (response && response.status === "incompatible") {
-        showUpdateNotification(
-          response.wrapper_version || "unknown",
-          response.min_extension_version || "unknown",
-        );
-        return;
-      }
-
-      if (!fromHistory) {
-        addToHistory(url, title);
-      }
-
-      browser.notifications.create({
+    // ============================================================
+    // NOTIFICAÇÃO DE ENVIO
+    // ============================================================
+    browser.notifications.create({
         type: "basic",
         iconUrl: browser.runtime.getURL("icons/icon-48.png"),
         title: "MPV Opener",
-        message:
-          browser.i18n.getMessage("sendingNotification") || "Sending to mpv...",
-      });
-
-      if (prefs.closeTab && tabId && !fromHistory) {
-        browser.tabs.remove(tabId);
-      }
-    })
-    .catch(function (err) {
-      console.error("MPV Opener: Native Messaging Error:", err);
-      showErrorNotification(
-        "Failed to send to mpv. Check if Native Host is installed.",
-      );
+        message: browser.i18n.getMessage("sendingNotification") || "Sending to mpv..."
     });
+
+    // Enviar status para o popup (se estiver aberto)
+    browser.runtime.sendMessage({
+        action: "sendStatus",
+        status: "sending",
+        message: browser.i18n.getMessage("sendingNotification") || "Sending to mpv..."
+    }).catch(function() { /* popup pode não estar aberto */ });
+
+    var startTime = Date.now();
+
+    browser.runtime
+        .sendNativeMessage("org.custom.mpv", payload)
+        .then(function(response) {
+            var elapsed = Date.now() - startTime;
+            console.log("MPV Opener: Response received in " + elapsed + "ms", response);
+
+            if (response && response.status === "incompatible") {
+                showUpdateNotification(
+                    response.wrapper_version || "unknown",
+                    response.min_extension_version || "unknown"
+                );
+                browser.runtime.sendMessage({
+                    action: "sendStatus",
+                    status: "error",
+                    errorType: ERROR_TYPES.NATIVE_HOST_FAILED,
+                    message: browser.i18n.getMessage('videoSendFailedNative') || 'Native Host version incompatible. Please update.'
+                }).catch(function() {});
+                return;
+            }
+
+            if (response && response.status === "error") {
+                var errorMsg = response.message || '';
+                var errorType = ERROR_TYPES.UNKNOWN;
+                
+                if (errorMsg.includes('yt-dlp') || errorMsg.includes('extract')) {
+                    errorType = ERROR_TYPES.YTDLP_FAILED;
+                } else if (errorMsg.includes('network') || errorMsg.includes('connection')) {
+                    errorType = ERROR_TYPES.NETWORK_ERROR;
+                } else if (errorMsg.includes('timeout')) {
+                    errorType = ERROR_TYPES.TIMEOUT;
+                }
+                
+                // ============================================================
+                // NOTIFICAÇÃO DE ERRO
+                // ============================================================
+                showErrorNotification(errorMsg, errorType);
+                
+                browser.runtime.sendMessage({
+                    action: "sendStatus",
+                    status: "error",
+                    errorType: errorType,
+                    message: errorMsg
+                }).catch(function() {});
+                return;
+            }
+
+            // ============================================================
+            // SUCESSO!
+            // ============================================================
+            if (!fromHistory) {
+                addToHistory(url, title);
+            }
+
+            // Notificação de sucesso
+            browser.notifications.create({
+                type: "basic",
+                iconUrl: browser.runtime.getURL("icons/icon-48.png"),
+                title: "MPV Opener",
+                message: browser.i18n.getMessage("videoSendSuccess") || "✅ Video sent successfully!"
+            });
+
+            browser.runtime.sendMessage({
+                action: "sendStatus",
+                status: "success",
+                message: browser.i18n.getMessage("videoSendSuccess") || "✅ Video sent successfully!"
+            }).catch(function() {});
+
+            if (prefs.closeTab && tabId && !fromHistory) {
+                browser.tabs.remove(tabId);
+            }
+        })
+        .catch(function(err) {
+            console.error("MPV Opener: Native Messaging Error:", err);
+            
+            var errorType = ERROR_TYPES.UNKNOWN;
+            var errorMsg = err.message || 'Unknown error';
+            
+            if (errorMsg.includes('timeout') || errorMsg.includes('timed out')) {
+                errorType = ERROR_TYPES.TIMEOUT;
+            } else if (errorMsg.includes('network') || errorMsg.includes('fetch')) {
+                errorType = ERROR_TYPES.NETWORK_ERROR;
+            } else if (errorMsg.includes('native') || errorMsg.includes('host')) {
+                errorType = ERROR_TYPES.NATIVE_HOST_FAILED;
+            }
+            
+            // ============================================================
+            // NOTIFICAÇÃO DE ERRO
+            // ============================================================
+            showErrorNotification(errorMsg, errorType);
+            
+            browser.runtime.sendMessage({
+                action: "sendStatus",
+                status: "error",
+                errorType: errorType,
+                message: errorMsg
+            }).catch(function() {});
+        });
 }
 
-function showErrorNotification(message) {
-  browser.notifications.create({
-    type: "basic",
-    iconUrl: browser.runtime.getURL("icons/icon-48.png"),
-    title: "MPV Opener",
-    message: message,
-  });
+// ============================================================
+// Função para mostrar notificação de erro com mais detalhes
+// ============================================================
+function showErrorNotification(message, errorType) {
+    var title = browser.i18n.getMessage('videoSendFailed') || '❌ Failed to send video to mpv';
+    var errorMsg = message || browser.i18n.getMessage('videoSendFailedUnknown') || 'Unknown error occurred.';
+    
+    if (errorType) {
+        var reason = getErrorMessage(errorType);
+        if (reason) {
+            errorMsg = browser.i18n.getMessage('videoSendFailedReason') || 'Reason: {reason}';
+            errorMsg = errorMsg.replace('{reason}', reason);
+        }
+    }
+    
+    browser.notifications.create({
+        type: "basic",
+        iconUrl: browser.runtime.getURL("icons/icon-48.png"),
+        title: title,
+        message: errorMsg
+    });
 }
 
 // ============================================================
@@ -786,7 +996,7 @@ browser.runtime.onInstalled.addListener(function (details) {
       .catch(function (error) {
         console.warn(
           "MPV Opener: Native Messaging Host not installed. Opening help page...",
-          error,
+          error
         );
         browser.tabs.create({
           url: browser.runtime.getURL("welcome/welcome.html"),
@@ -878,7 +1088,7 @@ browser.contextMenus.onClicked.addListener(function (info, tab) {
       targetUrl,
       tab ? tab.title : targetUrl,
       tab ? tab.id : null,
-      false,
+      false
     );
   } else if (info.menuItemId === "ctx-send-audio") {
     triggerMpvExecution(
@@ -886,7 +1096,7 @@ browser.contextMenus.onClicked.addListener(function (info, tab) {
       targetUrl,
       tab ? tab.title : targetUrl,
       tab ? tab.id : null,
-      false,
+      false
     );
   }
 });
@@ -902,7 +1112,7 @@ browser.runtime.onMessage.addListener(function (message, sender, sendResponse) {
         message.url,
         message.title,
         message.tabId,
-        message.fromHistory,
+        message.fromHistory
       );
       sendResponse({ success: true });
     } else if (message.action === "openSniffer" && message.tabId) {
@@ -975,16 +1185,18 @@ browser.runtime.onMessage.addListener(function (message, sender, sendResponse) {
           "MPV Opener: Scraped URL:",
           message.url,
           "Source:",
-          message.source || "unknown",
+          message.source || "unknown"
         );
       }
       sendResponse({ success: true });
     } else if (message.action === "cleanHistoryNow") {
-      cleanHistoryNow().then(function(result) {
-        sendResponse({ success: true, removed: result.removed || 0 });
-      }).catch(function(err) {
-        sendResponse({ success: false, error: err.message });
-      });
+      cleanHistoryNow()
+        .then(function (result) {
+          sendResponse({ success: true, removed: result.removed || 0 });
+        })
+        .catch(function (err) {
+          sendResponse({ success: false, error: err.message });
+        });
       return true;
     }
   } catch (err) {
@@ -1011,7 +1223,7 @@ browser.commands.onCommand.addListener(function (command) {
           activeTab.url,
           activeTab.title,
           activeTab.id,
-          false,
+          false
         );
       } else if (command === "shortcut-send-audio") {
         triggerMpvExecution(
@@ -1019,7 +1231,7 @@ browser.commands.onCommand.addListener(function (command) {
           activeTab.url,
           activeTab.title,
           activeTab.id,
-          false,
+          false
         );
       } else if (command === "shortcut-open-sniffer") {
         openSnifferPage(activeTab.id);
@@ -1035,6 +1247,6 @@ browser.commands.onCommand.addListener(function (command) {
 // ============================================================
 loadQueueState();
 updateQueueBadge();
-setTimeout(checkAndCleanHistory, 3000);
+setTimeout(checkAndCleanOnStartup, 3000);
 
-console.log("MPV Opener v7.2 loaded");
+console.log("MPV Opener v7.3 loaded");

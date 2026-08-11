@@ -40,7 +40,7 @@
     "description": "没有可显示的历史记录时的占位符文本"
   },
   "emptyQueue": {
-    "message": "队列是空的。",
+    "message": "队列为空。",
     "description": "没有队列项目时的占位符文本"
   },
   "queueCount": {
@@ -204,8 +204,8 @@
     "description": "自动清理切换标签"
   },
   "historyCleanupManual": {
-    "message": "手动（禁用）",
-    "description": "手动清理选项"
+    "message": "🔄 自动清洁：手动（禁用）",
+    "description": "手动模式标签"
   },
   "historyCleanupDaily": {
     "message": "每天",
@@ -223,6 +223,38 @@
     "message": "浏览器关闭时",
     "description": "浏览器关闭选项中的清理"
   },
+  "historyCleanupAutoLabel": {
+    "message": "🔄 自动清洁：{mode} ({action})",
+    "description": "带有占位符的自动清洁状态标签"
+  },
+  "historyCleanupModeDaily": {
+    "message": "日常的",
+    "description": "每日模式名称"
+  },
+  "historyCleanupModeWeekly": {
+    "message": "每周",
+    "description": "每周模式名称"
+  },
+  "historyCleanupModeMonthly": {
+    "message": "每月",
+    "description": "包月模式名称"
+  },
+  "historyCleanupModeOnClose": {
+    "message": "在浏览器关闭时",
+    "description": "关闭模式名称"
+  },
+  "historyCleanupActionKeeping": {
+    "message": "保留最后 {count} 个",
+    "description": "保持行动计数"
+  },
+  "historyCleanupActionClearing": {
+    "message": "清除所有",
+    "description": "清除所有动作"
+  },
+  "historyCleanupActionKeepingAll": {
+    "message": "保留所有",
+    "description": "保持所有动作"
+  },
   "historyCleanupRetention": {
     "message": "保持最后",
     "description": "保留标签"
@@ -230,6 +262,34 @@
   "historyCleanupRetentionDesc": {
     "message": "要保留在历史记录中的项目数",
     "description": "保留说明"
+  },
+  "historyCleanupRetentionAll": {
+    "message": "全部清除 (0 项)",
+    "description": "清除所有选项"
+  },
+  "historyCleanupRetention5": {
+    "message": "5 项目",
+    "description": "保留 5 件物品"
+  },
+  "historyCleanupRetention10": {
+    "message": "10 件",
+    "description": "保留 10 件物品"
+  },
+  "historyCleanupRetention20": {
+    "message": "20 项目",
+    "description": "保留 20 件物品"
+  },
+  "historyCleanupRetention50": {
+    "message": "50 件商品",
+    "description": "保留 50 件物品"
+  },
+  "historyCleanupRetention100": {
+    "message": "100 件",
+    "description": "保留 100 件物品"
+  },
+  "historyCleanupRetentionNoLimit": {
+    "message": "无限制（保留全部）",
+    "description": "无限制选项"
   },
   "historyCleanupSuccess": {
     "message": "历史清理成功！",
@@ -416,7 +476,7 @@
     "description": "音量调高按钮工具提示"
   },
   "volumeDown": {
-    "message": "调低音量",
+    "message": "降低音量",
     "description": "降低音量按钮工具提示"
   },
   "previousTrack": {
@@ -596,7 +656,7 @@
     "description": "队列管理器页面的标题"
   },
   "queueEmptyStatus": {
-    "message": "队列是空的。",
+    "message": "队列为空。",
     "description": "空队列状态"
   },
   "queueCompleted": {
@@ -634,5 +694,45 @@
   "queueItemsLabel": {
     "message": "项目",
     "description": "队列中的项目标签"
+  },
+  "videoSendSuccess": {
+    "message": "✅ 视频转mpv成功！",
+    "description": "视频发送成功消息"
+  },
+  "videoSendFailed": {
+    "message": "❌ 无法将视频发送到 mpv",
+    "description": "视频失败时的错误消息"
+  },
+  "videoSendFailedReason": {
+    "message": "原因：{原因}",
+    "description": "带有占位符的错误原因"
+  },
+  "videoSendFailedYtDlp": {
+    "message": "yt-dlp 无法提取视频。该视频可能不可用或受地理限制。",
+    "description": "yt-dlp 错误原因"
+  },
+  "videoSendFailedNetwork": {
+    "message": "网络错误。请检查您的互联网连接。",
+    "description": "网络错误原因"
+  },
+  "videoSendFailedNative": {
+    "message": "本地主机通信失败。请确保已安装 mpv。",
+    "description": "本机主机错误原因"
+  },
+  "videoSendFailedTimeout": {
+    "message": "请求超时。视频可能太长或者服务器太慢。",
+    "description": "超时错误原因"
+  },
+  "videoSendFailedUnknown": {
+    "message": "发生未知错误。检查浏览器控制台了解详细信息。",
+    "description": "未知错误原因"
+  },
+  "videoSendRetrying": {
+    "message": "⏳ 正在重试...（{尝试}/{最大}）",
+    "description": "重试尝试消息"
+  },
+  "videoSendQueueAdded": {
+    "message": "📋已添加到队列（{count} 项）",
+    "description": "添加到队列消息"
   }
 }

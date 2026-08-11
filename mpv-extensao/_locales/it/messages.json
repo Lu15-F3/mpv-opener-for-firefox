@@ -141,7 +141,7 @@
   },
   "pipSizeLarge": {
     "message": "Grande (30%)",
-    "description": "Opzione di grande formato"
+    "description": "Opzione di grandi dimensioni"
   },
   "pipSizeXL": {
     "message": "Molto grande (40%)",
@@ -204,8 +204,8 @@
     "description": "Etichetta per l'attivazione/disattivazione della pulizia automatica"
   },
   "historyCleanupManual": {
-    "message": "Manuale (disabilitato)",
-    "description": "Opzione di pulizia manuale"
+    "message": "🔄 Pulizia automatica: manuale (disabilitata)",
+    "description": "Etichetta modalità manuale"
   },
   "historyCleanupDaily": {
     "message": "Ogni giorno",
@@ -223,6 +223,38 @@
     "message": "Alla chiusura del browser",
     "description": "Opzione di pulizia all'uscita del browser"
   },
+  "historyCleanupAutoLabel": {
+    "message": "🔄 Pulizia automatica: {modalità} ({azione})",
+    "description": "Etichetta di stato di pulizia automatica con segnaposto"
+  },
+  "historyCleanupModeDaily": {
+    "message": "quotidiano",
+    "description": "Nome della modalità giornaliera"
+  },
+  "historyCleanupModeWeekly": {
+    "message": "settimanale",
+    "description": "Nome della modalità settimanale"
+  },
+  "historyCleanupModeMonthly": {
+    "message": "mensile",
+    "description": "Nome della modalità mensile"
+  },
+  "historyCleanupModeOnClose": {
+    "message": "alla chiusura del browser",
+    "description": "Nome della modalità di chiusura"
+  },
+  "historyCleanupActionKeeping": {
+    "message": "mantenendo l'ultimo {count}",
+    "description": "Mantenere l'azione con il conteggio"
+  },
+  "historyCleanupActionClearing": {
+    "message": "cancellando tutto",
+    "description": "Cancellazione di tutte le azioni"
+  },
+  "historyCleanupActionKeepingAll": {
+    "message": "mantenendo tutto",
+    "description": "Mantenere tutta l'azione"
+  },
   "historyCleanupRetention": {
     "message": "Mantieni ultimo",
     "description": "Etichetta di conservazione"
@@ -230,6 +262,34 @@
   "historyCleanupRetentionDesc": {
     "message": "Numero di elementi da conservare nella cronologia",
     "description": "Descrizione della conservazione"
+  },
+  "historyCleanupRetentionAll": {
+    "message": "Cancella tutto (0 articoli)",
+    "description": "Cancella tutte le opzioni"
+  },
+  "historyCleanupRetention5": {
+    "message": "5 articoli",
+    "description": "Conserva 5 articoli"
+  },
+  "historyCleanupRetention10": {
+    "message": "10 articoli",
+    "description": "Conserva 10 articoli"
+  },
+  "historyCleanupRetention20": {
+    "message": "20 articoli",
+    "description": "Conserva 20 articoli"
+  },
+  "historyCleanupRetention50": {
+    "message": "50 articoli",
+    "description": "Conserva 50 articoli"
+  },
+  "historyCleanupRetention100": {
+    "message": "100 articoli",
+    "description": "Conserva 100 articoli"
+  },
+  "historyCleanupRetentionNoLimit": {
+    "message": "Nessun limite (mantieni tutto)",
+    "description": "Nessuna opzione di limite"
   },
   "historyCleanupSuccess": {
     "message": "La cronologia è stata pulita con successo!",
@@ -325,7 +385,7 @@
   },
   "welcomeTitle": {
     "message": "Quasi pronto! Configurazione richiesta",
-    "description": "Per prima cosa installa l'intestazione della vista di benvenuto all'onboarding"
+    "description": "Per prima cosa installa l'intestazione della vista di benvenuto on-boarding"
   },
   "welcomeIntro": {
     "message": "MPV Opener per Firefox è stato aggiunto al tuo browser, ma non può ancora comunicare con il tuo sistema. Segui questi due rapidi passaggi:",
@@ -634,5 +694,45 @@
   "queueItemsLabel": {
     "message": "elementi",
     "description": "Etichetta degli articoli in coda"
+  },
+  "videoSendSuccess": {
+    "message": "✅ Video inviato a mpv con successo!",
+    "description": "Messaggio di successo quando viene inviato il video"
+  },
+  "videoSendFailed": {
+    "message": "❌ Impossibile inviare il video a mpv",
+    "description": "Messaggio di errore quando il video fallisce"
+  },
+  "videoSendFailedReason": {
+    "message": "Motivo: {motivo}",
+    "description": "Motivo dell'errore con segnaposto"
+  },
+  "videoSendFailedYtDlp": {
+    "message": "yt-dlp non è riuscito a estrarre il video. Il video potrebbe non essere disponibile o essere soggetto a limitazioni geografiche.",
+    "description": "Motivo dell'errore yt-dlp"
+  },
+  "videoSendFailedNetwork": {
+    "message": "Errore di rete. Controlla la tua connessione Internet.",
+    "description": "Motivo dell'errore di rete"
+  },
+  "videoSendFailedNative": {
+    "message": "La comunicazione con l'host nativo non è riuscita. Assicurati che mpv sia installato.",
+    "description": "Motivo dell'errore dell'host nativo"
+  },
+  "videoSendFailedTimeout": {
+    "message": "Richiesta scaduta. Il video potrebbe essere troppo lungo o il server è lento.",
+    "description": "Motivo dell'errore di timeout"
+  },
+  "videoSendFailedUnknown": {
+    "message": "Si è verificato un errore sconosciuto. Controlla la console del browser per i dettagli.",
+    "description": "Motivo dell'errore sconosciuto"
+  },
+  "videoSendRetrying": {
+    "message": "⏳ Nuovo tentativo... ({tentativo}/{max})",
+    "description": "Messaggio di nuovo tentativo"
+  },
+  "videoSendQueueAdded": {
+    "message": "📋 Aggiunto alla coda ({count} elementi)",
+    "description": "Aggiunto al messaggio in coda"
   }
 }

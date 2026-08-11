@@ -1,6 +1,6 @@
 #!/bin/bash
 # ============================================================
-# locale_loader.sh - MPV Opener for Firefox v7.2
+# locale_loader.sh - MPV Opener for Firefox v7.3
 # Loader para mensagens localizadas - Multi-Distro
 # ============================================================
 
@@ -192,7 +192,7 @@ except Exception as e:
 # Fallback messages (hardcoded em inglês)
 # ============================================================
 load_fallback_messages() {
-    MSG_installer="MPV Opener for Firefox - Installer v7.2"
+    MSG_installer="MPV Opener for Firefox - Installer v7.3"
     MSG_uninstaller="MPV Opener for Firefox - Uninstaller"
     MSG_checking_deps="Checking dependencies..."
     MSG_all_deps_installed="All dependencies installed."

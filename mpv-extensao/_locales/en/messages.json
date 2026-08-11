@@ -204,8 +204,8 @@
     "description": "Label for auto cleanup toggle"
   },
   "historyCleanupManual": {
-    "message": "Manual (Disabled)",
-    "description": "Manual cleanup option"
+    "message": "🔄 Auto-clean: Manual (disabled)",
+    "description": "Manual mode label"
   },
   "historyCleanupDaily": {
     "message": "Every Day",
@@ -223,6 +223,38 @@
     "message": "On Browser Close",
     "description": "Cleanup on browser close option"
   },
+  "historyCleanupAutoLabel": {
+    "message": "🔄 Auto-clean: {mode} ({action})",
+    "description": "Auto-clean status label with placeholders"
+  },
+  "historyCleanupModeDaily": {
+    "message": "daily",
+    "description": "Daily mode name"
+  },
+  "historyCleanupModeWeekly": {
+    "message": "weekly",
+    "description": "Weekly mode name"
+  },
+  "historyCleanupModeMonthly": {
+    "message": "monthly",
+    "description": "Monthly mode name"
+  },
+  "historyCleanupModeOnClose": {
+    "message": "on browser close",
+    "description": "On close mode name"
+  },
+  "historyCleanupActionKeeping": {
+    "message": "keeping last {count}",
+    "description": "Keeping action with count"
+  },
+  "historyCleanupActionClearing": {
+    "message": "clearing all",
+    "description": "Clearing all action"
+  },
+  "historyCleanupActionKeepingAll": {
+    "message": "keeping all",
+    "description": "Keeping all action"
+  },
   "historyCleanupRetention": {
     "message": "Keep Last",
     "description": "Retention label"
@@ -230,6 +262,34 @@
   "historyCleanupRetentionDesc": {
     "message": "Number of items to keep in history",
     "description": "Retention description"
+  },
+  "historyCleanupRetentionAll": {
+    "message": "Clear All (0 items)",
+    "description": "Clear all option"
+  },
+  "historyCleanupRetention5": {
+    "message": "5 items",
+    "description": "Keep 5 items"
+  },
+  "historyCleanupRetention10": {
+    "message": "10 items",
+    "description": "Keep 10 items"
+  },
+  "historyCleanupRetention20": {
+    "message": "20 items",
+    "description": "Keep 20 items"
+  },
+  "historyCleanupRetention50": {
+    "message": "50 items",
+    "description": "Keep 50 items"
+  },
+  "historyCleanupRetention100": {
+    "message": "100 items",
+    "description": "Keep 100 items"
+  },
+  "historyCleanupRetentionNoLimit": {
+    "message": "No Limit (Keep All)",
+    "description": "No limit option"
   },
   "historyCleanupSuccess": {
     "message": "History cleaned successfully!",
@@ -634,5 +694,45 @@
   "queueItemsLabel": {
     "message": "items",
     "description": "Items label in queue"
+  },
+  "videoSendSuccess": {
+    "message": "✅ Video sent to mpv successfully!",
+    "description": "Success message when video is sent"
+  },
+  "videoSendFailed": {
+    "message": "❌ Failed to send video to mpv",
+    "description": "Error message when video fails"
+  },
+  "videoSendFailedReason": {
+    "message": "Reason: {reason}",
+    "description": "Error reason with placeholder"
+  },
+  "videoSendFailedYtDlp": {
+    "message": "yt-dlp failed to extract the video. The video may be unavailable or geo-restricted.",
+    "description": "yt-dlp error reason"
+  },
+  "videoSendFailedNetwork": {
+    "message": "Network error. Check your internet connection.",
+    "description": "Network error reason"
+  },
+  "videoSendFailedNative": {
+    "message": "Native Host communication failed. Make sure mpv is installed.",
+    "description": "Native host error reason"
+  },
+  "videoSendFailedTimeout": {
+    "message": "Request timed out. The video may be too long or the server is slow.",
+    "description": "Timeout error reason"
+  },
+  "videoSendFailedUnknown": {
+    "message": "Unknown error occurred. Check the browser console for details.",
+    "description": "Unknown error reason"
+  },
+  "videoSendRetrying": {
+    "message": "⏳ Retrying... ({attempt}/{max})",
+    "description": "Retry attempt message"
+  },
+  "videoSendQueueAdded": {
+    "message": "📋 Added to queue ({count} items)",
+    "description": "Added to queue message"
   }
 }

@@ -49,7 +49,7 @@
   },
   "queueEnabled": {
     "message": "Mode File d'attente",
-    "description": "Libellé pour le basculement du mode file d'attente"
+    "description": "Étiquette pour basculer le mode file d'attente"
   },
   "queueEnabledDesc": {
     "message": "Lorsqu'elles sont activées, les vidéos sont ajoutées à la file d'attente au lieu d'ouvrir de nouvelles fenêtres",
@@ -181,10 +181,10 @@
   },
   "volumeFull": {
     "message": "Complet (100%)",
-    "description": "Option volume complet"
+    "description": "Option plein volume"
   },
   "volumeMuted": {
-    "message": "Muet (0%)",
+    "message": "En sourdine (0%)",
     "description": "Option de volume coupé"
   },
   "volumeCustom": {
@@ -204,8 +204,8 @@
     "description": "Étiquette pour la bascule de nettoyage automatique"
   },
   "historyCleanupManual": {
-    "message": "Manuel (désactivé)",
-    "description": "Option de nettoyage manuel"
+    "message": "🔄 Nettoyage automatique : manuel (désactivé)",
+    "description": "Étiquette du mode manuel"
   },
   "historyCleanupDaily": {
     "message": "Tous les jours",
@@ -223,6 +223,38 @@
     "message": "À la fermeture du navigateur",
     "description": "Option de nettoyage à la fermeture du navigateur"
   },
+  "historyCleanupAutoLabel": {
+    "message": "🔄 Nettoyage automatique : {mode} ({action})",
+    "description": "Étiquette d'état de nettoyage automatique avec espaces réservés"
+  },
+  "historyCleanupModeDaily": {
+    "message": "tous les jours",
+    "description": "Nom du mode quotidien"
+  },
+  "historyCleanupModeWeekly": {
+    "message": "hebdomadaire",
+    "description": "Nom du mode hebdomadaire"
+  },
+  "historyCleanupModeMonthly": {
+    "message": "mensuelle",
+    "description": "Nom du mode mensuel"
+  },
+  "historyCleanupModeOnClose": {
+    "message": "sur le navigateur fermer",
+    "description": "Sur le nom du mode de fermeture"
+  },
+  "historyCleanupActionKeeping": {
+    "message": "garder le dernier {count}",
+    "description": "Maintenir l'action en comptant"
+  },
+  "historyCleanupActionClearing": {
+    "message": "effacer tout",
+    "description": "Effacer toutes les actions"
+  },
+  "historyCleanupActionKeepingAll": {
+    "message": "garder tout",
+    "description": "Garder toute l'action"
+  },
   "historyCleanupRetention": {
     "message": "Garder en dernier",
     "description": "Étiquette de rétention"
@@ -230,6 +262,34 @@
   "historyCleanupRetentionDesc": {
     "message": "Nombre d'éléments à conserver dans l'historique",
     "description": "Description de la rétention"
+  },
+  "historyCleanupRetentionAll": {
+    "message": "Tout effacer (0 éléments)",
+    "description": "Effacer toutes les options"
+  },
+  "historyCleanupRetention5": {
+    "message": "5 articles",
+    "description": "Gardez 5 articles"
+  },
+  "historyCleanupRetention10": {
+    "message": "10 articles",
+    "description": "Gardez 10 articles"
+  },
+  "historyCleanupRetention20": {
+    "message": "20 articles",
+    "description": "Gardez 20 articles"
+  },
+  "historyCleanupRetention50": {
+    "message": "50 articles",
+    "description": "Gardez 50 articles"
+  },
+  "historyCleanupRetention100": {
+    "message": "100 articles",
+    "description": "Conserver 100 articles"
+  },
+  "historyCleanupRetentionNoLimit": {
+    "message": "Aucune limite (garder tout)",
+    "description": "Option sans limite"
   },
   "historyCleanupSuccess": {
     "message": "Historique nettoyé avec succès !",
@@ -244,7 +304,7 @@
     "description": "Sous-en-tête pour les configurations de comportement du bureau"
   },
   "alwaysOnTopLabel": {
-    "message": "Gardez la fenêtre mpv toujours au premier plan",
+    "message": "Gardez la fenêtre MPV toujours au premier plan",
     "description": "Texte de description de la case à cocher pour la couche de lecteur flottante"
   },
   "audioSettings": {
@@ -313,7 +373,7 @@
   },
   "snifferInstructions": {
     "message": "<strong>Instructions :</strong> Revenez à l'onglet du site Web, appuyez sur <strong>PLAY</strong> sur le lecteur vidéo (et fermez toutes les fenêtres contextuelles qui apparaissent). Les flux réels masqués s’afficheront instantanément ci-dessous.",
-    "description": "Notice explicative expliquant la méthodologie de capture d'image active"
+    "description": "Notice explicative expliquant la méthodologie de capture d'images actives"
   },
   "ctxSniffMedia": {
     "message": "🎣 Démarrez le mode Renifleur de médias",
@@ -356,7 +416,7 @@
     "description": "Étiquette pour les éléments du presse-papiers interactifs standard du tableau de bord de configuration"
   },
   "copiedBtn": {
-    "message": "Copié!",
+    "message": "Copié !",
     "description": "Brève mise à jour visuelle de l'état reconnaissant les interactions de copie réussies"
   },
   "shortcutSendVideoDesc": {
@@ -364,7 +424,7 @@
     "description": "Explication contextuelle du mappage des raccourcis clavier affichée dans le menu Outils système"
   },
   "shortcutSendAudioDesc": {
-    "message": "Écoutez l'audio de l'onglet actif en MPV",
+    "message": "Écoutez l'audio de l'onglet actif dans MPV",
     "description": "Explication du mappage des raccourcis clavier ciblant la configuration du profil d'écoute"
   },
   "shortcutOpenSnifferDesc": {
@@ -429,7 +489,7 @@
   },
   "playPause": {
     "message": "Lecture/Pause",
-    "description": "Info-bulle du bouton Pause de lecture"
+    "description": "Info-bulle du bouton de pause de lecture"
   },
   "snifferChecking": {
     "message": "Vérification...",
@@ -553,7 +613,7 @@
   },
   "popup720p": {
     "message": "720b",
-    "description": "option 720p"
+    "description": "Option 720p"
   },
   "popup480p": {
     "message": "480p",
@@ -628,11 +688,51 @@
     "description": "Statut de mise en pause de la file d'attente avec le nombre d'éléments"
   },
   "queueStatusIdle": {
-    "message": "⏹ Au ralenti",
+    "message": "⏹ Au repos",
     "description": "État d'inactivité de la file d'attente"
   },
   "queueItemsLabel": {
     "message": "articles",
     "description": "Étiquette des éléments dans la file d'attente"
+  },
+  "videoSendSuccess": {
+    "message": "✅ Vidéo envoyée en mpv avec succès !",
+    "description": "Message de réussite lorsque la vidéo est envoyée"
+  },
+  "videoSendFailed": {
+    "message": "❌ Échec de l'envoi de la vidéo en mpv",
+    "description": "Message d'erreur lorsque la vidéo échoue"
+  },
+  "videoSendFailedReason": {
+    "message": "Raison : {raison}",
+    "description": "Raison de l'erreur avec espace réservé"
+  },
+  "videoSendFailedYtDlp": {
+    "message": "yt-dlp n'a pas réussi à extraire la vidéo. La vidéo peut être indisponible ou géo-restreinte.",
+    "description": "raison de l'erreur yt-dlp"
+  },
+  "videoSendFailedNetwork": {
+    "message": "Erreur réseau. Vérifiez votre connexion Internet.",
+    "description": "Raison de l'erreur réseau"
+  },
+  "videoSendFailedNative": {
+    "message": "La communication avec l'hôte natif a échoué. Assurez-vous que mpv est installé.",
+    "description": "Raison de l'erreur de l'hôte natif"
+  },
+  "videoSendFailedTimeout": {
+    "message": "La demande a expiré. La vidéo est peut-être trop longue ou le serveur est lent.",
+    "description": "Raison de l'erreur d'expiration du délai"
+  },
+  "videoSendFailedUnknown": {
+    "message": "Une erreur inconnue s'est produite. Consultez la console du navigateur pour plus de détails.",
+    "description": "Raison de l'erreur inconnue"
+  },
+  "videoSendRetrying": {
+    "message": "⏳ Nouvelle tentative... ({tentative}/{max})",
+    "description": "Message de nouvelle tentative"
+  },
+  "videoSendQueueAdded": {
+    "message": "📋 Ajouté à la file d'attente ({count} éléments)",
+    "description": "Message ajouté à la file d'attente"
   }
 }

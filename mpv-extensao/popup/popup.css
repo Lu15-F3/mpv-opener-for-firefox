@@ -1,5 +1,5 @@
 /* ============================================================
-   popup.css - MPV Opener for Firefox v7.2
+   popup.css - MPV Opener for Firefox v7.3
    ============================================================ */
 
 :root {
@@ -36,6 +36,26 @@ body {
   padding: 0;
   width: 320px;
   min-height: 420px;
+}
+
+/* ============================================================
+   Send Status Feedback
+   ============================================================ */
+#send-status {
+  transition: all 0.3s ease;
+}
+
+#send-status.error {
+  border-left: 3px solid var(--danger-color);
+}
+
+#send-status.success {
+  border-left: 3px solid var(--success-green);
+}
+
+#send-status.sending {
+  border-left: 3px solid var(--accent-color);
+  animation: pulse 1.5s ease-in-out infinite;
 }
 
 /* ============================================================

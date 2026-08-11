@@ -73,7 +73,7 @@
   },
   "playPrev": {
     "message": "Odtwórz poprzednie",
-    "description": "Przycisk odtwarzania poprzedniego elementu w kolejce"
+    "description": "Przycisk umożliwiający odtworzenie poprzedniego elementu w kolejce"
   },
   "removeItem": {
     "message": "Usunąć",
@@ -204,8 +204,8 @@
     "description": "Etykieta przełącznika automatycznego czyszczenia"
   },
   "historyCleanupManual": {
-    "message": "Ręczny (wyłączony)",
-    "description": "Opcja ręcznego czyszczenia"
+    "message": "🔄 Automatyczne czyszczenie: ręczne (wyłączone)",
+    "description": "Etykieta trybu ręcznego"
   },
   "historyCleanupDaily": {
     "message": "Codziennie",
@@ -223,6 +223,38 @@
     "message": "W przeglądarce Zamknij",
     "description": "Opcja czyszczenia po zamknięciu przeglądarki"
   },
+  "historyCleanupAutoLabel": {
+    "message": "🔄 Automatyczne czyszczenie: {tryb} ({akcja})",
+    "description": "Etykieta stanu automatycznego czyszczenia z symbolami zastępczymi"
+  },
+  "historyCleanupModeDaily": {
+    "message": "codziennie",
+    "description": "Nazwa trybu dziennego"
+  },
+  "historyCleanupModeWeekly": {
+    "message": "tygodnik",
+    "description": "Nazwa trybu tygodniowego"
+  },
+  "historyCleanupModeMonthly": {
+    "message": "miesięczny",
+    "description": "Nazwa trybu miesięcznego"
+  },
+  "historyCleanupModeOnClose": {
+    "message": "przy zamknięciu przeglądarki",
+    "description": "Nazwa trybu zamknięcia"
+  },
+  "historyCleanupActionKeeping": {
+    "message": "utrzymując ostatni {count}",
+    "description": "Utrzymywanie akcji z licznikiem"
+  },
+  "historyCleanupActionClearing": {
+    "message": "czyszczenie wszystkiego",
+    "description": "Usuwanie wszystkich działań"
+  },
+  "historyCleanupActionKeepingAll": {
+    "message": "zachowując wszystko",
+    "description": "Utrzymanie wszelkich działań"
+  },
   "historyCleanupRetention": {
     "message": "Zachowaj ostatni",
     "description": "Etykieta przechowywania"
@@ -231,8 +263,36 @@
     "message": "Liczba elementów do zachowania w historii",
     "description": "Opis przechowywania"
   },
+  "historyCleanupRetentionAll": {
+    "message": "Wyczyść wszystko (0 pozycji)",
+    "description": "Wyczyść wszystkie opcje"
+  },
+  "historyCleanupRetention5": {
+    "message": "5 przedmiotów",
+    "description": "Zachowaj 5 przedmiotów"
+  },
+  "historyCleanupRetention10": {
+    "message": "10 pozycji",
+    "description": "Zachowaj 10 przedmiotów"
+  },
+  "historyCleanupRetention20": {
+    "message": "20 pozycji",
+    "description": "Zachowaj 20 przedmiotów"
+  },
+  "historyCleanupRetention50": {
+    "message": "50 pozycji",
+    "description": "Zachowaj 50 przedmiotów"
+  },
+  "historyCleanupRetention100": {
+    "message": "100 pozycji",
+    "description": "Zachowaj 100 przedmiotów"
+  },
+  "historyCleanupRetentionNoLimit": {
+    "message": "Bez limitu (Zachowaj wszystko)",
+    "description": "Brak opcji limitu"
+  },
   "historyCleanupSuccess": {
-    "message": "Historia została wyczyszczona pomyślnie!",
+    "message": "Historia została pomyślnie wyczyszczona!",
     "description": "Komunikat o powodzeniu czyszczenia"
   },
   "historyCleanupCount": {
@@ -244,7 +304,7 @@
     "description": "Nagłówek podrzędny dotyczący konfiguracji zachowania pulpitu"
   },
   "alwaysOnTopLabel": {
-    "message": "Utrzymuj okno mpv zawsze na wierzchu",
+    "message": "Utrzymuj okno mpv zawsze na górze",
     "description": "Tekst opisu pola wyboru dla pływającej warstwy gracza"
   },
   "audioSettings": {
@@ -341,7 +401,7 @@
   },
   "welcomeStep2Title": {
     "message": "2. Włącz most komunikacyjny (host natywny)",
-    "description": "Nagłówek zawierający szczegółowe informacje o zadaniach związanych z uprawnieniami do umieszczania manifestu"
+    "description": "Nagłówek zawierający szczegółowe informacje na temat zadań związanych z uprawnieniami do umieszczania manifestu"
   },
   "welcomeStep2Desc": {
     "message": "Teraz uruchom oficjalny skrypt instalatora, aby zarejestrować manifesty lokalnej integracji:",
@@ -360,7 +420,7 @@
     "description": "Krótka aktualizacja wizualna stanu potwierdzająca udane interakcje z kopiami"
   },
   "shortcutSendVideoDesc": {
-    "message": "Wyślij wideo z aktywnej karty do MPV",
+    "message": "Wyślij wideo z aktywną zakładką do MPV",
     "description": "Kontekstowe objaśnienie mapowania skrótów klawiszowych pokazane w menu narzędzi systemowych"
   },
   "shortcutSendAudioDesc": {
@@ -469,7 +529,7 @@
   },
   "snifferStatus": {
     "message": "Status",
-    "description": "Etykieta stanu w oknie testowym"
+    "description": "Etykieta stanu w oknie dialogowym testu"
   },
   "snifferType": {
     "message": "Typ",
@@ -517,7 +577,7 @@
   },
   "snifferStreams": {
     "message": "strumienie do mpv?",
-    "description": "Pytanie o streamy"
+    "description": "Pytanie o strumienie"
   },
   "snifferFilter": {
     "message": "Filtr",
@@ -634,5 +694,45 @@
   "queueItemsLabel": {
     "message": "rzeczy",
     "description": "Etykieta pozycji w kolejce"
+  },
+  "videoSendSuccess": {
+    "message": "✅ Film został pomyślnie wysłany do mpv!",
+    "description": "Komunikat o powodzeniu po wysłaniu wideo"
+  },
+  "videoSendFailed": {
+    "message": "❌ Nie udało się wysłać wideo do mpv",
+    "description": "Komunikat o błędzie, gdy wideo nie zostanie odtworzone"
+  },
+  "videoSendFailedReason": {
+    "message": "Powód: {powód}",
+    "description": "Przyczyna błędu z symbolem zastępczym"
+  },
+  "videoSendFailedYtDlp": {
+    "message": "yt-dlp nie mógł rozpakować wideo. Film może być niedostępny lub podlegać ograniczeniom geograficznym.",
+    "description": "Przyczyna błędu yt-dlp"
+  },
+  "videoSendFailedNetwork": {
+    "message": "Błąd sieci. Sprawdź swoje połączenie internetowe.",
+    "description": "Przyczyna błędu sieci"
+  },
+  "videoSendFailedNative": {
+    "message": "Komunikacja z hostem natywnym nie powiodła się. Upewnij się, że mpv jest zainstalowany.",
+    "description": "Przyczyna błędu hosta natywnego"
+  },
+  "videoSendFailedTimeout": {
+    "message": "Upłynął limit czasu żądania. Film może być za długi lub serwer działa wolno.",
+    "description": "Przyczyna błędu przekroczenia limitu czasu"
+  },
+  "videoSendFailedUnknown": {
+    "message": "Wystąpił nieznany błąd. Aby uzyskać szczegółowe informacje, sprawdź konsolę przeglądarki.",
+    "description": "Nieznana przyczyna błędu"
+  },
+  "videoSendRetrying": {
+    "message": "⏳ Ponawianie próby... ({attempt}/{max})",
+    "description": "Komunikat o ponownej próbie"
+  },
+  "videoSendQueueAdded": {
+    "message": "📋 Dodano do kolejki ({count} pozycji)",
+    "description": "Dodano do kolejki wiadomości"
   }
 }

@@ -1,6 +1,6 @@
 #!/bin/bash
 # ============================================================
-# install.sh - MPV Opener for Firefox v7.2
+# install.sh - MPV Opener for Firefox v7.3
 # Native Host Installer - Multi-Distro Support
 # ============================================================
 
@@ -412,7 +412,7 @@ fi
 # ============================================================
 echo -e "\n${BLUE}▶ Registering version...${NC}"
 mkdir -p "$VERSION_DIR"
-echo "7.0.2" > "$VERSION_FILE"
+echo "7.0.3" > "$VERSION_FILE"
 echo -e "${GREEN}  ✔ Version registered: $(cat "$VERSION_FILE")${NC}"
 
 # ============================================================

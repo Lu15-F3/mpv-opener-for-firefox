@@ -204,8 +204,8 @@
     "description": "Rótulo para alternância de limpeza automática"
   },
   "historyCleanupManual": {
-    "message": "Manual (Desativado)",
-    "description": "Opção de limpeza manual"
+    "message": "🔄 Limpeza automática: Manual (desativado)",
+    "description": "Etiqueta do modo manual"
   },
   "historyCleanupDaily": {
     "message": "Diariamente",
@@ -223,6 +223,38 @@
     "message": "Ao fechar o navegador",
     "description": "Opção de limpeza ao fechar o navegador"
   },
+  "historyCleanupAutoLabel": {
+    "message": "🔄 Limpeza automática: {mode} ({action})",
+    "description": "Etiqueta de status de limpeza automática com espaços reservados"
+  },
+  "historyCleanupModeDaily": {
+    "message": "diário",
+    "description": "Nome do modo diário"
+  },
+  "historyCleanupModeWeekly": {
+    "message": "semanalmente",
+    "description": "Nome do modo semanal"
+  },
+  "historyCleanupModeMonthly": {
+    "message": "mensal",
+    "description": "Nome do modo mensal"
+  },
+  "historyCleanupModeOnClose": {
+    "message": "no navegador fechar",
+    "description": "No nome do modo fechado"
+  },
+  "historyCleanupActionKeeping": {
+    "message": "mantendo a última {contagem}",
+    "description": "Mantendo a ação com contagem"
+  },
+  "historyCleanupActionClearing": {
+    "message": "limpando tudo",
+    "description": "Limpando todas as ações"
+  },
+  "historyCleanupActionKeepingAll": {
+    "message": "mantendo tudo",
+    "description": "Mantendo todas as ações"
+  },
   "historyCleanupRetention": {
     "message": "Mantenha o último",
     "description": "Etiqueta de retenção"
@@ -230,6 +262,34 @@
   "historyCleanupRetentionDesc": {
     "message": "Número de itens a serem mantidos no histórico",
     "description": "Descrição da retenção"
+  },
+  "historyCleanupRetentionAll": {
+    "message": "Limpar tudo (0 itens)",
+    "description": "Limpar todas as opções"
+  },
+  "historyCleanupRetention5": {
+    "message": "5 itens",
+    "description": "Mantenha 5 itens"
+  },
+  "historyCleanupRetention10": {
+    "message": "10 itens",
+    "description": "Mantenha 10 itens"
+  },
+  "historyCleanupRetention20": {
+    "message": "20 itens",
+    "description": "Mantenha 20 itens"
+  },
+  "historyCleanupRetention50": {
+    "message": "50 itens",
+    "description": "Mantenha 50 itens"
+  },
+  "historyCleanupRetention100": {
+    "message": "100 itens",
+    "description": "Mantenha 100 itens"
+  },
+  "historyCleanupRetentionNoLimit": {
+    "message": "Sem limite (manter tudo)",
+    "description": "Sem opção de limite"
   },
   "historyCleanupSuccess": {
     "message": "Histórico limpo com sucesso!",
@@ -634,5 +694,45 @@
   "queueItemsLabel": {
     "message": "Unid",
     "description": "Etiqueta de itens na fila"
+  },
+  "videoSendSuccess": {
+    "message": "✅ Vídeo enviado para mpv com sucesso!",
+    "description": "Mensagem de sucesso quando o vídeo é enviado"
+  },
+  "videoSendFailed": {
+    "message": "❌ Falha ao enviar vídeo para mpv",
+    "description": "Mensagem de erro quando o vídeo falha"
+  },
+  "videoSendFailedReason": {
+    "message": "Motivo: {motivo}",
+    "description": "Motivo do erro com espaço reservado"
+  },
+  "videoSendFailedYtDlp": {
+    "message": "yt-dlp não conseguiu extrair o vídeo. O vídeo pode estar indisponível ou com restrição geográfica.",
+    "description": "motivo do erro yt-dlp"
+  },
+  "videoSendFailedNetwork": {
+    "message": "Erro de rede. Verifique sua conexão com a Internet.",
+    "description": "Motivo do erro de rede"
+  },
+  "videoSendFailedNative": {
+    "message": "A comunicação do host nativo falhou. Certifique-se de que o mpv esteja instalado.",
+    "description": "Motivo do erro do host nativo"
+  },
+  "videoSendFailedTimeout": {
+    "message": "A solicitação expirou. O vídeo pode ser muito longo ou o servidor está lento.",
+    "description": "Motivo do erro de tempo limite"
+  },
+  "videoSendFailedUnknown": {
+    "message": "Ocorreu um erro desconhecido. Verifique o console do navegador para obter detalhes.",
+    "description": "Motivo do erro desconhecido"
+  },
+  "videoSendRetrying": {
+    "message": "⏳ Tentando novamente... ({attempt}/{max})",
+    "description": "Mensagem de nova tentativa"
+  },
+  "videoSendQueueAdded": {
+    "message": "📋 Adicionado à fila ({count} itens)",
+    "description": "Mensagem adicionada à fila"
   }
 }

@@ -80,7 +80,7 @@
     "description": "Кнопка удаления элемента из очереди"
   },
   "optionsTitle": {
-    "message": "Настройки открывателя MPV",
+    "message": "Настройки открывания MPV",
     "description": "Основной заголовок на странице панели настроек"
   },
   "playbackSettings": {
@@ -149,7 +149,7 @@
   },
   "initialState": {
     "message": "Исходное состояние",
-    "description": "Метка, определяющая, начинается ли воспроизведение видео или оно приостановлено"
+    "description": "Ярлык, определяющий, начинается ли воспроизведение видео или оно приостановлено"
   },
   "statePlaying": {
     "message": "Играя",
@@ -204,8 +204,8 @@
     "description": "Ярлык для переключения автоматической очистки"
   },
   "historyCleanupManual": {
-    "message": "Ручной (отключено)",
-    "description": "Возможность ручной очистки"
+    "message": "🔄 Автоочистка: Ручная (отключена)",
+    "description": "Метка ручного режима"
   },
   "historyCleanupDaily": {
     "message": "Каждый день",
@@ -223,6 +223,38 @@
     "message": "При закрытии браузера",
     "description": "Очистка при закрытии браузера"
   },
+  "historyCleanupAutoLabel": {
+    "message": "🔄 Автоочистка: {mode} ({action})",
+    "description": "Ярлык состояния автоматической очистки с заполнителями"
+  },
+  "historyCleanupModeDaily": {
+    "message": "ежедневно",
+    "description": "Название ежедневного режима"
+  },
+  "historyCleanupModeWeekly": {
+    "message": "еженедельно",
+    "description": "Название еженедельного режима"
+  },
+  "historyCleanupModeMonthly": {
+    "message": "ежемесячно",
+    "description": "Название ежемесячного режима"
+  },
+  "historyCleanupModeOnClose": {
+    "message": "при закрытии браузера",
+    "description": "Имя режима закрытия"
+  },
+  "historyCleanupActionKeeping": {
+    "message": "сохраняя последний {count}",
+    "description": "Сохранение действия с подсчетом"
+  },
+  "historyCleanupActionClearing": {
+    "message": "очистка всех",
+    "description": "Отмена всех действий"
+  },
+  "historyCleanupActionKeepingAll": {
+    "message": "сохраняя все",
+    "description": "Сохранение всех действий"
+  },
   "historyCleanupRetention": {
     "message": "Держись последним",
     "description": "Этикетка хранения"
@@ -230,6 +262,34 @@
   "historyCleanupRetentionDesc": {
     "message": "Количество элементов, которые нужно сохранить в истории",
     "description": "Описание хранения"
+  },
+  "historyCleanupRetentionAll": {
+    "message": "Очистить все (0 позиций)",
+    "description": "Очистить все опции"
+  },
+  "historyCleanupRetention5": {
+    "message": "5 предметов",
+    "description": "Оставьте 5 предметов"
+  },
+  "historyCleanupRetention10": {
+    "message": "10 предметов",
+    "description": "Оставьте 10 предметов"
+  },
+  "historyCleanupRetention20": {
+    "message": "20 предметов",
+    "description": "Храните 20 предметов"
+  },
+  "historyCleanupRetention50": {
+    "message": "50 предметов",
+    "description": "Храните 50 предметов"
+  },
+  "historyCleanupRetention100": {
+    "message": "100 предметов",
+    "description": "Сохраните 100 предметов"
+  },
+  "historyCleanupRetentionNoLimit": {
+    "message": "Без ограничений (Сохранить все)",
+    "description": "Безлимитный вариант"
   },
   "historyCleanupSuccess": {
     "message": "История очищена успешно!",
@@ -273,7 +333,7 @@
   },
   "saveSuccess": {
     "message": "Настройки успешно сохранены!",
-    "description": "Текст оповещения плавающего баннера об оперативном обновлении"
+    "description": "Плавающий баннер с текстом оповещения об оперативном обновлении"
   },
   "sendingNotification": {
     "message": "Отправка видео в mpv...",
@@ -317,7 +377,7 @@
   },
   "ctxSniffMedia": {
     "message": "🎣 Запустите режим медиа-сниффера",
-    "description": "Метка динамически применяется к контекстным меню страницы, вызываемым правой кнопкой мыши."
+    "description": "Ярлык динамически применяется к контекстным меню страницы, вызываемым правой кнопкой мыши."
   },
   "sendToMpvBtnText": {
     "message": "Отправить в MPV",
@@ -329,14 +389,14 @@
   },
   "welcomeIntro": {
     "message": "MPV Opener для Firefox был добавлен в ваш браузер, но он пока не может взаимодействовать с вашей системой. Выполните следующие два быстрых шага:",
-    "description": "Вводный абзац, в котором подчеркиваются проблемы установления связи при выполнении локального хоста."
+    "description": "Вводный абзац, в котором подчеркивается проблема установления связи при выполнении локального хоста."
   },
   "welcomeStep1Title": {
     "message": "1. Установите зависимости",
-    "description": "Заголовок заголовка, поясняющий зависимости операционных пакетов"
+    "description": "Заголовок заголовка, объясняющий зависимости операционных пакетов"
   },
   "welcomeStep1Desc": {
-    "message": "Откройте терминал и запустите эту команду, чтобы установить плеер, механизм извлечения и медиа-плагин:",
+    "message": "Откройте терминал и запустите эту команду, чтобы установить проигрыватель, механизм извлечения и медиа-плагин:",
     "description": "Блок описания инструкций, предшествующий блоку CLI"
   },
   "welcomeStep2Title": {
@@ -541,7 +601,7 @@
   },
   "popupResolutionCap": {
     "message": "Ограничение разрешения:",
-    "description": "Ярлык для выбора разрешения во всплывающем окне"
+    "description": "Метка для выбора разрешения во всплывающем окне"
   },
   "popupBestQuality": {
     "message": "Лучший (Макс)",
@@ -605,7 +665,7 @@
   },
   "queuePaused": {
     "message": "Приостановлено",
-    "description": "Очередь приостановлена"
+    "description": "Статус очереди приостановлен"
   },
   "queuePlaying": {
     "message": "Играя",
@@ -634,5 +694,45 @@
   "queueItemsLabel": {
     "message": "предметы",
     "description": "Метка элементов в очереди"
+  },
+  "videoSendSuccess": {
+    "message": "✅ Видео успешно отправлено в mpv!",
+    "description": "Сообщение об успешном завершении отправки видео"
+  },
+  "videoSendFailed": {
+    "message": "❌ Не удалось отправить видео в mpv.",
+    "description": "Сообщение об ошибке при сбое видео"
+  },
+  "videoSendFailedReason": {
+    "message": "Причина: {причина}",
+    "description": "Причина ошибки с заполнителем"
+  },
+  "videoSendFailedYtDlp": {
+    "message": "yt-dlp не удалось извлечь видео. Видео может быть недоступно или ограничено по географическому признаку.",
+    "description": "причина ошибки yt-dlp"
+  },
+  "videoSendFailedNetwork": {
+    "message": "Ошибка сети. Проверьте подключение к Интернету.",
+    "description": "Причина ошибки сети"
+  },
+  "videoSendFailedNative": {
+    "message": "Не удалось установить связь с собственным хостом. Убедитесь, что mpv установлен.",
+    "description": "Причина ошибки собственного хоста"
+  },
+  "videoSendFailedTimeout": {
+    "message": "Время запроса истекло. Возможно, видео слишком длинное или сервер работает медленно.",
+    "description": "Причина ошибки тайм-аута"
+  },
+  "videoSendFailedUnknown": {
+    "message": "Произошла неизвестная ошибка. Подробности проверьте в консоли браузера.",
+    "description": "Неизвестная причина ошибки"
+  },
+  "videoSendRetrying": {
+    "message": "⏳ Повторная попытка... ({попытка}/{макс})",
+    "description": "Сообщение о повторной попытке"
+  },
+  "videoSendQueueAdded": {
+    "message": "📋 Добавлено в очередь (элементов: {count})",
+    "description": "Добавлено в очередь сообщение"
   }
 }

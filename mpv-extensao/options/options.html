@@ -135,6 +135,7 @@
       </div>
     </div>
     
+    <!-- Seção de History Cleanup -->
     <div class="section">
       <h2 id="header-history">History Settings</h2>
       
@@ -152,20 +153,21 @@
       <div class="form-group" id="retention-group">
         <label id="label-historyRetention" for="historyRetention">Keep Last:</label>
         <select id="historyRetention">
-          <option value="5">5 items</option>
-          <option value="10" selected>10 items</option>
-          <option value="20">20 items</option>
-          <option value="50">50 items</option>
-          <option value="100">100 items</option>
-          <option value="0">All (No limit)</option>
+          <option value="0" id="opt-retentionAll">Clear All (0 items)</option>
+          <option value="5" id="opt-retention5">5 items</option>
+          <option value="10" id="opt-retention10" selected>10 items</option>
+          <option value="20" id="opt-retention20">20 items</option>
+          <option value="50" id="opt-retention50">50 items</option>
+          <option value="100" id="opt-retention100">100 items</option>
+          <option value="-1" id="opt-retentionNoLimit">No Limit (Keep All)</option>
         </select>
       </div>
       
-      <div style="margin-top: 10px; display: flex; gap: 10px;">
+      <div style="margin-top: 10px; display: flex; gap: 10px; align-items: center;">
         <button id="cleanup-now-btn" class="btn-warning" style="padding: 6px 14px; font-size: 12px; border-radius: var(--border-radius); border: none; cursor: pointer; background: linear-gradient(135deg, var(--accent-color), #565f89); color: var(--text-color);">
           🧹 Clean Now
         </button>
-        <span id="cleanup-status" style="font-size: 12px; color: var(--text-muted); display: flex; align-items: center;"></span>
+        <span id="cleanup-status" style="font-size: 12px; color: var(--text-muted);"></span>
       </div>
     </div>
 

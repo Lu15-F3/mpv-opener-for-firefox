@@ -1,6 +1,6 @@
 #!/bin/bash
 # ============================================================
-# MPV Opener for Firefox - Uninstaller v7.0.2
+# MPV Opener for Firefox - Uninstaller v7.0.3
 # ============================================================
 # Usage: curl -sSL https://raw.githubusercontent.com/Lu15-F3/mpv-opener-for-firefox/main/uninstall.sh | bash
 # ============================================================
@@ -23,7 +23,7 @@ NC='\033[0m'
 REPO_OWNER="Lu15-F3"
 REPO_NAME="mpv-opener-for-firefox"
 BRANCH="main"
-VERSION="7.0.2"
+VERSION="7.0.3"
 
 BASE_URL="https://raw.githubusercontent.com/$REPO_OWNER/$REPO_NAME/$BRANCH/native-host"
 

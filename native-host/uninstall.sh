@@ -1,6 +1,6 @@
 #!/bin/bash
 # ============================================================
-# uninstall.sh - MPV Opener for Firefox v7.2
+# uninstall.sh - MPV Opener for Firefox v7.3
 # Native Host Uninstaller - Multi-Distro Support
 # ============================================================
 

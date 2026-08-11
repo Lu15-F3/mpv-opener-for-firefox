@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # ============================================================
-# mpv_wrapper.py - MPV Opener for Firefox v7.2
+# mpv_wrapper.py - MPV Opener for Firefox v7.3
 # Native Messaging Host Wrapper - Versão Estável Final
 # ============================================================
 
@@ -17,8 +17,8 @@ import time
 # ============================================================
 # VERSION
 # ============================================================
-WRAPPER_VERSION = "7.0.2"
-MIN_EXTENSION_VERSION = "7.0.2"
+WRAPPER_VERSION = "7.0.3"
+MIN_EXTENSION_VERSION = "7.0.3"
 
 # ============================================================
 # CONSTANTS

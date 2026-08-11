@@ -204,8 +204,8 @@
     "description": "ऑटो क्लीनअप टॉगल के लिए लेबल"
   },
   "historyCleanupManual": {
-    "message": "मैनुअल (अक्षम)",
-    "description": "मैन्युअल सफ़ाई विकल्प"
+    "message": "🔄 स्वतः साफ़: मैन्युअल (अक्षम)",
+    "description": "मैनुअल मोड लेबल"
   },
   "historyCleanupDaily": {
     "message": "रोज रोज",
@@ -223,6 +223,38 @@
     "message": "ब्राउज़र पर बंद करें",
     "description": "ब्राउज़र बंद करने के विकल्प पर क्लीनअप करें"
   },
+  "historyCleanupAutoLabel": {
+    "message": "🔄 स्वतः साफ़: {मोड} ({कार्रवाई})",
+    "description": "प्लेसहोल्डर्स के साथ ऑटो-क्लीन स्टेटस लेबल"
+  },
+  "historyCleanupModeDaily": {
+    "message": "दैनिक",
+    "description": "दैनिक मोड का नाम"
+  },
+  "historyCleanupModeWeekly": {
+    "message": "साप्ताहिक",
+    "description": "साप्ताहिक मोड का नाम"
+  },
+  "historyCleanupModeMonthly": {
+    "message": "महीने के",
+    "description": "मासिक मोड का नाम"
+  },
+  "historyCleanupModeOnClose": {
+    "message": "ब्राउज़र बंद होने पर",
+    "description": "क्लोज़ मोड नाम पर"
+  },
+  "historyCleanupActionKeeping": {
+    "message": "अंतिम गिनती रखना",
+    "description": "गिनती के साथ कार्रवाई रखना"
+  },
+  "historyCleanupActionClearing": {
+    "message": "सब साफ़ करना",
+    "description": "सभी कार्रवाई साफ़ करना"
+  },
+  "historyCleanupActionKeepingAll": {
+    "message": "सब रखते हुए",
+    "description": "सारी कार्रवाई रखते हुए"
+  },
   "historyCleanupRetention": {
     "message": "अंतिम रखें",
     "description": "अवधारण लेबल"
@@ -230,6 +262,34 @@
   "historyCleanupRetentionDesc": {
     "message": "इतिहास में रखने योग्य वस्तुओं की संख्या",
     "description": "अवधारण विवरण"
+  },
+  "historyCleanupRetentionAll": {
+    "message": "सभी साफ़ करें (0 आइटम)",
+    "description": "सभी विकल्प साफ़ करें"
+  },
+  "historyCleanupRetention5": {
+    "message": "5 आइटम",
+    "description": "5 वस्तुएं रखें"
+  },
+  "historyCleanupRetention10": {
+    "message": "10 आइटम",
+    "description": "10 वस्तुएं रखें"
+  },
+  "historyCleanupRetention20": {
+    "message": "20 आइटम",
+    "description": "20 वस्तुएं रखें"
+  },
+  "historyCleanupRetention50": {
+    "message": "50 आइटम",
+    "description": "50 वस्तुएं रखें"
+  },
+  "historyCleanupRetention100": {
+    "message": "100 आइटम",
+    "description": "100 आइटम रखें"
+  },
+  "historyCleanupRetentionNoLimit": {
+    "message": "कोई सीमा नहीं (सभी रखें)",
+    "description": "कोई सीमा विकल्प नहीं"
   },
   "historyCleanupSuccess": {
     "message": "इतिहास सफलतापूर्वक साफ़ किया गया!",
@@ -249,7 +309,7 @@
   },
   "audioSettings": {
     "message": "ऑडियो डिवाइस कॉन्फ़िगरेशन",
-    "description": "उन्नत ऑडियो आउटपुट के लिए अनुभाग हेडर"
+    "description": "उन्नत ऑडियो आउटपुट के लिए अनुभाग शीर्षलेख"
   },
   "audioDeviceLabel": {
     "message": "डिफ़ॉल्ट ऑडियो आउटपुट डिवाइस (एमपीवी --ऑडियो-डिवाइस)",
@@ -264,7 +324,7 @@
     "description": "पोस्ट-ट्रांसमिशन लेआउट प्रबंधन के लिए अनुभाग शीर्षलेख"
   },
   "closeTabLabel": {
-    "message": "एमपीवी पर वीडियो भेजने के बाद टैब स्वचालित रूप से बंद हो जाता है",
+    "message": "एमपीवी पर वीडियो भेजने के बाद स्वचालित रूप से टैब बंद करें",
     "description": "लॉन्च के तुरंत बाद कार्यक्षेत्र साफ़ करने के लिए चेकबॉक्स विकल्प"
   },
   "saveButton": {
@@ -634,5 +694,45 @@
   "queueItemsLabel": {
     "message": "सामान",
     "description": "कतार में आइटम लेबल"
+  },
+  "videoSendSuccess": {
+    "message": "✅ वीडियो एमपीवी पर सफलतापूर्वक भेजा गया!",
+    "description": "वीडियो भेजे जाने पर सफलता का संदेश"
+  },
+  "videoSendFailed": {
+    "message": "❌ एमपीवी पर वीडियो भेजने में विफल",
+    "description": "वीडियो विफल होने पर त्रुटि संदेश"
+  },
+  "videoSendFailedReason": {
+    "message": "कारण: {कारण}",
+    "description": "प्लेसहोल्डर के साथ त्रुटि का कारण"
+  },
+  "videoSendFailedYtDlp": {
+    "message": "yt-dlp वीडियो निकालने में विफल रहा। वीडियो अनुपलब्ध या भू-प्रतिबंधित हो सकता है।",
+    "description": "yt-dlp त्रुटि कारण"
+  },
+  "videoSendFailedNetwork": {
+    "message": "नेटवर्क त्रुटि। अपना इंटरनेट कनेक्शन जांचें.",
+    "description": "नेटवर्क त्रुटि कारण"
+  },
+  "videoSendFailedNative": {
+    "message": "नेटिव होस्ट संचार विफल रहा. सुनिश्चित करें कि एमपीवी स्थापित है।",
+    "description": "मूल होस्ट त्रुटि कारण"
+  },
+  "videoSendFailedTimeout": {
+    "message": "अनुरोध का समय समाप्त हो गया. वीडियो बहुत लंबा हो सकता है या सर्वर धीमा है.",
+    "description": "टाइमआउट त्रुटि कारण"
+  },
+  "videoSendFailedUnknown": {
+    "message": "अज्ञात त्रुटि उत्पन्न हुई. विवरण के लिए ब्राउज़र कंसोल की जाँच करें।",
+    "description": "अज्ञात त्रुटि कारण"
+  },
+  "videoSendRetrying": {
+    "message": "⏳ पुनः प्रयास किया जा रहा है... ({प्रयास}/{अधिकतम})",
+    "description": "पुनः प्रयास प्रयास संदेश"
+  },
+  "videoSendQueueAdded": {
+    "message": "📋 कतार में जोड़ा गया ({गिनती} आइटम)",
+    "description": "कतार संदेश में जोड़ा गया"
   }
 }

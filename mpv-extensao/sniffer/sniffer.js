@@ -1,5 +1,5 @@
 // ============================================================
-// sniffer.js - MPV Opener for Firefox v7.2
+// sniffer.js - MPV Opener for Firefox v7.3
 // COM SUPORTE COMPLETO A i18n E SEM innerHTML
 // ============================================================
 
@@ -971,4 +971,4 @@ window.__MPV_SNIFFER = {
   }
 };
 
-console.log('MPV Opener Sniffer v7.2 loaded with i18n support');
+console.log('MPV Opener Sniffer v7.3 loaded with i18n support');

@@ -204,8 +204,8 @@
     "description": "Beschriftung zum Umschalten der automatischen Bereinigung"
   },
   "historyCleanupManual": {
-    "message": "Manuell (deaktiviert)",
-    "description": "Manuelle Bereinigungsoption"
+    "message": "🔄 Automatische Reinigung: Manuell (deaktiviert)",
+    "description": "Etikett für den manuellen Modus"
   },
   "historyCleanupDaily": {
     "message": "Täglich",
@@ -223,6 +223,38 @@
     "message": "Beim Schließen des Browsers",
     "description": "Option „Bereinigung beim Schließen des Browsers“."
   },
+  "historyCleanupAutoLabel": {
+    "message": "🔄 Automatische Reinigung: {mode} ({action})",
+    "description": "Statusbeschriftung für die automatische Reinigung mit Platzhaltern"
+  },
+  "historyCleanupModeDaily": {
+    "message": "täglich",
+    "description": "Name des Tagesmodus"
+  },
+  "historyCleanupModeWeekly": {
+    "message": "wöchentlich",
+    "description": "Name des wöchentlichen Modus"
+  },
+  "historyCleanupModeMonthly": {
+    "message": "monatlich",
+    "description": "Name des Monatsmodus"
+  },
+  "historyCleanupModeOnClose": {
+    "message": "beim Schließen des Browsers",
+    "description": "Name des Modus zum Schließen"
+  },
+  "historyCleanupActionKeeping": {
+    "message": "als Letzter bleiben {count}",
+    "description": "Mit Zählen am Ball bleiben"
+  },
+  "historyCleanupActionClearing": {
+    "message": "alles aufräumen",
+    "description": "Alle Aktionen löschen"
+  },
+  "historyCleanupActionKeepingAll": {
+    "message": "alles behalten",
+    "description": "Alle Maßnahmen beibehalten"
+  },
   "historyCleanupRetention": {
     "message": "Als Letztes behalten",
     "description": "Aufbewahrungsetikett"
@@ -231,13 +263,41 @@
     "message": "Anzahl der im Verlauf aufzubewahrenden Elemente",
     "description": "Aufbewahrungsbeschreibung"
   },
+  "historyCleanupRetentionAll": {
+    "message": "Alles löschen (0 Artikel)",
+    "description": "Option „Alle löschen“."
+  },
+  "historyCleanupRetention5": {
+    "message": "5 Artikel",
+    "description": "Behalten Sie 5 Gegenstände"
+  },
+  "historyCleanupRetention10": {
+    "message": "10 Artikel",
+    "description": "Behalten Sie 10 Gegenstände"
+  },
+  "historyCleanupRetention20": {
+    "message": "20 Artikel",
+    "description": "Behalten Sie 20 Gegenstände"
+  },
+  "historyCleanupRetention50": {
+    "message": "50 Artikel",
+    "description": "Behalten Sie 50 Gegenstände"
+  },
+  "historyCleanupRetention100": {
+    "message": "100 Artikel",
+    "description": "Behalte 100 Gegenstände"
+  },
+  "historyCleanupRetentionNoLimit": {
+    "message": "Kein Limit (Alle behalten)",
+    "description": "Keine Limit-Option"
+  },
   "historyCleanupSuccess": {
     "message": "Verlauf erfolgreich bereinigt!",
     "description": "Erfolgsmeldung der Bereinigung"
   },
   "historyCleanupCount": {
     "message": "{count} alte Verlaufseinträge entfernt",
-    "description": "Meldung zur Bereinigungsanzahl"
+    "description": "Meldung zur Anzahl der Bereinigungen"
   },
   "windowBehavior": {
     "message": "Fensterverhalten",
@@ -309,7 +369,7 @@
   },
   "snifferSubtitle": {
     "message": "Aufgenommene Streams",
-    "description": "Liste der erfolgreich erfassten Untertitel-Tracking-Elemente"
+    "description": "Listen Sie die erfolgreich erfassten Untertitel-Tracking-Elemente auf"
   },
   "snifferInstructions": {
     "message": "<strong>Anleitung:</strong> Gehen Sie zurück zum Website-Tab, drücken Sie im Videoplayer auf <strong>PLAY</strong> (und schließen Sie alle angezeigten Popups). Versteckte tatsächliche Streams werden sofort unten angezeigt.",
@@ -401,10 +461,10 @@
   },
   "snifferExportSuccess": {
     "message": "Links zur Konsole exportiert",
-    "description": "Bestätigung beim Exportieren von Links"
+    "description": "Bestätigung, wenn Links exportiert werden"
   },
   "snifferEmpty": {
-    "message": "Noch keine Streams erfasst. Befolgen Sie die obigen Anweisungen.",
+    "message": "Es wurden noch keine Streams erfasst. Befolgen Sie die obigen Anweisungen.",
     "description": "Leere Statusmeldung im Sniffer"
   },
   "nowPlaying": {
@@ -537,7 +597,7 @@
   },
   "snifferClearConfirm": {
     "message": "Alle erfassten Streams löschen?",
-    "description": "Klare Bestätigungsmeldung"
+    "description": "Klare Bestätigungsnachricht"
   },
   "popupResolutionCap": {
     "message": "Auflösungsobergrenze:",
@@ -634,5 +694,45 @@
   "queueItemsLabel": {
     "message": "Artikel",
     "description": "Artikelbezeichnung in der Warteschlange"
+  },
+  "videoSendSuccess": {
+    "message": "✅ Video erfolgreich an mpv gesendet!",
+    "description": "Erfolgsmeldung, wenn das Video gesendet wird"
+  },
+  "videoSendFailed": {
+    "message": "❌ Video konnte nicht an MPV gesendet werden",
+    "description": "Fehlermeldung, wenn das Video fehlschlägt"
+  },
+  "videoSendFailedReason": {
+    "message": "Grund: {Grund}",
+    "description": "Fehlergrund mit Platzhalter"
+  },
+  "videoSendFailedYtDlp": {
+    "message": "yt-dlp konnte das Video nicht extrahieren. Das Video ist möglicherweise nicht verfügbar oder geografisch eingeschränkt.",
+    "description": "YT-DLP-Fehlergrund"
+  },
+  "videoSendFailedNetwork": {
+    "message": "Netzwerkfehler. Überprüfen Sie Ihre Internetverbindung.",
+    "description": "Grund für den Netzwerkfehler"
+  },
+  "videoSendFailedNative": {
+    "message": "Die Kommunikation mit dem nativen Host ist fehlgeschlagen. Stellen Sie sicher, dass mpv installiert ist.",
+    "description": "Fehlerursache des nativen Hosts"
+  },
+  "videoSendFailedTimeout": {
+    "message": "Zeitüberschreitung bei der Anfrage. Das Video ist möglicherweise zu lang oder der Server ist langsam.",
+    "description": "Grund für Timeout-Fehler"
+  },
+  "videoSendFailedUnknown": {
+    "message": "Es ist ein unbekannter Fehler aufgetreten. Weitere Informationen finden Sie in der Browserkonsole.",
+    "description": "Unbekannter Fehlergrund"
+  },
+  "videoSendRetrying": {
+    "message": "⏳ Wiederholter Versuch... ({attempt}/{max})",
+    "description": "Meldung zum Wiederholungsversuch"
+  },
+  "videoSendQueueAdded": {
+    "message": "📋 Zur Warteschlange hinzugefügt ({count} Elemente)",
+    "description": "Zur Warteschlangennachricht hinzugefügt"
   }
 }
