@@ -17,7 +17,23 @@ Save system resources (CPU/RAM), bypass heavy web player scripts, and enjoy adva
 <details>
   <summary><b>Click to expand / Clique para expandir</b></summary>
   
-  • Smart and Cross-Platform Picture-in-Picture (PiP) Mode / Modo Picture-in-Picture (PiP) Inteligente e Multiplataforma: Completely redesigned PiP feature offering a more robust and customizable experience.
+• Floating Action Button (FAB) / Botão Flutuante (FAB): Introduced a floating action button that can be activated on any web page, allowing you to send videos to mpv without opening the extension popup. Built with a closed Shadow DOM to ensure total CSS isolation and prevent conflicts with host page styles. Features intelligent detection on video pages (YouTube, Netflix, Twitch, etc., plus active <video>/<audio> tags), customizable position in all four corners with expanding menus, three quick actions ("Send to mpv", "Audio Only", and "Catch Mode"), smooth scale/expansion animations, and helpful tooltips.
+
+> 🇧🇷 BR: Introduzido um botão flutuante que pode ser ativado em qualquer página web, permitindo enviar vídeos para o mpv sem precisar abrir o popup da extensão. O FAB é construído com Shadow DOM fechado, garantindo isolamento total de CSS e evitando conflitos com estilos da página hospedeira. Conta com detecção inteligente em páginas de vídeo (YouTube, Netflix, Twitch, etc., além de tags <video>/<audio> ativas), posicionamento customizável nos quatro cantos com expansão adaptativa do menu, três ações rápidas ("Enviar para mpv", "Somente Áudio" e "Modo Pesca"), animações suaves e tooltips informativas.
+
+• Default Window Size Control / Controle de Tamanho da Janela Padrão: Added the ability to choose the window size when using the "Standard Window" display mode, available both in the popup and in the options page. Users can select from preset sizes—Small (640x360), Medium (854x480), Default (1024x576), Large (1280x720), Extra Large (1600x900)—or specify a custom WxH resolution (e.g., 960x540).
+
+> 🇧🇷 BR: Adicionada a possibilidade de escolher o tamanho da janela quando o modo de exibição é "Standard Window", disponível tanto no popup quanto nas opções. O usuário pode escolher entre resoluções pré-definidas—Small (640x360), Medium (854x480), Default (1024x576), Large (1280x720), Extra Large (1600x900)—ou especificar manualmente uma resolução personalizada no formato LxA (ex.: 960x540).
+
+• Manual Screen Resolution Override / Substituição Manual da Resolução da Tela: Users can now manually set the screen resolution (1366x768, 1600x900, 1920x1080, 2560x1440, 3840x2160, or a custom WxH value) directly from the popup and options page. This is especially useful when automatic detection via xrandr/xdpyinfo fails or reports incorrect values (e.g., in XWayland, virtual monitors, or multi-monitor setups). The wrapper then calculates the PiP position based on the selected resolution, ensuring the window lands in the correct corner.
+
+> 🇧🇷 BR: Nova opção nas configurações e no popup para forçar a resolução da tela usada no cálculo do posicionamento do PiP (presets: 1366x768, 1600x900, 1920x1080, 2560x1440, 3840x2160 ou valor personalizado LxA). Essencial para sistemas onde a detecção automática via xrandr/xdpyinfo retorna valores incorretos (muito comum em XWayland, monitores virtuais ou múltiplos monitores). O wrapper passa a calcular a posição do PiP com base na resolução escolhida, garantindo que a janela apareça no canto correto.
+
+• Universal PiP Positioning Fallback / Fallback Universal para Posicionamento do PiP: The Python wrapper now uses wmctrl (primary) and xdotool (secondary) as fallback tools to reposition the PiP window when the native --geometry flag is ignored by the window manager (common on KDE Plasma with Wayland). It automatically detects the environment to apply the fallback only on Wayland sessions, robustly searches for any window ending with " - mpv", retries for up to 6 seconds (20 attempts at 0.3s intervals) for window mapping, and executes a double repositioning call with a 0.2s delay to force KWin to apply the layout change.
+
+> 🇧🇷 BR: O wrapper Python agora utiliza wmctrl (primário) e xdotool (secundário) como ferramentas de fallback para reposicionar a janela do PiP quando a flag nativa --geometry é ignorada pelo gerenciador de janelas (comportamento comum no KDE Plasma com Wayland). Aplica o fallback apenas em sessões Wayland (preservando o comportamento nativo em X11), busca de forma robusta por qualquer janela cujo título termine com " - mpv", realiza múltiplas tentativas por até 6 segundos (20 tentativas de 0,3s) e executa o reposicionamento duplo com intervalo de 0,2s para garantir que o KWin aplique a mudança.
+  
+• Smart and Cross-Platform Picture-in-Picture (PiP) Mode / Modo Picture-in-Picture (PiP) Inteligente e Multiplataforma: Completely redesigned PiP feature offering a more robust and customizable experience.
 
 > 🇧🇷 BR: O recurso de PiP foi completamente reformulado para oferecer uma experiência mais robusta e personalizável.
 
@@ -195,11 +211,9 @@ Save system resources (CPU/RAM), bypass heavy web player scripts, and enjoy adva
 
 > 🇧🇷 BR: Logs abrangentes para depuração dos sistemas de fila e sniffer, API do sniffer exposta no console (window.__MPV_SNIFFER), código bem comentado para fácil manutenção e JavaScript ES5+ moderno com ampla compatibilidade de navegadores.
 </details>
-
-
 ---
 
-## 🛠️ Prerequisites (Fedora Linux) / 🛠️ Pré-requisitos (Fedora Linux)
+## 🛠️ Prerequisites / 🛠️ Pré-requisitos
 
 Before installing the extension interface, you must ensure that your system has the media backend, the web extractor engine, and the D-Bus communication plugin installed.
 
