@@ -14,7 +14,10 @@ Save system resources (CPU/RAM), bypass heavy web player scripts, and enjoy adva
 
 ✨ Features / ✨ Recursos
 
-• Smart and Cross-Platform Picture-in-Picture (PiP) Mode / Modo Picture-in-Picture (PiP) Inteligente e Multiplataforma: Completely redesigned PiP feature offering a more robust and customizable experience.
+<details>
+  <summary><b>Click to expand / Clique para expandir</b></summary>
+  
+  • Smart and Cross-Platform Picture-in-Picture (PiP) Mode / Modo Picture-in-Picture (PiP) Inteligente e Multiplataforma: Completely redesigned PiP feature offering a more robust and customizable experience.
 
 > 🇧🇷 BR: O recurso de PiP foi completamente reformulado para oferecer uma experiência mais robusta e personalizável.
 
@@ -191,6 +194,8 @@ Save system resources (CPU/RAM), bypass heavy web player scripts, and enjoy adva
 • Developer Tools / Ferramentas para Desenvolvedores: Comprehensive logging for debugging queue and sniffer systems, exposed sniffer API in console (window.__MPV_SNIFFER), well-commented code for easy maintenance, and modern ES5+ JavaScript with broad browser compatibility.
 
 > 🇧🇷 BR: Logs abrangentes para depuração dos sistemas de fila e sniffer, API do sniffer exposta no console (window.__MPV_SNIFFER), código bem comentado para fácil manutenção e JavaScript ES5+ moderno com ampla compatibilidade de navegadores.
+</details>
+
 
 ---
 
